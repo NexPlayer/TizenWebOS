@@ -399,7 +399,7 @@
                     <a href="advance.html#track_selection">
                 
                         
-                        Track
+                        ABR
                 
                     </a>
                 
@@ -695,7 +695,7 @@ nexplayer.Setup({
 });
 </code></pre>
 <p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the DRM used.</p>
-<p>CENC is supported on DASH.</p>
+<p>CENC is supported with DASH.</p>
 <h4 id="aes">AES </h4>
 <p>NexPlayer&#x2122; supports HLS content encrypted with the AES-128 algorithm. If the key is trasported inside the HLS manifest itself, it will automatically work, without any modification on the developer&apos;s side.</p>
 <p>Please note that this method is not as secure as other DRMs.</p>
@@ -729,8 +729,8 @@ nexplayer.Setup({
 <pre><code class="lang-javascript">{
   div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
   src: <span class="hljs-string">&apos;URL video&apos;</span>, <span class="hljs-comment">// Mandatory</span>
-  lowLatency: <span class="hljs-literal">true</span>,
-  lowLatencyLiveDelay: <span class="hljs-literal">3.2 </span><span class="hljs-comment">// The desired latency to maintain</span>
+  lowLatency: <span class="hljs-literal">true</span>, <span class="hljs-comment">// toggles on/off low latency mode</span>
+  
 }
 </code></pre>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>lowLatency</em> parameter is false, so the player will start without low latency if <em>lowLatency</em> is not set to true.</p>
@@ -791,7 +791,7 @@ nexplayer.Setup({
 </div></div></p>
 <h2 id="custom_selection">Custom Actions </h2>
 <p>Advanced actions can be perform with a player instance. For the full action list, check <a href="api.html">NexPlayer API</a>.</p>
-<h3 id="track_selection">Track </h3>
+<h3 id="track_selection">ABR </h3>
 <p>HLS and DASH streams include several video tracks of different resolutions in order to adjust the quality based on the network conditions. Changes in bitrate are done automatically when ABR (Adaptive Bitrate) is enabled (default behavior).</p>
 <p>The currently selected track can be obtained with the method <a href="api.html#Player_getCurrentTrack"><code>getCurrentTrack</code></a> of NexPlayer&#x2122;. It returns all the <a href="api.html#Track">track information</a>.</p>
 <pre><code class="lang-javascript">nexplayerInstance.getCurrentTrack();

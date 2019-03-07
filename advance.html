@@ -312,6 +312,16 @@
                 
             </li>
         
+            <li class="chapter " data-level="1.6.2" data-path="advance.html">
+            
+                <a href="advance.html#ads">
+            
+                    
+                    Ads
+            
+                </a>
+            
+            </li>
         
             <li class="chapter " data-level="1.6.4" data-path="advance.html">
                 
@@ -714,6 +724,17 @@ nexplayer.Setup({
 </code></pre>
 <p>Please note that this method is not as secure as other DRMs.</p>
 <p>Custom headers are supported with HLS and DASH.</p>
+<h2 id="ads">Ads</h2>
+<p>NexPlayer supports the VAST, VPAID, and VMAP ad formats.</p>
+<p>You can insert any pre/mid/post roll ad by setting up the ad links as shown below:</p>
+<pre><code class="lang-javascript">nexplayer.Setup({
+  key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
+    div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
+    src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
+    vast: <span class="hljs-string">&apos;VAST / VPAID / VMAP link&apos;</span>
+});
+</code></pre>
+<p>Sample VAST links can be found on the <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/tags" target="_blank">Google website</a>.</p>
 <h2 id="mute">Mute </h2>
 <p>This feature tells the player whether to start playback with the volume muted or not. This can be configured in the player by adding the <em>mutedAtStart</em> option:</p>
 <pre><code class="lang-javascript">{

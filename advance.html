@@ -539,7 +539,7 @@
                     <a href="advance.html#cors">
                 
                         
-                        Cross-Origin Resource Sharing (CORS)
+                        Cross-Origin Resource Sharing
                 
                     </a>
                 
@@ -655,7 +655,7 @@
 </div></div></p>
 <p>NexPlayer&#x2122; supports several DRM technologies:</p>
 <h4 id="widevine">Widevine </h4>
-<p>A DRM powered by <a href="https://www.widevine.com" target="_blank">Google</a> for our WebOS Player. It can be used by entering the information into the DRM array:</p>
+<p>A DRM powered by <a href="https://www.widevine.com" target="_blank">Google</a> . It can be used by entering the information into the DRM array:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> nexDRMInformationWidevine = {
   NexDRMType:<span class="hljs-string">&apos;com.widevine.alpha&apos;</span>,
   NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>,
@@ -672,7 +672,7 @@ nexplayer.Setup({
 <p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the Widevine server used.</p>
 <p>Widevine is supported with DASH.</p>
 <h4 id="playready">PlayReady </h4>
-<p>A DRM powered by <a href="https://www.microsoft.com/playready/" target="_blank">Microsoft</a> for our Tizen and WebOS Players. It can be used by entering the information into the DRM array:</p>
+<p>A DRM powered by <a href="https://www.microsoft.com/playready/" target="_blank">Microsoft</a>. It can be used by entering the information into the DRM array:</p>
 <pre><code class="lang-javascript"><span class="hljs-keyword">var</span> nexDRMInformationPlayReady = {NexDRMType:<span class="hljs-string">&apos;com.microsoft.playready&apos;</span>, NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>, 
 NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>, FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};
 

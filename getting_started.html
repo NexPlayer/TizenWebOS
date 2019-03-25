@@ -563,7 +563,7 @@
                 <a href="advance.html#cors">
             
                     
-                    Cross-Origin Resource Sharing (CORS)
+                    Cross-Origin Resource Sharing
             
                 </a>
             
@@ -672,7 +672,7 @@
                                 <section class="normal markdown-section">
                                 
                                 <h1 id="getting-started">Getting Started</h1>
-<p>This section will explain how to integrate NexPlayer&#x2122; into your Tizen or WebOS Project</p>
+<p>This section will explain how to integrate NexPlayer&#x2122; into your Tizen project</p>
 <h2 id="integration">NexPlayer&#x2122; Integration </h2>
 <h4 id="sample">Sample </h4>
 <p>Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.com/sample/index.html" download="" target="_blank">HTML5 file</a>:</p>
@@ -718,16 +718,9 @@
 <p>To integrate NexPlayer™ into you project you must complete the following steps:</p>
 <ul>
     <li>Add the appropriate NexPlayer™ JavaScript library to the HTML file of your project:</li>
-    <ul>
-        <li>Tizen:</li>
-    </ul>
+
     <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://nexplayer.nexplayersdk.com/tizen/1.3.5/nexplayer.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
-    
-    <ul>
-        <li>WebOS:</li>
     </ul>
-    <pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://nexplayer.nexplayersdk.com/latest/web-os/nexplayer.js&quot;</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
-</ul>
 
 <p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that the use of https to call our library is mandatory.</p>
 </div></div></p>
@@ -753,7 +746,7 @@
 </div></div></p>
 <h2 id="Controler">NexPlayer&#x2122; Remote Controller </h2>
 <h4>Sample</h4>
-<p>You can create your own custom controls for a seemless integration of NexPlayer™ into your Tizen/WebOS app:</p>
+<p>You can create your own custom controls for a seemless integration of NexPlayer™ into your Tizen app:</p>
 <pre><code class="lang-javascript">
 document.addEventListener('keydown', function(e) {
     console.log('Key pressed ---> ' + e.keyCode);
@@ -808,10 +801,7 @@ document.addEventListener('keydown', function(e) {
 </code> </pre>
 <h4>Details</h4>
 <p>Navigating inside the NexPlayer™ UI can be done by shifting the focus from one element to another with the remote controller. A function can be assigned to one of the buttons of the remote controller using remote control key codes: </p>
-<p><ul>
-    <li><a href="https://developer.samsung.com/tv/develop/guides/user-interaction/remote-control" target="_blank">Samsung</a> </li>
-    <li><a href="http://webostv.developer.lge.com/design/webos-tv-system-ui/remote-control/" target="_blank">LG</a> </li>
-</ul>
+
 </p>
 <p>example:</p>
 <pre><code class="lang-javascript">{

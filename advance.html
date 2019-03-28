@@ -336,32 +336,6 @@
                 
             </li>
     
-            <li class="chapter " data-level="1.6.4" data-path="advance.html">
-                
-                <a href="advance.html#lowLatency">
-            
-                    
-                    
-                    Low Latency
-            
-                </a>
-            
-    
-            
-            </li>
-    
-            <li class="chapter " data-level="1.6.4" data-path="advance.html">
-                
-                <a href="advance.html#autoPlay">
-            
-                    
-                    Auto Play
-            
-                </a>
-            
-    
-            
-            </li>
     
             <li class="chapter " data-level="1.6.7" data-path="advance.html">
                 
@@ -744,30 +718,6 @@ nexplayer.Setup({
 }
 </code></pre>
 <p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>mutedAtStart</em> parameter is false, so the player will start unmuted if <em>mutedAtStart</em> is not set to true.</p>
-</div></div></p>
-<h2 id="lowLatency">Low Latency </h2>
-<p>This feature enables low latency for live streams. This can be configured in the player by adding the <em>lowLatency</em> option. You can also choose the desired latency:</p>
-<pre><code class="lang-javascript">{
-  div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
-  src: <span class="hljs-string">&apos;URL video&apos;</span>, <span class="hljs-comment">// Mandatory</span>
-  lowLatency: <span class="hljs-literal">true</span>, <span class="hljs-comment">// toggles on/off low latency mode</span>
-  
-}
-</code></pre>
-<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>lowLatency</em> parameter is false, so the player will start without low latency if <em>lowLatency</em> is not set to true.</p>
-</div></div></p>
-<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>lowLatencyLiveDelay</em> parameter will adjust the latency depending on the network conditions.</p>
-</div></div></p>
-
-<h2 id="autoPlay">Auto Play </h2>
-<p>This feature enables/disables autoplay. This can be configured in the player by adding the <em>autoplay</em> option:</p>
-<pre><code class="lang-javascript">{
-  div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>), <span class="hljs-comment">// Mandatory</span>
-  src: <span class="hljs-string">&apos;URL video&apos;</span>, <span class="hljs-comment">// Mandatory</span>
-  autoplay: <span class="hljs-literal">false</span>
-}
-</code></pre>
-<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <em>autoplay</em> parameter is true, so the player will start without any user action.</p>
 </div></div></p>
 <h2 id="timed_metadata">ID3 Tags </h2>
 <p>NexPlayer&#x2122; supports timed metadata for HLS content. The information is made available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack</a> array of the video element.</p>

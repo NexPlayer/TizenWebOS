@@ -698,7 +698,7 @@
         <li><a href="#Player_buttonPreviousFocus">.buttonPreviousFocus()</a></li>
         <li><a href="#Player_downFocus">.downFocus()</a></li>
         <!-- <li><a href="#Player_downLanguage">.downLanguage()</a></li> -->
-        <li><a href="#Player_downsubtitle">.downSubtitle()</a></li>
+        <li><a href="#Player_downSubtitle">.downSubtitle()</a></li>
         <li><a href="#Player_focusOnButtonBar">.focusOnButtonBar()</a></li>
         <li><a href="#Player_focusOnplaybackBar">.focusOnPlaybackBar()</a></li>
         <!-- <li><a href="#Player_upLanguage">.upanguage()</a></li> -->
@@ -709,8 +709,8 @@
 
     <li><em>Miscellaneous &#x21D2;</em><ul>
         <li><a href="#Player_attachSubtitleRendererDiv">.attachSubtitleRendererDiv(subtitleRendererDiv)</a></li>
-        <li><a href="#Player_on">.on(callbackType, functionToBeCalled)</a></li>
-        <li><a href="#Player_sendImpression">.sendImpression()</a></li>
+        <li><a href="#Player_playeroncallbacktype">.on(callbackType, functionToBeCalled)</a></li>
+        <li><a href="#Player_sendImpression">.sendImpression()</a></li> 
         <li><a href="#Player_setThumbnailResources">.setThumbnailResources(callback, vttURl, imageURL)</a></li>
     </ul></li>
 
@@ -849,7 +849,8 @@ If <i>isUTC()</i> is <b>true,</b> getDuration's returned value will be different
 <p>Get all the video tracks.</p>
 <p><strong>Returns</strong>: <a href="#AudioStream"><code>Array.&lt;videoTracks&gt;</code></a> - the list of the available video tracks.<a id="Player_getCurrentAudioStream"></a></p>
 
-<h4 id="playersetaudiostreamstreamid">player.setAudio(streamID)</h4>
+<p><a id="Player_setAudio"></a></p>
+<h4 id="playersetAudio">player.setAudio(streamID)</h4>
 <p>Set the current audio stream.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
@@ -868,8 +869,8 @@ If <i>isUTC()</i> is <b>true,</b> getDuration's returned value will be different
 </tr>
 </tbody>
 </table>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>AudioStream</code></a> - the current audio track.</p>
 
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>AudioStream</code></a> - the current audio track.<a id="Player_setAudioStream"></a></p>
 <h4 id="playersetaudiostreamstreamid">player.setAudioStream(streamID) <strong> &#x21D2; deprecated</strong></h4>
 <p>Set the current audio stream.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Track</code></a> - the current track.<a id="Player_setCurrentTrack"></a></p>
@@ -1043,8 +1044,8 @@ applies to live streams.</p>
 <p>Changes the focus to the play/pause button.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
 
-<p><a id="Player_focusOnPlaybackBar"></a></p>
-<h4 id="focusOnPlaybackBar">player.focusOnPlaybackBar()</h4>
+<p><a id="Player_focusOnplaybackBar"></a></p>
+<h4 id="focusOnplaybackBar">player.focusOnPlaybackBar()</h4>
 <p>Changes the focus to the video's seekbar.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
 
@@ -1109,7 +1110,8 @@ This is optional and the native subtitles of the video element will be used if t
 </tbody>
 </table>
 
-<h4 id="playeroncallbacktype-functiontobecalled">player.on(callbackType, functionToBeCalled)</h4>
+<p><a id="Player_playeroncallbacktype"></a></p>
+<h4 id="playeroncallbacktype">player.on(callbackType, functionToBeCalled)</h4>
 <p>Adds a listener for Events.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
@@ -1260,7 +1262,7 @@ This is optional and the native subtitles of the video element will be used if t
 </tbody>
 </table>
 
-<p><a id="AudioStream"></a></p>
+<p><a id="Player_AudioStream"></a></p>
 <h4 id="audiostream--object">AudioStream : <code>Object</code></h4>
 <p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
 <table>
@@ -1290,7 +1292,7 @@ This is optional and the native subtitles of the video element will be used if t
 </tbody>
 </table>
 
-<p><a id="NexDRMInformation"></a></p>
+<p><a id="Player_NexDRMInformation"></a></p>
 <h4 id="NexDRMInformation">NexDRMInformation : <code>Object</code></h4>
 <p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
 <table>
@@ -1314,13 +1316,13 @@ This is optional and the native subtitles of the video element will be used if t
 </tr>
 <tr>
 <td>NexHeaders</td>
-<td><a href="#NexHeaders"><code>Array.&lt;NexHeaders&gt;</code></a></td>
+<td><a href="#Player_NexHeaders"><code>Array.&lt;NexHeaders&gt;</code></a></td>
 <td>NexHeaders of the video</td>
 </tr>
 </tbody>
 </table>
 
-<p><a id="NexHeaders"></a></p>
+<p><a id="Player_NexHeaders"></a></p>
 <h4 id="NexHeaders">NexHeaders : <code>Object</code></h4>
 <p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
 <table>
@@ -1345,7 +1347,7 @@ This is optional and the native subtitles of the video element will be used if t
 </tbody>
 </table>
 
-<p><a id="Track"></a></p>
+<p><a id="Player_Track"></a></p>
 <h4 id="Track">Track : <code>Object</code></h4>
 <p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
 <table>

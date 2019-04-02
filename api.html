@@ -650,52 +650,97 @@
 
 <p><strong>Kind</strong>: global class   </p>
 <ul>
-<li><a href="#Player">Player</a><ul>
-<li><a href="#new_Player_new">new Player()</a></li>
-<li><em>instance</em><ul>
-<li><a href="#Player_Init">.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog)</a> &#x21D2; <code>Promise</code></li>
-<li><a href="#Player_getTracks">.getTracks()</a> &#x21D2; <a href="#Track"><code>Array.&lt;Track&gt;</code></a></li>
-<li><a href="#Player_getCurrentTrack">.getCurrentTrack()</a> &#x21D2; <a href="#Track"><code>Track</code></a></li>
-<li><a href="#Player_setCurrentTrack">.setCurrentTrack(trackID)</a></li>
-<li><a href="#Player_enableABR">.enableABR()</a></li>
-<li><a href="#Player_getAudioStreams">.getAudioStreams()</a> &#x21D2; <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a></li>
-<li><a href="#Player_getCurrentAudioStream">.getCurrentAudioStream()</a> &#x21D2; <a href="#AudioStream"><code>AudioStream</code></a></li>
-<li><a href="#Player_setAudioStream">.setAudioStream(streamID)<strong> &#x21D2; deprecated</strong></a></li>
-<li><a href="#Player_setAudio">.setAudio(streamID)</a></li>
-<li><a href="#Player_isLive">.isLive()</a> &#x21D2; <code>boolean</code></li>
-<li><a href="#Player_on">.on(callbackType, functionToBeCalled)</a></li>
-<li><a href="#Player_attachSubtitleRendererDiv">.attachSubtitleRendererDiv(subtitleRendererDiv)</a></li>
-<li><a href="#Player_setThumbnailResources">.setThumbnailResources(callback, vttURl, imageURL)</a></li>
-<li><a href="#Player_isUTC">.isUTC()</a> &#x21D2; <code>boolean</code></li>
-<li><a href="#Player_getCurrentTime">.getCurrentTime()</a> &#x21D2; <code>number</code></li>
-<li><a href="#Player_getDuration">.getDuration()</a> &#x21D2; <code>number</code></li>
-<li><a href="#Player_seek">.seek(value)</a></li>
-<li><a href="#Player_sendImpression">.sendImpression()</a></li>
-<li><a href="#Player_getProtocol">.getProtocol()</a> &#x21D2; <code>number</code></li>
-<li><a href="#Player_setSpeed">.setSpeed(speed)</a></li>
-<li><a href="#Player_getQualityLevels">.getQualityLevels()</a> &#x21D2; <code>array</code></li>
-<li><a href="#Player_setTrack">.setTrack(qualityLevel)</a></li>
-<li><a href="#Player_togglePlayPause">.togglePlayPause()</a></li>
-<li><a href="#Player_setSubtitle">.setSubtitle(index)</a></li>
-<li><a href="#Player_toggleFullScreen">.toggleFullScreen()</a></li>
+    <li><em>setup :</em><ul>
+        <li><a href="#Player_enableABR">.enableABR()</a></li>
+        <li><a href="#Player_Init">.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog)</a> &#x21D2; <code>Promise</code></li>
+        <li><a href="#Player_mutedAtStart">.mutedAtStart()</a></li>
+        <li><a href="#new_Player_new">new Player() </a></li>
+        <li><a href="#Player_useDefaultControls">.useDefaultControls()</a></li>
+    </ul></li>
+    <li><em>player.get[...] &#x21D2; return stream info: </em><ul>
+        <li><a href="#Player_getAudioStreams">.getAudioStreams()</a> &#x21D2; <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a></li>
+        <li><a href="#Player_getCurrentAudioStream">.getCurrentAudioStream()</a> &#x21D2; <a href="#AudioStream"><code>AudioStream</code></a></li>
+        <li><a href="#Player_getCurrentTrack">.getCurrentTrack()</a> &#x21D2; <a href="#Track"><code>Track</code></a></li>
+        <li><a href="#Player_getCurrentTime">.getCurrentTime()</a> &#x21D2; <code>number</code></li>
+        <li><a href="#Player_getDuration">.getDuration()</a> &#x21D2; <code>number</code></li>
+        <li><a href="#Player_getProtocol">.getProtocol()</a> &#x21D2; <code>number</code></li>
+        <li><a href="#Player_getQualityLevels">.getQualityLevels()</a> &#x21D2; <code>array</code></li>
+        <li><a href="#Player_getTracks">.getTracks()</a> &#x21D2; <a href="#Track"><code>Array.&lt;Track&gt;</code></a></li>
+    </ul></li>
+
+    <li><em>player.set[...] &#x21D2; change the player parameters:</em><ul>
+        <li><a href="#Player_setAudio">.setAudio(streamID)</a></li>
+        <li><a href="#Player_setAudioStream">.setAudioStream(streamID)<strong> &#x21D2; deprecated</strong></a></li>
+        <li><a href="#Player_setCurrentTrack">.setCurrentTrack(trackID)</a></li>
+        <li><a href="#Player_setTrack">.setTrack(qualityLevel)</a></li>
+        <li><a href="#Player_setSpeed">.setSpeed(speed)</a></li>
+        <li><a href="#Player_setSubtitle">.setSubtitle(index)</a></li>
+    </ul></li>
+
+    <li><em>player.is[...] &#x21D2; boolean checks on the player state:</em><ul>
+        <li><a href="#Player_isControlBarOpen">.isControlBarOpen()</a> &#x21D2; <code>boolean</code></li>
+        <li><a href="#Player_isLanguageMenuOpen">.isLanguageMenuOpen()</a> &#x21D2; <code>boolean</code></li>
+        <li><a href="#Player_isLive">.isLive()</a> &#x21D2; <code>boolean</code></li>
+        <li><a href="#Player_isPlaybackBarFocused">.isPlaybackBarFocused</a> &#x21D2; <code>boolean</code></li>
+        <li><a href="#Player_isUTC">.isUTC()</a> &#x21D2; <code>boolean</code></li>
+    </ul></li>
+
+    <li><em>player.toggle[...] &#x21D2; toggle on/off player features:</em><ul> 
+        <li><a href="#Player_toggleControlBar">.toggleControlBar()</a></li>
+        <!-- <li><a href="#Player_toggleFullScreen">.toggleFullScreen()</a></li> -->  
+        <li><a href="#Player_toggleLanguageMenu">.toggleLanguageMenu()</a></li>
+        <li><a href="#Player_togglePlayPause">.togglePlayPause()</a></li>
+    </ul></li>
+
+    <li><em>Navigation &#x21D2; APIs for the navigation in the UI and video :</em><ul>
+        <li><a href="#Player_buttonClickFocus">.buttonClickFocus()</a></li>
+        <li><a href="#Player_buttonNextFocus">.buttonNextFocus()</a></li>
+        <li><a href="#Player_buttonPreviousFocus">.buttonPreviousFocus()</a></li>
+        <li><a href="#Player_downFocus">.downFocus()</a></li>
+        <!-- <li><a href="#Player_downLanguage">.downLanguage()</a></li> -->
+        <li><a href="#Player_downsubtitle">.downSubtitle()</a></li>
+        <li><a href="#Player_focusOnButtonBar">.focusOnButtonBar()</a></li>
+        <li><a href="#Player_focusOnplaybackBar">.focusOnPlaybackBar()</a></li>
+        <!-- <li><a href="#Player_upLanguage">.upanguage()</a></li> -->
+        <li><a href="#Player_upFocus">.upFocus()</a></li>
+        <li><a href="#Player_upSubtitle">.upSubtitle()</a></li>
+        <li><a href="#Player_seek">.seek(value)</a></li>
+    </ul></li>
+
+    <li><em>Miscellaneous &#x21D2;</em><ul>
+        <li><a href="#Player_attachSubtitleRendererDiv">.attachSubtitleRendererDiv(subtitleRendererDiv)</a></li>
+        <li><a href="#Player_on">.on(callbackType, functionToBeCalled)</a></li>
+        <li><a href="#Player_sendImpression">.sendImpression()</a></li>
+        <li><a href="#Player_setThumbnailResources">.setThumbnailResources(callback, vttURl, imageURL)</a></li>
+    </ul></li>
+
+    <li><em>static</em><ul>
+        <li><a href="#Player_NexProtocol">.NexProtocol</a> : <code>enum</code></li>
+        <li><a href="#Player_NexEvent">.NexEvent</a> : <code>enum</code></li>
+        <li><a href="#Player_THUMB_TYPE">.THUMB_TYPE</a> : <code>enum</code></li>
+    </ul></li>
+    
+    <li><em>Global TypeDef</em><ul>
+        <li><a href="#Player_AudioStream">.AudioStream</a> : <code>object</code></li>
+        <li><a href="#Player_NexDRMInformation">.NexDRMInformation</a> : <code>object</code></li>
+        <li><a href="#Player_NexHeaders">.NexHeaders</a> : <code>object</code></li>
+        <li><a href="#Player_Track">.Track</a> : <code>object</code></li>
+    </ul></li>
 </ul>
 </li>
-<li><em>static</em><ul>
-<li><a href="#Player_NexProtocol">.NexProtocol</a> : <code>enum</code></li>
-<li><a href="#Player_NexEvent">.NexEvent</a> : <code>enum</code></li>
-<li><a href="#Player_THUMB_TYPE">.THUMB_TYPE</a> : <code>enum</code></li>
 </ul>
-</li>
-</ul>
-</li>
-</ul>
-<p><a id="new_Player_new"></a></p>
-<h3 id="new-player">new Player()</h3>
-<p>Constructs a NexPlayer.</p>
+
+<h1 id="Player_enableABR"> NexPlayer™ APIs:</h1>
+
+<p><a id="Player_enableABR"></a></p>
+<h4 id="playerenableabr">player.enableABR()</h4>
+<p>Enable the ABR function to automatically switch between tracks.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
 <p><a id="Player_Init"></a></p>
-<h3 id="playerinitkey-div-videoelement-url-nexdrminformation-displayableincanvas-protocoltype-debuglog-&#x21D2;-promise">player.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog) &#x21D2; <code>Promise</code></h3>
+<h4 id="playerinitkey-div-videoelement-url-nexdrminformation-displayableincanvas-protocoltype-debuglog-&#x21D2;-promise">player.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog) &#x21D2; <code>Promise</code></h4>
 <p>Initializes the player.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>Promise</code> - that will be resolved when its successfully initializes.<br><strong>Export</strong>:   </p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>Promise</code> - that will be resolved when the player successfully initializes.<br><strong>Export</strong>:   </p>
 <table>
 <thead>
 <tr>
@@ -709,6 +754,7 @@
 <td>key</td>
 <td><code>string</code></td>
 <td>that validates the playback</td>
+<td>HTML container</td>
 </tr>
 <tr>
 <td>div</td>
@@ -728,34 +774,108 @@
 <tr>
 <td>nexDRMInformation</td>
 <td><a href="#NexDRMInformation"><code>Array.&lt;NexDRMInformation&gt;</code></a></td>
-<td>that contains an array of DRM information. By default it is null.</td>
+<td>that contains an array of DRM information (by default it is null)</td>
 </tr>
 <tr>
 <td>displayableinCanvas</td>
 <td><code>boolean</code></td>
-<td>that will inform if the videoElement will be used to generate external textures to be displayed in a canvas. By default it is false.</td>
+<td>that will inform if the videoElement will be used to generate external textures to be displayed in a canvas (by default it is false)</td>
 </tr>
 <tr>
 <td>protocolType</td>
 <td><code>NexProtocol</code></td>
-<td>that will define the protocol type.  By default it is UNKNOWN and it will be obtained from the URL.</td>
+<td>that will define the protocol type (by default it is UNKNOWN and it will be obtained from the URL)</td>
 </tr>
 <tr>
 <td>debugLog</td>
 <td><code>boolean</code></td>
-<td>that will set the output of extra logs. By default it is false.</td>
+<td>that will set the output of extra logs (by default it is false)</td>
 </tr>
 </tbody>
 </table>
-<p><a id="Player_getTracks"></a></p>
-<h3 id="playergettracks-&#x21D2;-arraytrack">player.getTracks() &#x21D2; <a href="#Track"><code>Array.&lt;Track&gt;</code></a></h3>
-<p>Get all the video tracks.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Array.&lt;Track&gt;</code></a> - all the tracks available.<a id="Player_getCurrentTrack"></a></p>
-<h3 id="playergetcurrenttrack-&#x21D2;-track">player.getCurrentTrack() &#x21D2; <a href="#Track"><code>Track</code></a></h3>
+
+<p><a id="Player_mutedAtStart"></a></p>
+<h4 id="mutedAtStart">player.mutedAtStart()</h4>
+<p>Enable or disable the sound when the player loads.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="new_Player_new"></a></p>
+<h4 id="new-player">newPlayer()</h4>
+<p>Constructs a NexPlayer.</p>
+
+<p><a id="Player_useDefaultControls"></a></p>
+<h4 id="useDefaultControls">player.useDefaultControls()</h4>
+<p>Assign basic actions to the remote controller keys.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><a id="Player_getAudioStreams"></a></p>
+
+<h4 id="playergetaudiostreams-&#x21D2;-arrayaudiostream">player.getAudioStreams() &#x21D2; <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a></h4>
+<p>Get the available audio streams.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+<p><strong>Returns</strong>: <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a> - the list of the available audio streams.<a id="Player_getCurrentAudioStream"></a></p>
+
+<h4 id="playergetcurrentaudiostream-&#x21D2;-audiostream">player.getCurrentAudioStream() &#x21D2; <a href="#AudioStream"><code>AudioStream</code></a></h4>
+<p>Get the audio stream currently in use.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Array.&lt;TrackInfo&gt;</code></a> - information about the current audio track </p>
+
+<p>><a id="Player_getCurrentTrack"></a></p>
+<h4 id="playergetcurrenttrack-&#x21D2;-track">player.getCurrentTrack() &#x21D2; <a href="#Track"><code>Track</code></a></h4>
 <p>Get the current track information.</p>
+<p><strong>Returns</strong>: <a href="#AudioStream"><code>Array.&lt;trackInfo&gt;</code></a> - information about the current video track.<a id="Player_getCurrentAudioStream"></a></p>
+
+<p><a id="Player_getCurrentTime"></a></p>
+<h4 id="playergetcurrenttime-&#x21D2;-number">player.getCurrentTime() &#x21D2; <code>number</code></h4>
+<p>Returns the currentTime taking into account <i>isUTC()</i>.
+If <i>isUTC()</i> is <b>true,</b> getCurrentTime's returned value will be different from the time of the video element.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the current time of the video.</p>
+
+<p><a id="Player_getDuration"></a></p>
+<h4 id="playergetduration-&#x21D2;-number">player.getDuration() &#x21D2; <code>number</code></h4>
+<p>Returns the duration taking into account <i>isUTC()</i>.
+If <i>isUTC()</i> is <b>true,</b> getDuration's returned value will be different from the duration of the video element.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+<p><strong>Returns</strong>: <code>number</code> - the duration of the video.</p>
+
+<p><a id="Player_getProtocol"></a></p>
+<h4 id="playergetprotocol-&#x21D2;-number">player.getProtocol() &#x21D2; <code>number</code></h4>
+<p>Returns the stream's protocol ID.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="Player_getQualityLevels"></a></p>
+<h4 id="playergetqualitylevels-&#x21D2;-array">player.getQualityLevels() &#x21D2; <code>array</code></h4>
+<p>Get the video quality levels array.</p>
+
+<p><a id="Player_getTracks"></a></p>
+<h4 id="playergettracks-&#x21D2;-arraytrack">player.getTracks() &#x21D2; <a href="#Track"><code>Array.&lt;Track&gt;</code></a></h4>
+<p>Get all the video tracks.</p>
+<p><strong>Returns</strong>: <a href="#AudioStream"><code>Array.&lt;videoTracks&gt;</code></a> - the list of the available video tracks.<a id="Player_getCurrentAudioStream"></a></p>
+
+<h4 id="playersetaudiostreamstreamid">player.setAudio(streamID)</h4>
+<p>Set the current audio stream.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>streamID</td>
+<td><code>number</code></td>
+<td>ID of the audio stream to be used</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>AudioStream</code></a> - the current audio track.<a id="Player_setAudioStream"></a></p>
+<h4 id="playersetaudiostreamstreamid">player.setAudioStream(streamID) <strong> &#x21D2; deprecated</strong></h4>
+<p>Set the current audio stream.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#Track"><code>Track</code></a> - the current track.<a id="Player_setCurrentTrack"></a></p>
-<h3 id="playersetcurrenttracktrackid">player.setCurrentTrack(trackID)</h3>
-<p>Set the current tack.</p>
+
+<h4 id="playersetcurrenttracktrackid">player.setCurrentTrack(trackID)</h4>
+<p>Set the current track.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
@@ -773,19 +893,12 @@
 </tr>
 </tbody>
 </table>
-<p><a id="Player_enableABR"></a></p>
-<h3 id="playerenableabr">player.enableABR()</h3>
-<p>Enable the ABR to change automatically between tracks.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><a id="Player_getAudioStreams"></a></p>
-<h3 id="playergetaudiostreams-&#x21D2;-arrayaudiostream">player.getAudioStreams() &#x21D2; <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a></h3>
-<p>Get the available audio streams.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>Array.&lt;AudioStream&gt;</code></a> - the list of the available audio streams.<a id="Player_getCurrentAudioStream"></a></p>
-<h3 id="playergetcurrentaudiostream-&#x21D2;-audiostream">player.getCurrentAudioStream() &#x21D2; <a href="#AudioStream"><code>AudioStream</code></a></h3>
-<p>Get the audio stream currently in use.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <a href="#AudioStream"><code>AudioStream</code></a> - the current audio track.<a id="Player_setAudioStream"></a></p>
-<h3 id="playersetaudiostreamstreamid">player.setAudioStream(streamID) <strong> &#x21D2; deprecated</strong></h3>
-<p>Set the current audio stream.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>array</code> - quality levels array info.</p>
+
+<p><a id="Player_setTrack"></a></p>
+<h4 id="playersettrackqualitylevel">player.setTrack(qualityLevel)</h4>
+<p>Set the video quality level.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
 <table>
 <thead>
 <tr>
@@ -796,16 +909,19 @@
 </thead>
 <tbody>
 <tr>
-<td>streamID</td>
+<td>qualityLevel</td>
 <td><code>number</code></td>
-<td>ID of the audio stream to be used.</td>
+<td>index of the quality level</td>
 </tr>
 </tbody>
 </table>
-<p><a id="Player_isLive"></a></p>
-<h3 id="playersetaudiostreamstreamid">player.setAudio(streamID)</h3>
-<p>Set the current audio stream.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+
+<p><a id="Player_setSpeed"></a></p>
+<h4 id="playersetspeed">player.setSpeed(speed)</h4>
+<p>Set the video playback speed.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
 <table>
 <thead>
 <tr>
@@ -816,18 +932,16 @@
 </thead>
 <tbody>
 <tr>
-<td>streamID</td>
+<td>speed</td>
 <td><code>number</code></td>
-<td>ID of the audio stream to be used.</td>
+<td>the value of the speed</td>
 </tr>
 </tbody>
 </table>
-<p><a id="Player_isLive"></a></p>
-<h3 id="playerislive-&#x21D2;-boolean">player.isLive() &#x21D2; <code>boolean</code></h3>
-<p>Informs whether the video is live or on demand (VOD).</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>boolean</code> - true if the video is live, false otherwise.<br><a id="Player_on"></a></p>
-<h3 id="playeroncallbacktype-functiontobecalled">player.on(callbackType, functionToBeCalled)</h3>
-<p>Adds a listener for Events.</p>
+
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><a id="Player_setSubtitle"></a></p>
+<h4 id="playersetsubtitleindex">player.setSubtitle(index)</h4>
+<p>Set the video subtitles.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
 <thead>
@@ -839,19 +953,142 @@
 </thead>
 <tbody>
 <tr>
-<td>callbackType</td>
-<td><code>NexEvent</code></td>
-<td>Event to listen for.</td>
-</tr>
-<tr>
-<td>functionToBeCalled</td>
-<td><a href="#NexCallbackEvent"><code>NexCallbackEvent</code></a></td>
-<td>Function called on each event.</td>
+<td>index</td>
+<td><code>number</code></td>
+<td>index of the subtitles list</td>
 </tr>
 </tbody>
 </table>
+
+<p><a id="Player_isControlBarOpen"></a></p>
+<h4 id="isControlBarOpen">player.isControlBarOpen() &#x21D2; <code>boolean</code></h4>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>boolean</code> - <strong> true</strong> if the bottom bar is showing, <strong>false</strong> otherwise.<br><a id="Player_on"></a></p>
+
+<p><a id="Player_isLanguageMenuOpen"></a></p>
+<h4 id="isLanguageMenuOpen">player.isLanguageMenuOpen() &#x21D2; <code>boolean</code></h4>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>boolean</code> - <strong> true</strong> if the Languague/Subtitle menu is showing, <strong>false</strong> otherwise.<br><a id="Player_on"></a></p>
+
+<p><a id="Player_isLive"></a></p>
+<h4 id="playerislive-&#x21D2;-boolean">player.isLive() &#x21D2; <code>boolean</code></h4>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>boolean</code> - <strong> true</strong> if the video is live, <strong>false</strong> otherwise.<br><a id="Player_on"></a></p>
+
+<p><a id="Player_isPlaybackBarFocused"></a></p>
+<h4 id="isPlaybackBarFocused&#x21D2;-boolean">player.isPlaybackBarFocus() &#x21D2; <code>boolean</code></h4>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>boolean</code> - <strong> true</strong> if the seekbar of the video is currently focused, <strong>false</strong> otherwise.<br><a id="Player_on"></a></p>
+
+<p><a id="Player_isUTC"></a></p>
+<h4 id="playerisutc-&#x21D2;-boolean">player.isUTC() &#x21D2; <code>boolean</code></h4>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+<p>Indicates whether the video information (currentTime, duration, seekable range, etc.) of the video element is based on the present or on an absolute value that
+starts at midnight UTC, Jan 1, 1970.
+If this is true, you will need to take this into account when seeking through the currentTime of the video element. 
+Some useful methods (like getCurrentTime, getDuration, and seek) are
+available to reduce the complexity in these cases. Note that this property only
+applies to live streams.</p>
+
+<p><a id="Player_toggleControlBar"></a></p>
+<h4 id="playerToggleControlBar">player.toggleControlBar()</h4>
+<p>Shows or hides the bottom bar.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="Player_toggleLanguageMenu"></a></p>
+<h4 id="playerToggleLanguageMenu">player.toggleLanguageMenu()</h4>
+<p>Opens or closes the language menu.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="Player_togglePlayPause"></a></p>
+<h4 id="playerToggleplaypause">player.togglePlayPause()</h4>
+<p>Toggle the video playback between the play and pause states.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+<!--
+<p><a id="Player_toggleFullscreen"></a></p>
+<h4 id="playerToggleFullScreen">player.toggleFullScreen()</h4>
+<p>Toggle the video between windowed and fullscreen mode.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+-->
+<p><a id="Player_buttonClickFocus"></a></p>
+<h4 id="buttonClickFocus">player.buttonClickFocus()</h4>
+<p>Execute a click action on the Focused element of the UI.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="Player_buttonNextFocus"></a></p>
+<h4 id="buttonNextFocus">player.buttonNextFocus()</h4>
+<p>Focus the next element of the UI.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="Player_buttonPreviousFocus"></a></p>
+<h4 id="buttonPreviousFocus">player.buttonPreviousFocus()</h4>
+<p>Focus the previous element of the UI.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="Player_downFocus"></a></p>
+<h4 id="downFocus">player.downFocus()</h4>
+<p>Focus the element of the UI situated directly below the element currently focused.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<!--
+<p><a id="Player_downLanguage"></a></p>
+<h4 id="downLanguage">player.downLanguage()</h4>
+<p>change the current audio track to the previous one in the audio track playlist</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+-->
+
+<p><a id="Player_downSubtitle"></a></p>
+<h4 id="downSubtitle">player.downSubtitle()</h4>
+<p>Changes the current subtitles to the previous one in the subtiltle track playlist.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="Player_focusOnButtonBar"></a></p>
+<h4 id="focusOnButtonBar">player.focusOnButtonBar()</h4>
+<p>Changes the focus to the play/pause button.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="Player_focusOnPlaybackBar"></a></p>
+<h4 id="focusOnPlaybackBar">player.focusOnPlaybackBar()</h4>
+<p>Changes the focus to the video's seekbar.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<!--
+<p><a id="Player_upLanguage"></a></p>
+<h4 id="upLanguage">player.upLanguage()</h4>
+<p>change the current audio track to the following one in the audio track playlist</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+-->
+
+<p><a id="Player_upFocus"></a></p>
+<h4 id="upFocus">player.upFocus()</h4>
+<p>Focus the element of the UI situated directly above the element currently focused.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="Player_upSubtitle"></a></p>
+<h4 id="upSubtitle">player.upSubtitle()</h4>
+<p>Changes the current subtitles to the following one in the subtiltle track playlist</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="Player_seek"></a></p>
+<h4 id="playerseekvalue">player.seek(value)</h4>
+<p>Sets the position of the playback taking into account <i>isUTC()</i>.
+If <i>isUTC()</i> is <b>true,</b> the <i>seek</i> value will be in a different format than the currentTime of the video element.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>value</td>
+<td><code>number</code></td>
+<td>value that the player will seek to</td>
+</tr>
+</tbody>
+</table>
+
 <p><a id="Player_attachSubtitleRendererDiv"></a></p>
-<h3 id="playerattachsubtitlerendererdivsubtitlerendererdiv">player.attachSubtitleRendererDiv(subtitleRendererDiv)</h3>
+<h4 id="playerattachsubtitlerendererdivsubtitlerendererdiv">player.attachSubtitleRendererDiv(subtitleRendererDiv)</h4>
 <p>Adds a DIV to render certain subtitles in a more precise way.
 This is optional and the native subtitles of the video element will be used if this is not set.</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
@@ -867,12 +1104,43 @@ This is optional and the native subtitles of the video element will be used if t
 <tr>
 <td>subtitleRendererDiv</td>
 <td><code>subtitleRendererDiv</code></td>
-<td>DIV to render some advanced subtitles.</td>
+<td>DIV to render some advanced subtitles</td>
 </tr>
 </tbody>
 </table>
-<p><a id="Player_create360View"></a></p>
-<h3 id="playersetthumbnailresourcescallback-vtturl-imageurl">player.setThumbnailResources(callback, vttURl, imageURL)</h3>
+
+<h4 id="playeroncallbacktype-functiontobecalled">player.on(callbackType, functionToBeCalled)</h4>
+<p>Adds a listener for Events.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>callbackType</td>
+<td><code>NexEvent</code></td>
+<td>Event to listen for</td>
+</tr>
+<tr>
+<td>functionToBeCalled</td>
+<td><a href="#NexCallbackEvent"><code>NexCallbackEvent</code></a></td>
+<td>Function called on each event</td>
+</tr>
+</tbody>
+</table>
+
+<p><a id="Player_sendImpression"></a></p>
+<h4 id="playersendimpression">player.sendImpression()</h4>
+<p>Send the impression details to the server (only for internal management).</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
+<p><a id="Player_setThumbnailResources"></a></p>
+<h4 id="setThumbnailResourcesl">player.setThumbnailResources(callback, vttURl, imageURL)</h4>
 <p>Set thumbnails resources. This method should be called before Init().</p>
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
 <table>
@@ -901,121 +1169,9 @@ This is optional and the native subtitles of the video element will be used if t
 </tr>
 </tbody>
 </table>
-<p><a id="Player_isUTC"></a></p>
-<h3 id="playerisutc-&#x21D2;-boolean">player.isUTC() &#x21D2; <code>boolean</code></h3>
-<p>Indicates whether the video information (currentTime, duration, seekable range, etc.) of the video element is based on the present or on an absolute value that
-starts at midnight UTC, Jan 1, 1970.
-If this is true, you will need to take this into account when seeking through the currentTime of the video element. 
-Some useful methods (like getCurrentTime, getDuration, and seek) are
-available to reduce the complexity in these cases. Note that this property only
-applies to live streams.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>boolean</code> - true if the video information is using UTC, false otherwise.<br><a id="Player_getCurrentTime"></a></p>
-<h3 id="playergetcurrenttime-&#x21D2;-number">player.getCurrentTime() &#x21D2; <code>number</code></h3>
-<p>Returns the currentTime taking into account isUTC 
-(if <i>isUTC</i> is <b>true,</b> getCurrentTime's returned value will be different from the time of the video element).</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the current time of the video.<br><a id="Player_getDuration"></a></p>
-<h3 id="playergetduration-&#x21D2;-number">player.getDuration() &#x21D2; <code>number</code></h3>
-<p>Returns the duration taking into account isUTC 
-(if <i>isUTC</i> is <b>true,</b> getDuration's returned value will be different from the duration of the video element).</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the duration of the video.<br><a id="Player_seek"></a></p>
-<h3 id="playerseekvalue">player.seek(value)</h3>
-<p>Sets the position of the playback taking into account isUTC.
-(if <i>isUTC</i> is <b>true,</b> the <i>seek</i> value will be in a different format than the currentTime of the video element).</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>value</td>
-<td><code>number</code></td>
-<td>value that the player will seek to.</td>
-</tr>
-</tbody>
-</table>
-<p><a id="Player_sendImpression"></a></p>
-<h3 id="playersendimpression">player.sendImpression()</h3>
-<p>Send the impression details to the server (only for internal management).</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><a id="Player_getProtocol"></a></p>
-<h3 id="playergetprotocol-&#x21D2;-number">player.getProtocol() &#x21D2; <code>number</code></h3>
-<p>Returns the protocol type.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>number</code> - the duration of the video.<br><a id="Player_getThumbnailController"></a></p>
-<h3 id="playersetspeedspeed">player.setSpeed(speed)</h3>
-<p>Set the video playback speed.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>speed</td>
-<td><code>number</code></td>
-<td>the value of the speed</td>
-</tr>
-</tbody>
-</table>
-<p><a id="Player_getQualityLevels"></a></p>
-<h3 id="playergetqualitylevels-&#x21D2;-array">player.getQualityLevels() &#x21D2; <code>array</code></h3>
-<p>Get the video quality levels array.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Returns</strong>: <code>array</code> - quality levels array info<br><a id="Player_setTrack"></a></p>
-<h3 id="playersettrackqualitylevel">player.setTrack(qualityLevel)</h3>
-<p>Set the video quality level.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a>  </p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>qualityLevel</td>
-<td><code>number</code></td>
-<td>index of the quality level</td>
-</tr>
-</tbody>
-</table>
-<p><a id="Player_togglePlayPause"></a></p>
-<h3 id="playertoggleplaypause">player.togglePlayPause()</h3>
-<p>Toggle between play and pause.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><a id="Player_setSubtitle"></a></p>
-<h3 id="playersetsubtitleindex">player.setSubtitle(index)</h3>
-<p>Set the video subtitle.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
-<table>
-<thead>
-<tr>
-<th>Param</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>index</td>
-<td><code>number</code></td>
-<td>index of the subtitles list</td>
-</tr>
-</tbody>
-</table>
-<p><a id="Player_toggleFullScreen"></a></p>
-<h3 id="playertogglefullscreen">player.toggleFullScreen()</h3>
-<p>Toggle between full screen and not full screen</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a></p>
+
 <p><a id=Player_NexProtocol></a> </p>
-<h3 id="playernexprotocol--enum">Player.NexProtocol : <code>enum</code></h3>
+<h4 id="playernexprotocol--enum">Player.NexProtocol : <code>enum</code></h4>
 <p><strong>Kind</strong>: static enum of <a href="#Player"><code>Player</code></a><br><strong>Read only</strong>: true<br><strong>Properties</strong></p>
 <table>
 <thead>
@@ -1053,8 +1209,9 @@ applies to live streams.</p>
 </tr>
 </tbody>
 </table>
+
 <p><a id="Player_NexEvent"></a></p>
-<h3 id="playernexevent--enum">Player.NexEvent : <code>enum</code></h3>
+<h4 id="playernexevent--enum">Player.NexEvent : <code>enum</code></h4>
 <p><strong>Kind</strong>: static enum of <a href="#Player"><code>Player</code></a><br><strong>Read only</strong>: true<br><strong>Properties</strong></p>
 <table>
 <thead>
@@ -1077,8 +1234,9 @@ applies to live streams.</p>
 </tr>
 </tbody>
 </table>
+
 <p><a id="Player_THUMB_TYPE"></a></p>
-<h3 id="playerthumbtype--enum">Player.THUMB_TYPE : <code>enum</code></h3>
+<h4 id="playerthumbtype--enum">Player.THUMB_TYPE : <code>enum</code></h4>
 <p><strong>Kind</strong>: static enum of <a href="#Player"><code>Player</code></a><br><strong>Read only</strong>: true<br><strong>Properties</strong></p>
 <table>
 <thead>
@@ -1101,11 +1259,9 @@ applies to live streams.</p>
 </tr>
 </tbody>
 </table>
-<p><a id="NexCallbackEvent"></a></p>
-<h2 id="nexcallbackevent--function">NexCallbackEvent : <code>function</code></h2>
-<p>Called when a NexEvent happens.</p>
-<p><a id="NexHeaders"></a></p>
-<h2 id="nexheaders--object">NexHeaders : <code>Object</code></h2>
+
+<p><a id="AudioStream"></a></p>
+<h4 id="audiostream--object">AudioStream : <code>Object</code></h4>
 <p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
 <table>
 <thead>
@@ -1117,19 +1273,25 @@ applies to live streams.</p>
 </thead>
 <tbody>
 <tr>
-<td>FieldName</td>
-<td><code>string</code></td>
-<td>of the HTTPHeaders</td>
+<td>id</td>
+<td><code>number</code></td>
+<td>id of the stream</td>
 </tr>
 <tr>
-<td>FiledValue</td>
-<td><code>string</code></td>
-<td>of the HTTPHeaders</td>
+<td>language</td>
+<td><code>number</code></td>
+<td>language of the stream</td>
+</tr>
+<tr>
+<td>name</td>
+<td><code>number</code></td>
+<td>name of the stream</td>
 </tr>
 </tbody>
 </table>
+
 <p><a id="NexDRMInformation"></a></p>
-<h2 id="nexdrminformation--object">NexDRMInformation : <code>Object</code></h2>
+<h4 id="NexDRMInformation">NexDRMInformation : <code>Object</code></h4>
 <p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
 <table>
 <thead>
@@ -1157,8 +1319,34 @@ applies to live streams.</p>
 </tr>
 </tbody>
 </table>
+
+<p><a id="NexHeaders"></a></p>
+<h4 id="NexHeaders">NexHeaders : <code>Object</code></h4>
+<p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FieldName</td>
+<td><code>string</code></td>
+<td>of the HTTPHeaders</td>
+</tr>
+<tr>
+<td>FiledValue</td>
+<td><code>string</code></td>
+<td>of the HTTPHeaders</td>
+</tr>
+</tbody>
+</table>
+
 <p><a id="Track"></a></p>
-<h2 id="track--object">Track : <code>Object</code></h2>
+<h4 id="Track">Track : <code>Object</code></h4>
 <p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
 <table>
 <thead>
@@ -1191,35 +1379,8 @@ applies to live streams.</p>
 </tr>
 </tbody>
 </table>
-<p><a id="AudioStream"></a></p>
-<h2 id="audiostream--object">AudioStream : <code>Object</code></h2>
-<p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td><code>number</code></td>
-<td>id of the stream</td>
-</tr>
-<tr>
-<td>language</td>
-<td><code>number</code></td>
-<td>language of the stream</td>
-</tr>
-<tr>
-<td>name</td>
-<td><code>number</code></td>
-<td>name of the stream</td>
-</tr>
-</tbody>
-</table>
+
+
 
                                 
                                 </section>

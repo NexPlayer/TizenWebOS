@@ -43,7 +43,7 @@
 
 <ul class="summary">    
     
-    <li class="chapter active" data-level="1.1" >
+    <li class="chapter " data-level="1.1" >
         
             <a target="_blank" href="https://www.nexplayersdk.com/tizen-player/">
             
@@ -52,7 +52,7 @@
             </a>   
     </li>
 
-    <li class="chapter " data-level="1.2" data-path="index.html">
+    <li class="chapter" data-level="1.2" data-path="./">
         
             <a href="./">
             
@@ -137,7 +137,7 @@
         </a>    
     </li>
 
-    <li class ="chapter " data level="1.5" data-path="drm.html">
+    <li class ="chapter active" data level="1.5" data-path="drm.html">
         
         <a href="drm.html">
         
@@ -395,6 +395,7 @@
     </li>
 </ul>
 
+
                 </nav>
             
         
@@ -412,12 +413,9 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
+        <a href="." >Advanced Usage</a>
     </h1>
 </div>
-
-
-
 
                     <div class="page-wrapper" tabindex="-1" role="main">
                         <div class="page-inner">
@@ -425,47 +423,85 @@
 <div id="book-search-results">
     <div class="search-noresults">
     
-        <section class="normal markdown-section">
-            
-        <h1 id="logoLine">  <img src="Tizen-WebOS.png" alt="Tizen & WebOS" width="480" height="120"> </h1>
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="advanced-usage">Digital Rights Management</h1>
 
-<h1 id="nexplayer-html5">NexPlayer for Tizen</h1>
-<!--<h2 id="abstract">Abstract</h2>-->
-<p>NexPlayer&#x2122; provides a media player for Smart TVs operating on Tizen. It includes support for HLS, DASH, and progressive download.</p>
-<p>The default UI is easily customizable to fit the user&#xB4;s personal preferences (e.g. icons, colors, etc).</p>
-<!-- <h2 id="nexplayer-capabilities-and-features">NexPlayer&#x2122; Capabilities and Features</h2> -->
-<h2 id=".."><img src="FeatureTable.png"></h2>
-<!--
-<ul>
-<li>Integrated UI</ui>
-<li>Protocols:<ul>
-<li>HLS playback</li>
-<li>DASH playback</li>
-<li>Progressive download (MP4)</li>
-</ul>
-</li>
-<li>Adaptive bitrate (ABR) and UHD video</li>
-<li>ID3 tags</li>
-<li>Trick play</li>
-<li>Multiple audio tracks</li>
-<li>Subtitles:<ul>
-<li>WebVTT</li>
-<li>CEA 608/708</li>
-<li>TTML (DASH only)</li>
-</ul>
-</li>
-<li>Time-shifting</li>
-<li>DRM:<ul>
-<li>Widevine </li> 
-<li>PlayReady</li>
-<li>AES</li>
-<li>Custom HTTP headers</li>
-</ul>
-</li>
-</ul>
-</li>
+<p>Digital rights management (DRM) is a set of access control technologies for restricting the use of proprietary hardware and copyrighted works.</p>
+<p><div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Most of the DRMs available won&apos;t work without using HTTPS with a certificate. For development purposes, a tool like <a href="https://ngrok.com/" target="_blank">ngrok</a> can be used to test DRM-protected links.</p>
+</div></div></p>
+<p>NexPlayer&#x2122; supports several DRM technologies:</p>
+<h2 id="DRM_table"><img src="NexDRM.png"></h2>
+<h4 id="widevine">Widevine </h4>
+<p>A DRM powered by <a href="https://www.widevine.com" target="_blank">Google</a> . It can be used by entering the information into the DRM array:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> nexDRMInformationWidevine = {
+  NexDRMType:<span class="hljs-string">&apos;com.widevine.alpha&apos;</span>,
+  NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>,
+  NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>,<span class="hljs-comment">//Optional</span>
+               FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]<span class="hljs-comment">//Optional</span>
+};
+nexplayer.Setup({
+  key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
+    div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
+    src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
+    drm: [nexDRMInformationWidevine]
+});
+</code></pre>
+<p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the Widevine server used.</p>
+<p>Widevine is supported with DASH.</p>
+<h4 id="playready">PlayReady </h4>
+<p>A DRM powered by <a href="https://www.microsoft.com/playready/" target="_blank">Microsoft</a>. It can be used by entering the information into the DRM array:</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> nexDRMInformationPlayReady = {NexDRMType:<span class="hljs-string">&apos;com.microsoft.playready&apos;</span>, NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>, 
+NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>, FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};
 
--->
+nexplayer.Setup({
+  key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
+    div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
+    src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
+    drm: [nexDRMInformationPlayReady]
+});
+</code></pre>
+<p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the PlayReady server used.</p>
+<p>PlayReady is supported with DASH.</p>
+<h4 id="cenc">CENC </h4>
+<p>The Common Encryption Scheme (CENC) specifies the standard to enable decryption of the same file using different DRM systems.
+It allows the same CENC-encrypted content to be decrypted and played by any client device that interfaces with a DRM system that can serve the associated CENC key information.</p>
+<p>For example, Widevine and PlayReady can be used with the same DASH manifest and chunk files:</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// Widevine</span>
+<span class="hljs-keyword">var</span> nexDRMInformationWidevine = {NexDRMType:<span class="hljs-string">&apos;com.widevine.alpha&apos;</span>, NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>, 
+NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>, FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};
+
+<span class="hljs-comment">// PlayReady</span>
+<span class="hljs-keyword">var</span> nexDRMInformationPlayReady = {NexDRMType:<span class="hljs-string">&apos;com.microsoft.playready&apos;</span>, NexDRMKey: <span class="hljs-string">&apos;DRM key URL&apos;</span>, 
+NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>, FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};
+
+nexplayer.Setup({
+  key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
+    div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
+    src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
+    drm: [nexDRMInformationWidevine, nexDRMInformationPlayReady]
+});
+</code></pre>
+<p>Please note that the HTTP headers (NexHeaders) are optional, and might depend on the implementation of the DRM used.</p>
+<p>CENC is supported with DASH.</p>
+<h4 id="aes">AES </h4>
+<p>NexPlayer&#x2122; supports HLS content encrypted with the AES-128 algorithm. If the key is trasported inside the HLS manifest itself, it will automatically work, without any modification on the developer&apos;s side.</p>
+<p>Please note that this method is not as secure as other DRMs.</p>
+<p>AES is supported with HLS.</p>
+<h4 id="custom_headers">Custom Headers </h4>
+<p>Custom headers can be included in each HTTP petition, even without the use of DRM, to include extra information for the server.</p>
+<p>This information can be passed in the DRM array:</p>
+<pre><code class="lang-javascript">drmCustomHeaders = {NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>, FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};
+
+nexplayer.Setup({
+  key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
+    div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
+    src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
+    drm: [drmCustomHeaders]
+});
+</code></pre>
+<p>Please note that this method is not as secure as other DRMs.</p>
+<p>Custom headers are supported with HLS and DASH.</p>
 
 
                                 
@@ -494,8 +530,12 @@
 
             
                 
+                <a href="customization.html" class="navigation navigation-prev " aria-label="Previous page: CSS Customization">
+                    <i class="fa fa-angle-left"></i>
+                </a>
                 
-                <a href="getting_started.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Getting Started">
+                
+                <a href="api.html" class="navigation navigation-next " aria-label="NexPlayer APIs">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -506,41 +546,21 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.2","depth":1,"next":{"title":"Getting Started","level":"1.3","depth":1,"path":"getting_started.md","ref":"getting_started.md","articles":[{"title":"NexPlayer™ Integration","level":"1.3.1","depth":2,"anchor":"#integration","path":"getting_started.md","ref":"getting_started.md#integration","articles":[{"title":"Sample","level":"1.3.1.1","depth":3,"anchor":"#sample","path":"getting_started.md","ref":"getting_started.md#sample","articles":[]},{"title":"Explanation","level":"1.3.1.2","depth":3,"anchor":"#explanation","path":"getting_started.md","ref":"getting_started.md#explanation","articles":[]}]},{"title":"NexPlayer™ Configuration","level":"1.3.2","depth":2,"anchor":"#configuring","path":"getting_started.md","ref":"getting_started.md#configuring","articles":[]},{"title":"NexPlayer™ Messages error","level":"1.3.3","depth":2,"anchor":"#errors","path":"getting_started.md","ref":"getting_started.md#errors","articles":[]}]},"previous":{"title":"NexPlayer™","level":"1.1","depth":1,"url":"https://nexplayersdk.com/html5-player/","ref":"https://nexplayersdk.com/html5-player/","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hints","copy-code-button"],"root":"./book","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NexPlayer HTML5","gitbook":"3.2.3"},"file":{"path":"README.md","mtime":"2018-06-20T09:01:09.174Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-20T09:55:27.853Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Advanced Usage","level":"1.6","depth":1,"next":{"title":"Security","level":"1.6.1","depth":2,"anchor":"#drm","path":"advance.md","ref":"advance.md#drm","articles":[{"title":"Widevine","level":"1.6.1.1","depth":3,"anchor":"#widevine","path":"advance.md","ref":"advance.md#widevine","articles":[]},{"title":"PlayReady","level":"1.6.1.2","depth":3,"anchor":"#playready","path":"advance.md","ref":"advance.md#playready","articles":[]},{"title":"CENC","level":"1.6.1.3","depth":3,"anchor":"#cenc","path":"advance.md","ref":"advance.md#cenc","articles":[]},{"title":"FairPlay","level":"1.6.1.4","depth":3,"anchor":"#fairplay","path":"advance.md","ref":"advance.md#fairplay","articles":[]},{"title":"AES","level":"1.6.1.5","depth":3,"anchor":"#aes","path":"advance.md","ref":"advance.md#aes","articles":[]},{"title":"Custom Headers","level":"1.6.1.6","depth":3,"anchor":"#custom_headers","path":"advance.md","ref":"advance.md#custom_headers","articles":[]}]},"previous":{"title":"CSS Customization","level":"1.5","depth":1,"path":"customization.md","ref":"customization.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hints","copy-code-button"],"root":"./book","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NexPlayer HTML5","gitbook":"3.2.3"},"file":{"path":"advance.md","mtime":"2018-06-20T09:21:18.393Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-20T09:55:27.853Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
-
         
     <script src="gitbook/gitbook.js"></script>
     <script src="gitbook/book/anker.js"></script>
     <script src="gitbook/theme.js"></script>
-    
-        
-        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
+
+    <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
+    <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
+    <script src="gitbook/gitbook-plugin-search/search.js"></script>
+    <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+    <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+    <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
 
     </body>
 </html>
-

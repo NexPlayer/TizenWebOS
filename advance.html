@@ -292,6 +292,15 @@
                     
                         </a>
                     </li>
+
+                    <li class="chapter " data-level="1.6.8.5" data-path="advance.html">
+                        
+                        <a href="advance.html#PiP">
+                            
+                            Picture in Picture
+                    
+                        </a>
+                    </li>
                 </ul>  
             </li>
         
@@ -633,9 +642,23 @@ nexplayerInstance.setTrack(nexplayerInstance.getTracks()[<span class="hljs-numbe
 nexplayerInstance.setAudioStream(nexplayerInstance.getAudioStreams()[<span class="hljs-number">0</span>].id);
 </code></pre>
 <h4 id="seek">Seek </h4>
-<p>Seeking to a certain time can be achieved by calling the method <a href="api.html#Player_seek"><code>seek</code></a> of the NexPlayer&#x2122;, and passing the desired number of seconds.</p>
+<p>Seeking to a certain time can be achieved by calling the method/p>
 <pre><code class="lang-javascript">nexplayerInstance.seek(<span class="hljs-number">30</span>);
 </code></pre>
+<h4 id="PiP">Picture in Picture </h4>
+<p>Only valid in models equal or greater than Tizen 2018</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> callBackWithPlayers = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">nexplayerInstance, videoElement</span>) </span>{
+    videoElement.requestPictureInPicture()
+  };
+  
+  nexplayer.Setup({
+    key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
+    div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
+    src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
+    callbacksForPlayer: callBackWithPlayers
+  });
+</code></pre>
+
 <h2 id="callbacks">Callbacks </h2>
 <p>References to the <a href="#instances">player instances</a> are needed to register callbacks.</p>
 <p>There are two types of emitted events that can be listened to.</p>

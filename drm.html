@@ -510,20 +510,29 @@ nexplayer.Setup({
 </code></pre>
 <p>Please note that this method is not as secure as other DRMs.</p>
 <p>Custom headers are supported with HLS and DASH.</p>
-<h4 id="coming_from_avplay">Coming from AVPlay </h4>
-<p>Custom headers can be included in each HTTP petition, even without the use of DRM, to include extra information for the server.</p>
-<p>This information can be passed in the DRM array:</p>
-<pre><code class="lang-javascript">drmCustomHeaders = {NexHeaders:[{FieldName: <span class="hljs-string">&apos;Optional field name&apos;</span>, FiledValue: <span class="hljs-string">&apos;Optional field value&apos;</span>}]};
-
-nexplayer.Setup({
-  key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
-    div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
-    src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
-    drm: [drmCustomHeaders]
-});
+<h4 id="coming_from_avplay"> Coming from AVPlay</h4>
+<p>If you are migrating from AVPlay to our player, in order to configurate the DRM header, it could be helpful to take a look at this information.</p>
+<p>The way to introduce a header in AVPlay is like the following example (different to the way in our player):  </p>
+<pre><code class="lang-javascript">
+    
+    DRM_NAME: {
+        name: <span class="hljs-string">&apos;DRM NAME&apos;</span>,
+        url:  <span class="hljs-string">&apos;REPLACE THIS WITH YOUR MEDIA URL&apos;</span>,
+        licenseServer: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR LICENSE SERVER URL&apos;</span>,
+        customData: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOM DATA&apos;</span>
+    };
 </code></pre>
-<p>Please note that this method is not as secure as other DRMs.</p>
-<p>Custom headers are supported with HLS and DASH.</p>
+<p>To enter the same configuration in our player it should be done like this (PlayReady used as example):</p>
+<pre><code class="lang-javascript">
+
+    var nexDRMInformationPlayReady = {
+        NexDRMType: <span class="hljs-string">&apos;DRM NAME (e.g. com.microsoft.playready)&apos;</span>,     
+        NexDRMKey: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR LICENSE SERVER URL&apos;</span>,
+        NexHeaders:[{FieldName: <span class="hljs-string">&apos;X-AxDRM-Message&apos;</span> FiledValue:<span class="hljs-string">&apos;,REPLACE THIS WITH YOUR CUSTOM DATA,&apos;</span>}]
+    };
+    src:  <span class="hljs-string">&apos;REPLACE THIS WITH YOUR MEDIA URL&apos;</span>,
+    </code></pre>
+<p>FieldName should be specified (if you don’t know this field, please enter 'X-AxDRM-Message') and as FiledValue should be included the wanted custom data</p>
 
 
                                 

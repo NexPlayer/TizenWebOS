@@ -530,6 +530,25 @@ nexplayerInstance.setTrack(nexplayerInstance.getTracks()[<span class="hljs-numbe
 <p>The active subtitles have the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack/mode" target="_blank">mode</a> set to <code>showing</code>. The currently selected subtitle can also be selected by setting the mode to <code>showing</code>. A subtitle can be deselected by setting the mode to <code>hidden</code>.</p>
 <pre><code class="lang-javascript">videoElement.textTracks[<span class="hljs-number">0</span>].mode = <span class="hljs-string">&quot;showing&quot;</span>;
 </code></pre>
+<h6 id="SRTsubtitle_selection">SRT Subtitles </h6>
+<p>NexPlayer supports the SRT subtitle format.
+
+        You can insert an external SRT file by setting up the SRT source link and the language as shown below:</p>
+<pre><code class="lang-javascript">    
+        nexplayer.Setup({
+            key: <span class="hljs-string">&apos;REPLACE THIS WITH YOUR CUSTOMER KEY&apos;</span>,
+            div: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;player&apos;</span>),
+            src: <span class="hljs-string">&apos;VIDEO URL&apos;</span>,
+            callbacksForPlayer: callBackWithPlayers
+            srtSubtitles: [<span class="hljs-string">&apos;http://webs.nexstreaming.com/pd/function_local/Function_SRT_AOA_MV_H264_1920x1080_HP_2999K_24F_AAC_LC_5m26s.srt&apos;</span>,                             
+                           <span class="hljs-string">&apos;en&apos;</span>]
+          });
+        
+</code></pre>
+<p><div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>
+    Please note that the first parameter is the source link and the second the language that will be displayed in the subtitles label.</p>
+</div></div></p>
+
 <h4 id="audio_selection">Audio </h4>
 <p>Information about the current audio can be retrieved with the method <a href="api.html#Player_getCurrentAudioStream"><code>getCurrentAudioStream</code></a> of NexPlayer&#x2122;. It returns all the <a href="api.html#AudioStream">audio information</a> for that stream.</p>
 <pre><code class="lang-javascript">nexplayerInstance.getCurrentAudioStream();

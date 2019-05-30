@@ -37,6 +37,7 @@
         * [.setTrack(qualityLevel)](#Player_setTrack)
         * [.togglePlayPause()](#Player_togglePlayPause)
         * [.setSubtitle(index)](#Player_setSubtitle)
+        * [.addSrtSubtitle(subtitle)](#Player_addSrtSubtitle)
         * [.toggleFullScreen()](#Player_toggleFullScreen)
     * _static_
         * [.NexProtocol](#Player_NexProtocol) : <code>enum</code>
@@ -339,6 +340,16 @@ Set the video subtitle
 | Param | Type | Description |
 | --- | --- | --- |
 | index | <code>number</code> | index of the subtitles list |
+
+### player.addSrtSubtitle(subtitle)
+Add a video subtitle in SRT format
+
+**Kind**: instance method of [<code>Player</code>](#Player)  
+**Export**:   
+
+| Param | Type | Description |
+| --- | --- | --- |
+| subtitle | <code>array</code> | contains the subtitle source and its srclang |
 
 <a id="Player_toggleFullScreen"></a>
 

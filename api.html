@@ -463,6 +463,7 @@
         <li><a href="#Player_setTrack">.setTrack(qualityLevel)</a></li>
         <li><a href="#Player_setSpeed">.setSpeed(speed)</a></li>
         <li><a href="#Player_setSubtitle">.setSubtitle(index)</a></li>
+        <li><a href="#Player_addSrtSubtitles">.addSrtSubtitles(subtitle)</a></li>
     </ul></li>
 
     <li><em>player.is[...] &#x21D2; boolean checks on the player state:</em><ul>
@@ -731,7 +732,7 @@ If <i>isUTC()</i> is <b>true,</b> getDuration's returned value will be different
 <p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><a id="Player_setSubtitle"></a></p>
 <h4 id="playersetsubtitleindex">player.setSubtitle(index)</h4>
 <p>Set the video subtitles.</p>
-<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br></p>
 <table>
 <thead>
 <tr>
@@ -745,6 +746,27 @@ If <i>isUTC()</i> is <b>true,</b> getDuration's returned value will be different
 <td>index</td>
 <td><code>number</code></td>
 <td>index of the subtitles list</td>
+</tr>
+</tbody>
+</table>
+
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><a id="Player_addSrtSubtitles"></a></p>
+<h4 id="playeraddsrtsubtitles">player.addSrtSubtitles(subtitle)</h4>
+<p>Add a video subtitle in SRT format.</p>
+<p><strong>Kind</strong>: instance method of <a href="#Player"><code>Player</code></a><br><strong>Export</strong>:   </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>subtitle</td>
+<td><code>array</code></td>
+<td>contains the subtitle source and its srclang </td>
 </tr>
 </tbody>
 </table>

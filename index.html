@@ -1,552 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="description" content="Description">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify@4/themes/vue.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<style> 
 
-<!DOCTYPE HTML>
-<html lang="" >
-    <head>
-        <meta charset="UTF-8">
-        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Introduction · NexPlayer HTML5</title>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="description" content="">
-        <meta name="generator" content="GitBook 3.2.3">
-        
+.markdown-section{max-width: 900px;}
+
+:root{
+  --sidebar-background: rgb(116, 22, 22);    
+
+
+}
+
+
+
+
+
+</style>
+<body>
+  <div id="app">Please wait ... </div>
+  <script>
+    window.$docsify = {
+      loadSidebar: true,      
+      //autoHeader: true,
+      alias: {
+      '/.*/_sidebar.md': '/_sidebar.md'},
+      themeColor: '#DC143C',
+      externalLinkTarget:'_blank',
+      name: '',
+      repo: '',
+      search:'auto',
+    search: {
+      maxAge: 86400000, // Expiration time, the default one day
+      paths: 'auto', // or 'auto'
+      placeholder: 'Type to search',
+
+      // Localization
+      placeholder: {
+        '/': 'Type to search'
+      },
+      noData: 'No Results!',
+
+      // Localization
+      noData: {
+        '/': 'No Results'
+      }
+    },
     
-    <link rel="stylesheet" href="gitbook/style.css">
+    /*name: "NexPlayer™",
+    nameLink: 'https://www.nexplayersdk.com/html5-player/',*/
+    depth: 5,
+    mergeNavbar: true,
+    maxLevel: 4,
+    subMaxLevel: 3,
+    hideOtherSidebarContent: false, // whether or not to hide other sidebar content
+    themeable : { 
+				//readyTransition : false, 
+				responsiveTables: true 
+      },
+      pagination: {
+        previousText: 'Back',
+        nextText: 'Next',
+        crossChapter: true,
+      }
 
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-hints/plugin-hints.css">
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-highlight/website.css">
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-search/search.css">
-                <link rel="stylesheet" href="gitbook/gitbook-plugin-fontsettings/website.css">
-    
-    <meta name="HandheldFriendly" content="true"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="gitbook/images/apple-touch-icon-precomposed-152.png">
-    <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
-    
-    <link rel="next" href="getting_started.html" />
+    }
+  </script>
+  <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/search.min.js"></script>
+  <script src="//unpkg.com/docsify-themeable"></script>
+  <script src="//unpkg.com/docsify/lib/plugins/zoom-image.min.js"></script>
+  <script src="//unpkg.com/docsify-pagination/dist/docsify-pagination.min.js"></script>
 
-    </head>
-    <body>
-        
-<div class="book">
-    <div class="book-summary">
-        
-            
-<div id="book-search-input" role="search">
-    <input type="text" placeholder="Type to search" />
-</div>
-
-            
-                <nav role="navigation">
-                
-
-<ul class="summary">    
-    
-    <li class="chapter active" data-level="1.1" >
-        
-            <a target="_blank" href="https://www.nexplayersdk.com/tizen-player/">
-            
-                NexPlayer™
-        
-            </a>   
-    </li>
-
-    <li class="chapter " data-level="1.2" data-path="index.html">
-        
-            <a href="./">
-            
-                Introduction
-        
-            </a>       
-    </li>
-
-    <li class="chapter " data-level="1.3" data-path="getting_started.html">
-        
-        <a href="getting_started.html">
-            
-            Getting Started
-    
-        </a>
-        <ul class="articles">
-
-            <li class="chapter " data-level="1.3.1" data-path="getting_started.html">
-                
-                <a href="getting_started.html#integration">
-                    
-                    NexPlayer™ Integration
-            
-                </a>
-                <ul class="articles"> 
-
-                    <li class="chapter " data-level="1.3.1.1" data-path="getting_started.html">
-                        
-                        <a href="getting_started.html#sample">
-                            
-                            Sample
-                    
-                        </a>     
-                    </li>
-
-                    <li class="chapter " data-level="1.3.1.2" data-path="getting_started.html">
-                        
-                        <a href="getting_started.html#explanation">    
-                            
-                            Step-by-Step
-                    
-                        </a>
-                    </li>
-
-                    <li class="chapter " data-level="1.3.1.3" data-path="getting_started.html">
-                    
-                        <a href="getting_started.html#Controler">
-                            
-                            Remote Controller
-                    
-                        </a>
-                    </li>
-                </ul>
-            </li>
-    
-            <li class="chapter " data-level="1.3.2" data-path="getting_started.html">
-                
-                <a href="getting_started.html#configuring">
-
-                    NexPlayer™ Configuration
-            
-                </a>   
-            </li>
-
-            <li class="chapter " data-level="1.3.3" data-path="getting_started.html">
-                
-                <a href="getting_started.html#errors">
-                    
-                    NexPlayer™ Error Messages 
-            
-                </a>
-            </li>
-        </ul>
-    </li>
-
-    <li class="chapter " data-level="1.4" data-path="customization.html">
-
-        <a href="customization.html">
-            
-            CSS Customization
-
-        </a>    
-    </li>
-
-    <li class ="chapter " data level="1.5" data-path="drm.html">
-        
-        <a href="drm.html">
-        
-            Digital Rights Management
-    
-        </a>
-
-        <ul class="articles">
-    
-            <li class="chapter " data-level="1.5.1" data-path="drm.html">
-                
-                <a href="drm.html#widevine">
-                    
-                    Widevine
-            
-                </a>
-            </li>
-        
-            <li class="chapter " data-level="1.5.2" data-path="drm.html">
-                
-                <a href="drm.html#playready">
-                    
-                    PlayReady
-            
-                </a>
-            </li>
-        
-            <li class="chapter " data-level="1.5.3" data-path="drm.html">
-                
-                <a href="drm.html#cenc">
-                    
-                    CENC
-            
-                </a>    
-            </li>
-
-            <li class="chapter " data-level="1.5.4" data-path="drm.html">
-                
-                <a href="drm.html#aes">
-                    
-                    AES 128
-            
-                </a>   
-            </li>
-        
-            <li class="chapter " data-level="1.5.5" data-path="drm.html">
-                
-                <a href="drm.html#custom_headers">
-                    
-                    Custom Headers
-            
-                </a>    
-            </li>
-            <li class="chapter " data-level="1.5.6" data-path="drm.html">
-                
-                <a href="drm.html#coming_from_avplay">
-                    
-                    Coming from AVPlay
-            
-                </a>    
-            </li>
-        </ul>
-    </li>
-
-    <li class="chapter " data-level="1.6" data-path="advance.html">
-        
-        <a href="advance.html">
-            
-            Advanced Usage
-
-        </a>
-        <ul class="articles">
-                    
-                
-            <li class="chapter " data-level="1.6.1" data-path="advance.html">
-                
-                <a href="advance.html#ads">
-                    
-                    Ads
-            
-                </a>
-            </li>
-            
-            <li class="chapter " data-level="1.6.2" data-path="advance.html">
-            
-                <a href="advance.html#mute">
-                    
-                    Mute
-            
-                </a>
-            </li>
-
-
-            <li class="chapter " data-level="1.6.3" data-path="advance.html">
-                
-                <a href="advance.html#timed_metadata">
-                    
-                    ID3 Tags
-            
-                </a>
-            </li>
-        
-            <li class="chapter " data-level="1.6.4" data-path="advance.html">
-                
-                <a href="advance.html#instances">
-                    
-                    Access to the Player Instances
-            
-                </a>  
-            </li>
-        
-            <li class="chapter " data-level="1.6.5" data-path="advance.html">
-                
-                    <a href="advance.html#custom_selection">
-                        
-                        Custom Actions
-                
-                    </a>
-    
-                <ul class="articles">
-        
-                    <li class="chapter " data-level="1.6.6.1" data-path="advance.html">
-                        
-                        <a href="advance.html#track_selection">
-                            
-                            ABR
-                    
-                        </a>
-                    </li>
-                
-                    <li class="chapter " data-level="1.6.6.2" data-path="advance.html">
-                        
-                        <a href="advance.html#subtitle_selection">
-                            
-                            Subtitles
-                    
-                        </a>  
-                    </li>
-                
-                    <li class="chapter " data-level="1.6.6.3" data-path="advance.html">
-                        
-                        <a href="advance.html#audio_selection">
-                            
-                            Audio
-                    
-                        </a>
-                    </li>
-                
-                    <li class="chapter " data-level="1.6.6.4" data-path="advance.html">
-                        
-                        <a href="advance.html#seek">
-                            
-                            Seek
-                    
-                        </a>
-                    </li>
-                </ul>  
-            </li>
-        
-            <li class="chapter " data-level="1.6.7" data-path="advance.html">
-                
-                    <a href="advance.html#callbacks">
-                        
-                        Callbacks
-                
-                    </a>
-                <ul class="articles">  
-        
-                    <li class="chapter " data-level="1.6.7.1" data-path="advance.html">
-                        
-                        <a href="advance.html#events_native">
-                            
-                            Video Element Events
-                    
-                        </a>    
-                    </li>
-        
-                    <li class="chapter " data-level="1.6.7.2" data-path="advance.html">
-                        
-                        <a href="advance.html#events_neplayer">
-
-                            NexPlayer™ Events
-                    
-                        </a>
-                    </li>
-                </ul>
-            </li>
-        
-            <li class="chapter " data-level="1.6.8" data-path="advance.html">
-                
-                <a href="advance.html#closing">
-                    
-                    Closing Container
-            
-                </a>
-            </li>
-
-            <li class="chapter " data-level="1.6.9" data-path="advance.html">
-                
-                <a href="advance.html#size">
-                    
-                    Decreasing the Size of the Build
-            
-                </a>     
-            </li>
-        
-            <li class="chapter " data-level="1.6.10" data-path="advance.html">
-                
-                <a href="advance.html#cors">
-                    
-                    Cross-Origin Resource Sharing 
-            
-                </a>
-            </li>
-        
-            <li class="chapter " data-level="1.6.11" data-path="advance.html">
-                
-                <a href="advance.html#upgrading">
-                    
-                    Upgrading to a New Version
-            
-                </a>
-            </li>
-        </ul>
-    </li>
-        
-    <li class="chapter " data-level="1.8" data-path="api.html">
-        
-        <a href="api.html">
-
-            NexPlayer API
-
-        </a>
-    </li>
-        
-    <li class="chapter " data-level="1.9" data-path="licenses.html">
-        
-        <a href="licenses.html">
-
-            Third Party Licenses
-
-        </a>  
-    </li>
-
-    <li class="chapter " data-level="1.10" data-path="release_notes.html">
-        
-        <a href="release_notes.html">
-            
-            Releases
-
-        </a>
-    </li>
-        
-
-    <li class="divider"></li>
-
-    <li>
-        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
-            Published with GitBook
-        </a>
-    </li>
-</ul>
-
-                </nav>
-            
-        
-    </div>
-
-    <div class="book-body">
-        
-            <div class="body-inner">
-                
-                    
-
-<div class="book-header" role="navigation">
-    
-
-    <!-- Title -->
-    <h1>
-        <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Introduction</a>
-    </h1>
-</div>
-
-
-
-
-                    <div class="page-wrapper" tabindex="-1" role="main">
-                        <div class="page-inner">
-                            
-<div id="book-search-results">
-    <div class="search-noresults">
-    
-        <section class="normal markdown-section">
-            
-        <h1 id="logoLine">  <img src="logo.png" alt="Tizen & WebOS" width="480" height="120"> </h1>
-
-<h1 id="nexplayer-html5">NexPlayer for Tizen</h1>
-<!--<h2 id="abstract">Abstract</h2>-->
-<p>NexPlayer&#x2122; provides a media player for Smart TVs operating on Tizen. It includes support for HLS, DASH, and progressive download.</p>
-<p>The default UI is easily customizable to fit the user&#xB4;s personal preferences (e.g. icons, colors, etc).</p>
-<!-- <h2 id="nexplayer-capabilities-and-features">NexPlayer&#x2122; Capabilities and Features</h2> -->
-<h2 id=".."><img src="FeatureTable.png"></h2>
-<!--
-<ul>
-<li>Integrated UI</ui>
-<li>Protocols:<ul>
-<li>HLS playback</li>
-<li>DASH playback</li>
-<li>Progressive download (MP4)</li>
-</ul>
-</li>
-<li>Adaptive bitrate (ABR) and UHD video</li>
-<li>ID3 tags</li>
-<li>Trick play</li>
-<li>Multiple audio tracks</li>
-<li>Subtitles:<ul>
-<li>WebVTT</li>
-<li>CEA 608/708</li>
-<li>TTML (DASH only)</li>
-</ul>
-</li>
-<li>Time-shifting</li>
-<li>DRM:<ul>
-<li>Widevine </li> 
-<li>PlayReady</li>
-<li>AES</li>
-<li>Custom HTTP headers</li>
-</ul>
-</li>
-</ul>
-</li>
-
--->
-
-
-                                
-                                </section>
-                            
-    </div>
-    <div class="search-results">
-        <div class="has-results">
-            
-            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
-            <ul class="search-results-list"></ul>
-            
-        </div>
-        <div class="no-results">
-            
-            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
-            
-        </div>
-    </div>
-</div>
-
-                        </div>
-                    </div>
-                
-            </div>
-
-            
-                
-                
-                <a href="getting_started.html" class="navigation navigation-next navigation-unique" aria-label="Next page: Getting Started">
-                    <i class="fa fa-angle-right"></i>
-                </a>
-                
-            
-        
-    </div>
-
-    <script>
-        var gitbook = gitbook || [];
-        gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Introduction","level":"1.2","depth":1,"next":{"title":"Getting Started","level":"1.3","depth":1,"path":"getting_started.md","ref":"getting_started.md","articles":[{"title":"NexPlayer™ Integration","level":"1.3.1","depth":2,"anchor":"#integration","path":"getting_started.md","ref":"getting_started.md#integration","articles":[{"title":"Sample","level":"1.3.1.1","depth":3,"anchor":"#sample","path":"getting_started.md","ref":"getting_started.md#sample","articles":[]},{"title":"Explanation","level":"1.3.1.2","depth":3,"anchor":"#explanation","path":"getting_started.md","ref":"getting_started.md#explanation","articles":[]}]},{"title":"NexPlayer™ Configuration","level":"1.3.2","depth":2,"anchor":"#configuring","path":"getting_started.md","ref":"getting_started.md#configuring","articles":[]},{"title":"NexPlayer™ Messages error","level":"1.3.3","depth":2,"anchor":"#errors","path":"getting_started.md","ref":"getting_started.md#errors","articles":[]}]},"previous":{"title":"NexPlayer™","level":"1.1","depth":1,"url":"https://nexplayersdk.com/html5-player/","ref":"https://nexplayersdk.com/html5-player/","articles":[]},"dir":"ltr"},"config":{"plugins":["-sharing","hints","copy-code-button"],"root":"./book","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"hints":{"info":"fa fa-info-circle","tip":"fa fa-mortar-board","danger":"fa fa-exclamation-circle","working":"fa fa-wrench"},"copy-code-button":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"NexPlayer HTML5","gitbook":"3.2.3"},"file":{"path":"README.md","mtime":"2018-06-20T09:01:09.174Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-06-20T09:55:27.853Z"},"basePath":".","book":{"language":""}});
-        });
-    </script>
-</div>
-
-        
-    <script src="gitbook/gitbook.js"></script>
-    <script src="gitbook/book/anker.js"></script>
-    <script src="gitbook/theme.js"></script>
-    
-        
-        <script src="gitbook/gitbook-plugin-copy-code-button/toggle.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search-engine.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-search/search.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
-        
-    
-        
-        <script src="gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
-        
-    
-
-    </body>
+  <!-- Boostrap -->
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  <!-- Font Awesome!-->
+</body>
 </html>
-

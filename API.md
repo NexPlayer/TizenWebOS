@@ -55,7 +55,7 @@
  - [.seek(value)](#seek)
 
 - Miscellaneous:
- - [.attachSubtitleRendererDiv(subtitleRendererDiv)](#playerattachsubtitlerendererdiv)
+ - [.attachSubtitleRendererDiv(subtitleRendererDiv)](#attachsubtitlerendererdiv)
  - [.on(callbackType, functionToBeCalled)](#on)
  - [.sendImpression()](#sendimpression)
  - [.setThumbnailResources(callback, vttURl, imageURL)](#setthumbnailresources)
@@ -397,7 +397,7 @@ Sets the position of the playback taking into account isUTC(). If isUTC() is tru
 | value | <code>number</code> | value that the player will seek to. |
 
 
-<a id="attachSubtitleRendererDiv"> </a>
+<a id="attachsubtitlerendererdiv"> </a>
    #### player.attachSubtitleRendererDiv(subtitleRendererDiv)
 
 Adds a DIV to render certain subtitles in a more precise way. This is optional and the native subtitles of the video element will be used if this is not set.

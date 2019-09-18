@@ -54,6 +54,14 @@ NexPlayer™ supports several DRM technologies:
   
 </table>
 
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
+<p>
+*For Tizen, DRM is supported from 2017 device models    
+*For WebOS, DRM is supported from WebOS 5.0   
+</p>
+</div></div>
+
+
 
 ### Widevine
 A DRM powered by <a href =https://www.widevine.com target="_blank">Google</a>. It can be set by entering the information into the DRM array:

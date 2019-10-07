@@ -54,6 +54,14 @@ NexPlayer™ supports several DRM technologies:
   
 </table>
 
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
+<p>
+*For Tizen, DRM is supported from 2017 device models <br>    
+*For WebOS, DRM is supported from WebOS 5.0   
+</p>
+</div></div>
+
+
 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
 <p>

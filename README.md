@@ -16,7 +16,7 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
 
 
 <table class="table table-sm">
- 
+
   <tbody>
     <tr>
       <th class="titles" bgcolor="#C80000" scope="row">VIDEO DELIVERY FORMATS </th>      
@@ -36,7 +36,7 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
   </tbody>
 
   <table class="table tableFeatures">
- 
+
   <tbody >
     <tr>
       <th colspan="3" class="titles" bgcolor="#C80000" scope="row">FEATURES</th>      
@@ -69,13 +69,13 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
         <th>Fully Customizable UI</th>
     </tr>
   </tbody>
-  
+
 </table>
 
 </table>
 
 <table class="table table-sm tablePlayback" >
- 
+
   <tbody >
     <tr>
       <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">PLAYBACK</th>      
@@ -87,11 +87,11 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
         <th>Live</th>
     </tr>
   </tbody>
-  
+
 </table>
 
 <table class="table tableAds">
- 
+
   <tbody >
     <tr>
       <th colspan="3" bgcolor="##C80000"  class="titles" scope="column">AD INSERTION</th>      
@@ -102,12 +102,15 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
     <tr>
         <th>Pre-Roll, Mid-Roll, Post-Roll</th>
     </tr>
+	<tr>
+		<th>Client & Server-Side Ad Insertion</th>
+	</tr>
   </tbody>
-  
+
 </table>
 
 <table class="table table-sm tableSubs" >
- 
+
   <tbody >
     <tr>
       <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">SUBTITLES & CC</th>      
@@ -121,15 +124,18 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
       <tr>
         <th>TTML</th>
     </tr>
-      <tr>
+    <tr>
         <th>SRT</th>
     </tr>
+	<tr>
+		<th>SMPTE-TT (2018+)</th>
+	</tr>
   </tbody>
-  
+
 </table>
 
 <table class="table table-sm tableMetadata" >
- 
+
   <tbody >
     <tr>
       <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">METADATA</th>      
@@ -138,10 +144,10 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
         <th>ID3 Tags</th>
     </tr>    
   </tbody>
-  
+
 </table>
 <table class="table table-sm tableDRM" >
- 
+
   <tbody >
     <tr>
       <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">CONTENT PROTECTION</th>      
@@ -162,7 +168,7 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
         <th>CENC</th>
     </tr>
   </tbody>
-  
+
 </table>
 <pre style="background-color: #f8f8f800">
 
@@ -185,33 +191,3 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
 
 
 </pre>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

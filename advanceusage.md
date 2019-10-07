@@ -16,7 +16,7 @@ NexPlayer™ supports several DRM technologies:
 <style> .titles{color: #ffffff; width: 250px;}</style>
 
 <table class="table table-sm">
- 
+
   <tbody>
     <tr>
       <th class="titles" bgcolor="#C80000" scope="row">FEATURE </th>   
@@ -48,10 +48,10 @@ NexPlayer™ supports several DRM technologies:
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#9989;</span> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#9989;</span></th>      
     </tr>
-     
+
   </tbody>
 
-  
+
 </table>
 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
@@ -60,16 +60,6 @@ NexPlayer™ supports several DRM technologies:
 *For WebOS, DRM is supported from WebOS 5.0   
 </p>
 </div></div>
-
-
-
-<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
-<p>
-*For Tizen, DRM is supported from 2017 device models    
-*For WebOS, DRM is supported from WebOS 5.0   
-</p>
-</div></div>
-
 
 
 
@@ -104,7 +94,7 @@ A DRM powered by <a href =https://www.microsoft.com/playready/ target="_blank">M
 ```js
 var nexDRMInformationPlayReady = {
 NexDRMType:'com.microsoft.playready',
- NexDRMKey: 'DRM key URL', 
+ NexDRMKey: 'DRM key URL',
 NexHeaders:[{FieldName: 'Optional field name',  //Optional
             FiledValue: 'Optional field value'}]}; //Optional
 
@@ -131,13 +121,13 @@ For example, Widevine and PlayReady can be used with the same DASH manifest and 
 ```js
 // Widevine
 var nexDRMInformationWidevine = {NexDRMType:'com.widevine.alpha',
- NexDRMKey: 'DRM key URL', 
+ NexDRMKey: 'DRM key URL',
             NexHeaders:[{FieldName: 'Optional field name',  //Optional
             FiledValue: 'Optional field value'}]}; //Optional
 
 // PlayReady
 var nexDRMInformationPlayReady = {NexDRMType:'com.microsoft.playready',
- NexDRMKey: 'DRM key URL', 
+ NexDRMKey: 'DRM key URL',
             NexHeaders:[{FieldName: 'Optional field name', //Optional
             FiledValue: 'Optional field value'}]}; //Optional
 
@@ -526,11 +516,11 @@ nexplayer.Setup({
     callbacksForPlayer: callBackWithPlayers
     srtSubtitles: ['http://webs.nexstreaming.com/pd/function_local/Function_SRT_AOA_MV_H264_1920x1080_HP_2999K_24F_AAC_LC_5m26s.srt','en']
 });
-        
+
 ```
 
 
-<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>	
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>
 Please note that the first parameter is the source link and the second the language that will be displayed in the subtitles label. </p>
 </div></div>
 
@@ -578,7 +568,7 @@ Only supported by Tizen 4.0 (2018) or newer versions
 var callBackWithPlayers = function (nexplayerInstance, videoElement) {
     videoElement.requestPictureInPicture();
   };
-  
+
   nexplayer.Setup({
     key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
     div: document.getElementById('player'),
@@ -638,4 +628,3 @@ More information is available at <a href="https://developer.mozilla.org/en-US/do
 When using the <a href="#/releases?" target = "_blank" >latest release</a> , upgrades will be applied automatically. When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary.
 
 Every new release of NexPlayer™ is backwards compatible.
-

@@ -22,6 +22,8 @@
  - [.getProtocol()](#getprotocol) ⇒ number
  - [.getQualityLevels()](#getqualitylevels) ⇒ array
  - [.getTracks()](#gettracks) ⇒ [Array.< Track >](#track-object)
+ - [.getSubtitles()](#getsubtitles) ⇒ array
+ - [.getCurrentSubtitle()](#getcurrentsubtitle) ⇒ number
 
 - player.set[...] ⇒ change the player parameters:
  - [.setAudio(streamID)](#setaudio)
@@ -177,6 +179,16 @@ Get all the video avaliable tracks (different qualities).
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 **Returns**:: Array< Track > - all the tracks available.
+
+<a id="getsubtitles"> </a>
+   #### player.getSubtitles() ⇒ array
+
+Get the video subtitles info.
+
+<a id="getcurrentsubtitle"> </a>
+   #### player.getCurrentSubtitle() ⇒ number
+
+Get the current subtitle index.
 
 <a id="setaudio"></a>
    #### player.setAudio(streamID)

@@ -5,10 +5,10 @@
 
 ***
 
-# NexPlayer for Tizen{docsify-ignore-all}
+# NexPlayer for Tizen and WebOS{docsify-ignore-all}
 
 ## Abstract
-NexPlayer™ provides a media player for Smart TVs operating on Tizen. It includes support for HLS, DASH, and progressive download.
+NexPlayer™ provides a media player for Smart TVs operating on Tizen and WebOS. It includes support for HLS, DASH, and progressive download.
 
 The default UI is easily customizable to fit the user&#xB4;s personal preferences (e.g. icons, colors, etc).
 

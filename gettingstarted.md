@@ -12,7 +12,9 @@ Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.c
 ```html
 <!DOCTYPE html>
 <html>
-<head>    
+<head> 
+    <!-- MANDATORY! LOAD JQUERY BY CDN OR LOCAL  -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
@@ -57,9 +59,12 @@ Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.c
     <div id="player_container">
         <div id="player"></div>
     </div>
-
-    <script src="https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js"></script>
+    <!-- MANDATORY! LOAD NEXPLAYER WITH THE TAG "DEFER" -->
+    <script src="https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js" defer></script>
     <script type="text/javascript">
+    //Wait the document to be ready
+    $( document ).ready(function() {
+
         nexplayer.Setup({
             key: "REPLACE THIS WITH YOUR PLAYER KEY",
             div: document.getElementById('player'),
@@ -69,13 +74,15 @@ Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.c
         if(window.location.protocol ==  'file') {
             document.getElementById('warning').style.display = "inherit";
         }
+    }
     </script>
 </body>
 </html>
 ```
 
 
-<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that replacing the player key is mandatory. You can find the player key in the license section of your dashboard at <a style ="color:#5A5A5A!important" href="https://www.nexplayersdk.com/portal/portal-hub">https://www.nexplayersdk.com/portal/portal-hub</a></p>
+<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that replacing the player key is mandatory. You can find the player key in the license section of your dashboard at <a style ="color:#5A5A5A!important" href="https://www.nexplayersdk.com/portal/portal-hub">https://www.nexplayersdk.com/portal/portal-hub</a> <br> 
+Also, dont forget to load jquery and add the "defer" tag to the nexplayer.js loading script.</p>
 </div></div>
 
 ### Step-by-Step
@@ -85,10 +92,11 @@ To integrate NexPlayer™ into your project you must complete the following step
 - The NexPlayer™ JavaScript library should be included in the HTML file:
 
 ```html
-<script src="https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js"></script>
+<script src="https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js" defer></script>
 ```
 
-<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that the use of https to call our library is mandatory. </p>
+<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that the use of https to call our library is mandatory. <br>
+Also is necessary to use the "defer" tag.</p>
 </div></div>
 
 - A div that will contain the video and the UI has to be declared:

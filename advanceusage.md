@@ -13,6 +13,46 @@ Digital rights management (DRM) is a set of access control technologies for rest
 
 NexPlayer™ supports several DRM technologies:
 
+<table class="table table-sm">
+<style> .titles{color: #ffffff; width: 250px;}</style>
+  <tbody>
+    <tr>
+      <th class="titles" bgcolor="#C80000" scope="row">MODELS </th>   
+      <th class="titles" bgcolor="#C80000" scope="row">DASH+PlayReady</th>        
+      <th class="titles" bgcolor="#C80000" scope="row">DASH+Widevine</th>        
+      <th class="titles" bgcolor="#C80000" scope="row">HLS+Widevine</th>        
+    </tr>
+    <tr>
+      <th  scope="row">Samsung(Tizen)2017-2018+Models</th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px; ">&#x2714;</span> </th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px; ">&#x2714;</span> </th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
+    </tr>
+    <tr>
+       <th  scope="row">Samsung(Tizen)2015-2016MODELS</th>      
+      <th  scope="row">&#10060</th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight:110; font-size:30px;">&#8505;</span> </th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight: 900; font-weight:110; font-size:30px;">&#8505;</span></th>      
+    </tr>
+    <tr>
+      <th  scope="row">LG WebOS 4.0+</th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>             
+    </tr>
+
+  </tbody>
+
+
+</table>
+
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
+<p>  
+*Widevine Classic was supported in these models, but ​it has been deprecated by Google. Itis no longer supported on Samsung TVs due to maintenance issues  
+</p>
+</div></div>
+
+
 <style> .titles{color: #ffffff; width: 250px;}</style>
 
 <table class="table table-sm">
@@ -27,26 +67,26 @@ NexPlayer™ supports several DRM technologies:
     <tr>
       <th  scope="row">Encrypted key </th>      
       <th  scope="row">&#10060</th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#9989;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#9989;</span></th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
     </tr>
     <tr>
        <th  scope="row">Separate encryption key server </th>      
       <th  scope="row">&#10060</th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#9989;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#9989;</span></th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
     </tr>
     <tr>
       <th  scope="row">Hardware DRM </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#9989;</span></th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#9989;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#9989;</span></th>             
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>             
     </tr>
     <tr>
       <th  scope="row">Custom Headers</th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#9989;</span></th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#9989;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); ">&#9989;</span></th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
     </tr>
 
   </tbody>

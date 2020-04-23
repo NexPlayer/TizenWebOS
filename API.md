@@ -2,16 +2,17 @@
 
 # NexPlayer API 
 
+## nexplayer
+ - [.Setup(configObj)](#setup)
+ - [.ChangeSource({src: newSrc, drm: newDrm})](#changesource)
+
 ## Player
 
 
 **Type**: global class
 - setup:
  - [.enableABR()](#playerenableabr)
- - [.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog)](#init) ⇒ Promise
- - [.mutedAtStart()](#playermutedatstart)
- - [.newPlayer()](#playernewplayer)
- - [.useDefaultControls](#playerusedefaultcontrols)
+
 
 - player.get[...] ⇒ return stream info:
  - [.getAudioStreams()](#getaudiostreams) ⇒ [Array.< AudioStream >](#audiostream-object)
@@ -75,6 +76,21 @@
  - [.Track](#track) : object
 
 
+<a id="setup"> </a>
+#### nexplayer.Setup(configObj)
+
+Set NexPlayer settings using the configuration object as is indicated in this 
+<a href ="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration" target="_blank"> link </a>
+
+<a id="changesource"> </a>
+#### player.ChangeSource({src: newSrc, drm: newDrm}))
+
+Change the url stream of the video. It is possible to set a new url with new drm config if necessary.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| src | <code>string</code> | of the video to be played. |
+| drm | <code>Array.<NexDRMInformation></code> | that contains an array of DRM information (by default it is null). |
 
 #### player.enableABR()
 
@@ -82,39 +98,6 @@ Enable the ABR to change automatically between tracks.
 
 **Kind**: instance method of [<code>Player</code>](#Player)   
 
-<a id="init"> </a> 
-   #### player.Init(key, div, videoElement, URL, nexDRMInformation, displayableinCanvas, protocolType, debugLog) ⇒ Promise
-
-**Kind**: instance method of [<code>Player</code>](#Player)
-
-**Returns** <code>Promise</code> - that will be resolved when the player successfully initializes.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| key | <code>string</code> | that validates the playback. |
-| div | <code>HTMLDivElement</code> | the div container of the player. |
-| videoElement | <code>HTMLVideoElement</code> | that will output the video. |
-| URL | <code>string</code> | of the video to be played. |
-| nexDRMInformation | <code>Array.<NexDRMInformation></code> | that contains an array of DRM information (by default it is null). |
-| displayableinCanvas | <code>boolean</code> | inform if the videoElement will be used to generate external textures to be displayed in a canvas (by default it is false). |
-| protocolType | <code>boolean</code> | define the protocol type (by default it is UNKNOWN and it will be obtained from the URL) |
-| debug	 | <code>boolean</code> | set the output of extra logs (by default it is false). |
-
-#### player.mutedAtStart()
-
-Enable or disable the sound when the player loads.
-
-**Kind**: instance method of [<code>Player</code>](#Player) .
-
-#### player.newPlayer()
-
-Constructs a NexPlayer.
-
-#### player.useDefaultControls()
-
-Assign basic actions to the remote controller keys.
-
-**Kind** instance method of [<code>Player</code>](#Player) .
 
 <a id="getaudiostreams"> </a>
    #### player.getAudioStreams() ⇒ Array.< AudioStream >

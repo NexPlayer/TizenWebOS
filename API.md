@@ -83,7 +83,7 @@ Set NexPlayer settings using the configuration object as is indicated in this
 <a href ="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration" target="_blank"> link </a>
 
 <a id="changesource"> </a>
-#### player.ChangeSource({src: newSrc, drm: newDrm}))
+#### nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
 Change the url stream of the video. It is possible to set a new url with new drm config if necessary.
 

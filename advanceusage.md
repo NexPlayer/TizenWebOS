@@ -624,6 +624,7 @@ var callBackWithPlayers = function (nexplayerInstance, videoElement) {
 References to the <a href="#/advanceusage?id=access-to-the-player-instances">player instances</a> are needed to register callbacks.
 There are two types of emitted events that can be listened to.
 
+
 ### Video Element Events
 
 The video element emits the basic event, such as a change of the state of the video (pause/play/buffering), or informs that the current time of the video has changed.
@@ -648,6 +649,58 @@ If you want to reuse the same div for different videos, the container div must b
 ```js
 nexplayer.UnMount(document.getElementById('player');
 ```
+
+## Ad Events and Ad Methods
+
+We already have the API to control ad events.
+
+### Ads events
+
+We also have events to handle some different kind of ads events.
+
+We have the next list of ad events available:
+
+* adloaded
+* addurationchange
+* adimpression
+* adpaused
+* adresumed
+* adskipped
+* adfirstquartile
+* admidpoint
+* adthirdquartile
+* adcomplete
+* adclick
+* advolumemuted
+* advolumechanged
+* adclosed
+* aderror
+* addestroyed
+
+
+```js
+nextplayer.AdsEvents('event name', function () {console.log("this is an example")});;
+```
+
+### Ads method
+
+The following methods should be queried after the adstarted event has fired for accurate data with nexplayer.AdInstance()
+
+We also have the next methods:
+
+* getAdTitle(): return String, representing the VAST AdTitle tag.
+* getAdDescription(): return String, representing the VAST Description tag.
+* getAdDuration(): return Number in ms, representing the duration of the selected linear creative. -1 is returned if this value is not available.
+* getAdCurrentTime(): return Number in ms, representing the current timestamp in the selected linear creative. -1 is returned if this value is not available.
+* getAdRemainingTime(): return Number in ms, representing the current time remaining in the selected linear creative. -1 is returned if this value is not available.
+* getIsSkippableAd(): return Boolean, stating if the loaded linear ad is a VAST skippable ad - can be querried when adloaded event fires.
+
+```js
+nexplayer.AdsEvents('adstarted', function(e){
+    console.log("Time: ", nexplayer.AdInstance().getAdRemainingTime());
+});
+```
+
 ## Decreasing the Size of the Build
 
 The nexplayer.js library is already minified, but to use even less space it's recommended to use gzip on the server where the library will be hosted. gzip is supported on the vast majority of servers.

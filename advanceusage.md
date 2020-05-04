@@ -23,13 +23,15 @@ NexPlayer™ supports several DRM technologies:
       <th class="titles" bgcolor="#C80000" scope="row">HLS+Widevine</th>        
     </tr>
     <tr>
-      <th  scope="row">Samsung(Tizen)2017-2018+Models</th>      
+      <th  scope="row">Samsung Tizen 
+      <br> 2017-2018+ models</th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px; ">&#x2714;</span> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px; ">&#x2714;</span> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
     </tr>
     <tr>
-       <th  scope="row">Samsung(Tizen)2015-2016MODELS</th>      
+       <th  scope="row">Samsung Tizen 
+       <br> 2015-2016 models</th>      
       <th  scope="row">&#10060</th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight:110; font-size:30px;">&#8505;</span> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight: 900; font-weight:110; font-size:30px;">&#8505;</span></th>      

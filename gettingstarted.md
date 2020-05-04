@@ -224,6 +224,6 @@ There are a substantial number of customizable options for NexPlayer™ includin
     callbacksForReturn: callback, // Optional callback called with the return button
     disableKeyEvents: false,
     useDefaultControls: true, // Optional, to use the remote controller
-    ...
+    
     
 ```

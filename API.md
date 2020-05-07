@@ -75,6 +75,9 @@
 
 ## Ads
 
+Please, consult this 
+<a href ="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=ads-events" target="_blank"> link </a> for information about using ad events.
+
 - nexplayer.AdInstance().[...] :
  - [.play()](#play)
  - [.pause()](#pause)
@@ -127,7 +130,9 @@ Enable the ABR to change automatically between tracks.
 
 Get the available audio streams.
 
-| Param | Type | Description |
+AudioStream:
+
+| Property | Type | Description |
 | --- | --- | --- |
 | id | <code>number</code> | of the audio to be played. |
 | language | <code>string<NexDRMInformation></code> | that contains an string with languages audio available (by default it is empty). |
@@ -141,7 +146,9 @@ Get the available audio streams.
 
 Get the audio stream currently in use.
 
-| Param | Type | Description |
+AudioStream:
+
+| Property | Type | Description |
 | --- | --- | --- |
 | id | <code>number</code> | of the audio to be played. |
 | language | <code>string<NexDRMInformation></code> | that contains an string with languages audio stream currently in use (by default it is empty). |
@@ -155,7 +162,9 @@ Get the audio stream currently in use.
 
 Get the current track information.
 
-| Param | Type | Description |
+Track:
+
+| Property | Type | Description |
 | --- | --- | --- |
 | width | <code>number</code> | that contains an number with width of current track |
 | height | <code>number<NexDRMInformation></code> | that contains an number with height of current track |
@@ -168,12 +177,7 @@ Get the current track information.
 <a id="getcurrenttime"> </a>
    #### player.getCurrentTime() ⇒ number
 
-Returns the currentTime taking into account isUTC(). If isUTC() is **true**, getCurrentTime's returned value will be different from the time of the video element.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| value | <code>number</code> | that contains an number with current time |
-
+Returns the current time of the video element.
 
 **Kind**: instance method of [<code>Player</code>](#Player) 
 
@@ -182,11 +186,7 @@ Returns the currentTime taking into account isUTC(). If isUTC() is **true**, get
 <a id="getduration"></a>
    #### player.getDuration() ⇒ number
 
-Returns the duration taking into account isUTC(). If isUTC() is **true**, getDuration's returned value will be different from the duration of the video element.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| value | <code>number</code> | that contains an number with duration |
+Returns the duration taking of the video element.
 
 **Kind** instance method of [<code>Player</code>](#Player)
 
@@ -195,33 +195,29 @@ Returns the duration taking into account isUTC(). If isUTC() is **true**, getDur
 <a id="getprotocol"> </a>
    #### player.getProtocol() ⇒ number
 
-Returns the stream's protocol ID.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| id | <code>number</code> | of the protocol video to be played. |
+Returns the stream's protocol ID, the number correspond to the [NexProtocol](#nexprotocol) enum values.
 
 **Kind**: instance method of [<code>Player</code>](#Player)
 
+**Returns** number - the protocol of video to be played.
 
 <a id="getqualitylevels"> </a>
    #### player.getQualityLevels() ⇒ array
 
 Get the video quality levels array.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| Array | <code>array</code> | contains an array with all video quality levels |
-
-This array contain the next information:
+This array contain the following information:
 
 | Param | Type | Description |
 | --- | --- | --- |
-| id | <code>number<NexDRMInformation></code> | of this track |
+| id | <code>number</code> | of this track |
 | width | <code>number</code> | that contains an number with width of this track |
-| height | <code>number<NexDRMInformation></code> | that contains an number with height of this track |
-| bitrate | <code>number<NexDRMInformation></code> | that contains an number with bitrate of this track |
+| height | <code>number</code> | that contains an number with height of this track |
+| bitrate | <code>number</code> | that contains an number with bitrate of this track |
 
+**Kind**: instance method of [<code>Player</code>](#Player)
+
+**Returns** array - contains all video quality levels.
 
 
 <a id="gettracks"> </a>
@@ -229,45 +225,53 @@ This array contain the next information:
 
 Get all the video avaliable tracks (different qualities).
 
-| Param | Type | Description |
-| --- | --- | --- |
-| Array | <code>array.< Track ></code> | contains an array with all the video avaliable tracks and its different levels of quality |
-
 This array contain the next information:
 
 | Param | Type | Description |
 | --- | --- | --- |
-| id | <code>number<NexDRMInformation></code> | of all tracks |
+| id | <code>number</code> | of all tracks |
 | width | <code>number</code> | that contains an number with width of all tracks |
-| height | <code>number<NexDRMInformation></code> | that contains an number with height of all tracks |
-| bitrate | <code>number<NexDRMInformation></code> | that contains an number with bitrate of all tracks |
-
+| height | <code>number</code> | that contains an number with height of all tracks |
+| bitrate | <code>number</code> | that contains an number with bitrate of all tracks |
 
 **Type**: instance method of [<code>Player</code>](#Player)     
-**Returns**:: Array< Track > - all the tracks available.
+
+**Returns**:: Array< Track > - all the video avaliable tracks and its different levels of quality.
 
 <a id="getsubtitles"> </a>
    #### player.getSubtitles() ⇒ array
 
 Get the video subtitles info.
 
-| Param | Type | Description |
+The returned array contains objects with the following properties:
+
+| Property | Type | Description |
 | --- | --- | --- |
-| id | <code>number</code> | of the subtitle. |
+| id | <code>number</code> | is the identifier of each subtitle. It can be used to select the subtitle. |
 | language | <code>string<NexDRMInformation></code> | that contains an string with subtitle stream (by default it is empty). |
+
+**Type**: instance method of [<code>Player</code>](#Player)     
+
+**Returns**:: Array - all the subtitles availables in the stream.
 
 <a id="getcurrentsubtitle"> </a>
    #### player.getCurrentSubtitle() ⇒ number
 
-| Param | Type | Description |
-| --- | --- | --- |
-| id | <code>number</code> | of the subtitle to be played. |
-| language | <code>string<NexDRMInformation></code> | that contains an string with subtitle stream currently in use (by default it is empty). |
+Retrieve the number id of the current subtitle. If the returned value is -1 no subtitle is selected.
+
+**Type**: instance method of [<code>Player</code>](#Player)     
+
+**Returns**:: number - id of the current subtitle.
 
 <a id="setaudio"></a>
    #### player.setAudio(streamID)
 
-Set the current audio stream.
+Set the current audio stream by using the UI.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| streamID | <code>number</code> | is the identifier of the audio stream to be selected. |
+
 **Kind**: instance method of [<code>Player</code>](#Player)
 
 <a id="setaudiostream"></a>
@@ -275,12 +279,11 @@ Set the current audio stream.
 
 Set the current audio stream.
 
-**Kind**: instance method of [<code>Player</code>](#Player)   
-**Export**:
-
 | Param | Type | Description |
 | --- | --- | --- |
-| streamID | <code>number</code> | ID of the audio stream to be used. |
+| streamID | <code>number</code> | is the identifier of the audio stream to be selected. |
+
+**Kind**: instance method of [<code>Player</code>](#Player)
 
 <a id="setcurrenttrack"></a>
    #### player.setCurrentTrack(trackID)
@@ -293,7 +296,7 @@ Set the current track.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| trackID | <code>number</code> | ID of the track to be used. |
+| trackID | <code>number</code> | is the identifier of the audio stream to be selected. |
 
 <a id="settrack"></a>
    #### player.setTrack(qualityLevel)
@@ -306,7 +309,7 @@ Set the video quality level.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| qualityLevel | <code>number</code> | index of the quality level. |
+| qualityLevel | <code>number</code> | index of the track to be selected. |
 
 <a id="setspeed"></a>
    #### player.setSpeed(speed)
@@ -422,7 +425,7 @@ Focus the element of the UI situated directly below the element currently focuse
 **Kind**: instance method of [<code>Player</code>](#Player)
 
 <a id="downsubtitle"> </a>
-  #### player.downsubtitle()
+  #### player.downSubtitle()
 
 Changes the current subtitles to the previous one in the subtiltle track playlist.
 
@@ -478,7 +481,7 @@ Adds a DIV to render certain subtitles in a more precise way. This is optional a
 
 | Param | Type | Description |
 | --- | --- | --- |
-| subtilteRendererDiv | <code>SubtitleRendererDiv</code> | DIV to render some advanced subtitles |
+| subtilteRendererDiv | <code>HTML5 div</code> | DIV to render some advanced subtitles |
 
 
 <a id="on"> </a>

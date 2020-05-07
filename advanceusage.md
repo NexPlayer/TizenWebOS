@@ -654,7 +654,6 @@ nexplayer.UnMount(document.getElementById('player');
 
 ## Ad Events and Ad Methods
 
-We already have the API to control ad events.
 
 ### Ads events
 

@@ -681,7 +681,7 @@ We have the next list of ad events available:
 
 
 ```js
-nextplayer.AdsEvents('event name', function () {console.log("this is an example")});;
+nexplayer.AdsEvents('event name', function () {console.log("this is an example")});;
 ```
 
 ### Ads method
@@ -690,16 +690,27 @@ The following methods should be queried after the adstarted event has fired fo
 
 We also have the next methods:
 
+ #### Get methods
 * getAdTitle(): return String, representing the VAST AdTitle tag.
 * getAdDescription(): return String, representing the VAST Description tag.
 * getAdDuration(): return Number in ms, representing the duration of the selected linear creative. -1 is returned if this value is not available.
 * getAdCurrentTime(): return Number in ms, representing the current timestamp in the selected linear creative. -1 is returned if this value is not available.
 * getAdRemainingTime(): return Number in ms, representing the current time remaining in the selected linear creative. -1 is returned if this value is not available.
 * getIsSkippableAd(): return Boolean, stating if the loaded linear ad is a VAST skippable ad - can be querried when adloaded event fires.
-
+* getVolume(): return Number, representing the level of volume in the ad.
+* getMute(): return boolean, this indicate if the ad is mute.
 ```js
 nexplayer.AdsEvents('adstarted', function(e){
     console.log("Time: ", nexplayer.AdInstance().getAdRemainingTime());
+});
+```
+
+#### Set methods
+* setVolume(): set a number in order to indicate the volume level.
+* setMute(): set true when you want to mute the ad, and false to unmute it.
+```js
+nexplayer.AdsEvents('adstarted', function(e){
+    nexplayer.AdInstance().setVolume(0.5);
 });
 ```
 

@@ -39,7 +39,6 @@
  - [.isLanguageMenuOpen()](#islanguagemenuopen) ⇒ boolean
  - [.isLive()](#islive) ⇒ boolean
  - [.isPlaybackBarFocused()](#isplaybackbarfocused) ⇒ boolean
- - [.isUTC()](#isutc) ⇒ boolean
 
 - player.toggle[...] ⇒ toggle on/off player features:
  - [.toogleControlBar()](#tooglecontrolbar)
@@ -47,8 +46,6 @@
  - [.tooglePlayPause()](#toogleplaypause)
 
 - Navigation ⇒ APIs for the navigation in the UI and video :
- - [.buttonClickFocus()](#buttonclickfocus)
- - [.buttonNextFocus()](#buttonnextfocus)
  - [.downFocus()](#downfocus)
  - [.downSubtitle()](#downsubtitle)
  - [.focusOnButtonBar()](#focusonbuttonbar)
@@ -60,9 +57,9 @@
 - Miscellaneous:
  - [.attachSubtitleRendererDiv(subtitleRendererDiv)](#attachsubtitlerendererdiv)
  - [.on(callbackType, functionToBeCalled)](#on)
- - [.sendImpression()](#sendimpression)
- - [.setThumbnailResources(callback, vttURl, imageURL)](#setthumbnailresources)
  - [.addSrtSubtitles(subtitle)](#addsrtsubtitles)
+ - [.play()](#play)
+ - [.pause()](#pause)
 
 - static:
  - [.NexProtocol](#nexprotocol): enum
@@ -74,6 +71,32 @@
  - [.NexDRMInformation](#nexdrminformation) : object
  - [.NexHeaders](#nexheaders) : object
  - [.Track](#track) : object
+
+
+## Ads
+
+- nexplayer.AdInstance().[...] :
+ - [.play()](#play)
+ - [.pause()](#pause)
+
+
+- nexplayer.AdInstance().get[...] ⇒ return ads info :
+
+ - [.getAdTitle()](#getadtitle) ⇒ string
+ - [.getAdDescription()](#getaddescription) ⇒ string
+ - [.getAdDuration()](#getadduration) ⇒ number
+ - [.getAdCurrentTime()](#getadcurrenttime) ⇒ number
+ - [.getAdRemainingTime()](#getadremainingtime) ⇒ number
+ - [.getIsSkippableAd()](#getisskippablead) ⇒ boolean
+ - [.getAdPause()](#getadpause) ⇒ boolean
+ - [.getVolume()](#getvolume) ⇒ number
+ - [.getMute()](#getmute) ⇒ boolean
+
+
+ - nexplayer.AdInstance().set[...] ⇒ return ads info:
+ 
+  - [.setVolume()](#setvolume)
+  - [.setMute()](#setmute)
 
 
 <a id="setup"> </a>
@@ -104,6 +127,12 @@ Enable the ABR to change automatically between tracks.
 
 Get the available audio streams.
 
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>number</code> | of the audio to be played. |
+| language | <code>string<NexDRMInformation></code> | that contains an string with languages audio available (by default it is empty). |
+| name | <code>string<NexDRMInformation></code> | that contains an string with name of audio files available (by default it is empty). |
+
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: Array< AudioStream > - the list of the available audio streams.
 
@@ -111,6 +140,12 @@ Get the available audio streams.
    #### player.getCurrentAudioStream() ⇒ AudioStream
 
 Get the audio stream currently in use.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>number</code> | of the audio to be played. |
+| language | <code>string<NexDRMInformation></code> | that contains an string with languages audio stream currently in use (by default it is empty). |
+| name | <code>string<NexDRMInformation></code> | that contains an string with name of audio stream currently in use (by default it is empty). |
 
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: Array< TrackInfo> - information about the current audio track.
@@ -120,6 +155,13 @@ Get the audio stream currently in use.
 
 Get the current track information.
 
+| Param | Type | Description |
+| --- | --- | --- |
+| width | <code>number</code> | that contains an number with width of current track |
+| height | <code>number<NexDRMInformation></code> | that contains an number with height of current track |
+| bitrate | <code>number<NexDRMInformation></code> | that contains an number with bitrate of current track |
+| id | <code>number<NexDRMInformation></code> | of current track |
+
 **Returns** Array< TrackInfo> - information about the current video track.
 
 
@@ -127,6 +169,11 @@ Get the current track information.
    #### player.getCurrentTime() ⇒ number
 
 Returns the currentTime taking into account isUTC(). If isUTC() is **true**, getCurrentTime's returned value will be different from the time of the video element.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | that contains an number with current time |
+
 
 **Kind**: instance method of [<code>Player</code>](#Player) 
 
@@ -137,6 +184,10 @@ Returns the currentTime taking into account isUTC(). If isUTC() is **true**, get
 
 Returns the duration taking into account isUTC(). If isUTC() is **true**, getDuration's returned value will be different from the duration of the video element.
 
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | that contains an number with duration |
+
 **Kind** instance method of [<code>Player</code>](#Player)
 
 **Returns** number - the duration of the video.
@@ -146,6 +197,10 @@ Returns the duration taking into account isUTC(). If isUTC() is **true**, getDur
 
 Returns the stream's protocol ID.
 
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>number</code> | of the protocol video to be played. |
+
 **Kind**: instance method of [<code>Player</code>](#Player)
 
 
@@ -154,11 +209,39 @@ Returns the stream's protocol ID.
 
 Get the video quality levels array.
 
+| Param | Type | Description |
+| --- | --- | --- |
+| Array | <code>array</code> | contains an array with all video quality levels |
+
+This array contain the next information:
+
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>number<NexDRMInformation></code> | of this track |
+| width | <code>number</code> | that contains an number with width of this track |
+| height | <code>number<NexDRMInformation></code> | that contains an number with height of this track |
+| bitrate | <code>number<NexDRMInformation></code> | that contains an number with bitrate of this track |
+
+
 
 <a id="gettracks"> </a>
    #### player.getTracks() ⇒ Array.< Track >
 
 Get all the video avaliable tracks (different qualities).
+
+| Param | Type | Description |
+| --- | --- | --- |
+| Array | <code>array.< Track ></code> | contains an array with all the video avaliable tracks and its different levels of quality |
+
+This array contain the next information:
+
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>number<NexDRMInformation></code> | of all tracks |
+| width | <code>number</code> | that contains an number with width of all tracks |
+| height | <code>number<NexDRMInformation></code> | that contains an number with height of all tracks |
+| bitrate | <code>number<NexDRMInformation></code> | that contains an number with bitrate of all tracks |
+
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 **Returns**:: Array< Track > - all the tracks available.
@@ -168,10 +251,18 @@ Get all the video avaliable tracks (different qualities).
 
 Get the video subtitles info.
 
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>number</code> | of the subtitle. |
+| language | <code>string<NexDRMInformation></code> | that contains an string with subtitle stream (by default it is empty). |
+
 <a id="getcurrentsubtitle"> </a>
    #### player.getCurrentSubtitle() ⇒ number
 
-Get the current subtitle index.
+| Param | Type | Description |
+| --- | --- | --- |
+| id | <code>number</code> | of the subtitle to be played. |
+| language | <code>string<NexDRMInformation></code> | that contains an string with subtitle stream currently in use (by default it is empty). |
 
 <a id="setaudio"></a>
    #### player.setAudio(streamID)
@@ -245,9 +336,9 @@ Set the video subtitles.
 
 
 <a id="addsrtsubtitles"></a>
-   #### player.addSrtSubtitle(subtitle)
+   #### player.addSrtSubtitle(src, language)
 
-Add a video subtitle int .srt format.
+Add a video subtitle in .srt format.
 
 **Kind**: instance method of [<code>Player</code>](#Player)
 
@@ -255,7 +346,22 @@ Add a video subtitle int .srt format.
 
 | Param | Type | Description |
 | --- | --- | --- |
-| subtitle | <code>array</code> | contains the subtitle source and its srclang. |
+| src | <code>string</code> | link or path to the subtitle file |
+| language | <code>string</code> | name used to identify the subtitle |
+
+
+<a id="play"></a>
+   #### player.play()
+
+Play the video.
+
+**Kind**: instance method of [<code>Player</code>](#Player)
+<a id="pause"></a>
+   #### player.pause()
+
+Pause the video.
+
+**Kind**: instance method of [<code>Player</code>](#Player)
 
 
 <a id="iscontrolbaropen"> </a>
@@ -286,16 +392,6 @@ Add a video subtitle int .srt format.
 
 **Returns**: boolean - *true* if the seek bar of the video is currently focused, *false* otherwise.
 
-<a id="isutc"> </a>
-  #### player.isUTC() ⇒ boolean
-
-Indicates whether the video information (currentTime, duration, seekable range, etc.) of the video element is based on the present 
-or on an absolute value that starts at midnight UTC, Jan 1, 1970. If this is true, you will need to take this into account when seeking 
-through the currentTime of the video element. Some useful methods (like getCurrentTime, getDuration, and seek) are available to reduce 
-the complexity in these cases. Note that this property only applies to live streams.
-
-**Kind**: instance method of [<code>Player</code>](#Player)
-
 <a id="tooglecontrolbar"> </a>
   #### player.toogleControlBar()
 
@@ -317,26 +413,6 @@ Toggle the video playback between the play and pause states.
 
 **Kind**: instance method of [<code>Player</code>](#Player)
 
-<a id="buttonclickfocus"> </a>
-  #### player.buttonClickFocus()
-
-Execute a click action on the **focused** element of the UI.
-
-**Kind**: instance method of [<code>Player</code>](#Player)
-
-<a id="buttonnextfocus"> </a>
-  #### player.buttonNextFocus()
-
-Focus the next element of the UI.
-
-**Kind**: instance method of [<code>Player</code>](#Player)
-
-<a id="buttonpreviousfocus"> </a>
-  #### player.buttonNextFocus()
-
-Focus the previous element of the UI.
-
-**Kind**: instance method of [<code>Player</code>](#Player)
 
 <a id="downfocus"> </a>
   #### player.downFocus()
@@ -416,30 +492,7 @@ Adds a listener for Events.
 | Param | Type | Description |
 | --- | --- | --- |
 | callbackType | <code>NexEvent</code> | Event to listen for |
-| functionToBeCalled	 | <code>NexCallbackEvent</code> | 	Function called on each event |
-
-
-<a id="sendimpression"> </a>
-   #### player.sendImpression()
-
-Send the impression details to the server (only for internal management).
-
-**Kind**: instance method of [<code>Player</code>](#Player) 
-
-<a id="setthumbnailresources"> </a>
-   #### player.setThumbnailResources(callback, vttURI, imageURL)
-  
-   Set thumbnail resources. This method should be called before Init().
-
-**Kind**: instance method of [<code>Player</code>](#Player) 
-
-**Export**:
-
-| Param | Type | Description |
-| --- | --- | --- |
-| callbackType | <code>NexEvent</code> | functionToBeCalled function called when the thumbnails are loaded. |
-| functionToBeCalled	 | <code>NexCallbackEvent</code> | 	path to vtt thumbnails file. |
-|imageURL| <code>string</code> | path to the image thumbnails file.
+| functionToBeCalled	 | <code>Function</code> | 	Function called on each event |
 
 
 <a id="nexprotocol"></a>
@@ -455,7 +508,6 @@ Send the impression details to the server (only for internal management).
 | DASH | <code>number</code> | <code>1</code> | 
 | PROGRESSIVE_DOWNLOAD | <code>number</code> | <code>2</code> | 
 | UNKNOWN | <code>number</code> | <code>3</code> | 
-| OTHER | <code>number</code> | <code>4</code> | 
 
 <a id="nexevent"></a>
 
@@ -481,23 +533,6 @@ Send the impression details to the server (only for internal management).
 | STATIC_THUMBNAILS | <code>number</code> | <code>0</code> | 
 | DYNAMIC_THUMBNAILS | <code>number</code> | <code>1</code> |
 
-<a id="nexcallbackevent"></a>
-
-#### NexCallbackEvent : <code>function</code>
-Called when a NexEvent happens.
-
-**Type**: global typedef  
-
-<a id="nexcallback"></a>
-
-#### NexCallback : <code>function</code>
-Called when a FairPlay content needs to request the license.
-
-**Type**: global typedef  
-
-| Param | Description |
-| --- | --- |
-| event | when the webkitkeymessage event from FairPlay is called. |
 
 <a id="nexheaders"></a>
 
@@ -521,7 +556,6 @@ Called when a FairPlay content needs to request the license.
 | NexDRMType | <code>string</code> | NexDRMType of the video. |
 | NexDRMKey | <code>string</code> | NexDRMKey of the video. |
 | NexHeaders | [<code>Array.&lt;NexHeaders&gt;</code>](#NexHeaders) | NexHeaders of the video. |
-| NexCallback | [<code>NexCallback</code>](#NexCallback) | NexCallback for FairPlay content. |
 
 <a id="track"></a>
 
@@ -545,5 +579,109 @@ Called when a FairPlay content needs to request the license.
 | Name | Type | Description |
 | --- | --- | --- |
 | id | <code>number</code> | id of the stream. |
-| language | <code>number</code> | language of the stream. |
-| name | <code>number</code> | name of the stream. |
+| language | <code>string</code> | language of the stream. |
+| name | <code>string</code> | name of the stream. |
+
+  
+<a id="play"> </a>
+   #### nexplayer.AdInstance().play() 
+
+Play the ad
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)     
+
+<a id="pause"> </a>
+   #### nexplayer.AdInstance().pause() 
+
+Pause the current ad.
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+
+
+<a id="getadtitle"> </a>
+   #### nexplayer.AdInstance().getAdTitle() ⇒ string
+
+Get the available title ad.
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)     
+**Returns**: String - the title ad to be played.
+
+<a id="getaddescription"> </a>
+   ####  nexplayer.AdInstance().getAdDescription() ⇒ string
+
+Get the available description ad.
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Returns**: String - the description ad to be played.
+
+<a id="getadduration"> </a>
+   ####  nexplayer.AdInstance().getAdDuration() ⇒ number
+
+Get the available duration ad.
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Returns**: Number - the duration ad to be played.
+
+<a id="getadcurrenttime"> </a>
+   ####  nexplayer.AdInstance().getAdCurrentTime() ⇒ number
+
+Get the current time ad.
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Returns**: Number - the current time ad to be played.
+
+<a id="getadremainingtime"> </a>
+   ####  nexplayer.AdInstance().getAdRemainingTime() ⇒ number
+
+Get the remaining time ad.
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Returns**: Number - the remaining time ad to be played.
+
+<a id="getisskippablead"> </a>
+   ####  nexplayer.AdInstance().getIsSkippablead() ⇒ boolean
+
+Get
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Returns**: boolean - *true* if the video can be skip. *false* if it is not.
+
+<a id="getadpause"> </a>
+   ####  nexplayer.AdInstance().getAdPause() ⇒ boolean
+
+Get stating if the ad on stage is paused or not
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Returns**: boolean - *true* if the ad on stage is paused *false* if it is not.
+
+<a id="getvolume"> </a>
+   ####  nexplayer.AdInstance().getVolume() ⇒ number
+
+Get the volume of ad depending on what is on stage.
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Returns**: number - is a number between 0 and 1. -1 is returned if this value is not available.
+
+<a id="getmute"> </a>
+   ####  nexplayer.AdInstance().getMute() ⇒ boolean
+
+Get the mute state of ad depending on what is on stage.
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Returns**: boolean - *true* if the ad can is mute. *false* if it is not.
+
+
+<a id="setvolume"> </a>
+   ####  nexplayer.AdInstance().setVolume() 
+
+Set value should be a Number between 0 and 1.
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+
+
+<a id="setmute"> </a>
+   ####  nexplayer.AdInstance().setMute() 
+
+Set value should be a Boolean.
+
+**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  

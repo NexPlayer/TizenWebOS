@@ -213,7 +213,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
         NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
         NexCallback:OptionalDRMCallbackForFairPlay
     }], // Optional DRM information
-    vast: 'URL with a VAST/VPAID advertisement', // Optional
+    vast: 'URL with a VAST/VPAID/VMAP advertisement', // Optional
     autoplay: true, // Optional
     mutedAtStart: true, // Optional    
     debug: true, // Optional
@@ -224,6 +224,9 @@ There are a substantial number of customizable options for NexPlayer™ includin
     callbacksForReturn: callback, // Optional callback called with the return button
     disableKeyEvents: false,
     useDefaultControls: true, // Optional, to use the remote controller
+    resumePosition: number, // Optional, used for staring the video from the given position in seconds
+    externalSubtitles: 
+    {"src": "URL for the subtitles file", "language": "Subtitle language"}, // Optional, only SRT and WEBVTT subtitles can be used. "language" property is a string that define how the subtitle will be identified
     
     
 ```

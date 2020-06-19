@@ -9,7 +9,35 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
 
-#### version 1.3.6
+#### Version 2.3.8
+```
+https://nexplayer.nexplayersdk.com/HTML5/2.3.8_20200619/nexplayer.js
+```
+* **[Improved]** Bug fixes in Xbox
+
+#### Version 2.3.7
+```
+https://nexplayer.nexplayersdk.com/HTML5/2.3.7_20200617/nexplayer.js
+```
+* **[Improved]** Fixed problem with subtitles being activated without user interaction
+* **[Improved]** Fixed bug when unmounting the player. Now it is released correctly
+
+
+#### Version 2.3.6
+```
+https://nexplayer.nexplayersdk.com/HTML5/2.3.6_20200616/nexplayer.js
+```
+* **[Improved]** Fixed crash when VAST XML response is empty 
+* **[Improved]** Not sending ad breaks events when their VAST XML response is empty 
+
+#### Version 2.3.5
+```
+https://nexplayer.nexplayersdk.com/HTML5/2.3.5_20200610/nexplayer.js
+```
+* **[Improved]** Fixed bug whereby midroll ads not playing when the playback head reaches them
+
+
+#### Version 1.3.6
 ```
 https://nexplayer.nexplayersdk.com/tizen/1.3.6/nexplayer.js
 ```
@@ -17,7 +45,7 @@ https://nexplayer.nexplayersdk.com/tizen/1.3.6/nexplayer.js
 * **[Improved]** Bug fixes
 
 
-#### version 1.3.5
+#### Version 1.3.5
 * **[Added]** Added Default Settings for Remote Controller
 * **[Added]** New UI Features
 * **[Improved]** Documentation snippets can be easily copied
@@ -29,10 +57,10 @@ https://nexplayer.nexplayersdk.com/tizen/1.3.6/nexplayer.js
 * **[Improved]** DASH module update
 * **[Improved]** Bug fixes
 
-#### version 1.3.4
+#### Version 1.3.4
 * **[Improved]** Bug fixes
 
-#### version 1.3.3
+#### Version 1.3.3
 * **[Added]** New Remote Controller APIs
 * **[Added]** support WebVTT subtitles for HLS
 * **[Added]** Auto play option
@@ -46,7 +74,7 @@ https://nexplayer.nexplayersdk.com/tizen/1.3.6/nexplayer.js
 * **[Improved]** Bug fixes
 
 
-#### version 1.3
+#### Version 1.3
 
 * **[Added]** Online license management (setting the customer key is now necessary)
 * **[Added]** ABR track selection
@@ -58,7 +86,7 @@ https://nexplayer.nexplayersdk.com/tizen/1.3.6/nexplayer.js
 * **[Improved]** Improvement to playback of DASH and HLS streams
 * **[Improved]** Extended documentation with examples
 
-#### version 1.2
+#### Version 1.2
 
 * **[Added]** CMAF on HLS
 * **[Added]** Support attributes on the video tag
@@ -66,6 +94,6 @@ https://nexplayer.nexplayersdk.com/tizen/1.3.6/nexplayer.js
 * **[Improved]** TTML with images support with DASH
 * **[Improved]** Sample UI improvements
 
-#### version 1.0
+#### Version 1.0
 
 * **[Added]** Initial release of the player

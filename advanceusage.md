@@ -639,6 +639,17 @@ Some of the most important events are "playing", "pause", "waiting", and "timeup
 videoElement.addEventListener("timeupdate", function() { console.log("The video playback has advanced to: "+videoElement.currentTime+", with the duration: "+videoElement.duration) }, true);
 ```
 
+### Custom Events
+
+We also have custom events to handle some different kind of video events.
+```js
+videoElement.addEventListener("customEvent", function(event) { console.log("Custom Event") });
+```
+##### nexplayererror
+
+Sent when a NexPlayer error is fired. The parameter event has the detail property that contains the error message. 
+
+
 ### Nexplayer Events
 
 Advanced events such as a track change are available using the <code>on</code> method of NexPlayer.

@@ -25,6 +25,7 @@
  - [.getTracks()](#gettracks) ⇒ [Array.< Track >](#track-object)
  - [.getSubtitles()](#getsubtitles) ⇒ array
  - [.getCurrentSubtitle()](#getcurrentsubtitle) ⇒ number
+ - [.getVersion()](#getversion) ⇒ string
 
 - player.set[...] ⇒ change the player parameters:
  - [.setAudio(streamID)](#setaudio)
@@ -262,6 +263,15 @@ Retrieve the number id of the current subtitle. If the returned value is -1 no s
 **Type**: instance method of [<code>Player</code>](#Player)     
 
 **Returns**:: number - id of the current subtitle.
+
+<a id="getversion"> </a>
+   #### player.getVersion() ⇒ string
+
+Retrieve the current version of the player.
+
+**Type**: instance method of [<code>Player</code>](#Player)     
+
+**Returns**:: string - identify the version of the player.
 
 <a id="setaudio"></a>
    #### player.setAudio(streamID)

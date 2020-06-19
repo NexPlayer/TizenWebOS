@@ -694,6 +694,18 @@ We have the next list of ad events available:
 nexplayer.AdsEvents('event name', function () {console.log("this is an example")});;
 ```
 
+### Ads custom events
+
+* adstarted: Start an individual ad, contain the ad position in the block in the detail attribute.
+* adblockstarted: Contain the number of ads in the block in the detail attribute.
+* adpodsinfo: Contain all ad pods information.
+* adblockend: Event launched when an ad block (some ads in the same timestamp) ends.
+
+
+```js
+nexplayer.AdsEvents('custom event name', function (e) {console.log("this is an example", e.detail)});;
+```
+
 ### Ads method
 
 The following methods should be queried after the adstarted event has fired for accurate data with nexplayer.AdInstance()

@@ -15,7 +15,6 @@ https://nexplayer.nexplayersdk.com/HTML5/2.3.11_20200622/nexplayer.js
 ```
 * **[Improved]** Bug fixes in Xbox
 
-
 #### Version 2.3.10
 ```
 https://nexplayer.nexplayersdk.com/HTML5/2.3.10_20200622/nexplayer.js

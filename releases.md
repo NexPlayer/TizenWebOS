@@ -8,6 +8,13 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
+
+#### Version 2.3.10
+```
+https://nexplayer.nexplayersdk.com/HTML5/2.3.10_20200622/nexplayer.js
+```
+* **[Improved]** Bug fixes in Xbox
+
 #### Version 2.3.9
 ```
 https://nexplayer.nexplayersdk.com/HTML5/2.3.9_20200619/nexplayer.js

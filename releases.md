@@ -8,6 +8,12 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
+#### Version 2.3.12
+```
+https://nexplayer.nexplayersdk.com/HTML5/2.3.12_20200625/nexplayer.js
+```
+* **[Improved]** Fixed crash when the VMAP XML is empty
+* **[Added]** Added NexEvent.Buffering. Please, check it at the API document
 
 #### Version 2.3.11
 ```

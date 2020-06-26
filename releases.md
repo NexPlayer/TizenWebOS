@@ -14,6 +14,7 @@ https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 https://nexplayer.nexplayersdk.com/HTML5/2.3.13_20200626/nexplayer.js
 ```
 * **[Improved]** Fixed issue that made the lives streams not start at the live edge, but at the limit of the availability window
+* **[Improved]** Change the NexEvent.Buffering behaviour. It now receives as parameter an object containing the state of the buffer. True for buffering, false for finishing loading.
 
 
 #### Version 2.3.12

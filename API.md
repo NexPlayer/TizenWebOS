@@ -533,7 +533,7 @@ Adds a listener for Events.
 | --- | --- | --- | --- |
 | Track_Change | <code>number</code> | <code>0</code> | Fired when the player changes the current track.|
 | Fragment_Loading_Completed | <code>number</code> | <code>1</code> | Fired when a new fragment has been loaded.|
-| Buffering | <code>number</code> | <code>2</code> | Fired when the buffer is empty and no more media can be played. |
+| Buffering | <code>number</code> | <code>2</code> | Fired when the buffer state changes. Check payload for state. |
 
 <a id="thumbtype"></a>
 

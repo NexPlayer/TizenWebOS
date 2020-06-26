@@ -8,6 +8,14 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
+
+#### Version 2.3.13
+```
+https://nexplayer.nexplayersdk.com/HTML5/2.3.13_20200626/nexplayer.js
+```
+* **[Improved]** Fixed issue that made the lives streams not start at the live edge, but at the limit of the availability window
+
+
 #### Version 2.3.12
 ```
 https://nexplayer.nexplayersdk.com/HTML5/2.3.12_20200625/nexplayer.js

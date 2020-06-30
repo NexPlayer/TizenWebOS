@@ -9,9 +9,9 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
 
-#### Version 2.4.0
+#### Version 3.0.0
 ```
-https://nexplayer.nexplayersdk.com/HTML5/2.4.0_20200629/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/3.0.0_20200630/nexplayer.js
 ```
 * **[Improved]** Update Shaka external module to version 3.0.0
 

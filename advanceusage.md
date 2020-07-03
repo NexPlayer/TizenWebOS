@@ -647,7 +647,28 @@ videoElement.addEventListener("customEvent", function(event) { console.log("Cust
 ```
 ##### nexplayererror
 
-Sent when a NexPlayer error is fired. The parameter event has the detail property that contains the error message. 
+Sent when a NexPlayer error is fired. The **event** parameter has the **detail** property that contains the error message:
+```js
+// Accessing the error message
+var errorMessage = event.detail;
+```
+
+##### onstatechange
+
+This event is fired when the state of player is changed. The **event** parameter for the callback function has a property called **detail** 
+that stores the current state of the player:
+```js
+// Accessing the current state of the player
+var currentState = event.detail;
+```
+
+**detail** type is String and can have the following values:
+
+1. Ready
+2. Buffering
+3. Playing
+4. Paused
+5. Ended
 
 
 ### Nexplayer Events

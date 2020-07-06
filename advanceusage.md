@@ -732,8 +732,6 @@ nexplayer.AdsEvents('custom event name', function (e) {console.log("this is an e
 
 The following methods should be queried after the adstarted event has fired for accurate data with nexplayer.AdInstance()
 
-We also have the next methods:
-
  #### Get methods
 * getAdTitle(): return String, representing the VAST AdTitle tag.
 * getAdDescription(): return String, representing the VAST Description tag.
@@ -755,6 +753,19 @@ nexplayer.AdsEvents('adstarted', function(e){
 ```js
 nexplayer.AdsEvents('adstarted', function(e){
     nexplayer.AdInstance().setVolume(0.5);
+});
+```
+
+#### Miscellaneous
+* addEventListeners(): add a listener to the ads video. The possible events to listen are the same as the HTML video element ones. Important: this method should be called when the 'adtagstartloading' event is fired. Example of use:
+```js
+nexplayer.AdsEvents('adtagstartloading', function (e) {
+	nexplayer.AdInstance().addEventListener('playing', function() {
+    console.log("PLAYING --- ");
+	});
+	nexplayer.AdInstance().addEventListener('waiting', function() {
+    console.log("WAITING --- ");
+	});
 });
 ```
 

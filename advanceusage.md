@@ -693,6 +693,7 @@ We also have events to handle some different kind of ads events.
 
 We have the next list of ad events available:
 
+* adtagstartloading
 * adloaded
 * addurationchange
 * adimpression

@@ -337,7 +337,7 @@ Set the video playback speed.
 <a id="setsubtitle"></a>
    #### player.setSubtitle(index)
 
-Set the video subtitles.
+Set the video subtitles. Use -1 for deactivating the subtitles.
 
 **Kind**: instance method of [<code>Player</code>](#Player)
 

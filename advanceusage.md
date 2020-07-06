@@ -757,7 +757,7 @@ nexplayer.AdsEvents('adstarted', function(e){
 ```
 
 #### Miscellaneous
-* addEventListeners(): add a listener to the ads video. The possible events to listen are the same as the HTML video element ones. Important: this method should be called when the 'adtagstartloading' event is fired. Example of use:
+* addEventListener(): add a listener to the ads video. The possible events to listen are the same as the HTML video element ones. Important: this method should be called when the 'adtagstartloading' event is fired. Example of use:
 ```js
 nexplayer.AdsEvents('adtagstartloading', function (e) {
 	nexplayer.AdInstance().addEventListener('playing', function() {

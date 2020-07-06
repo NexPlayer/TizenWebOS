@@ -8,6 +8,13 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
+
+#### Version 3.0.2
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.0.2_20200703/nexplayer.js
+```
+* **[Improved]** Added 'onstatechange' event. See custom events at Advance Usage.
+
 #### Version 3.0.1
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.0.1_20200701/nexplayer.js

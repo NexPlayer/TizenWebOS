@@ -8,12 +8,17 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
+#### Version 3.0.3
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.0.2_20200706/nexplayer.js
+```
+* **[Added]** Added 'addEventListener' method on AdInstance() object. It is possible to subscribe for HTML video events for the ads. See <a href="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=miscellaneous">Ads Method</a> at Advance Usage.
 
 #### Version 3.0.2
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.0.2_20200703/nexplayer.js
 ```
-* **[Improved]** Added 'onstatechange' event. See custom events at Advance Usage.
+* **[Added]** Added 'onstatechange' event. See  <a href="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=custom-events">Custom Events</a> at Advance Usage.
 
 #### Version 3.0.1
 ```

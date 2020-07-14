@@ -8,6 +8,14 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
+
+#### Version 3.1.0
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.1.0_20200714/nexplayer.js
+```
+* **[Improved]** Subtitles styling.
+
+
 #### Version 3.0.3
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.0.3_20200706/nexplayer.js

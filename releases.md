@@ -8,6 +8,11 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
+#### Version 3.1.1
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.1.1_20200720/nexplayer.js
+```
+* **[Improved]** Fixed error that avoids ads events to be fired when multiples ads are available.
 
 #### Version 3.1.0
 ```

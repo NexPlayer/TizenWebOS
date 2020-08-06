@@ -54,6 +54,7 @@
  - [.upFocus()](#upfocus)
  - [.upSubtitle()](#upsubtitle)
  - [.seek(value)](#seek)
+ - [.seekLive()](#playerseekLive)
 
 - Miscellaneous:
  - [.attachSubtitleRendererDiv(subtitleRendererDiv)](#attachsubtitlerendererdiv)
@@ -472,13 +473,27 @@ Changes the current subtitles to the following one in the subtiltle track playli
 <a id="seek"> </a>
   #### player.seek(value)
 
-Sets the position of the playback taking into account isUTC(). If isUTC() is true, the seek value will be in a different format than the currentTime of the video element.
+   
+   Set the currentTime property of the attached video element. (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+   **Type**: instance method of [<code>Player</code>](#Player) 
 
-| Param | Type | Description |
-| --- | --- | --- |
-| value | <code>number</code> | value that the player will seek to. |
+  | Param | Type |Description |
+  | --- | --- | --- |
+  | event | Event | value in seconds that the player will seek to. |
+
+  ```js
+   //Non-live video 
+   player.seek(120) // It seeks into minute 2:00 in the video (120 secs), must be a positive number ranging from 0 to the full duration of the video in seconds
+   //Live video
+   player.seek(-120) // It jumps back 2 minutes (120 secs) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
+   ```
+
+#### player.seekLive()
+   
+   Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). only works in livestream.
+
+   **Type**: instance method of [<code>Player</code>](#Player) 
 
 
 <a id="attachsubtitlerendererdiv"> </a>

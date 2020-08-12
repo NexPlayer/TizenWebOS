@@ -42,9 +42,9 @@
  - [.isPlaybackBarFocused()](#isplaybackbarfocused) ⇒ boolean
 
 - player.toggle[...] ⇒ toggle on/off player features:
- - [.toogleControlBar()](#tooglecontrolbar)
- - [.toogleLanguageMenu()](#tooglelanguagemenu)
- - [.tooglePlayPause()](#toogleplaypause)
+ - [.toggleControlBar()](#togglecontrolbar)
+ - [.toggleLanguageMenu()](#togglelanguagemenu)
+ - [.togglePlayPause()](#toggleplaypause)
 
 - Navigation ⇒ APIs for the navigation in the UI and video :
  - [.downFocus()](#downfocus)
@@ -406,22 +406,22 @@ Pause the video.
 
 **Returns**: boolean - *true* if the seek bar of the video is currently focused, *false* otherwise.
 
-<a id="tooglecontrolbar"> </a>
-  #### player.toogleControlBar()
+<a id="togglecontrolbar"> </a>
+  #### player.toggleControlBar()
 
 Shows or hides the bottom bar.
 
 **Kind**: instance method of [<code>Player</code>](#Player)
 
-<a id="tooglelanguagemenu"> </a>
-  #### player.toogleLanguageMenu()
+<a id="togglelanguagemenu"> </a>
+  #### player.toggleLanguageMenu()
 
 Opens or closes the language menu.
 
 **Kind**: instance method of [<code>Player</code>](#Player)
 
-<a id="toogleplaypause"> </a>
-  #### player.tooglePlayPause()
+<a id="toggleplaypause"> </a>
+  #### player.togglePlayPause()
 
 Toggle the video playback between the play and pause states.
 

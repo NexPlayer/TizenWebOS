@@ -8,6 +8,13 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
+
+#### Version 3.1.2
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.1.2_20200813/nexplayer.js
+```
+* **[Improved]** Implemented fix for the issue on Tizen 2020 devices related to the ads. For using this workaround is necessary to use the property "reinitializeAfterAds: true" in the nexplayer Setup method.
+
 #### Version 3.1.1
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.1.1_20200720/nexplayer.js

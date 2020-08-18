@@ -10,7 +10,7 @@ https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
 #### Version 3.1.3
 ```
-https://nexplayer.nexplayersdk.com/HTML5/3.1.3_20200820/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/3.1.3_20200818/nexplayer.js
 ```
 * **[Improved]** Filter out .WEBM files for the ads in PS5, because they contain VP8 audio codec that is not supported in this platform. 
 

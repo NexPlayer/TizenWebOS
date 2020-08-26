@@ -68,7 +68,7 @@ Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.c
         nexplayer.Setup({
             key: "REPLACE THIS WITH YOUR PLAYER KEY",
             div: document.getElementById('player'),
-            src: 'https://d7wce5shv28x4.cloudfront.net/nexplayer/master.m3u8',
+            src: 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd', // Example URL
 
         });
         if(window.location.protocol ==  'file') {

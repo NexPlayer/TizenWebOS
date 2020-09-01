@@ -8,6 +8,12 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
+#### Version 3.2.0
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.2.0_20200831/nexplayer.js
+```
+* **[Added]** Implemented support for fallback ad feature.
+
 #### Version 3.1.3
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.1.3_20200818/nexplayer.js

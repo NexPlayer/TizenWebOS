@@ -8,6 +8,13 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
+
+#### Version 3.2.1
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.2.1_20200918/nexplayer.js
+```
+* **[Added]** PlayStation 5 support. It is needed a JSON file, provided by us, in order to use the player in this platform.
+
 #### Version 3.2.0
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.2.0_20200831/nexplayer.js

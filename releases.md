@@ -13,7 +13,7 @@ https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.2.1_20200918/nexplayer.js
 ```
-* **[Added]** PlayStation 5 support. It is needed a JSON file, provided by us, in order to use the player in this platform.
+* **[Added]** PlayStation 5 support. It is needed a JSON file, provided by us, in order to use the player in this platform. This JSON file must be hosted in the root of the domain where the application is hosted. For example, if the app is hosted in https://example.com/app the JSON file must be accessible from the path https://example.com/userAppId.json
 
 #### Version 3.2.0
 ```

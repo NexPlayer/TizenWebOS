@@ -2,7 +2,7 @@
 
 # Getting Started
 
-This section will explain how to integrate NexPlayer&#x2122; into your Tizen or WebOS project.
+This section will explain how to integrate NexPlayer&#x2122; into your project.
 
 ## NexPlayer™ Integration
 

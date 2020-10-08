@@ -74,7 +74,7 @@ Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.c
         if(window.location.protocol ==  'file') {
             document.getElementById('warning').style.display = "inherit";
         }
-    }
+    })
     </script>
 </body>
 </html>

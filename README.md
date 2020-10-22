@@ -1,193 +1,81 @@
 <a id="introduction-top"> </a>
 
 
-<img width="70%" text-align="center" src="./_images/logo.png" alt="logo of docsify-awesome repository" >
+<img width="30%" text-align="center" src="./_images/logo.png" alt="logo of docsify-awesome repository" >
 
 ***
 
-# NexPlayer for Tizen and WebOS{docsify-ignore-all}
+# NexPlayer for Tizen and WebOS<!-- {docsify-ignore-all} -->
 
 ## Abstract
 NexPlayer™ provides a media player for Smart TVs operating on Tizen and WebOS. It includes support for HLS, DASH, and progressive download.
 
 The default UI is easily customizable to fit the user&#xB4;s personal preferences (e.g. icons, colors, etc).
 
-<style> .titles{color: #ffffff; width: 250px;}.table{position: absolute; }  .tableFeatures{left: 18rem} .tablePlayback{top: 43rem} .tableAds{top: 55rem} .tableSubs{left: 37.5em} .tableMetadata{top: 50rem;} .tableDRM{left: 37.5em; top: 47rem;} </style>
+<a href="https://nexplayer.github.io/TizenWebOS/#/" class="hideText"> Full Documentation </a>
 
-
-<table class="table table-sm">
-
-  <tbody>
-    <tr>
-      <th class="titles" bgcolor="#C80000" scope="row">VIDEO DELIVERY FORMATS </th>      
-    </tr>
-    <tr>
-      <th  scope="row">HLS </th>      
-    </tr>
-    <tr>
-      <th  scope="row">DASH </th>      
-    </tr>
-    <!--tr>
-      <th scope="row">Microsoft Smooth Streaming </th>      
-    </tr-->
-    <tr>
-      <th scope="row">Progressive Download </th>      
-    </tr>
-  </tbody>
-
-  <table class="table tableFeatures">
-
-  <tbody >
-    <tr>
-      <th colspan="3" class="titles" bgcolor="#C80000" scope="row">FEATURES</th>      
-    </tr>
-    <tr>
-        <th>Pre-Integrated UI</th>
-    </tr>    
-    <tr>
-        <th>Multiple audio/video tracks</th>
-    </tr>
-    <tr>
-        <th>ABR and UHD video (4k and 8k)</th>
-    </tr>
-    <tr>
-        <th>Trick Play</th>
-    </tr>   
-    <tr>
-        <th>Time-shifting</th>
-    </tr>
-    <tr>
-        <th>DVR Live Streaming</th>
-    </tr>
-    <tr>
-        <th>Picture-in-picture</th>
-    </tr>
-    <!--tr>
-        <th>Low latency</th>
-    </tr-->
-    <tr>
-        <th>Fully Customizable UI</th>
-    </tr>
-  </tbody>
-
-</table>
-
-</table>
-
-<table class="table table-sm tablePlayback" >
-
-  <tbody >
-    <tr>
-      <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">PLAYBACK</th>      
-    </tr>
-    <tr>
-        <th>VOD</th>
-    </tr>
-    <tr>
-        <th>Live</th>
-    </tr>
-  </tbody>
-
-</table>
-
-<table class="table tableAds">
-
-  <tbody >
-    <tr>
-      <th colspan="3" bgcolor="##C80000"  class="titles" scope="column">AD INSERTION</th>      
-    </tr>
-    <tr>
-        <th>VAST, VPAID, VMAP</th>
-    </tr>
-    <tr>
-        <th>Pre-Roll, Mid-Roll, Post-Roll</th>
-    </tr>
-	<tr>
-		<th>Client & Server-Side Ad Insertion</th>
-	</tr>
-  </tbody>
-
-</table>
-
-<table class="table table-sm tableSubs" >
-
-  <tbody >
-    <tr>
-      <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">SUBTITLES & CC</th>      
-    </tr>
-    <tr>
-        <th>WebVTT</th>
-    </tr>
-    <tr>
-        <th>CEA 608/708</th>
-    </tr>
-      <tr>
-        <th>TTML</th>
-    </tr>
-    <tr>
-        <th>SRT</th>
-    </tr>
-	<tr>
-		<th>SMPTE-TT (2018+)</th>
-	</tr>
-  </tbody>
-
-</table>
-
-<table class="table table-sm tableMetadata" >
-
-  <tbody >
-    <tr>
-      <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">METADATA</th>      
-    </tr>
-    <tr>
-        <th>ID3 Tags</th>
-    </tr>    
-  </tbody>
-
-</table>
-<table class="table table-sm tableDRM" >
-
-  <tbody >
-    <tr>
-      <th colspan="3"  class="titles" bgcolor="##C80000" scope="row">CONTENT PROTECTION</th>      
-    </tr>
-    <tr>
-        <th>Widevine DRM</th>
-    </tr>
-    <tr>
-        <th>PlayReady DRM</th>
-    </tr>    
-      <tr>
-        <th>AES</th>
-    </tr>
-       <tr>
-        <th>Custom HTTP headers</th>
-    </tr>
-     <tr>
-        <th>CENC</th>
-    </tr>
-  </tbody>
-
-</table>
-<pre style="background-color: #f8f8f800">
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</pre>
+<div class="listsContainer">
+<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/" class="hideText"> Full Documentation </a>
+<div class="blocks">
+<h5 class="titleBlocks">VIDEO DELIVERY FORMATS</h5>
+  <ul class="list">  
+      <li>HLS </li>      
+      <li>DASH </li>  
+      <li>Progressive Download </li>      
+  </ul>
+</div>
+<div class="blocks">
+<h5 class="titleBlocks">FEATURES</h5>
+  <ul class="list">  
+      <li>Integrated UI </li>         
+      <li>Multiple audio/video tracks </li>      
+      <li>ABR and UHD video (4k and 8k) </li>
+      <li>Trick Play </li>     
+      <li>Time-shifting </li>   
+      <li>DVR Live Streaming </li>   
+      <li>Picture-in-picture </li>   
+      <li>Fully Customizable UI </li>         
+  </ul>
+</div>
+<div class="blocks">
+<h5 class="titleBlocks">PLAYBACK</h5>
+  <ul class="list">  
+      <li>VOD </li>      
+      <li>Live </li>             
+  </ul>
+</div>
+<div class="blocks">
+<h5 class="titleBlocks">INSERTION</h5>
+  <ul class="list">  
+      <li>VAST, VPAID, VMAP </li>      
+      <li>Pre-Roll, Mid-Roll, Post-Roll </li>
+      <li>Client & Server-Side Ad Insertion </li> 
+  </ul>
+</div>
+<div class="blocks">
+<h5 class="titleBlocks">SUBTITLES & CC</h5>
+  <ul class="list">  
+      <li>WebVTT </li>      
+      <li>CEA 608/708 </li> 
+      <li>TTML </li> 
+      <li>SRT </li> 
+      <li>SMPTE-TT(2018+) </li> 
+  </ul>
+</div>
+<div class="blocks">
+<h5 class="titleBlocks">METADATA</h5>
+  <ul class="list">  
+      <li>ID3 Tags </li>
+  </ul>
+</div>
+<div class="blocks">
+<h5 class="titleBlocks">CONTENT PROTECTION</h5>
+  <ul class="list">  
+      <li>Widevine DRM </li>      
+      <li>PlayReady DRM </li>       
+      <li>AES </li>
+      <li>Custom HTTP headers</li>   
+      <li>CENC </li>        
+  </ul>
+</div>
+</div>

@@ -266,5 +266,41 @@ td::before{
     content:' ' !important;
     position:absolute;
 }
-
+.hideText{
+    color: #ffffff;
+    position: absolute;
+    top: -100rem;
+     
+}
+.blocks{
+    border: solid 0.5px #dbcfcf;
+}
+.titleBlocks{
+    color: #ffffff !important;
+    background-color: #C80000;
+    padding: 3%;
+    margin-top: 0%;
+    text-align: center;
+}
+.list{
+    margin-top: -1rem !important;
+    margin-left: -1rem;
+    list-style-type: none;
+}
+.listsContainer{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 37%;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    
+}
+.listsContainer div:nth-child(3) {
+    grid-column: 2;
+    grid-row: 4 / 1;
+  }
+.titles{
+    color: #ffffff;
+    width: 250px;
+}
 /*!

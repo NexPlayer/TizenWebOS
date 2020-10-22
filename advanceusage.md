@@ -14,7 +14,6 @@ Digital rights management (DRM) is a set of access control technologies for rest
 NexPlayer™ supports several DRM technologies:
 
 <table class="table table-sm">
-<style> .titles{color: #ffffff; width: 250px;}</style>
   <tbody>
     <tr>
       <th class="titles" bgcolor="#C80000" scope="row">MODELS </th>   

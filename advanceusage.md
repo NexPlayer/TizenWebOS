@@ -53,9 +53,6 @@ NexPlayer™ supports several DRM technologies:
 </p>
 </div></div>
 
-
-<style> .titles{color: #ffffff; width: 250px;}</style>
-
 <table class="table table-sm">
 
   <tbody>

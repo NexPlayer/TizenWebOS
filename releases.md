@@ -8,6 +8,24 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js
 ```
+#### Version 3.3.1
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.3.1_20200928/nexplayer.js
+```
+* **[Improved]** Resolved issue when playing multiple ads during midrolls. Sometimes the main video wasn't playing back again and the screen was just black.
+
+#### Version 3.3.0
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.3.0_20200923/nexplayer.js
+```
+* **[Improved]** Fixed issue when initializing the player again after the ads.
+
+#### Version 3.2.1
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.2.1_20200918/nexplayer.js
+```
+* **[Added]** PlayStation 5 support. It is needed a JSON file, provided by us, in order to use the player in this platform. This JSON file must be hosted in the root of the domain where the application is hosted. For example, if the app is hosted in https://example.com/app the JSON file must be accessible from the path https://example.com/userAppId.json
+
 #### Version 3.2.0
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.2.0_20200831/nexplayer.js

@@ -2,7 +2,7 @@
 
 # Getting Started
 
-This section will explain how to integrate NexPlayer&#x2122; into your Tizen or WebOS project.
+This section will explain how to integrate NexPlayer&#x2122; into your project.
 
 ## NexPlayer™ Integration
 
@@ -74,7 +74,7 @@ Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.c
         if(window.location.protocol ==  'file') {
             document.getElementById('warning').style.display = "inherit";
         }
-    }
+    })
     </script>
 </body>
 </html>
@@ -220,13 +220,13 @@ There are a substantial number of customizable options for NexPlayer™ includin
     callbacksForLogger: callback, // Optional callback called with the logger instances
     startFullscreen: true, // Optional
     disableFullscreen: true, // Optional
-    showingFullUI: true, // Optional
+    showingFullUI: true, // Optional, used for showing the player controls
     callbacksForReturn: callback, // Optional callback called with the return button
     disableKeyEvents: false,
     useDefaultControls: true, // Optional, to use the remote controller
-    resumePosition: number, // Optional, used for staring the video from the given position in seconds
+    resumePosition: number, // Optional, used for starting the video from the given position in seconds
     externalSubtitles: 
-    {"src": "URL for the subtitles file", "language": "Subtitle language"}, // Optional, only SRT and WEBVTT subtitles can be used. "language" property is a string that define how the subtitle will be identified
+    {"src": "URL for the subtitles file", "language": "Subtitle language"}, // Optional, only WEBVTT subtitles can be used. "language" property is a string that define how the subtitle will be identified
     
     
 ```

@@ -57,9 +57,7 @@
  - [.seekLive()](#playerseekLive)
 
 - Miscellaneous:
- - [.attachSubtitleRendererDiv(subtitleRendererDiv)](#attachsubtitlerendererdiv)
  - [.on(callbackType, functionToBeCalled)](#on)
- - [.addSrtSubtitles(subtitle)](#addsrtsubtitles)
  - [.play()](#play)
  - [.pause()](#pause)
 
@@ -349,21 +347,6 @@ Set the video subtitles. Use -1 for deactivating the subtitles.
 | index | <code>number</code> | index of the subtitles list. |
 
 
-<a id="addsrtsubtitles"></a>
-   #### player.addSrtSubtitle(src, language)
-
-Add a video subtitle in .srt format.
-
-**Kind**: instance method of [<code>Player</code>](#Player)
-
-**Export**:
-
-| Param | Type | Description |
-| --- | --- | --- |
-| src | <code>string</code> | link or path to the subtitle file |
-| language | <code>string</code> | name used to identify the subtitle |
-
-
 <a id="play"></a>
    #### player.play()
 
@@ -494,19 +477,6 @@ Changes the current subtitles to the following one in the subtiltle track playli
    Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). only works in livestream.
 
    **Type**: instance method of [<code>Player</code>](#Player) 
-
-
-<a id="attachsubtitlerendererdiv"> </a>
-   #### player.attachSubtitleRendererDiv(subtitleRendererDiv)
-
-Adds a DIV to render certain subtitles in a more precise way. This is optional and the native subtitles of the video element will be used if this is not set.
-
-**Kind**: instance method of [<code>Player</code>](#Player)      
-**Export**:
-
-| Param | Type | Description |
-| --- | --- | --- |
-| subtilteRendererDiv | <code>HTML5 div</code> | DIV to render some advanced subtitles |
 
 
 <a id="on"> </a>

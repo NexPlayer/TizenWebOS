@@ -12,10 +12,8 @@ NexPlayer™ provides a media player for Smart TVs operating on Tizen and WebOS 
 
 The default UI is easily customizable to fit the user&#xB4;s personal preferences (e.g. icons, colors, etc).
 
-<a href="https://nexplayer.github.io/TizenWebOS/#/" class="hideText"> Full Documentation </a>
-
 <div class="listsContainer">
-<a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/" class="hideText"> Full Documentation </a>
+<a href="https://nexplayer.github.io/TizenWebOS/#/" class="hideText"> Full Documentation </a>
 <div class="blocks">
 <h5 class="titleBlocks">VIDEO DELIVERY FORMATS</h5>
   <ul class="list">  

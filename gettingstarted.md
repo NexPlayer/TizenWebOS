@@ -66,9 +66,9 @@ Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.c
     $( document ).ready(function() {
 
         nexplayer.Setup({
-            key: "REPLACE THIS WITH YOUR PLAYER KEY",
+            key: "ENTER YOUR LICENSE KEY HERE",
             div: document.getElementById('player'),
-            src: 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd', // Example URL
+            src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4', // Example URL
 
         });
         if(window.location.protocol ==  'file') {
@@ -110,9 +110,9 @@ Also is necessary to use the "defer" tag.</p>
 - The player should be initialized by entering the previous div to the Setup method:
 ```js
 nexplayer.Setup({
-    key: 'REPLACE THIS WITH YOUR PLAYER KEY',
+    key: 'ENTER YOUR LICENSE KEY HERE',
     div: document.getElementById('player'),
-    src: 'https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd'
+    src: 'http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4'
 });
 ```
 
@@ -200,7 +200,7 @@ document.addEventListener('keydown', function(e) {
 There are a substantial number of customizable options for NexPlayer™ including: the name and subtitle format of the video, a logo for the company, the DRM information, a VAST link, and the thumbnail preview...
 
 ```js
-    key: 'Player key to validate the playback', // Mandatory
+    key: 'License key to validate the playback', // Mandatory
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
     poster: 'URL poster', // Optional

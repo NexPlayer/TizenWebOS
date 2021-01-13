@@ -224,6 +224,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     disableKeyEvents: false,
     useDefaultControls: true, // Optional, to use the remote controller
     resumePosition: number, // Optional, used for starting the video from the given position in seconds
+    addRequestFilter: Function, //Optional, used for give filters to the drm request
     externalSubtitles: 
     {"src": "URL for the subtitles file", "language": "Subtitle language"}, // Optional, only WEBVTT subtitles can be used. "language" property is a string that define how the subtitle will be identified
     

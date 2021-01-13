@@ -616,6 +616,29 @@ var callBackWithPlayers = function (nexplayerInstance, videoElement) {
 
 ```
 
+### addRequestFilter
+
+This property needs a function as parameter, where we change the next differents propperties:
+
+| Propperty | Type |
+| --- | --- |
+| headers | Object.<string, string> |
+| body | BufferSource |
+```js
+var filter = function(request){
+				request.headers['FieldName'] = 'FieldValue';
+			};
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'VIDEO URL',
+    callbacksForPlayer: 'YOUR CALLBACK VAR',
+    drm:['YOR DRM'],
+    addRequestFilter: filter,
+  });
+
+```
 
 ## Callbacks
 

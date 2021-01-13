@@ -618,7 +618,7 @@ var callBackWithPlayers = function (nexplayerInstance, videoElement) {
 
 ### addRequestFilter
 
-This property needs a function as parameter, where we change the next differents propperties:
+This property is a function that receives the request as parameter , where the following properties chan be changed:
 
 | Propperty | Type |
 | --- | --- |

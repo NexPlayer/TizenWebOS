@@ -10,7 +10,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.2.2_20201123/nexplayer.js
 ```
 * **[Improved]** Resolved subtitles issue when using a large vtt file as external subtitles in TVs.
 
-Date: 23-11-2020
+Date: Nov 23rd 2020
 
 #### Version 3.3.1
 ```
@@ -18,7 +18,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.3.1_20200928/nexplayer.js
 ```
 * **[Improved]** Resolved issue when playing multiple ads during midrolls. Sometimes the main video wasn't playing back again and the screen was just black.
 
-Date: 28-09-2020
+Date: Sep 28th 2020
 
 #### Version 3.3.0
 ```
@@ -26,7 +26,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.3.0_20200923/nexplayer.js
 ```
 * **[Improved]** Fixed issue when initializing the player again after the ads.
 
-Date: 23-09-2020
+Date: Sep 23rd 2020
 
 #### Version 3.2.1
 ```
@@ -34,7 +34,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.2.1_20200918/nexplayer.js
 ```
 * **[Added]** PlayStation 5 support. It is needed a JSON file, provided by us, in order to use the player in this platform. This JSON file must be hosted in the root of the domain where the application is hosted. For example, if the app is hosted in https://example.com/app the JSON file must be accessible from the path https://example.com/userAppId.json
 
-Date: 18-09-2020
+Date: Sep 18th 2020
 
 #### Version 3.2.0
 ```

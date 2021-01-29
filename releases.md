@@ -4,6 +4,15 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.3.3
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.3.3_20210129/nexplayer.js
+```
+* **[Added]** WebOS 3.X support including 2017 and older LG smart TVs. 
+* **[Improved]** Resolved issues regarding TTML subtitles displaying badly and slow playback caused by CC. 
+
+Date: Jan 29th 2021
+
 #### Version 3.2.2
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.2.2_20201123/nexplayer.js

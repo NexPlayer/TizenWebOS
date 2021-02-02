@@ -230,3 +230,11 @@ There are a substantial number of customizable options for NexPlayer™ includin
     
     
 ```
+
+## Tizen Studio
+
+While using Tizen Studio, if your app works in the simulator and it doesn't in a device nor the emulator, add the next line to your config.xml:
+```xml
+<access origin="*" subdomains="true"></access>
+
+```

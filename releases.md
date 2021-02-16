@@ -4,6 +4,20 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.3.4
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.3.4_20210216/nexplayer.js
+```
+* **[Added]** DRM request filter. 
+* **[Added]** Support for static thumbnails using only a VTT file.
+* **[Added]** Implemented getURL(), getPlaybackRate() and getMediaElement() functions.
+* **[Improved]** Fixed language UI bug.
+* **[Improved]** Fixed UI play button bug.
+* **[Improved]** Resolved issues regarding VAST ads.
+* **[Improved]** Resolved issues regarding subtitles file size.
+
+Date: Feb 16th 2021
+
 #### Version 3.3.3
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.3_20210129/nexplayer.js

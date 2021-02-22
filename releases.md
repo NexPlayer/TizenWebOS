@@ -4,6 +4,14 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.3.5
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.3.5_20210219/nexplayer.js
+```
+* **[Improved]** Solved visual bug related with subtitles on PS5. 
+
+Date: Feb 19th 2021
+
 #### Version 3.3.4
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.4_20210216/nexplayer.js

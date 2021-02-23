@@ -2,6 +2,7 @@
 - [Introduction](/?id=introduction-top)
 - [Getting Started](gettingstarted.md?id=gettingstarted-top)
 * [Advance Usage](advanceusage.md?id=advance-top)
+* [Samsung Tizen Usage](Samsungtizenusage.md?id=samsungtizenusage-top)
 * [NexPlayer API](API.md?id=api-top)
 * [Releases](releases.md?id=releases-top)
 * [Third Party Licenses](licenses.md?id=licenses-top) 

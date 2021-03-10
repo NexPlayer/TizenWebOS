@@ -14,6 +14,8 @@ https://nexplayer.nexplayersdk.com/HTML5/3.3.6_20210309/nexplayer.js
 
 * **[Added]** New Relic tracker. It can be used through the property <a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"useNewRelicTracker"</a>
 
+* **[Added]** Seek bar is not shown in live content.
+
 Date: March 9th 2021 
 
 #### Version 3.3.5

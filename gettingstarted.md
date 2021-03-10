@@ -227,8 +227,13 @@ There are a substantial number of customizable options for NexPlayer™ includin
     addRequestFilter: Function, //Optional, used for give filters to the drm request
     externalSubtitles: 
     {"src": "URL for the subtitles file", "language": "Subtitle language"}, // Optional, only WEBVTT subtitles can be used. "language" property is a string that define how the subtitle will be identified
-    
-    
+    staticThumbnailsVTT: string, // URI of the VTT file,
+    thumbChunking: { // This property will only take effect if the static thumbnails were passed ("staticThumbnailsVTT")
+        limit: 3, // Number of chunks whose thumbnails images are loaded
+        total: 30 // Total number of chunks
+    },
+    useNewRelicTracker: boolean, // By default is set to false. Set to true in order to use the tracker. You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
+   
 ```
 
 ## Tizen Studio

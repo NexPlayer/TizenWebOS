@@ -4,13 +4,25 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.3.6
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.3.6_20210309/nexplayer.js
+```
+* **[Added]** Video progress events for the 25%, 50%, 75% of the video's duration.
+* **[Added]** Possibility to use a chunking algorithm in order to improve the efficiency of the thumbnails. It can be used through a new property, 
+<a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"thumbChunking"</a> , in the nexplayer Setup method.
+
+* **[Added]** New Relic tracker. It can be used through the property <a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"useNewRelicTracker"</a>
+
+Date: March 9th 2021
+
 #### Version 3.3.5
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.5_20210219/nexplayer.js
 ```
 * **[Improved]** Solved visual bug related with subtitles on PS5. 
 
-Date: Feb 19th 2021
+Date: February 19th 2021
 
 #### Version 3.3.4
 ```
@@ -24,7 +36,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.3.4_20210216/nexplayer.js
 * **[Improved]** Resolved issues regarding VAST ads.
 * **[Improved]** Resolved issues regarding subtitles file size.
 
-Date: Feb 16th 2021
+Date: February 16th 2021
 
 #### Version 3.3.3
 ```
@@ -33,7 +45,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.3.3_20210129/nexplayer.js
 * **[Added]** WebOS 3.X support including 2017 and older LG smart TVs. 
 * **[Improved]** Resolved issues regarding TTML subtitles displaying badly and slow playback caused by CC. 
 
-Date: Jan 29th 2021
+Date: January 29th 2021
 
 #### Version 3.2.2
 ```
@@ -41,7 +53,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.2.2_20201123/nexplayer.js
 ```
 * **[Improved]** Resolved subtitles issue when using a large vtt file as external subtitles in TVs.
 
-Date: Nov 23rd 2020
+Date: November 23rd 2020
 
 #### Version 3.3.1
 ```
@@ -49,7 +61,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.3.1_20200928/nexplayer.js
 ```
 * **[Improved]** Resolved issue when playing multiple ads during midrolls. Sometimes the main video wasn't playing back again and the screen was just black.
 
-Date: Sep 28th 2020
+Date: September 28th 2020
 
 #### Version 3.3.0
 ```
@@ -57,7 +69,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.3.0_20200923/nexplayer.js
 ```
 * **[Improved]** Fixed issue when initializing the player again after the ads.
 
-Date: Sep 23rd 2020
+Date: September 23rd 2020
 
 #### Version 3.2.1
 ```
@@ -65,7 +77,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.2.1_20200918/nexplayer.js
 ```
 * **[Added]** PlayStation 5 support. It is needed a JSON file, provided by us, in order to use the player in this platform. This JSON file must be hosted in the root of the domain where the application is hosted. For example, if the app is hosted in https://example.com/app the JSON file must be accessible from the path https://example.com/userAppId.json
 
-Date: Sep 18th 2020
+Date: September 18th 2020
 
 #### Version 3.2.0
 ```

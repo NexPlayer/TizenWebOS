@@ -689,6 +689,56 @@ var currentState = event.detail;
 4. Paused
 5. Ended
 
+##### videofirstquartile
+
+This event is fired when the 25% of the video's duration has been reached. The **event** parameter for the callback function has a property called **detail** 
+that stores the time of the quartile:
+```js
+// Accessing the time of the quartile
+var firstQuartile = event.detail;
+```
+
+**detail** type is number and returns the quartile time
+
+```js
+videoElement.addEventListener('videofirstquartile', function(e){
+  console.log("VIDEO FIRST QUARTILE -----> ", e);
+});
+```
+
+##### videomidpoint
+
+This event is fired when the 50% of the video's duration has been reached. The **event** parameter for the callback function has a property called **detail** 
+that stores the time of the quartile:
+```js
+// Accessing the time of the quartile
+var midPoint = event.detail;
+```
+
+**detail** type is number and returns the quartile time
+
+```js
+videoElement.addEventListener('videomidpoint', function(e){
+  console.log("VIDEO MID POINT -----> ", e);
+});
+```
+
+##### videothirdquartile
+
+This event is fired when the 75% of the video's duration has been reached. The **event** parameter for the callback function has a property called **detail** 
+that stores the time of the quartile:
+```js
+// Accessing the time of the quartile
+var thirdQuartile = event.detail;
+```
+
+**detail** type is number and returns the quartile time
+
+```js
+videoElement.addEventListener('videothirdquartile', function(e){
+  console.log("VIDEO THIRD QUARTILE -----> ", e);
+});
+```
 
 ### Nexplayer Events
 

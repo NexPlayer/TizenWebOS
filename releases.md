@@ -8,13 +8,13 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.6_20210309/nexplayer.js
 ```
-* **[Added]** Video progress events for the 25%, 50%, 75% of the video's duration.
+* **[Added]** Video progress events for the 25%, 50%, 75% of the video's duration. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=custom-events">here</a>.
 * **[Added]** Possibility to use a chunking algorithm in order to improve the efficiency of the thumbnails. It can be used through a new property, 
 <a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"thumbChunking"</a> , in the nexplayer Setup method.
 
 * **[Added]** New Relic tracker. It can be used through the property <a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"useNewRelicTracker"</a>
 
-Date: March 9th 2021
+Date: March 9th 2021 
 
 #### Version 3.3.5
 ```

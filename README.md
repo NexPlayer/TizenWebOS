@@ -43,11 +43,12 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
   </ul>
 </div>
 <div class="blocks">
-<h5 class="titleBlocks">INSERTION</h5>
+<h5 class="titleBlocks">AD INSERTION</h5>
   <ul class="list">  
       <li>VAST, VPAID, VMAP </li>      
       <li>Pre-Roll, Mid-Roll, Post-Roll </li>
-      <li>Client & Server-Side Ad Insertion </li> 
+      <li>Client-Side Ad Insertion </li>
+      <li>Server-Side Ad Insertion </li>
   </ul>
 </div>
 <div class="blocks">

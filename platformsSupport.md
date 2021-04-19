@@ -1,6 +1,6 @@
 <a id="platforms-top"> </a>
 
-# Platforms support
+# Platform support
 
 NexPlayer supports several platforms and models:
 

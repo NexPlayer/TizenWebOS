@@ -233,6 +233,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
         total: 30 // Total number of chunks
     },
     useNewRelicTracker: boolean, // By default is set to false. Set to true in order to use the tracker. You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
+    preferredAudioCodec: array, //This property can be used to give priority to specific audio codec
    
 ```
 

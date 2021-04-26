@@ -637,6 +637,23 @@ var filter = function(request){
 
 ```
 
+### preferredAudioCodec
+
+This property was created to give priority to some specific audio codec.
+
+```js
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'VIDEO URL',
+    callbacksForPlayer: 'YOUR CALLBACK VAR',
+    drm:['YOR DRM'],
+    preferredAudioCodec:['The priority codec as ac-3', 'mp4a.40.2']
+  });
+
+```
+
 ## Callbacks
 
 References to the <a href="#/advanceusage?id=access-to-the-player-instances">player instances</a> are needed to register callbacks.

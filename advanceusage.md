@@ -639,7 +639,7 @@ var filter = function(request){
 
 ### preferredAudioCodec
 
-This property was created to give priority to some specific audio codec.
+This property gives priority to a specific audio codec.
 
 ```js
 
@@ -649,7 +649,53 @@ This property was created to give priority to some specific audio codec.
     src: 'VIDEO URL',
     callbacksForPlayer: 'YOUR CALLBACK VAR',
     drm:['YOR DRM'],
-    preferredAudioCodec:['The priority codec as ac-3', 'mp4a.40.2']
+    preferredAudioCodec: ['The priority codec as ac-3', 'mp4a.40.2'],
+  });
+
+```
+
+### useNewRelicTracker
+
+This property enables NewRelic's tracker. A browser agent and a custom implementation must be included like so:
+
+```js
+
+    <!-- newrelic browser agent -->
+    <script src="agent.js"></script>
+
+    <!-- newrelic custom tracker -->
+    <script src="newrelic-video-nexplayer.min.js"></script>
+
+```
+
+Setup configuration:
+
+```js
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'VIDEO URL',
+    callbacksForPlayer: 'YOUR CALLBACK VAR',
+    drm:['YOR DRM'],
+    useNewRelicTracker: true, // true to enable, false to disable
+  });
+
+```
+
+### startingBufferLength
+
+This property sets a custom-sized initial buffer by passing the desired number of seconds to achieve.
+
+```js
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'VIDEO URL',
+    callbacksForPlayer: 'YOUR CALLBACK VAR',
+    drm:['YOR DRM'],
+    startingBufferLength: 50, // minimum number of seconds that the player will try to initially buffer
   });
 
 ```

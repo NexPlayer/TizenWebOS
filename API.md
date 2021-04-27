@@ -60,6 +60,8 @@
  - [.on(callbackType, functionToBeCalled)](#on)
  - [.play()](#play)
  - [.pause()](#pause)
+ - [.addTrackerData()](#addtrackerdata)
+ - [.removeTrackerData()](#removetrackerdata)
 
 - static:
  - [.NexProtocol](#nexprotocol): enum
@@ -122,7 +124,7 @@ Change the url stream of the video. It is possible to set a new url with new drm
 
 Enable the ABR to change automatically between tracks.
 
-**Kind**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)   
 
 
 <a id="getaudiostreams"> </a>
@@ -179,7 +181,7 @@ Track:
 
 Returns the current time of the video element.
 
-**Kind**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player) 
 
 **Returns**: number - the current time of the video.
 
@@ -188,7 +190,7 @@ Returns the current time of the video element.
 
 Returns the duration taking of the video element.
 
-**Kind** instance method of [<code>Player</code>](#Player)
+**Type** instance method of [<code>Player</code>](#Player)
 
 **Returns** number - the duration of the video.
 
@@ -197,7 +199,7 @@ Returns the duration taking of the video element.
 
 Returns the stream's protocol ID, the number correspond to the [NexProtocol](#nexprotocol) enum values.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns** number - the protocol of video to be played.
 
@@ -215,7 +217,7 @@ This array contain the following information:
 | height | <code>number</code> | that contains an number with height of this track |
 | bitrate | <code>number</code> | that contains an number with bitrate of this track |
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns** array - contains all video quality levels.
 
@@ -281,7 +283,7 @@ Set the current audio stream by using the UI.
 | --- | --- | --- |
 | streamID | <code>number</code> | is the identifier of the audio stream to be selected. |
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="setaudiostream"></a>
 #### player.setAudioStream(streamID)
@@ -292,14 +294,14 @@ Set the current audio stream.
 | --- | --- | --- |
 | streamID | <code>number</code> | is the identifier of the audio stream to be selected. |
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="setcurrenttrack"></a>
    #### player.setCurrentTrack(trackID)
 
 Set the current track.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Export**:
 
@@ -312,7 +314,7 @@ Set the current track.
 
 Set the video quality level.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Export**:
 
@@ -325,7 +327,7 @@ Set the video quality level.
 
 Set the video playback speed.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Export**:
 
@@ -338,7 +340,7 @@ Set the video playback speed.
 
 Set the video subtitles. Use -1 for deactivating the subtitles.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Export**:
 
@@ -352,40 +354,40 @@ Set the video subtitles. Use -1 for deactivating the subtitles.
 
 Play the video.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 <a id="pause"></a>
    #### player.pause()
 
 Pause the video.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 
 <a id="iscontrolbaropen"> </a>
    #### player.isControlBarOpen() ⇒ boolean
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: boolean - *true* if the bar is showing. *false* otherwise.
 
 <a id="islanguagemenuopen"> </a>
   #### player.isLanguageMenuOpen() ⇒ boolean
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: boolean - *true* if the Language/Subtitle menu is showing. *false* otherwise.
 
 <a id="islive"> </a>
   #### player.isLive() ⇒ boolean
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: boolean - *true* if the video is live, *false* otherwise.
 
 <a id="isplaybackbarfocused"> </a>
   #### player.isPlaybackBarFocus() ⇒ boolean
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: boolean - *true* if the seek bar of the video is currently focused, *false* otherwise.
 
@@ -394,21 +396,21 @@ Pause the video.
 
 Shows or hides the bottom bar.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="togglelanguagemenu"> </a>
   #### player.toggleLanguageMenu()
 
 Opens or closes the language menu.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="toggleplaypause"> </a>
   #### player.togglePlayPause()
 
 Toggle the video playback between the play and pause states.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 
 <a id="downfocus"> </a>
@@ -416,67 +418,69 @@ Toggle the video playback between the play and pause states.
 
 Focus the element of the UI situated directly below the element currently focused.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="downsubtitle"> </a>
   #### player.downSubtitle()
 
 Changes the current subtitles to the previous one in the subtiltle track playlist.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="focusonbuttonbar"> </a>
   #### player.focusOnButtonBar()
 
 Changes the focus to the play/pause button.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="focusonplaybackbar"> </a>
   #### player.focusOnPlaybackBar()
 
 Changes the focus to the video's seekbar.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="upfocus"> </a>
   #### player.upFocus()
 
 Focus the element of the UI situated directly above the element currently focused.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="upsubtitle"> </a>
   #### player.upSubtitle()
 
 Changes the current subtitles to the following one in the subtiltle track playlist.
 
-**Kind**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player)
 
 <a id="seek"> </a>
   #### player.seek(value)
 
    
-   Set the currentTime property of the attached video element. (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
+Set the currentTime property of the attached video element. (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
 
-   **Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player) 
 
-  | Param | Type |Description |
-  | --- | --- | --- |
-  | event | Event | value in seconds that the player will seek to. |
+| Param | Type |Description |
+| --- | --- | --- |
+| event | Event | value in seconds that the player will seek to. |
 
-  ```js
-   //Non-live video 
-   player.seek(120) // It seeks into minute 2:00 in the video (120 secs), must be a positive number ranging from 0 to the full duration of the video in seconds
-   //Live video
-   player.seek(-120) // It jumps back 2 minutes (120 secs) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
-   ```
+```js
+//Non-live video 
+player.seek(120) // It seeks into minute 2:00 in the video (120 secs), must be a positive number ranging from 0 to the full duration of the video in seconds
+//Live video
+player.seek(-120) // It jumps back 2 minutes (120 secs) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
+```
+
+
 
 #### player.seekLive()
    
-   Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). only works in livestream.
+Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). only works in livestream.
 
-   **Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player) 
 
 
 <a id="on"> </a>
@@ -484,13 +488,40 @@ Changes the current subtitles to the following one in the subtiltle track playli
 
 Adds a listener for Events.
 
-**Kind**: instance method of [<code>Player</code>](#Player)      
+**Type**: instance method of [<code>Player</code>](#Player)      
 **Export**:
 
 | Param | Type | Description |
 | --- | --- | --- |
 | callbackType | <code>NexEvent</code> | Event to listen for |
 | functionToBeCalled	 | <code>Function</code> | 	Function called on each event |
+
+
+<a id="addtrackerdata"> </a>
+   #### player.addTrackerData(key, value)
+
+Adds custom data into New Relic's tracker if initialized.
+
+**Type**: instance method of [<code>Player</code>](#Player)  
+**Export**:
+
+| Param | Type | Description |
+| --- | --- | --- |
+| key | <code>string</code> | Data variable name |
+| value	 | <code>any</code> | Data value |
+
+
+<a id="removetrackerdata"> </a>
+   #### player.removeTrackerData(key)
+
+Removes custom data from New Rellic's tracker if initialized.
+
+**Type**: instance method of [<code>Player</code>](#Player)  
+**Export**:
+
+| Param | Type | Description |
+| --- | --- | --- |
+| key | <code>string</code> | Data variable name |
 
 
 <a id="nexprotocol"></a>
@@ -587,14 +618,14 @@ Adds a listener for Events.
 
 Play the ad
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)     
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)     
 
 <a id="pause"> </a>
    #### nexplayer.AdInstance().pause() 
 
 Pause the current ad.
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 
 
 <a id="getadtitle"> </a>
@@ -602,7 +633,7 @@ Pause the current ad.
 
 Get the available title ad.
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)     
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)     
 **Returns**: String - the title ad to be played.
 
 <a id="getaddescription"> </a>
@@ -610,7 +641,7 @@ Get the available title ad.
 
 Get the available description ad.
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 **Returns**: String - the description ad to be played.
 
 <a id="getadduration"> </a>
@@ -618,7 +649,7 @@ Get the available description ad.
 
 Get the available duration ad.
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 **Returns**: Number - the duration ad to be played.
 
 <a id="getadcurrenttime"> </a>
@@ -626,7 +657,7 @@ Get the available duration ad.
 
 Get the current time ad.
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 **Returns**: Number - the current time ad to be played.
 
 <a id="getadremainingtime"> </a>
@@ -634,7 +665,7 @@ Get the current time ad.
 
 Get the remaining time ad.
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 **Returns**: Number - the remaining time ad to be played.
 
 <a id="getisskippablead"> </a>
@@ -642,7 +673,7 @@ Get the remaining time ad.
 
 Get
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 **Returns**: boolean - *true* if the video can be skip. *false* if it is not.
 
 <a id="getadpause"> </a>
@@ -650,7 +681,7 @@ Get
 
 Get stating if the ad on stage is paused or not
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 **Returns**: boolean - *true* if the ad on stage is paused *false* if it is not.
 
 <a id="getvolume"> </a>
@@ -658,7 +689,7 @@ Get stating if the ad on stage is paused or not
 
 Get the volume of ad depending on what is on stage.
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 **Returns**: number - is a number between 0 and 1. -1 is returned if this value is not available.
 
 <a id="getmute"> </a>
@@ -666,7 +697,7 @@ Get the volume of ad depending on what is on stage.
 
 Get the mute state of ad depending on what is on stage.
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 **Returns**: boolean - *true* if the ad can is mute. *false* if it is not.
 
 
@@ -675,7 +706,7 @@ Get the mute state of ad depending on what is on stage.
 
 Set value should be a Number between 0 and 1.
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 
 
 <a id="setmute"> </a>
@@ -683,4 +714,4 @@ Set value should be a Number between 0 and 1.
 
 Set value should be a Boolean.
 
-**Kind**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  

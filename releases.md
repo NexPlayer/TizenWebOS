@@ -4,6 +4,25 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.3.7
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.3.7_20210426/nexplayer.js
+```
+* **[Added]** Added the possibility to specify the codec priority. It can be used through a new property, 
+<a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration"> "preferredAudioCodec"</a>, in the nexplayer Setup method.
+
+* **[Added]** A custom-sized initial buffer can now be set by passing the desired number of seconds to achieve. It can be used through a new property, 
+<a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration"> "startingBufferLength"</a>, in the nexplayer Setup method.
+
+* **[Added]** Custom data can now be added to New Relic's tracker. Removing data can also be done. Check NexPlayer's API for more details.
+
+* **[Improved]** Prevented subtitles from updating while seeking.
+* **[Improved]** Restart video button now works when video ends.
+* **[Improved]** Video now ends before any postroll starts playing.
+
+
+Date: April 27th 2021 
+
 #### Version 3.3.6.1
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.6.1_20210312/nexplayer.js
@@ -18,7 +37,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.3.6_20210309/nexplayer.js
 ```
 * **[Added]** Video progress events for the 25%, 50%, 75% of the video's duration. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=custom-events">here</a>.
 * **[Added]** Possibility to use a chunking algorithm in order to improve the efficiency of the thumbnails. It can be used through a new property, 
-<a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"thumbChunking"</a> , in the nexplayer Setup method.
+<a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration"> "thumbChunking"</a>, in the nexplayer Setup method.
 
 * **[Added]** New Relic tracker. It can be used through the property <a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"useNewRelicTracker"</a>
 

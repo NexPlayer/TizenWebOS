@@ -654,52 +654,6 @@ This property gives priority to a specific audio codec.
 
 ```
 
-### useNewRelicTracker
-
-This property enables NewRelic's tracker. A browser agent and a custom implementation must be included like so:
-
-```js
-
-    <!-- newrelic browser agent -->
-    <script src="agent.js"></script>
-
-    <!-- newrelic custom tracker -->
-    <script src="newrelic-video-nexplayer.min.js"></script>
-
-```
-
-Setup configuration:
-
-```js
-
-  nexplayer.Setup({
-    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
-    div: document.getElementById('player'),
-    src: 'VIDEO URL',
-    callbacksForPlayer: 'YOUR CALLBACK VAR',
-    drm:['YOR DRM'],
-    useNewRelicTracker: true, // true to enable, false to disable
-  });
-
-```
-
-### startingBufferLength
-
-This property sets a custom-sized initial buffer by passing the desired number of seconds to achieve.
-
-```js
-
-  nexplayer.Setup({
-    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
-    div: document.getElementById('player'),
-    src: 'VIDEO URL',
-    callbacksForPlayer: 'YOUR CALLBACK VAR',
-    drm:['YOR DRM'],
-    startingBufferLength: 50, // minimum number of seconds that the player will try to initially buffer
-  });
-
-```
-
 ## Callbacks
 
 References to the <a href="#/advanceusage?id=access-to-the-player-instances">player instances</a> are needed to register callbacks.

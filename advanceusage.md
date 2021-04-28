@@ -620,7 +620,7 @@ This property is a function that receives the request as parameter , where the f
 | Propperty | Type |
 | --- | --- |
 | headers | Object.<string, string> |
-| body | BufferSource |
+| body | String |
 ```js
 var filter = function(request){
 				request.headers['FieldName'] = 'FieldValue';

@@ -6,6 +6,8 @@
 
 ## Nexplayer
 
+***
+
 #### Methods
 
  - [Setup(configObj)](#setup)
@@ -226,6 +228,8 @@ Removes custom data from New Rellic's tracker if initialized.
 
 
 
+
+
 #### Navigation
 
 ***
@@ -292,6 +296,8 @@ Jump to the livestream current time from the current position (if isUTC is true,
 
 
 
+
+
 #### Player states
 
 ***
@@ -319,6 +325,8 @@ Jump to the livestream current time from the current position (if isUTC is true,
 **Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: boolean - *true* if the seek bar of the video is currently focused, *false* otherwise.
+
+
 
 
 

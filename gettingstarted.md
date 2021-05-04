@@ -83,7 +83,6 @@ Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.c
 
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that replacing the license key is mandatory. License key should have been already sent to your inbox or you can request one from support.madrid@nexplayer.com. Also don't forget to load jquery and add the "defer" tag to the nexplayer.js loading script.</p>
 </div></div>
-
 ### Step-by-Step
 
 To integrate NexPlayer™ into your project you must complete the following steps:
@@ -171,6 +170,8 @@ document.addEventListener('keydown', function(e) {
         }
     });
 ```
+
+
 #### Details
 
 Navigating inside the NexPlayer™ UI can be done by shifting the focus from one element to another with the remote controller. A function can be assigned to one of the buttons of the remote controller using remote control key codes:
@@ -194,6 +195,8 @@ document.addEventListener('keydown', function(e) {
     }
 }      
 ```
+
+
 ## NexPlayer™ Configuration
 
 There are a substantial number of customizable options for NexPlayer™ including: the name and subtitle format of the video, a logo for the company, the DRM information, a VAST link, and the thumbnail preview...
@@ -202,39 +205,44 @@ There are a substantial number of customizable options for NexPlayer™ includin
     key: 'License key to validate the playback', // Mandatory
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
-    poster: 'URL poster', // Optional
-    name: 'Name of the Video', // Optional
-    subtitle: 'Subtitle of the video', // Optional
-    logosrc: 'URL logo of the company', // Optional
-    callbacksForPlayer: callback, // Optional callback called with the player instances
     drm: [{
         NexDRMType:'DRM Type (eg. com.widevine.alpha(', NexDRMKey: 'URI for the DRM Key', 
         NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
         NexCallback:OptionalDRMCallbackForFairPlay
     }], // Optional DRM information
-    vast: 'URL with a VAST/VPAID/VMAP advertisement', // Optional
-    autoplay: true, // Optional
-    mutedAtStart: true, // Optional    
     debug: true, // Optional
-    callbacksForLogger: callback, // Optional callback called with the logger instances
-    startFullscreen: true, // Optional
-    disableFullscreen: true, // Optional
-    showingFullUI: true, // Optional, used for showing the player controls
-    callbacksForReturn: callback, // Optional callback called with the return button
-    disableKeyEvents: false,
-    useDefaultControls: true, // Optional, to use the remote controller
-    resumePosition: number, // Optional, used for starting the video from the given position in seconds
-    addRequestFilter: Function, //Optional, used for give filters to the drm request
-    externalSubtitles: 
-    {"src": "URL for the subtitles file", "language": "Subtitle language"}, // Optional, only WEBVTT subtitles can be used. "language" property is a string that define how the subtitle will be identified
-    staticThumbnailsVTT: string, // URI of the VTT file,
+    vast: 'URL with a VAST/VPAID/VMAP advertisement', // Optional
+    externalSubtitles: {"src": "URL for the subtitles file", "language": "Subtitle language"}, 
+    // Optional, only WEBVTT subtitles can be used. "language" property is a string that 
+    // define how the subtitle will be identified
+    useDynamicThumbnails: false, // Optional, none of the following properties is required
+	staticThumbnailsImage: string, // URI of the Image thumbnails will be fetched from (Mandatory when using static thumbs)
+    staticThumbnailsVTT: string, // URI of the VTT file containing thumbnails timing and location info (Optional when using static thumbs)
     thumbChunking: { // This property will only take effect if the static thumbnails were passed ("staticThumbnailsVTT")
         limit: 3, // Number of chunks whose thumbnails images are loaded
         total: 30 // Total number of chunks
     },
-    useNewRelicTracker: boolean, // By default is set to false. Set to true in order to use the tracker. You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
-    preferredAudioCodec: array, //This property can be used to give priority to specific audio codec
+    callbacksForPlayer: callback, // Optional callback called with the player instances
+    callbacksForLogger: callback, // Optional callback called with the logger instances
+    callbacksForReturn: callback, // Optional callback called with the return button
+    addRequestFilter: Function, //Optional, used for give filters to the drm request
+    autoplay: true, // Optional
+    disableFullscreen: true, // Optional
+    disableKeyEvents: false, // Optional
+    mutedAtStart: true, // Optional    
+    preferredAudioCodec: array, // This property can be used to give priority to a specific audio codec
+    resumePosition: number, // Optional, used for starting the video from the given position in seconds
+    showingFullUI: true, // Optional, used for showing the player controls
+    startFullscreen: true, // Optional
     startingBufferLength: 50, // Number of seconds the player will try to achieve when initializing
+    useDefaultControls: true, // Optional, allows usage of remote controller
+    useNewRelicTracker: boolean, 
+    // By default is set to false. Set to true in order to use the tracker. 
+    // You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
+    name: 'Name of the Video', // Optional
+    subtitle: 'Subtitle name of the video', // Optional
+    logosrc: 'URL logo of the company', // Optional
+    poster: 'URL poster', // Optional
    
 ```
 

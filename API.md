@@ -4,7 +4,7 @@
 
 ***
 
-## nexplayer
+## Nexplayer
 
 #### Methods
 
@@ -13,7 +13,7 @@
 
 ***
 
-## player
+## Player
 
 **Type**: global class
 
@@ -102,7 +102,7 @@
 ***
 
 
-## ads
+## Ads
 
 Please, consult this <a href ="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=ads-events" target="_blank"> link </a> for information on how to use ad events.
 
@@ -140,6 +140,8 @@ Please, consult this <a href ="https://nexplayer.github.io/TizenWebOS/#/advanceu
 
 ### Methods
 
+***
+
 #### <a id="setup"></a> nexplayer.Setup(configObj)
 
 Set NexPlayer settings using the configuration object as is indicated in this <a href ="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration" target="_blank">link</a>.
@@ -157,9 +159,13 @@ Change the url stream of the video. It is possible to set a new url with new drm
 
 ## Player
 
+***
+
 
 
 ### Methods
+
+***
 
 #### Miscellaneous
 
@@ -342,6 +348,8 @@ Toggle the video playback between the play and pause states.
 
 ### Getters
 
+***
+
    #### <a id="getaudiostreams"></a> player.getAudioStreams() ⇒ Array.< AudioStream >
 
 Get the available audio streams.
@@ -505,6 +513,8 @@ Retrieve the current version of the player.
 
 ### Setters
 
+***
+
    #### <a id="setaudio"></a> player.setAudio(streamID)
 
 Set the current audio stream by using the UI.
@@ -578,6 +588,8 @@ Set the video quality level.
 
 ### Static enums
 
+***
+
 #### <a id="nexprotocol"></a> Player.NexProtocol : <code>enum</code>
 **Type**: static enum of [<code>Player</code>](#Player)  
 **Read only**: true  
@@ -612,6 +624,8 @@ Set the video quality level.
 | DYNAMIC_THUMBNAILS | <code>number</code> | <code>1</code> |
 
 ### Global typedefs
+
+***
 
 #### <a id="audiostream"></a> AudioStream : <code>Object</code>
 **Type**: global typedef  
@@ -658,11 +672,14 @@ Set the video quality level.
 
 
 
-## ads
+## Ads
 
+***
 
 
 ### Methods
+
+***
 
    #### <a id="adplay"></a> nexplayer.AdInstance().play() 
 
@@ -679,6 +696,8 @@ Pause the current ad.
 
 
 ### Getters
+
+***
 
    ####  <a id="getadcurrenttime"></a> nexplayer.AdInstance().getAdCurrentTime() ⇒ number
 
@@ -746,6 +765,8 @@ Get the volume of ad depending on what is on stage.
 
 
 ### Setters
+
+***
 
    ####  <a id="setmute"></a> nexplayer.AdInstance().setMute(state) 
 

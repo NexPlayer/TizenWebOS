@@ -139,9 +139,7 @@ Please, consult this <a href ="https://nexplayer.github.io/TizenWebOS/#/advanceu
 ***
 
 
-
 ## Nexplayer
-
 
 
 ### Methods
@@ -162,10 +160,9 @@ Change the url stream of the video. It is possible to set a new url with new drm
 | drm | <code>Array.<NexDRMInformation></code> | that contains an array of DRM information (by default it is null). |
 
 
+***
 
 ## Player
-
-***
 
 
 ### Methods
@@ -681,9 +678,9 @@ Set the video quality level.
 
 
 
-## Ads
-
 ***
+
+## Ads
 
 
 ### Methods
@@ -701,7 +698,6 @@ Play the ad
 Pause the current ad.
 
 **Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
-
 
 
 ### Getters
@@ -770,7 +766,6 @@ Get the volume of ad depending on what is on stage.
 
 **Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 **Returns**: number - is a number between 0 and 1. -1 is returned if this value is not available.
-
 
 
 ### Setters

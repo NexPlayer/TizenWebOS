@@ -19,6 +19,8 @@
 
 **Type**: global class
 
+***
+
 #### Methods
 
 ##### Miscellaneous
@@ -108,6 +110,8 @@
 
 Please, consult this <a href ="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=ads-events" target="_blank"> link </a> for information on how to use ad events.
 
+***
+
 #### Methods
 
  - [play()](#adplay)
@@ -164,8 +168,8 @@ Change the url stream of the video. It is possible to set a new url with new drm
 ***
 
 
-
 ### Methods
+
 
 ***
 
@@ -227,8 +231,7 @@ Removes custom data from New Rellic's tracker if initialized.
 | key   | <code>string</code> | Data variable name |
 
 
-
-
+***
 
 #### Navigation
 
@@ -295,8 +298,7 @@ Jump to the livestream current time from the current position (if isUTC is true,
 **Type**: instance method of [<code>Player</code>](#Player) 
 
 
-
-
+***
 
 #### Player states
 
@@ -327,8 +329,7 @@ Jump to the livestream current time from the current position (if isUTC is true,
 **Returns**: boolean - *true* if the seek bar of the video is currently focused, *false* otherwise.
 
 
-
-
+***
 
 #### Toggle
 

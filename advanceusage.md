@@ -36,8 +36,14 @@ NexPlayer™ supports several DRM technologies:
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight: 900; font-weight:110; font-size:30px;">&#8505;</span></th>      
     </tr>
     <tr>
-      <th  scope="row">LG WebOS 3.0+</th>      
+      <th  scope="row">LG WebOS 4.0+</th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>             
+    </tr>
+    <tr>
+      <th  scope="row">LG WebOS 3.0</th>      
+      <th  scope="row">&#10060</th>  </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>             
     </tr>
@@ -92,7 +98,7 @@ NexPlayer™ supports several DRM technologies:
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
 <p>
 *For Tizen, DRM is supported from 2017 device models and higher<br>    
-*For WebOS, DRM is supported from WebOS 4.0 and higher  
+*For WebOS, DRM is supported from WebOS 3.0 and higher  
 </p>
 </div></div>
 

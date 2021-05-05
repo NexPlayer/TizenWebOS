@@ -43,7 +43,7 @@ NexPlayer™ supports several DRM technologies:
     </tr>
     <tr>
       <th  scope="row">LG WebOS 3.0</th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span>  </th>      
+      <th  scope="row">&#10060</th> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>             
     </tr>

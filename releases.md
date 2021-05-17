@@ -4,6 +4,16 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.3.8
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.3.8_20210517/nexplayer.js
+```
+* **[Added]** Implemented getThumbnailAt(time) and getThumbnails() functions. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=custom-events">here</a>.
+* **[Added]** When choosing subtitles, playback stops until leaving the UI.
+
+* **[Improved]** Enhanced thubmnail fetch when hovering.
+* **[Improved]** staticThumbnailsVTT can now provide a VTT reference instead of an actual VTT.
+
 #### Version 3.3.7
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.7_20210426/nexplayer.js

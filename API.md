@@ -74,6 +74,8 @@
  - [getProtocol()](#getprotocol) ⇒ number
  - [getQualityLevels()](#getqualitylevels) ⇒ array
  - [getSubtitles()](#getsubtitles) ⇒ array
+ - [getThumbnailAt()](#getthumbnailat) ⇒ [Array\<Frame\>](#frame)
+ - [getThumbnails()](#getthumbnails) ⇒ [Array\<Frame\>](#frame)
  - [getTracks()](#gettracks) ⇒ [Array\<Track\>](#track)
  - [getURL()](#geturl) ⇒ string
  - [getVersion()](#getversion) ⇒ string
@@ -99,6 +101,7 @@
 
 
  - [AudioStream](#audiostream) : object
+ - [Frame](#frame) : object
  - [NexDRMInformation](#nexdrminformation) : object
  - [NexHeaders](#nexheaders) : object
  - [Track](#track) : object
@@ -482,17 +485,53 @@ The returned array contains objects with the following properties:
 
 **Returns**:: Array - all the subtitles availables in the stream.
 
+   #### <a id="getthumbnailat"></a> player.getThumbnailAt() ⇒ Frame
+
+Get the thumbnail from a specific video time.
+
+The returned object contains the next information:
+
+| Name    | Type                | Description                  |
+| ------- | ------------------- | ---------------------------- |
+| f       | <code>canvas</code> | Thumbnail canvas instance.   |
+| w       | <code>number</code> | Width.                       |
+| h       | <code>number</code> | Height.                      |
+| st      | <code>number</code> | Thumbnail starting time.     |
+| ft      | <code>number</code> | Thumbnail ending time.       |
+
+**Type**: instance method of [<code>Player</code>](#Player)     
+
+**Returns**:: Frame - thumbnail from a specific video time.
+
+   #### <a id="getthumbnails"></a> player.getThumbnails() ⇒ Array.< Frame >
+
+Get all the available thumbnails.
+
+Each array's element contains the next information:
+
+| Name    | Type                | Description                  |
+| ------- | ------------------- | ---------------------------- |
+| f       | <code>canvas</code> | Thumbnail canvas instance.   |
+| w       | <code>number</code> | Width.                       |
+| h       | <code>number</code> | Height.                      |
+| st      | <code>number</code> | Thumbnail starting time.     |
+| ft      | <code>number</code> | Thumbnail ending time.       |
+
+**Type**: instance method of [<code>Player</code>](#Player)     
+
+**Returns**:: Array< Frame > - all the avaliable thumbnails.
+
    #### <a id="gettracks"></a> player.getTracks() ⇒ Array.< Track >
 
 Get all the video avaliable tracks (different qualities).
 
-This array contain the next information:
+Each array's element contains the next information:
 
-| Param | Type | Description |
-| --- | --- | --- |
-| id | <code>number</code> | of all tracks |
-| width | <code>number</code> | that contains an number with width of all tracks |
-| height | <code>number</code> | that contains an number with height of all tracks |
+| Param   | Type                | Description                                        |
+| ------- | ------------------- | -------------------------------------------------- |
+| id      | <code>number</code> | of all tracks                                      |
+| width   | <code>number</code> | that contains an number with width of all tracks   |
+| height  | <code>number</code> | that contains an number with height of all tracks  |
 | bitrate | <code>number</code> | that contains an number with bitrate of all tracks |
 
 **Type**: instance method of [<code>Player</code>](#Player)     
@@ -642,6 +681,19 @@ Set the video quality level.
 | id | <code>number</code> | id of the stream. |
 | language | <code>string</code> | language of the stream. |
 | name | <code>string</code> | name of the stream. |
+
+#### <a id="frame"></a> Frame : <code>Object</code>
+
+**Type**: global typedef     
+**Properties**:  
+
+| Name    | Type                | Description                  |
+| ------- | ------------------- | ---------------------------- |
+| f       | <code>canvas</code> | Thumbnail canvas instance.   |
+| w       | <code>number</code> | Width.                       |
+| h       | <code>number</code> | Height.                      |
+| st      | <code>number</code> | Thumbnail starting time.     |
+| ft      | <code>number</code> | Thumbnail ending time.       |
 
 #### <a id="nexdrminformation"></a> NexDRMInformation : <code>Object</code>
 

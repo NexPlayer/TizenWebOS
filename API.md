@@ -395,7 +395,7 @@ Retrieve the number id of the current subtitle. If the returned value is -1 no s
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 
-**Returns**:: number - id of the current subtitle.
+**Returns**: number - id of the current subtitle.
 
    #### <a id="getcurrenttime"></a> player.getCurrentTime() ⇒ number
 
@@ -468,7 +468,7 @@ This array contain the following information:
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
-**Returns** array - contains all video quality levels.
+**Returns**: array - contains all video quality levels.
 
    #### <a id="getsubtitles"></a> player.getSubtitles() ⇒ array
 
@@ -483,7 +483,7 @@ The returned array contains objects with the following properties:
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 
-**Returns**:: Array - all the subtitles availables in the stream.
+**Returns**: Array - all the subtitles availables in the stream.
 
    #### <a id="getthumbnailat"></a> player.getThumbnailAt() ⇒ Frame
 
@@ -501,7 +501,7 @@ The returned object contains the next information:
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 
-**Returns**:: Frame - thumbnail from a specific video time.
+**Returns**: Frame - thumbnail from a specific video time.
 
    #### <a id="getthumbnails"></a> player.getThumbnails() ⇒ Array.< Frame >
 
@@ -519,7 +519,7 @@ Each array's element contains the next information:
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 
-**Returns**:: Array< Frame > - all the avaliable thumbnails.
+**Returns**: Array< Frame > - all the avaliable thumbnails.
 
    #### <a id="gettracks"></a> player.getTracks() ⇒ Array.< Track >
 
@@ -536,7 +536,7 @@ Each array's element contains the next information:
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 
-**Returns**:: Array< Track > - all the video avaliable tracks and its different levels of quality.
+**Returns**: Array< Track > - all the video avaliable tracks and its different levels of quality.
 
    #### <a id="geturl"></a> player.getURL() ⇒ string
 
@@ -544,7 +544,7 @@ Returns the current stream's URL.
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 
-**Returns**:: string - stream URL.
+**Returns**: string - stream URL.
 
    #### <a id="getversion"></a> player.getVersion() ⇒ string
 
@@ -552,7 +552,7 @@ Retrieve the current version of the player.
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 
-**Returns**:: string - identify the version of the player.
+**Returns**: string - identify the version of the player.
 
 
 

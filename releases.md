@@ -8,7 +8,7 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.8_20210517/nexplayer.js
 ```
-* **[Added]** Implemented getThumbnailAt(time) and getThumbnails() functions. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=custom-events">here</a>.
+* **[Added]** Implemented getThumbnailAt(time) and getThumbnails() functions. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/API?id=getthumbnailat">here</a>.
 * **[Added]** When choosing subtitles, playback stops until leaving the UI.
 
 * **[Improved]** Enhanced thubmnail fetch when hovering.

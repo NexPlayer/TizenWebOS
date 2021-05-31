@@ -74,7 +74,7 @@
  - [getProtocol()](#getprotocol) ⇒ number
  - [getQualityLevels()](#getqualitylevels) ⇒ array
  - [getSubtitles()](#getsubtitles) ⇒ array
- - [getThumbnailAt()](#getthumbnailat) ⇒ [Array\<Frame\>](#frame)
+ - [getThumbnailAt()](#getthumbnailat) ⇒ Promise
  - [getThumbnails()](#getthumbnails) ⇒ [Array\<Frame\>](#frame)
  - [getTracks()](#gettracks) ⇒ [Array\<Track\>](#track)
  - [getURL()](#geturl) ⇒ string
@@ -485,23 +485,13 @@ The returned array contains objects with the following properties:
 
 **Returns**: Array - all the subtitles availables in the stream.
 
-   #### <a id="getthumbnailat"></a> player.getThumbnailAt() ⇒ Frame
+   #### <a id="getthumbnailat"></a> player.getThumbnailAt() ⇒ Promise
 
-Get the thumbnail from a specific video time.
-
-The returned object contains the next information:
-
-| Name    | Type                | Description                  |
-| ------- | ------------------- | ---------------------------- |
-| f       | <code>canvas</code> | Thumbnail canvas instance.   |
-| w       | <code>number</code> | Width.                       |
-| h       | <code>number</code> | Height.                      |
-| st      | <code>number</code> | Thumbnail starting time.     |
-| ft      | <code>number</code> | Thumbnail ending time.       |
+Get the thumbnail at a specific video time.
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 
-**Returns**: Frame - thumbnail from a specific video time.
+**Returns**: Promise - waits for a specific thumbnail to load.
 
    #### <a id="getthumbnails"></a> player.getThumbnails() ⇒ Array.< Frame >
 

@@ -4,6 +4,13 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.3.9
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.3.9_20210531/nexplayer.js
+```
+* **[Improved]** Changed getThumbnailAt(time) to return a Promise instead of a thumbnail. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/API?id=getthumbnailat">here</a>.
+* **[Improved]** Fixed crash due to providing non-finite double values.
+
 #### Version 3.3.8
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.8_20210517/nexplayer.js

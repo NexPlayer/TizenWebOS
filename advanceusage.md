@@ -760,6 +760,22 @@ videoElement.addEventListener('videothirdquartile', function(e){
 });
 ```
 
+##### 60secondsin
+
+This event is fired when the current video time is 60 or more seconds:
+```js
+// Accessing the time when the event triggered
+var sixtysecondsin = event.detail;
+```
+
+**detail** type is number and returns the quartile time
+
+```js
+videoElement.addEventListener('60secondsin', function(e){
+  console.log("60 SECONDS IN -----> ", e);
+});
+```
+
 ### Nexplayer Events
 
 Advanced events such as a track change are available using the <code>on</code> method of NexPlayer.

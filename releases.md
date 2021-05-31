@@ -8,8 +8,14 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.9_20210531/nexplayer.js
 ```
+* **[Added]** Milestone management for trailers and scrubbing. It can be used through the property <a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"trailer"</a>
+* **[Added]** 60 seconds in event added. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=custom-events">here</a>.
+
 * **[Improved]** Changed getThumbnailAt(time) to return a Promise instead of a thumbnail. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/API?id=getthumbnailat">here</a>.
 * **[Improved]** Fixed crash due to providing non-finite double values.
+
+
+Date: May 31st 2021 
 
 #### Version 3.3.8
 ```
@@ -20,6 +26,9 @@ https://nexplayer.nexplayersdk.com/HTML5/3.3.8_20210517/nexplayer.js
 
 * **[Improved]** Enhanced thumbnail fetch when hovering.
 * **[Improved]** staticThumbnailsVTT can now provide a VTT reference instead of an actual VTT.
+
+
+Date: May 14th 2021 
 
 #### Version 3.3.7
 ```

@@ -243,6 +243,8 @@ There are a substantial number of customizable options for NexPlayer™ includin
     subtitle: 'Subtitle name of the video', // Optional
     logosrc: 'URL logo of the company', // Optional
     poster: 'URL poster', // Optional
+    trailer: boolean, 
+    // By default is set to false. Set to true when a stream should be considered a trailer, false when not.
    
 ```
 

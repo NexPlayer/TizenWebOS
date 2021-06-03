@@ -57,7 +57,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.3.6.1_20210312/nexplayer.js
 
 * **[Improved]** Fixed ABR issue.
 * **[Improved]** Fixed file not found issue.
-* **[Improved]** Fixed non-finite.
+* **[Improved]** Fixed non-finite value issue on seek.
 
 Date: March 12th 2021 
 

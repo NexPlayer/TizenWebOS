@@ -53,7 +53,11 @@ Date: April 27th 2021
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.6.1_20210312/nexplayer.js
 ```
+* **[Added]** Changed destroy method to return a Promise. UnMount should be use when this Promise is resolved to fully destroy the player.
+
 * **[Improved]** Fixed ABR issue.
+* **[Improved]** Fixed file not found issue.
+* **[Improved]** Fixed non-finite.
 
 Date: March 12th 2021 
 

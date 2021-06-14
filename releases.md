@@ -4,6 +4,20 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.3.10
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.3.10_20210614/nexplayer.js
+```
+* **[Added]** Implemented trickplay(value). Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/API?id=trickplay">here</a>.
+* **[Added]** Start time improvement. It can be used through the property <a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"improveStartTime"</a>
+* **[Added]** Callbacks for handling external subtitles and thumbnails errors. More information <a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"here"</a>
+
+* **[Improved]** Fixed "file not found" error.
+* **[Improved]** Fixed crash after mid-roll and pre-roll ads on Tizen.
+
+
+Date: June 14th 2021 
+
 #### Version 3.3.9
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.9_20210531/nexplayer.js

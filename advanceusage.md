@@ -887,9 +887,17 @@ Cross-Origin Resource Sharing (CORS) is a mechanism that uses additional HTTP he
 This means that if a video is hosted in a different domain than the player, a header like <code>Access-Control-Allow-Origin: httрs://foo.mycompany.com </code> should be included in the response in order for it not to be blocked by the browser for security reasons. To allow all domains, set the header to <code>Access-Control-Allow-Origin: *</code>.
 
 More information is available at <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS" target = "_blank" >MDN Web Docs</a>.
+
+## Trickplay
+
+We have the next list of ad events available:
+
+* trickPlayStarted: Thrown when trickplay's value changes
+* trickPlayTimeUpdate: Thrown every tick
+* trickPlayEnded: Thrown when trickplay ends
+
+
 ## Upgrading to a New Version
-
-
 
 When using the <a href="#/releases?" target = "_blank" >latest release</a> , upgrades will be applied automatically. When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary.
 

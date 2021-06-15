@@ -784,9 +784,9 @@ Advanced events such as a track change are available using the <code>on</code> m
  ```
 
 ## Closing Container
-If you want to reuse the same div for different videos, the container div must be unmounted properly.
+If you want to reuse the same div for different videos, the container div must be unmounted properly. The way this is done has changed recently, now the following command must be used:
 ```js
-nexplayer.UnMount(document.getElementById('player');
+player.destroy().then(nexplayer.UnMount(document.getElementById('player'));
 ```
 
 ## Ad Events and Ad Methods

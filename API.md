@@ -152,17 +152,58 @@ Please, consult this <a href ="https://nexplayer.github.io/TizenWebOS/#/advanceu
 
 #### <a id="setup"></a> nexplayer.Setup(configObj)
 
+Creates and initializes the player.
+
 Set NexPlayer settings using the configuration object as is indicated in this <a href ="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration" target="_blank">link</a>.
+
+**Type**: instance method of [<code>nexplayer</code>](#Player)   
+**Param**: **info** is an object which values could be:
+
+| Param | Type | Description |
+| --- | --- | --- |
+| key | <code>string</code> | NexPlayer key to validates the playback. |
+| div | <code>HTMLDivElement</code> | The div container of the player. |
+| src | <code>string</code> | URL of the video to be played. |
+| adsDelay | <code>number</code> | Determines the delay before the ad starts playing. |
+| addRequestFilter | <code>Function</code> | Sets a function that receives the DRM request as a parameter and changes its Headers. |
+| autoplay | <code>boolean</code> | Determines if the video must start playing or paused. By default it’s set to true. |
+| callbackForLogger | <code>Function</code> | Function to be called when the logger shows a message. |
+| callbackForReturn | <code>Function</code> | Sets a callback to be executed when the corresponding button is clicked. |
+| callbackForSubtitles | <code>Function</code> | Sets a callback to be executed when the corresponding subtitle is loaded. |
+| callbacksWithPlayers | <code>Function</code> | Used for retrieving the nexplayer instance and video element. This is necessary for getting the instance and use the NexPlayer API. |
+| cast | <code>boolean</code> | Determines if the cast will be enabled or not. |
+| debug | <code>boolean</code> | Determines if log information is showed. By default is set to true. |
+| defaultLanguage | <code>string</code> | Determines which is the default audio language. |
+| disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video. |
+| drm | <code>Array<NexDRMInformation></code> | Contains an object of DRM information. By default it’s set to null. |
+| externalSubtitles | <code>Object</code> | Used to provide a WEBVTT as external subtitles. |
+| hideControlBarOnStart | <code>boolean</code> | Determines if the control bar will hide when the video starts. |
+| hideUITime | <code>boolean</code> | Determines if the time will be hidden in the UI. |
+| improveStartUp | <code>boolean</code> | Determines whether the video has to start at the lowet bitrate or not. |
+| logosrc | <code>string</code> | URL logo of the company. |
+| mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. By default this value is set to false. |
+| preferredAudioCodec | <code>Array</code> | Determines the codec priority. |
+| poster | <code>string</code> | URL of the video poster. |
+| subtitle | <code></code> | Subtitle name of the video. |
+| reinitializeAfterAds | <code>boolean</code> | Used to avoid errors related to ads on Tizen 2020. |
+| resumePosition | <code>number</code> | Determines the position where the video will start playing. |
+| showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
+| staticThumbnailsImage | <code>string</code> | Image to extract thumbnails from. |
+| staticThumbnailsVTT | <code>string</code> | Used to provide the player an external thumbnails VTT file. |
+| startFullScreen | <code>boolean</code> | Determines if the video will start on full screen. |
+| startingBufferLength | <code>number</code> | Determines the starting buffer lenght. |
+| thumbChunking | <code>Object</code> | Sets the maximum chunks to load at a time and the total number of chunks to divide the thumbnail array into. |
+| title | <code>string</code> | Name of the video. |
+| trailer | <code>boolean</code> | Determines if a stream should be considered a trailer. |
+| type_360 | <code>boolean</code> | Determines if the video will be a 360° video. |
+| useDefaultControls | <code>boolean</code> | Determines if the tv controller will be able to be used to navigate in the UI. |
+| useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this values is set to false. |
+| useNewRelicTracker | <code>boolean</code> | Determines if the New Relick tracker will be used. |
+| vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
 
 #### <a id="changesource"></a> nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
 Change the url stream of the video. It is possible to set a new url with new drm config if necessary.
-
-| Param | Type | Description |
-| --- | --- | --- |
-| src | <code>string</code> | of the video to be played. |
-| drm | <code>Array.<NexDRMInformation></code> | that contains an array of DRM information (by default it is null). |
-
 
 ***
 

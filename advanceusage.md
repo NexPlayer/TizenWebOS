@@ -764,7 +764,7 @@ videoElement.addEventListener('videothirdquartile', function(e){
 
 This event is fired when the current video time is 60 or more seconds:
 ```js
-// Accessing the time when the event triggered
+// Accessing the time when the event is triggered
 var sixtysecondsin = event.detail;
 ```
 
@@ -773,6 +773,54 @@ var sixtysecondsin = event.detail;
 ```js
 videoElement.addEventListener('60secondsin', function(e){
   console.log("60 SECONDS IN -----> ", e);
+});
+```
+
+##### trickPlayStarted
+
+This event is fired when the trick play value is changed:
+```js
+// Accessing the time when the event is triggered
+var trickPlayTime = event.detail;
+```
+
+**detail** type is number and returns time when trick play started (currentTime when trick play value changed).
+
+```js
+videoElement.addEventListener('trickPlayStarted', function(e){
+  console.log("Trick play changed at time:", e.detail);
+});
+```
+
+##### trickPlayTimeUpdate
+
+This event is fired each time trick play time is changed (with a frequency of value times per second):
+```js
+// Accessing the time when the event is triggered
+var trickPlayTime = event.detail;
+```
+
+**detail** type is number and returns the time where trick play is.
+
+```js
+videoElement.addEventListener('trickPlayTimeUpdate', function(e){
+  console.log("Trick play updated at time:", e.detail);
+});
+```
+
+##### trickPlayEnded
+
+This event is fired when trick play ends:
+```js
+// Accessing the time when the event is triggered
+var trickPlayTime = event.detail;
+```
+
+**detail** type is number and returns the time where trick play is.
+
+```js
+videoElement.addEventListener('trickPlayEnded', function(e){
+  console.log("Trick play ended at time:", e.detail);
 });
 ```
 

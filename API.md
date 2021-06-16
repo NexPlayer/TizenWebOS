@@ -28,6 +28,7 @@
 
  - [play()](#play)
  - [pause()](#pause)
+ - [destroy(UnMount(player))](#destroy)
  - [on(callbackType, functionToBeCalled)](#on)
  - [enableABR()](#playerenableabr)
  - [addTrackerData()](#addtrackerdata)
@@ -228,6 +229,14 @@ Play the video.
    #### <a id="pause"></a> player.pause()
 
 Pause the video.
+
+**Type**: instance method of [<code>Player</code>](#Player)
+
+   #### <a id="destroy"></a> player.destroy().then(UnMount(document.getElementById('player')))
+
+Destroy the player. This method returns a promise which must call to UnMount as soon as it is resolved.
+This way, the player will be completely destroyed and new instances could be created afterwards. The UnMount
+method must be called from the 'nexplayer' instance and needs the 'player' element to be passed as argument.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 

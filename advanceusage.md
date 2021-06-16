@@ -831,10 +831,10 @@ Advanced events such as a track change are available using the <code>on</code> m
  nexplayerInstance.on(nexplayer.Player.NexEvent.Track_Change, function() { console.log("The current track has changed") });
  ```
 
-## Closing Container
-If you want to reuse the same div for different videos, the container div must be unmounted properly.
+## Player destroy
+If you want to reuse the same div for different videos, the container div must be unmounted properly. The way this is done has changed recently, now the following command must be used:
 ```js
-nexplayer.UnMount(document.getElementById('player');
+player.destroy().then(nexplayer.UnMount(document.getElementById('player'));
 ```
 
 ## Ad Events and Ad Methods

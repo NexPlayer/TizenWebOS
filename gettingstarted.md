@@ -60,7 +60,7 @@ Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.c
         <div id="player"></div>
     </div>
     <!-- MANDATORY! LOAD NEXPLAYER WITH THE TAG "DEFER" -->
-    <script src="https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js" defer></script>
+    <script src="Latest SDK version. Check 'Releases' section" defer></script>
     <script type="text/javascript">
     //Wait the document to be ready
     $( document ).ready(function() {
@@ -90,7 +90,7 @@ To integrate NexPlayer™ into your project you must complete the following step
 - The NexPlayer™ JavaScript library should be included in the HTML file:
 
 ```html
-<script src="https://nexplayer.nexplayersdk.com/latest/tizen/nexplayer.js" defer></script>
+<script src="Latest SDK version. Check 'Releases' section" defer></script>
 ```
 
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that the use of https to call our library is mandatory. <br>
@@ -202,42 +202,48 @@ document.addEventListener('keydown', function(e) {
 There are a substantial number of customizable options for NexPlayer™ including: the name and subtitle format of the video, a logo for the company, the DRM information, a VAST link, and the thumbnail preview...
 
 ```js
-
     key: 'License key to validate the playback', // Mandatory
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
-    adsDelay: number, //Optional, used to add a delay before the ad starts playing. Specified in milliseconds
-    addRequestFilter: Function, //Optional, used for give filters to the drm request
+    adsDelay: number, // Optional, used to add a delay before the ad starts playing. Specified in milliseconds
+    addRequestFilter: Function, // Optional, used for give filters to the drm request
     autoplay: true, // Optional
     callbacksForLogger: callback, // Optional callback called with the logger instances
     callbacksForReturn: callback, // Optional callback called with the return button
     callbackForSubtitles: callback, // Optional callback called with the subtitles instance
     callbacksForPlayer: callback, // Optional callback called with the player instances
-    cast: boolean, //Optioanl, used to determines if the cast will be enabled or not
+    cast: boolean, // Optioanl, used to determines if the cast will be enabled or not
     debug: true, // Optional
-    defaultLanguage: string, //Optional
+    defaultLanguage: string, // Optional
     disableKeyEvents: false, // Optional
     drm: [{
         NexDRMType:'DRM Type (eg. com.widevine.alpha(', NexDRMKey: 'URI for the DRM Key', 
         NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
         NexCallback:OptionalDRMCallbackForFairPlay
     }], // Optional DRM information
-    externalSubtitles: {"src": "URL for the subtitles file", "language": "Subtitle language"}, 
+    externalSubtitles: {
+        src: "URL for the subtitles file",
+        language: "Subtitle language",
+        callback: function(e), // Error callback for subtitles (returns any received errors)
+    }, 
     // Optional, only WEBVTT subtitles can be used. "language" property is a string that 
-    // define how the subtitle will be identified
-    hideControlBarOnStart: boolean, //Optional
-    hideUITime: boolean, //Optional
-    improveStartUp: boolean //Optional
+    // define how the subtitle will be identified.
+    hideControlBarOnStart: boolean, // Optional
+    hideUITime: boolean, // Optional
+    improveStartUp: boolean // Optional
     logosrc: 'URL logo of the company', // Optional
     mutedAtStart: true, // Optional    
-    preferredAudioCodec: Array, // This property can be used to give priority to a specific audio codec
+    preferredAudioCodec: Array, // This property can be used to give priority to a specific audio codec.
     poster: 'URL poster', // Optional
     subtitle: 'Subtitle name of the video', // Optional
-    reinitializeAfterAds: boolean, //Optional, used to avoid errors related to ads on Tizen 2020.
-    resumePosition: number, // Optional, used for starting the video from the given position in seconds
+    reinitializeAfterAds: boolean, // Optional, used to avoid errors related to ads on Tizen 2020.
+    resumePosition: number, // Optional, used for starting the video from the given position in seconds.
     showingFullUI: true, // Optional, used for showing the player controls
 	staticThumbnailsImage: string, // URI of the Image thumbnails will be fetched from (Mandatory when using static thumbs)
-    staticThumbnailsVTT: string, // URI of the VTT file containing thumbnails timing and location info (Optional when using static thumbs)
+    staticThumbnailsVTT: {
+        src: 'URL of the VTT file',
+        callback: function(e), // Error callback for thumbnails (returns any received errors)
+    }, // Optional
     startFullscreen: true, // Optional
     startingBufferLength: 50, // Number of seconds the player will try to achieve when initializing
     thumbChunking: { // This property will only take effect if the static thumbnails were passed ("staticThumbnailsVTT")
@@ -245,15 +251,14 @@ There are a substantial number of customizable options for NexPlayer™ includin
         total: 30 // Total number of chunks
     },
     title: 'Name of the Video', // Optional
-    trailer: boolean,//Optional, by default is set to false. Set to true when a stream should be considered a trailer, false when not.
-    type_360: boolean, //Optional, determines if the video will be a 360° video.
+    trailer: boolean,// Optional, by default is set to false. Set to true when a stream should be considered a trailer, false when not.
+    type_360: '360 visualisation type' // Optional, 'equirectangular' or 'cubemap'.
     useDefaultControls: true, // Optional, allows usage of remote controller
     useDynamicThumbnails: false, // Optional, none of the following properties is required
     useNewRelicTracker: boolean,
     // By default is set to false. Set to true in order to use the tracker. 
     // You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
     vast: 'URL with a VAST/VPAID/VMAP advertisement', // Optional
-
 ```
 
 ## Tizen Studio

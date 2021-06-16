@@ -939,6 +939,6 @@ More information is available at <a href="https://developer.mozilla.org/en-US/do
 
 
 
-When using the <a href="#/releases?" target = "_blank" >latest release</a> , upgrades will be applied automatically. When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary.
+When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary. Here you can find the <a href="#/releases?" target = "_blank" >latest release</a>.
 
 Every new release of NexPlayer™ is backwards compatible.

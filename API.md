@@ -12,6 +12,8 @@
 
  - [Setup(configObj)](#setup)
  - [ChangeSource({src: newSrc, drm: newDrm})](#changesource)
+ - [UnMount(player)](#unmount)
+ - [IsReady()](#isready)
 
 ***
 
@@ -158,7 +160,7 @@ Creates and initializes the player.
 Set NexPlayer settings using the configuration object as is indicated in this <a href ="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration" target="_blank">link</a>.
 
 **Type**: instance method of [<code>nexplayer</code>](#Player)   
-**Param**: **info** is an object which values could be:
+**Parameters**: <code>configObj</code> is an object which values could be:
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -176,7 +178,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | debug | <code>boolean</code> | Determines if log information is showed. By default is set to true. |
 | defaultLanguage | <code>string</code> | Determines which is the default audio language. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video. |
-| drm | <code>Array<NexDRMInformation></code> | Contains an object of DRM information. By default it’s set to null. |
+| drm | <code>Object</code> | Contains an object of DRM information. By default it’s set to null. |
 | externalSubtitles | <code>Object</code> | Used to provide a WEBVTT file as external subtitles. |
 | hideControlBarOnStart | <code>boolean</code> | Determines if the control bar will hide when the video starts. |
 | hideUITime | <code>boolean</code> | Determines if the time will be hidden in the UI. |
@@ -185,15 +187,13 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. False y default. |
 | preferredAudioCodec | <code>Array</code> | Determines the codec priority. |
 | poster | <code>string</code> | Video poster URL. |
-| subtitle | <code></code> | Subtitle name of the video. |
+| subtitle | <code>string</code> | Subtitle name of the video. |
 | reinitializeAfterAds | <code>boolean</code> | Used to avoid errors related to ads on Tizen 2020. False by default. |
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
-| staticThumbnailsImage | <code>string</code> | Image to extract thumbnails from. |
-| staticThumbnailsVTT | <code>Object</code> | Used to provide the player an external thumbnails VTT file. |
+| staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and callback. |
 | startFullScreen | <code>boolean</code> | Determines if the video will start on full screen. |
 | startingBufferLength | <code>number</code> | Determines the starting buffer lenght. |
-| thumbChunking | <code>Object</code> | Sets the maximum chunks to load at a time and the total number of chunks to divide the thumbnail array into. |
 | title | <code>string</code> | Video name. |
 | trailer | <code>boolean</code> | Determines if a stream should be considered a trailer. |
 | type_360 | <code>string</code> | Select the 360 video format to play. Possible values are 'equirectangular' and 'cubemap' |
@@ -205,6 +205,36 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 #### <a id="changesource"></a> nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
 Change the url stream of the video. It is possible to set a new url with new drm config if necessary.
+
+**Type**: instance method of [<code>Player</code>](#Player)  
+**Parameters**: <code>configObj</code> is an object which values could be:
+
+| Param | Type                | Description        |
+| ----- | ------------------- | ------------------ |
+| src   | <code>string</code> | URL of the video to be played. |
+| drm   | [NexDRMInformation](#NexDRMInformation) | Contains an object of DRM information. |
+
+***
+
+#### <a id="unmount"></a> nexplayer.UnMount(player)
+
+Unmounts the player and its dependencies. In order to properly clear the player this method must be called after destroying the very same player. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/API?id=destroy">here</a>. 
+
+**Type**: instance method of [<code>Player</code>](#Player)  
+**Parameters**:
+
+| Param | Type                | Description        |
+| ----- | ------------------- | ------------------ |
+| player | <code>HTMLElement</code> | Player tag |
+
+***
+
+#### <a id="isready"></a> nexplayer.IsReady()
+
+Fetches the player mount/unmount status. If true, it can be mounted again.
+
+**Type**: instance method of [<code>Player</code>](#Player)  
+**Returns**: boolean - Whether the player is ready to be mounted or not.
 
 ***
 
@@ -234,7 +264,7 @@ Pause the video.
 
    #### <a id="destroy"></a> player.destroy().then(UnMount(document.getElementById('player')))
 
-Destroy the player. This method returns a promise which must call to UnMount as soon as it is resolved.
+Destroys the player. This method returns a promise which must call to UnMount as soon as it is resolved.
 This way, the player will be completely destroyed and new instances could be created afterwards. The UnMount
 method must be called from the 'nexplayer' instance and needs the 'player' element to be passed as argument.
 
@@ -245,7 +275,7 @@ method must be called from the 'nexplayer' instance and needs the 'player' eleme
 Adds a listener for Events.
 
 **Type**: instance method of [<code>Player</code>](#Player)      
-**Export**:
+**Parameters**:
 
 | Param              | Type                  | Description                   |
 | ------------------ | --------------------- | ----------------------------- |
@@ -263,7 +293,7 @@ Enable the ABR to change automatically between tracks.
 Adds custom data into New Relic's tracker if initialized.
 
 **Type**: instance method of [<code>Player</code>](#Player)  
-**Export**:
+**Parameters**:
 
 | Param | Type                | Description        |
 | ----- | ------------------- | ------------------ |
@@ -275,7 +305,7 @@ Adds custom data into New Relic's tracker if initialized.
 Removes custom data from New Rellic's tracker if initialized.
 
 **Type**: instance method of [<code>Player</code>](#Player)  
-**Export**:
+**Parameters**:
 
 | Param | Type                | Description        |
 | ----- | ------------------- | ------------------ |
@@ -637,7 +667,7 @@ Set the current track.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
-**Export**:
+**Parameters**:
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -649,7 +679,7 @@ Set the video playback speed.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
-**Export**:
+**Parameters**:
 
 | Param | Type                | Description  |
 | ----- | ------------------- | ------------ |
@@ -661,7 +691,7 @@ Set the video subtitles. Use -1 for deactivating the subtitles.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
-**Export**:
+**Parameters**:
 
 | Param | Type                | Description                  |
 | ----- | ------------------- | ---------------------------- |
@@ -673,7 +703,7 @@ Set the video quality level.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
-**Export**:
+**Parameters**:
 
 | Param | Type | Description |
 | --- | --- | --- |

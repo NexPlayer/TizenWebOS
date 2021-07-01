@@ -4,13 +4,27 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.3.11
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.3.11_20210701/nexplayer.js
+```
+* **[Added]** Chunking properties are internally calculated depending on the number of thumbnails provided. Thus, "thumbChunking" property has been removed.
+* **[Added]** Added "mount" and "unmount" events in order to check when the player is initialized or destroyed. More information <a href="https://nexplayer.github.io/TizenWebOS/#/API?id=isready">here</a>.
+* **[Added]** Added IsReady() method in order to check if the player is ready to mount or not. More information <a href="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=player-destroy">here</a>.
+
+* **[Improved]** Changed staticThumbnailsVTT to staticThumbnails and useDynamicThumbnails to dynamicThumbnails. "staticThumbnailsImg" property has been removed.
+* **[Improved]** Normalized event names throughout all projects. "adended" is now "adcomplete" and "adblockstarted" is now "adblockstart". 
+* **[Improved]** Fixed non-finite value issue when seeking multiple times via controller.
+* **[Improved]** Fixed VTT parsing error which led the URL to be corrupted.
+* **[Improved]** Fixed error when seeking to 0 on VODs.
+
 #### Version 3.3.10
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.10_20210614/nexplayer.js
 ```
 * **[Added]** Implemented trickplay(value). Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/API?id=trickplay">here</a>.
-* **[Added]** Start time improvement. It can be used through the property <a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"improveStartTime"</a>
-* **[Added]** Callbacks for handling external subtitles and thumbnails errors. More information <a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"here"</a>
+* **[Added]** Start time improvement. It can be used through the property <a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"improveStartTime"</a>.
+* **[Added]** Callbacks for handling external subtitles and thumbnails errors. More information <a href="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration">"here"</a>.
 
 * **[Improved]** Fixed "file not found" error.
 * **[Improved]** Fixed crash after mid-roll and pre-roll ads on Tizen.

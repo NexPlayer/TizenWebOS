@@ -221,6 +221,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
         NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
         NexCallback:OptionalDRMCallbackForFairPlay
     }], // Optional DRM information
+    dynamicThumbnails: false, // Optional, none of the following properties is required
     externalSubtitles: {
         src: "URL for the subtitles file",
         language: "Subtitle language",
@@ -239,22 +240,17 @@ There are a substantial number of customizable options for NexPlayer™ includin
     reinitializeAfterAds: boolean, // Optional, used to avoid errors related to ads on Tizen 2020.
     resumePosition: number, // Optional, used for starting the video from the given position in seconds.
     showingFullUI: true, // Optional, used for showing the player controls
-	staticThumbnailsImage: string, // URI of the Image thumbnails will be fetched from (Mandatory when using static thumbs)
-    staticThumbnailsVTT: {
+    staticThumbnails: {
         src: 'URL of the VTT file',
+        img: 'URL of the Image to fetch thumbs from',
         callback: function(e), // Error callback for thumbnails (returns any received errors)
     }, // Optional
     startFullscreen: true, // Optional
     startingBufferLength: 50, // Number of seconds the player will try to achieve when initializing
-    thumbChunking: { // This property will only take effect if the static thumbnails were passed ("staticThumbnailsVTT")
-        limit: 3, // Number of chunks whose thumbnails images are loaded
-        total: 30 // Total number of chunks
-    },
     title: 'Name of the Video', // Optional
     trailer: boolean,// Optional, by default is set to false. Set to true when a stream should be considered a trailer, false when not.
     type_360: '360 visualisation type' // Optional, 'equirectangular' or 'cubemap'.
     useDefaultControls: true, // Optional, allows usage of remote controller
-    useDynamicThumbnails: false, // Optional, none of the following properties is required
     useNewRelicTracker: boolean,
     // By default is set to false. Set to true in order to use the tracker. 
     // You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.

@@ -4,6 +4,25 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.4.0
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.4.0_20210720/nexplayer.js
+```
+* **[Added]** Playlist ad format is now supported. 
+* **[Added]** Remote buttons handlers have been implemented.
+* **[Added]** IMA and PAL ad libraries are now supported. More information on how to use them <a href="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=ads">here</a>.
+* **[Added]** Implemented "removeEventListener" methods for ad events removal. More information on how to use these methods <a href="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=ads-events">here</a>.
+* **[Added]** Implemented "off" methods for player events removal. More information on how to use it <a href="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=nexplayer-events">here</a>.
+
+* **[Improved]** Black screen after ads has been fixed.
+* **[Improved]** Fixed unresponsive UI when no ads are triggered.
+* **[Improved]** Playback now continues when the license server is down.
+* **[Improved]** Changed "FiledValue" to "FieldValue" due to a mispelling.
+* **[Improved]** Fixed non-triggering events when linear inline ads were being played.
+
+
+Date: July 20th 2021 
+
 #### Version 3.3.11
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.3.11_20210701/nexplayer.js
@@ -17,6 +36,9 @@ https://nexplayer.nexplayersdk.com/HTML5/3.3.11_20210701/nexplayer.js
 * **[Improved]** Fixed non-finite value issue when seeking multiple times via controller.
 * **[Improved]** Fixed VTT parsing error which led the URL to be corrupted.
 * **[Improved]** Fixed error when seeking to 0 on VODs.
+
+
+Date: July 1st 2021 
 
 #### Version 3.3.10
 ```

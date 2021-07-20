@@ -168,6 +168,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | div | <code>HTMLDivElement</code> | The div container of the player. |
 | src | <code>string</code> | URL of the video to be played. |
 | adsDelay | <code>number</code> | Determines the delay before the ad starts playing. |
+| adsMode | <code>string</code> | Determines the ad library: IMA, PAL or NexPlayer's. |
 | addRequestFilter | <code>Function</code> | Sets a function that receives the DRM request as a parameter and changes its Headers. |
 | autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
 | callbackForLogger | <code>Function</code> | Function to be called when the logger shows a message. |

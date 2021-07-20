@@ -247,17 +247,29 @@ FieldName should be specified (if you don’t know this field, please enter 'X-A
 
 NexPlayer supports the VAST, VPAID, and VMAP ad formats.
 
+IMA and PAL libraries can be used for ad playback as well as NexPlayer's own solution.
+
 You can insert any pre/mid/post roll ad by setting up the ad links as shown below:
 ```js
 nexplayer.Setup({
   key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
-    div: document.getElementById('player'),
-    src: 'VIDEO URL',
-    vast: 'VAST / VPAID / VMAP link'
+  div: document.getElementById('player'),
+  src: 'VIDEO URL',
+  vast: 'VAST / VPAID / VMAP link',
+  adsmode: 'pal / ima / default',
 });
 ```
 Sample VAST links can be found on the <a href =https://developers.google.com/interactive-media-ads/docs/sdks/html5/tags target="_blank">Google Website</a>.
 
+In order to use IMA or PAL, a script must be provided in the index, which are the following respectively:
+
+```js
+<!-- IMA -->
+<script src="https://imasdk.googleapis.com/js/sdkloader/ima3_debug.js"></script>
+
+<!-- PAL -->
+<script src="https://nex360.s3.amazonaws.com/PAL/pal.js" ></script>
+```
 
 ## Mute
 
@@ -831,6 +843,10 @@ Advanced events such as a track change are available using the <code>on</code> m
  nexplayerInstance.on(nexplayer.Player.NexEvent.Track_Change, function() { console.log("The current track has changed") });
  ```
 
+ These events can be removed using the <code>off</code> method:
+ ```js
+ nexplayerInstance.off(nexplayer.Player.NexEvent.Track_Change);
+ ```
 ## Player destroy
 If you want to reuse the same div for different videos, the container div must be unmounted properly. The way this is done has changed recently, now the following command must be used:
 ```js
@@ -877,7 +893,13 @@ We have the next list of ad events available:
 
 
 ```js
-nexplayer.AdsEvents('event name', function () {console.log("this is an example")});;
+var f = function() { console.log("this is an example") };
+nexplayer.AdsEvents('event name', f);
+```
+To remove the event, do the following:
+
+```js
+nexplayer.RemoveAdsEvents('event name', f);
 ```
 
 ### Ads custom events

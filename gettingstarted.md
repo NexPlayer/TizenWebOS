@@ -206,6 +206,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
     adsDelay: number, // Optional, used to add a delay before the ad starts playing. Specified in milliseconds
+    adsMode: string, // Optional, used to select the ad library. Can be NexPlayer's, IMA's or PAL's.
     addRequestFilter: Function, // Optional, used for give filters to the drm request
     autoplay: true, // Optional
     callbacksForLogger: callback, // Optional callback called with the logger instances

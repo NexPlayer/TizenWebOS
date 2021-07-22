@@ -374,34 +374,34 @@ Listens for ads events.
 
 We have events to handle some different kind of player events. List of player events available:
 
-* statechanged: Event is fired when the state of player is changed, contains in the detail attribute the different states of the player (Ready, Buffering, Playing, Paused, Ended)
-* playercreating: Event lauched when the player is being created.
-* playercreated: Event launched when the player has been created.
-* playerdestroyed: Event launched when the player has been destroyed.
-* play: Event launched when play is requested.
-* playing: Event launched when the player is played.
-* pause: Event launched when pause is requested.
-* paused: Event launched when the player is paused.
-* seeking: Returns a boolean. True when is seeking, false otherwise.
-* seeked: Event launched when the stream has been seeked.
-* stalled: Event launched when the stream has been stalled.
-* hovering: Event launched when the cursor hovers over the seekbar.
-* durationchange: Event launched when video duration is changed.
-* timeupdate: Event launched when the video element duration changes.
-* loadstart: Event launched when the player starts loading.
-* loadeddata: Event launched when the manifest is loaded.
-* canplay: Event lauched when the player is ready to play.
-* buffering: Event lauched when the player is buffering.
-* videofirstquartile:  Event is fired when the 25% of the video’s duration has been reached.
-* videomidpoint: Event is fired when the 50% of the video’s duration has been reached.
-* videothirdquartile: Event is fired when the 75% of the video’s duration has been reached.
-* ended: Event launched when the stream has been finished.
-* subtitlesdataloaded: Event launched when captions are loaded.
-* newsubtitlesdataloaded: Event launched when new captions are loaded.
-* ccnewdata: Event launched when new captions are received.
-* thumbnaildata: Event launched when a thumbnail data is received.
-* thumbnailloaded: Event launched when a thumbnail is loaded to the thumbnail array.
-* thumbnailreply: Event launched when a thumbnail is provided to the canvas.
+* **statechanged**: Event is fired when the state of player is changed, contains in the detail attribute the different states of the player (Ready, Buffering, Playing, Paused, Ended)
+* **playercreating**: Event lauched when the player is being created.
+* **playercreated**: Event launched when the player has been created.
+* **playerdestroyed**: Event launched when the player has been destroyed.
+* **play**: Event launched when play is requested.
+* **playing**: Event launched when the player is played.
+* **pause**: Event launched when pause is requested.
+* **paused**: Event launched when the player is paused.
+* **seeking**: Returns a boolean. True when is seeking, false otherwise.
+* **seeked**: Event launched when the stream has been seeked.
+* **stalled**: Event launched when the stream has been stalled.
+* **hovering**: Event launched when the cursor hovers over the seekbar.
+* **durationchange**: Event launched when video duration is changed.
+* **timeupdate**: Event launched when the video element duration changes.
+* **loadstart**: Event launched when the player starts loading.
+* **loadeddata**: Event launched when the manifest is loaded.
+* **canplay**: Event lauched when the player is ready to play.
+* **buffering**: Event lauched when the player is buffering.
+* **videofirstquartile**:  Event is fired when the 25% of the video’s duration has been reached.
+* **videomidpoint**: Event is fired when the 50% of the video’s duration has been reached.
+* **videothirdquartile**: Event is fired when the 75% of the video’s duration has been reached.
+* **ended**: Event launched when the stream has been finished.
+* **subtitlesdataloaded**: Event launched when captions are loaded.
+* **newsubtitlesdataloaded**: Event launched when new captions are loaded.
+* **ccnewdata**: Event launched when new captions are received.
+* **thumbnaildata**: Event launched when a thumbnail data is received.
+* **thumbnailloaded**: Event launched when a thumbnail is loaded to the thumbnail array.
+* **thumbnailreply**: Event launched when a thumbnail is provided to the canvas.
 
 Example on how to listen for a player event:
 
@@ -415,40 +415,29 @@ Example on how to listen for a player event:
 
 We have events to handle some different kind of ads events. List of ad events available:
 
-* adlibrarycreating: Creates a library with all ads when the player is started.
-* adlibrarycreated: Event launched when the ads library is created.
-* adlibrarydestroyed: Destroys the library with all ads when the player is started.
-* adpodsinfo: Contains all ad pods information.
-* adblockstarted: Contains the number of ads in the block in the detail attribute.
-* adblockend: Event launched when an ad block (some ads in the same timestamp) ends.
-* adstarted: Event launched when when the ad has started, contain the ad position in the block in the detail attribute.
-* adtagstartloading: Event launched when the ad starts.
-* adloaded: Event launched when the ad has been loaded.
-* adcomplete: Event launched when the ad has ended.
-* addestroyed: Event launched when the ad has been destroyed after ended.
-* adpaused:  Event launched when an ad is paused.
-* adresumed: Event launched when an ad is resumed.
-* adskipped: Event launched when an ad is skipped.
-* adfirstquartile: Event is fired when the 25% of the ad’s duration has been reached.
-* admidpoint: Event is fired when the 50% of the ad’s duration has been reached.
-* adthirdquartile: Event is fired when the 75% of the ad’s duration has been reached.
-* adimpression: Event launched when ad impression is sent to the server.
-* aderror: Event launched when there is an error loading the ad.
-* adpodcompleted: Event launched when an ad block has been completed.
+* **adlibrarycreating**: Creates a library with all ads when the player is started.
+* **adlibrarycreated**: Event launched when the ads library is created.
+* **adlibrarydestroyed**: Destroys the library with all ads when the player is started.
+* **adpodsinfo**: Contains all ad pods information.
+* **adblockstarted**: Contains the number of ads in the block in the detail attribute.
+* **adblockend**: Event launched when an ad block (some ads in the same timestamp) ends.
+* **adstarted**: Event launched when when the ad has started, contain the ad position in the block in the detail attribute.
+* **adtagstartloading**: Event launched when the ad starts.
+* **adloaded**: Event launched when the ad has been loaded.
+* **adcomplete**: Event launched when the ad has ended.
+* **addestroyed**: Event launched when the ad has been destroyed after ended.
+* **adpaused**: Event launched when an ad is paused.
+* **adresumed**: Event launched when an ad is resumed.
+* **adskipped**: Event launched when an ad is skipped.
+* **adfirstquartile**: Event is fired when the 25% of the ad’s duration has been reached.
+* **admidpoint**: Event is fired when the 50% of the ad’s duration has been reached.
+* **adthirdquartile**: Event is fired when the 75% of the ad’s duration has been reached.
+* **adimpression**: Event launched when ad impression is sent to the server.
+* **aderror**: Event launched when there is an error loading the ad.
+* **adpodcompleted**: Event launched when an ad block has been completed.
 
 ```js
     nexplayer.AdsEvents("aderror", function(e) {
         console.log("aderror", e);
     });
-```
-
-#### Ads custom events
-
-* adstarted: Start an individual ad, contain the ad position in the block in the detail attribute.
-* adblockstart: Contain the number of ads in the block in the detail attribute.
-* adpodsinfo: Contain all ad pods information.
-* adblockend: Event launched when an ad block (some ads in the same timestamp) ends.
-
-```js
-nexplayer.AdsEvents('custom event name', function (e) {console.log("this is an example", e.detail)});;
 ```

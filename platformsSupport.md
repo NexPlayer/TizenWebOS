@@ -24,13 +24,9 @@ NexPlayer supports several platforms and models:
     </tr>
     <tr>
       <th  scope="row">PlayStation</th>      
-      <th  scope="row"><span>PlayStation 4*</span></th>   
+      <th  scope="row"><span>PlayStation 4</span></th>   
     </tr>
   </tbody>
 </table>
 
-<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
-<p>  
-* PlayStation 4 SDK is currently delivered independently to this SDK. Ask html5@nexplayer.com support to get access to PlayStation 4 SDK. 
-</p>
 </div></div>

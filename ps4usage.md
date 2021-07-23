@@ -7,7 +7,7 @@ This section explains how to integrate NexPlayer&#x2122; for PS4 into your proje
 ## Latest release
 
 ```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.1.9_20210525/nexplayer.js
+https://nexplayer.nexplayersdk.com/NexHTML5/1.2.0_20210723/nexplayer.js
 ```
 
 ## NexPlayer™ Integration
@@ -138,12 +138,12 @@ There are a substantial number of customizable options for NexPlayer™ includin
 
 #### Nexplayer methods
 
- - [Setup(configObj)](#setup)
+ - [Setup(configObj)](#ps4setup)
  - [UnMount(div)](#unmount)
  - [PlayerEvents(event,callback)](#playerevents)
  - [AdsEvents(event,callback)](#adsevents)
 
-#### Player methods and objects
+#### Player methods
 
 ##### Miscellaneous
 
@@ -197,7 +197,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [Thumbnails](#thumbnails) : object
  - [ICaptionsDisplayer](#icaptionsdisplayer) : object
 
-#### Ads methods and objects
+#### Ads methods
 
 ##### Miscellaneous
 
@@ -214,15 +214,14 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [getAdTitle()](#getadtitle) ⇒ string
  - [getAdDuration()](#getadduration) ⇒ number
  - [getAdRemainingTime()](#getadremainingtime) ⇒ number
- - [getMute()](#getmute) ⇒ boolean
- - [getVolume()](#getvolume) ⇒ number
+ - [getMute()](#getadmute) ⇒ boolean
+ - [getVolume()](#getadvolume) ⇒ number
  - [getAdBreaks()](#getadbreaks) ⇒ Object
 
 ##### Setters
 
-  - [setMute(state)](#setmute)
-  - [setVolume(value)](#setvolume)
-  - [setVideoEngine(videoEngine)](#setvideoengine)
+  - [setMute(state)](#setadmute)
+  - [setVolume(value)](#setadvolume)
 
 ***
 
@@ -260,7 +259,7 @@ Creates and initializes the player.
 
 Unmounts the player and its dependencies.
 
-**Type**: instance method of [<code>Player</code>](#Player)  
+**Type**: instance method of [<code>nexplayer</code>](#Player)  
 **Parameters**:
 
 | Param | Type                | Description        |
@@ -268,11 +267,11 @@ Unmounts the player and its dependencies.
 | div | <code>HTMLElement</code> | Player tag |
 
 
-#### <a id="playevents"></a> nexplayer.PlayerEvents(event, callback)
+#### <a id="playerevents"></a> nexplayer.PlayerEvents(event, callback)
 
 Listens for player events.
 
-**Type**: instance method of [<code>Player</code>](#Player)  
+**Type**: instance method of [<code>nexplayer</code>](#Player)  
 **Parameters**:
 
 | Param | Type                | Description        |
@@ -285,7 +284,7 @@ Listens for player events.
 
 Listens for ads events.
 
-**Type**: instance method of [<code>Player</code>](#Player)  
+**Type**: instance method of [<code>nexplayer</code>](#Player)  
 **Parameters**:
 
 | Param | Type                | Description        |
@@ -295,11 +294,337 @@ Listens for ads events.
 
 ***
 
-### Global typedefs
+### Player methods
 
 ***
 
-#### <a id="neplayerdrmoptions"></a> Player.NexPlayerDRMOptions : <code>Object</code>
+#### Miscellaneous
+
+***
+
+<a id="init"></a>
+
+##### player.init(NexPlayerConfig)
+
+Initialize the player with the config Object given.
+
+**Type**: instance method of  [<code>Player</code>](#Player)
+
+<a id="play"></a>
+
+##### player.play()
+
+Plays the video when it is paused.
+
+**Type**: instance method of  [<code>Player</code>](#Player)
+
+<a id="pause"></a>
+
+##### player.pause()
+
+Pauses the video when it is playing.
+
+**Type**: instance method of  [<code>Player</code>](#Player)
+
+<a id="seek"></a>
+
+##### player.seek(value)
+
+Seek the video to the value given.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+
+<a id="isseeking"></a>
+
+##### player.isSeeking()
+
+Return a boolean, true if the player is seeking and false if not.
+
+**Type**: instance method of  [<code>Player</code>](#Player)
+
+<a id="environment"></a>
+
+##### player.Environment()
+
+Returns which browser, platform and device type.
+
+**Type**: instance method of  [<code>Player</code>](#Player)
+
+<a id="defaultconfig"></a>
+
+##### player.DefaultConfig()
+
+Sends the default configuration in case the parameters are not specified in the init.
+
+**Type**: instance method of  [<code>Player</code>](#Player)
+
+<a id="destroy"></a>
+
+##### player.destroy()
+
+Destroy the player
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+
+***
+
+#### Getters
+
+***
+
+<a id="getaudiostreams"> </a>
+
+##### player.getAudioStreams() ⇒ Array.< AudioStream >
+
+Gets the available audio streams.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: An array<AudioStream> - which contains the available audio streams.
+
+<a id="getcurrentaudiotrack"> </a>
+
+##### player.getCurrentAudioTrack() ⇒ AudioTrack
+
+Gets the audio track currently in use.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: AudioTrack - The current audio track.
+
+<a id="getcurrentsubtitle"> </a>  
+
+##### player.getCurrentSubtitle() 
+
+Gets the current subtitle info.
+
+**Type**: instance method of [<code>Player</code>](#Player)     
+**Returns**: Current Subtitle - the current subtitle track (undefined if no subtitles are activated).
+
+<a id="getcurrenttime"> </a>  
+
+##### player.getCurrentTime() ⇒ number
+
+Returns the currentTime taking into account isUTC (if isUTC is true, getCurrentTime's returned value will be different from the time of the video element).
+
+**Type**: instance method of [<code>Player</code>](#Player)    
+**Returns**: number - the current time of the video.
+
+<a id="getcurrenttrack"> </a>
+
+##### player.getCurrentTrack() ⇒ Track
+
+Gets the current track information.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: Track - the current track.
+
+<a id="getduration"> </a>  
+
+##### player.getDuration() ⇒ number
+
+Returns the duration taking into account isUTC (if isUTC is true, getDuration's returned value will be different from the duration of the video element).
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: number - the duration of the video.
+
+<a id="getqualitylevels"> </a>
+
+##### player.getQualityLevels() ⇒ array
+
+Gets the video quality levels array.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: array - quality levels array info
+
+<a id="getsubtitles"> </a>
+
+##### player.getSubtitles()
+   
+Gets all the avaliable subtitle tracks info.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: Array of subtitles - the subtitle tracks of the video.
+
+<a id="getthumbnailat"> </a>  
+
+##### player.getthumbnailAt() ⇒ Promise
+
+Returns a thumbnail loading promise in a specific time.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: Promise - Thumbnail loading promise in a specific time.
+
+<a id="getthumbnails"> </a>  
+
+##### player.getthumbnails() ⇒ Array < Frame >
+
+Returns the loaded thumbnails.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: Array < Frame > - The loaded thumbnails.
+
+<a id="gettracks"> </a>
+   
+##### player.getTracks() ⇒ Array.< Track >
+
+Gets all of the videoes avaliable tracks (different qualities).
+
+**Type**: instance method of [<code>Player</code>](#Player)     
+**Returns**:: Array.< Track > - all the tracks available.
+
+<a id="geturl"> </a>
+   
+##### player.getURL()
+
+Returns the current video URL.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: String
+
+<a id="getversion"></a>
+
+##### player.getVersion()
+
+Returns the current version of the player.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: String
+
+<a id="getplayerdiv"></a>
+
+##### player.getPlayerDiv()
+
+Returns the video container.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: HTMLDivElement
+
+<a id="getplayercontainerdiv"></a>
+
+##### player.getPlayerContainerDiv()
+
+Returns the player container.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: HTMLDivElement
+
+<a id="getadinstance"></a>
+
+##### player.getAdInstance()
+
+Returns the AdInstance Object.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: Object
+
+<a id="getvolume"></a>
+
+##### player.getVolume()
+
+Returns the current volume of the Player.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: number
+
+<a id="getmute"></a>
+
+##### player.getMute()
+
+Returns true if the video is muted and false if not.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: boolean
+
+<a id="getlogger"></a>
+
+##### player.getLogger()
+
+Returns the logger of the Player.
+
+**Type**: instance method of  [<code>Player</code>](#Player)  
+**Returns**: Object
+
+***
+
+#### Setters
+
+***
+
+<a id="setaudio"></a>
+
+##### player.setAudio(streamID)
+
+Sets the current audio stream.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+
+| Param | Type | Description |
+| --- | --- | --- |
+| streamID | <code>number</code> | ID of the audio stream to be used. |
+
+<a id="setcurrenttrack"></a>
+
+##### player.setCurrentTrack(trackID)
+
+Sets the current track.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+
+| Param | Type | Description |
+| --- | --- | --- |
+| trackID | <code>number</code> | ID of the track to be used. |
+
+<a id="setsubtitle"></a>
+
+##### player.setCurrentSubtitle(subID)
+
+Sets the current subtitle.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+
+| Param | Type | Description |
+| --- | --- | --- |
+| subID | <code>number</code> | ID of the subtitle to be used. |
+
+<a id="setvolume"></a>
+
+##### player.setVolume(value)
+
+Set the volume of the video.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | The volume level to be used. |
+
+<a id="setmute"></a>
+
+##### player.setMute(boolean)
+
+Set mute or unmute to the video.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| boolean | <code>boolean</code> | If the video will be mute or unmute. |
+
+<a id="setlogger"></a>
+
+##### player.setLogger(logger)
+
+Set logger to the video.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| logger | <code>Object</code> | The logger to be used. |
+
+
+***
+
+#### Global typedefs
+
+***
+
+<a id="nexplayerdrmoptions"></a>
+
+##### Player.NexPlayerDRMOptions : <code>Object</code>
 
 **Type**: global typedef
 **Properties**:
@@ -310,7 +635,9 @@ Listens for ads events.
 | license    | <code>string</code> | DRM's license. |
 | customData | <code>DRMCustomData</code> | Used to indicate the custom headers necessary to request the license. Optional. |
 
-#### <a id="drmcustomdata"></a> Player.DRMCustomData : <code>Object</code>
+<a id="drmcustomdata"></a> 
+
+##### Player.DRMCustomData : <code>Object</code>
 
 **Type**: global typedef
 **Properties**:
@@ -320,7 +647,9 @@ Listens for ads events.
 | fieldName  | <code>string</code> | Header's name .|
 | value    | <code>string</code> | Value used in the DRM's request. |
 
-#### <a id="captions"></a> Player.Captions : <code>Object</code>
+<a id="captions"></a> 
+
+##### Player.Captions : <code>Object</code>
 
 **Type**: global typedef
 **Properties**:
@@ -330,7 +659,9 @@ Listens for ads events.
 | src       | <code>string</code> | Caption's URL. |
 | language  | <code>string</code> | Language of the captions. Use to identificate them. |
 
-#### <a id="thumbnails"></a> Player.Thumbnails : <code>Object</code>
+<a id="thumbnails"></a>
+
+##### Player.Thumbnails : <code>Object</code>
 
 **Type**: global typedef
 **Properties**:
@@ -343,7 +674,9 @@ Listens for ads events.
 | chunkLimit  | <code>number</code> | Number of thumbnails' chunks available at the same time. |
 | chunkTotal  | <code>number</code> | Number of thumbanils' chunks in total. |
 
-#### <a id="icaptionsdisplayer"></a> Player.ICaptionsDisplayer : <code>Class</code>
+<a id="icaptionsdisplayer"></a>
+
+##### Player.ICaptionsDisplayer : <code>Class</code>
 
 **Type**: global typedef
 **Properties**:
@@ -363,6 +696,161 @@ Listens for ads events.
 | setTextVisibility  | visible: <code>boolean</code>  | void | Shows/hides the captions. |
 | updateCue  | time: <code>number</code> | void | Called to update the current cues to display. |
 | displayCuesCC  | cuesCC:<code>Map<string, Object></code> | void | Displays the CC cues passed. Object properties: "text", "position", and "rgba". |
+
+***
+
+
+### Ads methods
+
+***
+
+#### Miscellaneous
+
+***
+
+<a id="adplay"></a>
+
+##### nexplayer.AdInstance().play()
+
+Plays the ad when it is paused.
+
+**Type**: instance method of  [<code>nexplayer</code>](#Player)
+
+<a id="adpause"></a>
+
+##### nexplayer.AdInstance().pause()
+
+Pauses the ad when it is playing.
+
+**Type**: instance method of  [<code>nexplayer</code>](#Player)
+
+<a id="registerplugin"></a>
+
+##### nexplayer.AdInstance().registerPlugin(ads)
+
+ads is an Object that implements IAds interface, The users can pass their own implementation in case they want to use another advertisement library or a custom one.
+
+**Type**: instance method of  [<code>nexplayer</code>](#Player)  
+
+<a id="isadplaying"></a>
+
+##### nexplayer.AdInstance().isAdPlaying()
+
+Return a boolean, true if the ad is playing and false if not.
+
+**Type**: instance method of  [<code>nexplayer</code>](#Player)
+
+<a id="skip"></a>
+
+##### nexplayer.AdInstance().skip()
+
+Skip the current ad if is possible.
+
+**Type**: instance method of  [<code>nexplayer</code>](#Player)
+
+<a id="checkinitialads"></a>
+
+##### nexplayer.AdInstance().checkInitialAds()
+
+Checks whether there ads
+
+**Type**: instance method of  [<code>nexplayer</code>](#Player)
+
+***
+
+#### Getters
+
+***
+
+<a id="getadtype"> </a>
+
+##### nexplayer.AdInstance().getAdType() ⇒ string
+
+Gets the current Ad type.
+
+**Type**: instance method of [<code>nexplayer</code>](#Player)   
+**Returns**: String - The current ad type.
+
+<a id="getadtitle"> </a>
+
+##### nexplayer.AdInstance().getAdTitle() ⇒ string
+
+Gets the Ad title.
+
+**Type**: instance method of [<code>nexplayer</code>](#Player)   
+**Returns**: String - The current ad title.
+
+<a id="getadduration"> </a>
+
+##### nexplayer.AdInstance().getAdDuration() ⇒ number
+
+Gets the Ad duration.
+
+**Type**: instance method of [<code>nexplayer</code>](#Player)   
+**Returns**: number - The current ad duration.
+
+<a id="getadremainingtime"> </a>
+
+##### nexplayer.AdInstance().getAdRemainingTime() ⇒ number
+
+Gets the Ad remaining time.
+
+**Type**: instance method of [<code>nexplayer</code>](#Player)   
+**Returns**: number - The ad remaining time.
+
+<a id="getadmute"> </a>
+
+##### nexplayer.AdInstance().getMute() ⇒ boolean
+
+Gets the true if the video is muted or false if not.
+
+**Type**: instance method of [<code>nexplayer</code>](#Player)   
+**Returns**: boolean - True if the video is muted or false if not.
+
+<a id="getadvolume"> </a>
+
+##### nexplayer.AdInstance().getVolume() ⇒ number
+
+Gets the Ad volume.
+
+**Type**: instance method of [<code>nexplayer</code>](#Player)   
+**Returns**: number - The ad volume.
+
+<a id="getadbreaks"> </a>
+
+##### nexplayer.AdInstance().getAdBreaks() ⇒ Object
+
+Returns the break points when ads will trigger
+
+
+**Type**: instance method of [<code>nexplayer</code>](#Player)   
+**Returns**: Object - The break points when ads will trigger
+
+***
+
+#### Setters
+
+***
+
+<a id="setadmute"></a>
+
+##### nexplayer.AdInstance().setMute(state)
+
+Set mute or unmute to the ad.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| state | <code>boolean</code> | If the ad will be mute or unmute. |
+
+<a id="setadvolume"></a>
+
+##### nexplayer.AdInstance().setVolume(value)
+
+Set the volume of the ad.
+
+| Param | Type | Description |
+| --- | --- | --- |
+| value | <code>number</code> | The volume level to be used. |
 
 ***
 

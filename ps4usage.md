@@ -7,7 +7,7 @@ This section explains how to integrate NexPlayer&#x2122; for PS4 into your proje
 ## Latest release
 
 ```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.2.0_20210723/nexplayer.js
+https://nexplayer.nexplayersdk.com/NexHTML5/1.1.9_20210525/nexplayer.js
 ```
 
 ## NexPlayer™ Integration

@@ -346,7 +346,7 @@ Return a boolean, true if the player is seeking and false if not.
 
 ##### player.Environment()
 
-Returns which browser, platform and device type.
+Returns which browser, platform and device type are set.
 
 **Type**: instance method of  [<code>Player</code>](#Player)
 
@@ -446,7 +446,7 @@ Gets all the avaliable subtitle tracks info.
 
 <a id="getthumbnailat"> </a>  
 
-##### player.getthumbnailAt() ⇒ Promise
+##### player.getThumbnailAt() ⇒ Promise
 
 Returns a thumbnail loading promise in a specific time.
 
@@ -455,7 +455,7 @@ Returns a thumbnail loading promise in a specific time.
 
 <a id="getthumbnails"> </a>  
 
-##### player.getthumbnails() ⇒ Array < Frame >
+##### player.getThumbnails() ⇒ Array < Frame >
 
 Returns the loaded thumbnails.
 
@@ -466,7 +466,7 @@ Returns the loaded thumbnails.
    
 ##### player.getTracks() ⇒ Array.< Track >
 
-Gets all of the videoes avaliable tracks (different qualities).
+Gets all of the videos avaliable tracks (different qualities).
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 **Returns**:: Array.< Track > - all the tracks available.
@@ -744,7 +744,7 @@ Return a boolean, true if the ad is playing and false if not.
 
 ##### nexplayer.AdInstance().skip()
 
-Skip the current ad if is possible.
+Skip the current ad if possible.
 
 **Type**: instance method of  [<code>nexplayer</code>](#Player)
 
@@ -836,7 +836,7 @@ Returns the break points when ads will trigger
 
 ##### nexplayer.AdInstance().setMute(state)
 
-Set mute or unmute to the ad.
+Mutes or unmutes the ad.
 
 | Param | Type | Description |
 | --- | --- | --- |

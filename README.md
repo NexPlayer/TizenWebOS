@@ -8,7 +8,7 @@
 # NexPlayer SDK for Tizen, WebOS, Xbox and PlayStation<!-- {docsify-ignore-all} -->
 
 ## Abstract
-NexPlayer™ provides a media player for Smart TVs operating on Tizen and WebOS and for consoles like Xbox and PlayStation 5. It includes support for HLS, DASH, and progressive download.
+NexPlayer™ provides a media player for Smart TVs operating on Tizen and WebOS and for consoles like Xbox and PlayStation 4, 5. It includes support for HLS, DASH, and progressive download.
 
 The default UI is easily customizable to fit the user&#xB4;s personal preferences (e.g. icons, colors, etc).
 

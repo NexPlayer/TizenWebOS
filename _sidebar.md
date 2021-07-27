@@ -1,4 +1,4 @@
-- [<b style="color:#970101"> NexPlayer Website™</b>](https://www.nexplayersdk.com/tizen-player/)
+- [<b style="color:#970101"> NexPlayer's Website™</b>](https://www.nexplayersdk.com/tizen-player/)
 - [Introduction](/?id=introduction-top)
 * [Platforms support](platformsSupport.md?id=platforms-top)
 - [PS5/Xbox/Tizen/WebOS Usage](ps5_xbox_tizen_webos_usage.md?id=ps5_xbox_tizen_webos_usage-top)

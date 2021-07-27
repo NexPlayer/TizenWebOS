@@ -45,11 +45,10 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
 <div class="blocks">
 <h5 class="titleBlocks">AD INSERTION</h5>
   <ul class="list">  
-      <li>VAST, VPAID, VMAP </li>      
+      <li>VAST, VPAID, VMAP, Playslist </li>      
       <li>Pre-Roll, Mid-Roll, Post-Roll </li>
-      <li>Client-Side Ad Insertion </li>
-      <li>IMA SDK for Client-Side Ad Insertion </li>
-      <li>PAL SDK For Client-Side Ad Insertion </li>
+      <li>Integrated Client-Side Ad Insertion </li>
+      <li>IMA/PAL SDKs for Client-Side Ad Insertion </li>
       <li>Server-Side Ad Insertion </li>
   </ul>
 </div>

@@ -4,6 +4,16 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.4.1
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.4.1_20210727/nexplayer.js
+```
+* **[Improved]** Fixed trickplay errors.
+* **[Improved]** Fixed ads errors and improved ads behavior.
+
+
+Date: July 27th 2021 
+
 #### Version 3.4.0
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.4.0_20210720/nexplayer.js

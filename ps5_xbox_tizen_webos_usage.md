@@ -207,7 +207,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
     adsDelay: number, // Optional, used to add a delay before the ad starts playing. Specified in milliseconds
-    adsMode: string, // Optional, used to select the ad library. Can be NexPlayer's, IMA's or PAL's.
+    adsMode: string, // Optional, used to select the ad library. Can be 'ima', 'pal' or 'default'.
     addRequestFilter: Function, // Optional, used for give filters to the drm request
     autoplay: true, // Optional
     callbacksForLogger: callback, // Optional callback called with the logger instances
@@ -411,7 +411,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | div | <code>HTMLDivElement</code> | The div container of the player. |
 | src | <code>string</code> | URL of the video to be played. |
 | adsDelay | <code>number</code> | Determines the delay before the ad starts playing. |
-| adsMode | <code>string</code> | Determines the ad library: IMA, PAL or NexPlayer's. |
+| adsMode | <code>string</code> | Determines the ad library: 'ima', 'pal' or 'default'. |
 | addRequestFilter | <code>Function</code> | Sets a function that receives the DRM request as a parameter and changes its Headers. |
 | autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
 | callbackForLogger | <code>Function</code> | Function to be called when the logger shows a message. |
@@ -1461,7 +1461,7 @@ In order to use IMA or PAL, a script must be provided in the index, which are th
 
 ```js
 <!-- IMA -->
-<script src="https://imasdk.googleapis.com/js/sdkloader/ima3_debug.js"></script>
+<script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
 
 <!-- PAL -->
 <script src="https://nex360.s3.amazonaws.com/PAL/pal.js" ></script>

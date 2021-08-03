@@ -241,6 +241,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     subtitle: 'Subtitle name of the video', // Optional
     reinitializeAfterAds: boolean, // Optional, used to avoid errors related to ads on Tizen 2020.
     resumePosition: number, // Optional, used for starting the video from the given position in seconds.
+    showAdsUI: true, // Optional, used for showing the player controls when an ad is playing
     showingFullUI: true, // Optional, used for showing the player controls
     staticThumbnails: {
         src: 'URL of the VTT file',
@@ -304,6 +305,8 @@ There are a substantial number of customizable options for NexPlayer™ includin
 
 
  - [isControlBarOpen()](#iscontrolbaropen) ⇒ boolean
+ - [isCurrentAssetAd()](#iscurrentassetad) ⇒ boolean
+ - [isCurrentAssetMuted()](#iscurrentassetmuted) ⇒ boolean
  - [isLanguageMenuOpen()](#islanguagemenuopen) ⇒ boolean
  - [isLive()](#islive) ⇒ boolean
  - [isPlaybackBarFocused()](#isplaybackbarfocused) ⇒ boolean
@@ -319,10 +322,12 @@ There are a substantial number of customizable options for NexPlayer™ includin
 
 
  - [getAudioStreams()](#getaudiostreams) ⇒ [Array\<AudioStream\>](#audiostream)
+ - [getCurrentContentType()](#getcurrentcontenttype) ⇒ string
  - [getCurrentAudioStream()](#getcurrentaudiostream) ⇒ [AudioStream](#audiostream)
  - [getCurrentSubtitle()](#getcurrentsubtitle) ⇒ number
  - [getCurrentTime()](#getcurrenttime) ⇒ number
  - [getCurrentTrack()](#getcurrenttrack) ⇒ [Track](#track-object)
+ - [getDroppedFrames()](#getdroppedframes) ⇒ number
  - [getDuration()](#getduration) ⇒ number
  - [getMediaElement()](#getmediaelement) ⇒ HTMLVideoElement
  - [getPlayBackRate()](#getplaybackrate) ⇒ number
@@ -434,6 +439,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | subtitle | <code>string</code> | Subtitle name of the video. |
 | reinitializeAfterAds | <code>boolean</code> | Used to avoid errors related to ads on Tizen 2020. False by default. |
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
+| showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
 | staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and callback. |
 | startFullScreen | <code>boolean</code> | Determines if the video will start on full screen. |
@@ -640,6 +646,22 @@ Jump to the livestream current time from the current position (if isUTC is true,
 
 **Returns**: boolean - *true* if the bar is showing. *false* otherwise.
 
+   #### <a id="iscurrentassetad"></a> player.isCurrentAssetAd() ⇒ boolean
+
+Indicates whether the current asset playing is an ad or not
+
+**Type**: instance method of [<code>Player</code>](#Player)
+
+**Returns**: boolean - *true* if the current asset is an ad. *false* otherwise.
+
+   #### <a id="iscurrentassetmuted"></a> player.isCurrentAssetMuted() ⇒ boolean
+
+Indicates whether the ad or the main content is muted or not.
+
+**Type**: instance method of [<code>Player</code>](#Player)
+
+**Returns**: boolean - *true* if the current asset is muted. *false* otherwise.
+
    #### <a id="islanguagemenuopen"></a> player.isLanguageMenuOpen() ⇒ boolean
 
 **Type**: instance method of [<code>Player</code>](#Player)
@@ -689,7 +711,7 @@ Toggle the video playback between the play and pause states.
 
 ***
 
-   #### <a id="getaudiostreams"></a> player.getAudioStreams() ⇒ Array.< AudioStream >
+   #### <a id="getaudiostreams"></a> player.getAudioStreams() ⇒ Array< AudioStream >
 
 Get the available audio streams.
 
@@ -718,6 +740,13 @@ AudioStream:
 
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: Array\<TrackInfo\> - information about the current audio track.
+
+   #### <a id="getcurrentcontenttype"></a> player.getCurrentContentType() ⇒ string
+
+Returns the the type of the current asset (“ad”, “mainContent” or “none”)
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: string - information about the current audio track.
 
    #### <a id="getcurrentsubtitle"></a> player.getCurrentSubtitle() ⇒ number
 
@@ -750,6 +779,14 @@ Track:
 
 **Returns** Array\<TrackInfo\> - information about the current video track.
 
+   #### <a id="getdroppedframes"></a> player.getDroppedFrames() ⇒ number
+
+Returns the number of frames dropped or NaN if not available or no frames were dropped.
+
+**Type**: instance method of [<code>Player</code>](#Player)
+
+**Returns**: number - the number of frames dropped.
+
    #### <a id="getduration"></a> player.getDuration() ⇒ number
 
 Returns the duration taking of the video element.
@@ -766,7 +803,7 @@ Returns the player's video element.
 
 **Returns**: HTMLVideoElement- video element playing the stream.
 
-   #### <a id="getprotocol"></a> player.getPlaybackRate() ⇒ number
+   #### <a id="getplaybackrate"></a> player.getPlaybackRate() ⇒ number
 
 Returns the video's playback rate.
 
@@ -823,7 +860,7 @@ Get the thumbnail at a specific video time.
 
 **Returns**: Promise - waits for a specific thumbnail to load.
 
-   #### <a id="getthumbnails"></a> player.getThumbnails() ⇒ Array.< Frame >
+   #### <a id="getthumbnails"></a> player.getThumbnails() ⇒ Array< Frame >
 
 Get all the available thumbnails.
 
@@ -841,7 +878,7 @@ Each array's element contains the next information:
 
 **Returns**: Array< Frame > - all the avaliable thumbnails.
 
-   #### <a id="gettracks"></a> player.getTracks() ⇒ Array.< Track >
+   #### <a id="gettracks"></a> player.getTracks() ⇒ Array< Track >
 
 Get all the video avaliable tracks (different qualities).
 
@@ -1533,6 +1570,21 @@ We also have custom events to handle some different kind of video events.
 ```js
 videoElement.addEventListener("customEvent", function(event) { console.log("Custom Event") });
 ```
+
+##### bufferType
+
+This event will be fired when a buffering event occurs and it specifies what type of buffering occurred (connection, seek, initial, background).
+```js
+// Accessing the type of the buffer
+var bufferType = event.detail;
+```
+
+**detail** contains the type of buffering: connection, seek, initial or background.
+
+```js
+videoElement.addEventListener("bufferType", function(e) { console.log("Buffer Type", e) });
+```
+
 ##### nexplayererror
 
 Sent when a NexPlayer error is fired. The **event** parameter has the **detail** property that contains the error message:

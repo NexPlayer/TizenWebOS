@@ -4,6 +4,28 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.4.2
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.4.2_20210803/nexplayer.js
+```
+* **[Added]** A UI for ads is now available using the property <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration">"showAdsUI"</a>.
+* **[Added]** Added new methods in order to fetch properties status (more info <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-api">here</a>):
+    * **getCurrentContentType()**: string → returns the the type of the current asset (“ad”, “mainContent” or “none”).
+    * **getCurrentTime()**: number → returns the current time of the video.
+    * **getDroppedFrames()**: number → returns the number of frames dropped or NaN if not available or no frames were dropped.
+    * **getPlaybackRate()**: number → returns the playback rate/speed of the video.
+    * **getProtocol()**: NexProtocol  → returns the protocol of the stream used: 
+    * **getVersion()**: string → returns the version of the SDK.
+    * **isCurrentAssetAd()**: boolean → indicates whether the current asset playing is an ad or not; 
+    * **isCurrentAssetMuted()**: boolean → returns whether the ad or the main content is muted or not.
+* **[Added]** Added a new event, <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=buffertype">"bufferType"</a>. this new event will be fired when a buffering event occurs and it specifies what type of buffering occurred (connection, seek, initial, background).
+
+* **[Improved]** Fixed non-resizing ads when using IMA.
+* **[Improved]** Fixed non-skipping ads when using IMA.
+
+
+Date: August 3rd 2021 
+
 #### Version 3.4.1
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.4.1_20210727/nexplayer.js

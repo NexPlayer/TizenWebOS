@@ -258,6 +258,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     // By default is set to false. Set to true in order to use the tracker. 
     // You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
     vast: 'URL with a VAST/VPAID/VMAP advertisement', // Optional
+    adsParamsToEncode: ["video_url_to_fetch"], // Optional. Array of strings that specifies the name of the VAST ad URL parameters to encode.
 ```
 
 ## NexPlayer™ API
@@ -451,6 +452,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this values is set to false. |
 | useNewRelicTracker | <code>boolean</code> | Determines if the New Relick tracker will be used. |
 | vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
+| adsParamsToEncode| <code>Array<string></code> | Specifies the name of the VAST ad URL parameters to encode. |
 
 #### <a id="changesource"></a> nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
@@ -781,7 +783,7 @@ Track:
 
    #### <a id="getdroppedframes"></a> player.getDroppedFrames() ⇒ number
 
-Returns the number of frames dropped or NaN if not available or no frames were dropped.
+Returns the number of frames dropped. 0 is returned if not available or no frames were dropped.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 

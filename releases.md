@@ -4,6 +4,16 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.4.3
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.4.3_20210809/nexplayer.js
+```
+* **[Added]** Implemented new property for encoding parameters of the VAST URLs. <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration">"adsParamsToEncode"</a>.
+* **[Improved]** Fixed playback after preroll ads.
+* **[Improved]** getDroppedFrames() method improved. Now returns accurate number of dropped frames.
+
+Date: August 9th 2021
+
 #### Version 3.4.2
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.4.2_20210803/nexplayer.js

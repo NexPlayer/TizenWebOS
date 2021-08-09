@@ -1231,12 +1231,12 @@ player.destroy().then(nexplayer.UnMount(document.getElementById('player'));
 #### Unmount and mount event
 In the case of using an await procedure to unmount the player, it is convenient to ensure that the Setup is called after the UnMount method is finished. This can be done via the <a href="https://nexplayer.github.io/TizenWebOS/#/API?id=isready">IsReady</a> method that returns a boolean value which indicates whether the player can be mounted or not. The recommended way to do this is via events, which are the following:
 
-* mount
-* unmount
+* mounted
+* unmounted
 
-When "unmount" is triggered after calling UnMount, the player is ready to be initialized again. This means that creating a listener on this event and calling the Setup from there will always mount the player properly. The "mount" event just notifies that the player has started the initialization. The listener must be added on the player HTML tag, usually called "player". For example, for the "unmount" event, it would look like this:
+When "unmounted" is triggered after calling UnMount, the player is ready to be initialized again. This means that creating a listener on this event and calling the Setup from there will always mount the player properly. The "mounted" event just notifies that the player has started the initialization. The listener must be added on the player HTML tag, usually called "player". For example, for the "unmounted" event, it would look like this:
 ```js
-document.getElementById('player').addEventListener("unmount", function() {/* Do something here */});
+document.getElementById('player').addEventListener("unmounted", function() {/* Do something here */});
 ```
 
 ### Security

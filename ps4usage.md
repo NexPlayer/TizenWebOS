@@ -7,7 +7,7 @@ This section explains how to integrate NexPlayer&#x2122; for PS4 into your proje
 ## Latest release
 
 ```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.1.9_20210525/nexplayer.js
+https://nexplayer.nexplayersdk.com/NexHTML5/1.2.2_20210730/nexplayer.js
 ```
 
 ## NexPlayer™ Integration
@@ -933,6 +933,29 @@ We have events to handle some different kind of ads events. List of ad events av
 ## Releases
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
+
+#### Version 1.2.2
+
+```
+https://nexplayer.nexplayersdk.com/NexHTML5/1.2.2_20210730/nexplayer.js
+```
+
+**Bug fixes:**
+  - Renamed Frame object "canvas" property to "thumbnail".
+  - Fixed permanent pending promise when fetching thumbnails that lead to "undefined" resolutions.
+
+Date: July 30th 2021
+
+#### Version 1.2.1
+
+```
+https://nexplayer.nexplayersdk.com/NexHTML5/1.2.1_20210729/nexplayer.js
+```
+
+**Bug fixes:**
+  - Fixed thumbails width and height properties as they were swapped.
+
+Date: July 29th 2021
 
 #### Version 1.2.0
 

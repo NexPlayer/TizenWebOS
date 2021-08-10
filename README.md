@@ -48,7 +48,7 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
       <li>VAST, VPAID, VMAP, Playslist </li>      
       <li>Pre-Roll, Mid-Roll, Post-Roll </li>
       <li>Integrated Client-Side Ad Insertion </li>
-      <li>IMA/PAL SDKs for Client-Side Ad Insertion </li>
+      <li>IMA & PAL SDKs for Client-Side Ad Insertion </li>
       <li>Server-Side Ad Insertion </li>
   </ul>
 </div>

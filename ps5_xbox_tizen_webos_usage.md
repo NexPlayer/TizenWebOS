@@ -258,7 +258,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     // By default is set to false. Set to true in order to use the tracker. 
     // You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
     vast: 'URL with a VAST/VPAID/VMAP advertisement', // Optional
-    adsParamsToEncode: ["video_url_to_fetch"], // Optional. Array of strings that specifies the name of the VAST ad URL parameters to encode.
+    adsParamsToEncode: [ e.g. "video_url_to_fetch"], // Optional. Array of strings that specifies the name of the VAST ad URL parameters to encode.
 ```
 
 ## NexPlayer™ API
@@ -275,6 +275,8 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [ChangeSource({src: newSrc, drm: newDrm})](#changesource)
  - [UnMount(player)](#unmount)
  - [IsReady()](#isready)
+ - [AdsEvents()](#adsevents)
+ - [RemoveAdsEvents()](#removeadsevents)
 
 #### Player methods and objects
 
@@ -285,6 +287,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [pause()](#pause)
  - [destroy(UnMount(player))](#destroy)
  - [on(callbackType, functionToBeCalled)](#on)
+ - [off(callbackType)](#off)
  - [enableABR()](#playerenableabr)
  - [addTrackerData()](#addtrackerdata)
  - [removeTrackerData()](#removetrackerdata)
@@ -369,7 +372,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
 
 #### Ads methods and objects
 
-Please, consult this <a href ="https://nexplayer.github.io/TizenWebOS/#/advanceusage?id=ads-events" target="_blank"> link </a> for information on how to use ad events.
+Please, consult this <a href ="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ads" target="_blank"> link </a> for information on how to use ad events.
 
 ##### Miscellaneous
 
@@ -408,7 +411,8 @@ Creates and initializes the player.
 
 Set NexPlayer settings using the configuration object as is indicated in this <a href ="https://nexplayer.github.io/TizenWebOS/#/gettingstarted?id=nexplayer%e2%84%a2-configuration" target="_blank">link</a>.
 
-**Type**: instance method of [<code>nexplayer</code>](#Player)   
+**Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
+
 **Parameters**: <code>configObj</code> is an object which values could be:
 
 | Param | Type | Description |
@@ -452,13 +456,14 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this values is set to false. |
 | useNewRelicTracker | <code>boolean</code> | Determines if the New Relick tracker will be used. |
 | vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
-| adsParamsToEncode| <code>Array<string></code> | Specifies the name of the VAST ad URL parameters to encode. |
+| adsParamsToEncode| <code>Array<string></code> | Specifies the name of the VAST ad URL parameters to encode. Maximum size of |
 
 #### <a id="changesource"></a> nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
 Change the url stream of the video. It is possible to set a new url with new drm config if necessary.
 
-**Type**: instance method of [<code>Player</code>](#Player)  
+**Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
+
 **Parameters**: <code>configObj</code> is an object which values could be:
 
 | Param | Type                | Description        |
@@ -472,7 +477,8 @@ Change the url stream of the video. It is possible to set a new url with new drm
 
 Unmounts the player and its dependencies. In order to properly clear the player this method must be called after destroying the very same player. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/API?id=destroy">here</a>. 
 
-**Type**: instance method of [<code>Player</code>](#Player)  
+**Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
+
 **Parameters**:
 
 | Param | Type                | Description        |
@@ -485,8 +491,21 @@ Unmounts the player and its dependencies. In order to properly clear the player 
 
 Fetches the player mount/unmount status. If true, it can be mounted again.
 
-**Type**: instance method of [<code>Player</code>](#Player)  
+**Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
+
 **Returns**: boolean - Whether the player is ready to be mounted or not.
+
+#### <a id="adsevents"></a> nexplayer.AdsEvents([<code>"adEvent"</code>](#ads-events), function () {}) 
+
+Add a listener for the specified ad event.
+
+**Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
+
+   #### <a id="removeadsevents"></a> nexplayer.RemoveAdsEvents([<code>"adEvent"</code>](#ads-events), function () {}) 
+
+Remove a listener for the specified ad event which has been previously registered.
+
+**Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
 
 ***
 
@@ -520,7 +539,7 @@ method must be called from the 'nexplayer' instance and needs the 'player' eleme
 
    #### <a id="on"></a> player.on(callbackType, functionToBeCalled)
 
-Adds a listener for Events.
+Add a listener for a event.
 
 **Type**: instance method of [<code>Player</code>](#Player)      
 **Parameters**:
@@ -529,6 +548,17 @@ Adds a listener for Events.
 | ------------------ | --------------------- | ----------------------------- |
 | callbackType       | <code>NexEvent</code> | Event to listen for           |
 | functionToBeCalled | <code>Function</code> | Function called on each event |
+
+   #### <a id="off"></a> player.off(callbackType)
+
+Remove a listener for a event.
+
+**Type**: instance method of [<code>Player</code>](#Player)      
+**Parameters**:
+
+| Param              | Type                  | Description                   |
+| ------------------ | --------------------- | ----------------------------- |
+| callbackType       | <code>NexEvent</code> | Event to remove the listener from |
 
    #### <a id="enableabr"></a> player.enableABR()
 
@@ -1102,13 +1132,13 @@ Set the video quality level.
 
 Play the ad
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)     
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 
    #### <a id="adpause"></a> nexplayer.AdInstance().pause() 
 
 Pause the current ad.
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 
 ***
 
@@ -1581,7 +1611,7 @@ This event will be fired when a buffering event occurs and it specifies what typ
 var bufferType = event.detail;
 ```
 
-**detail** contains the type of buffering: connection, seek, initial or background.
+**detail** contains a string indicating the type of buffering: connection, seek, initial or background.
 
 ```js
 videoElement.addEventListener("bufferType", function(e) { console.log("Buffer Type", e) });
@@ -1725,6 +1755,44 @@ var trickPlayTime = event.detail;
 videoElement.addEventListener('trickPlayEnded', function(e){
   console.log("Trick play ended at time:", e.detail);
 });
+```
+
+##### mounted
+
+This event just notifies that the player has started the initialization. The listener must be added on the player HTML tag, usually called “player”.
+
+```html
+<div id="player_container">
+  <div id="player"></div>
+</div>
+```
+```js
+document.getElementById('player').addEventListener('mounted', function() {/* Do something here */});
+
+nexplayer.Setup({
+  key: 'YOUR LICENSE KEY',
+  div: document.getElementById('player'),
+  ...
+})
+```
+
+##### unmounted
+
+This event is triggered after calling "nexplayer.UnMount()", therefore it indicates that the player is ready to be initialized again.
+
+```html
+<div id="player_container">
+  <div id="player"></div>
+</div>
+```
+```js
+document.getElementById('player').addEventListener('unmounted', function() {/* Do something here */});
+
+nexplayer.Setup({
+  key: 'YOUR LICENSE KEY',
+  div: document.getElementById('player'),
+  ...
+})
 ```
 
 #### Nexplayer Events

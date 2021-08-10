@@ -8,7 +8,7 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.4.3_20210809/nexplayer.js
 ```
-* **[Added]** Implemented new property for encoding parameters of the VAST URLs. <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration">"adsParamsToEncode"</a>.
+* **[Added]** Implemented new property for encoding parameters of the VAST URLs. <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=setup">"adsParamsToEncode"</a>.
 * **[Improved]** Fixed playback after preroll ads.
 * **[Improved]** getDroppedFrames() method improved. Now returns accurate number of dropped frames.
 
@@ -18,7 +18,7 @@ Date: August 9th 2021
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.4.2_20210803/nexplayer.js
 ```
-* **[Added]** A UI for ads is now available using the property <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration">"showAdsUI"</a>.
+* **[Added]** A UI for ads is now available using the property <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=setup">"showAdsUI"</a>.
 * **[Added]** Added new methods in order to fetch properties status (more info <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-api">here</a>):
     * **getCurrentContentType()**: string → returns the the type of the current asset (“ad”, “mainContent” or “none”).
     * **getCurrentTime()**: number → returns the current time of the video.
@@ -53,8 +53,8 @@ https://nexplayer.nexplayersdk.com/HTML5/3.4.0_20210720/nexplayer.js
 * **[Added]** Playlist ad format is now supported. 
 * **[Added]** Remote buttons handlers have been implemented.
 * **[Added]** IMA and PAL ad libraries are now supported. More information on how to use them <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ads">here</a>.
-* **[Added]** Implemented "removeEventListener" methods for ad events removal. More information on how to use these methods <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ads-events">here</a>.
-* **[Added]** Implemented "off" methods for player events removal. More information on how to use it <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer-events">here</a>.
+* **[Added]** Implemented method for removing the listeners of ad events. More information on how to use these methods <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=removeadsevents">here</a>.
+* **[Added]** Implemented "off" method for player events removal. More information on how to use it <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer-events">here</a>.
 
 * **[Improved]** Black screen after ads has been fixed.
 * **[Improved]** Fixed unresponsive UI when no ads are triggered.
@@ -70,8 +70,8 @@ Date: July 20th 2021
 https://nexplayer.nexplayersdk.com/HTML5/3.3.11_20210701/nexplayer.js
 ```
 * **[Added]** Chunking properties are internally calculated depending on the number of thumbnails provided. Thus, "thumbChunking" property has been removed.
-* **[Added]** Added "mount" and "unmount" events in order to check when the player is initialized or destroyed. More information <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=isready">here</a>.
-* **[Added]** Added IsReady() method in order to check if the player is ready to mount or not. More information <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=destroy">here</a>.
+* **[Added]** Added "mount" and "unmount" events in order to check when the player is initialized or destroyed. More information <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=mounted">here</a>.
+* **[Added]** Added IsReady() method in order to check if the player is ready to mount or not. More information <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=isready">here</a>.
 
 * **[Improved]** Changed staticThumbnailsVTT to staticThumbnails and useDynamicThumbnails to dynamicThumbnails. "staticThumbnailsImg" property has been removed.
 * **[Improved]** Normalized event names throughout all projects. "adended" is now "adcomplete" and "adblockstarted" is now "adblockstart". 

@@ -2257,7 +2257,6 @@ Every new release of NexPlayer™ is backwards compatible.
 This document describes the integration of the NexPlayer Tizen SDK and the detailed steps
 to create a sample application.
 
-
 ### Prerequisites 
 
 #### Setting Environment
@@ -2368,3 +2367,10 @@ While using Tizen Studio, if your app works in the simulator and it doesn't in a
 <access origin="*" subdomains="true"></access>
 
 ```
+
+## PlayStation 5
+
+PlayStation 5 is supported from NexPlayer's version [3.2.1](https://nexplayer.github.io/TizenWebOS/#/releases?id=version-321)
+In order to be able to use NexPlayer's SDK for PS5, a JSON file is needed. This JSON file must be hosted in the root of the domain where the application is hosted. For example, if the app is hosted in https://example.com/app the JSON file must be accessible from the path https://example.com/userAppId.json.
+
+Please, contact NexPlayer's support (supportmadrid@nexplayer.com) to request this file.

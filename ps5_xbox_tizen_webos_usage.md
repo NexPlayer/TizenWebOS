@@ -438,11 +438,11 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | hideUITime | <code>boolean</code> | Determines if the time will be hidden in the UI. |
 | improveStartUp | <code>boolean</code> | Determines whether the video has to start at the lowet bitrate or not. |
 | logosrc | <code>string</code> | Company URL logo. |
-| mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. False y default. |
+| mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. False by default. |
 | preferredAudioCodec | <code>Array</code> | Determines the codec priority. |
 | poster | <code>string</code> | Video poster URL. |
 | subtitle | <code>string</code> | Subtitle name of the video. |
-| reinitializeAfterAds | <code>boolean</code> | Used to avoid errors related to ads on Tizen 2020. False by default. |
+| reinitializeAfterAds | <code>boolean</code> | Used to avoid errors related to ads on PS5, please set it to true on this platform. False by default. |
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
 | showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |

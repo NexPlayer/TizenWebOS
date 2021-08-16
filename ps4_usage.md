@@ -93,6 +93,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
     addRequestFilter: Function, // Optional, used for give filters to the drm request
+    adsParamsToEncode: Array<string>, // Optional, used to encode adURL parameters
     autoplay: true, // Optional
     callbacksForPlayer: callback, // Optional callback called with the player instances
     debug: true, // Optional
@@ -145,7 +146,6 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [play()](#play)
  - [pause()](#pause)
  - [seek(value)](#seek)
- - [isSeeking()](#isseeking)
  - [Environment](#environment)
  - [DefaultConfig](#defaultconfig)
  - [destroy()](#destroy)
@@ -159,8 +159,8 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [getCurrentTime()](#getcurrenttime) ⇒ number
  - [getCurrentTrack()](#getcurrenttrack) ⇒ [Track](#track-object)
  - [getDuration()](#getduration) ⇒ number
- - [getQualityLevels()](#getqualitylevels) ⇒ array
- - [getSubtitles()](#getsubtitles) ⇒ array
+ - [getQualityLevels()](#getqualitylevels) ⇒ Array
+ - [getSubtitles()](#getsubtitles) ⇒ Array
  - [getThumbnailAt()](#getthumbnailat) ⇒ Promise
  - [getThumbnails()](#getthumbnails) ⇒ [Array\<Frame\>](#frame)
  - [getTracks()](#gettracks) ⇒ [Array\<Track\>](#track)
@@ -172,6 +172,9 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [getVolume()](#getvolume) ⇒ number
  - [getMute()](#getmute) ⇒ boolean
  - [getLogger()](#getlogger) ⇒ Logger
+ - [isCurrentAssetAd()](#iscurrentassetad) ⇒ boolean
+ - [isCurrentAssetMuted()](#iscurrentassetmuted) ⇒ boolean
+ - [isSeeking()](#isseeking) ⇒ boolean
 
 ##### Setters
 
@@ -236,6 +239,7 @@ Creates and initializes the player.
 | div | <code>HTMLDivElement</code> | The div container of the player. |
 | src | <code>string</code> | URL of the video to be played. |
 | drm | <code>NexPlayerDRMOptions</code> | Contains an object of DRM information. By default it's set to null. |
+| adsParamsToEncode | <code>Array<string></code> | Array of strings specifying the parameters in the ad URL to be encoded. |
 | adURL | <code>string</code> | Contains an object of DRM information. By default it's set to null. |
 | autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
 | callbacksForPlayer | <code>Function</code> | Used for retrieving the NexPlayer instance and video element. This is necessary for getting the instance and use the NexPlayer API. |
@@ -328,14 +332,6 @@ Seek the video to the value given.
 
 **Type**: instance method of  [<code>Player</code>](#Player)  
 
-<a id="isseeking"></a>
-
-##### player.isSeeking()
-
-Return a boolean, true if the player is seeking and false if not.
-
-**Type**: instance method of  [<code>Player</code>](#Player)
-
 <a id="environment"></a>
 
 ##### player.Environment()
@@ -373,7 +369,7 @@ Destroy the player
 Gets the available audio streams.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
-**Returns**: An array<AudioStream> - which contains the available audio streams.
+**Returns**: An Array<AudioStream> - which contains the available audio streams.
 
 <a id="getcurrentaudiotrack"> </a>
 
@@ -422,12 +418,12 @@ Returns the duration taking into account isUTC (if isUTC is true, getDuration's 
 
 <a id="getqualitylevels"> </a>
 
-##### player.getQualityLevels() ⇒ array
+##### player.getQualityLevels() ⇒ Array
 
 Gets the video quality levels array.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
-**Returns**: array - quality levels array info
+**Returns**: Array - quality levels array info
 
 <a id="getsubtitles"> </a>
 
@@ -536,6 +532,30 @@ Returns the logger of the Player.
 
 **Type**: instance method of  [<code>Player</code>](#Player)  
 **Returns**: Object
+
+<a id="iscurrentassetad"></a>
+
+##### player.isCurrentAssetAd()
+
+Returns a boolean, true if the current playing asset is an ad, false if not.
+
+**Type**: instance method of  [<code>Player</code>](#Player)
+
+<a id="iscurrentassetmuted"></a>
+
+##### player.isCurrentAssetMuted()
+
+Returns a boolean, true if the current playing asset is muted, false if not.
+
+**Type**: instance method of  [<code>Player</code>](#Player)
+
+<a id="isseeking"></a>
+
+##### player.isSeeking()
+
+Returns a boolean, true if the player is seeking and false if not.
+
+**Type**: instance method of  [<code>Player</code>](#Player)
 
 ***
 

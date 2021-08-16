@@ -4,6 +4,31 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 1.2.3
+
+```
+https://nexplayer.nexplayersdk.com/NexHTML5/1.2.3_20210810/nexplayer.js
+```
+
+**New features:**
+- Added property "adsParamsToEncode" that must provide an Array of strings specifying the parameters in the ad URL to be encoded. For example: ["video_url_to_fetch"]
+- Added new methods in order to fetch properties status (more info <a href="https://nexplayer.github.io/TizenWebOS/#/ps4_usage?id=getters-2">here</a>):
+
+    * **getCurrentContentType()**: string → returns the the type of the current asset (“Ad”, “Main content” or “None”).
+    * **getCurrentTime()**: number → returns the current time of the video.
+    * **getPlaybackRate()**: number → returns the playback rate/speed of the video.
+    * **getProtocol()**: NexProtocol  → returns the protocol of the stream used: 
+    * **getVersion()**: string → returns the version of the SDK.
+    * **isCurrentAssetAd()**: boolean → indicates whether the current asset playing is an ad or not; 
+    * **isCurrentAssetMuted()**: boolean → returns whether the ad or the main content is muted or not.
+
+- Added a new event, “bufferType”. this new event will be fired when a buffering event occurs and it specifies what type of buffering occurred ("Connection", "Seek", "Initial", "Background"). More info about events <a href="https://nexplayer.github.io/TizenWebOS/#/ps4_usage?id=playerevents">here</a>.
+
+**Bug fixes:**
+- Fixed non-resolving promises which lead to out of memory errors when fetching thumbnails
+
+Date: August 10th 2021
+
 #### Version 1.2.2
 
 ```

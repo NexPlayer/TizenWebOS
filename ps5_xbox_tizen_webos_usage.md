@@ -2250,16 +2250,67 @@ When a specific version of the library is used, the URL of the hosted library sh
 Every new release of NexPlayer™ is backwards compatible.
 
 
-## Tizen Studio
+## Integrations 
 
-###  How to integerate NexPlayer Tizen SDK 
+### New Relic
+
+This document describes the integration of a New Relic tracker and NexPlayer. 
+
+#### Quick start
+
+The two following scripts must be included before NexPlayer does:
+
+```js
+    <!-- newrelic browser agent. REMEMBER TO REPLACE THIS SCRIPT WITH YOUR OWN BROWSER AGENT -->
+    <script type="text/javascript" src="./agent.js"></script>
+
+    <!-- newrelic tracker. Ask NexPlayer team for the library -->
+    <script type="text/javascript" src="./newrelic-video-nexplayer.min.js"></script>
+```
+
+In order to make New Relic work the property 'useNewRelicTracker' must be set to true in the Setup:
+
+```js
+    var player = null;
+    var video = null;
+
+    // Pass this function to the Setup method as below
+    var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+
+        // Retrieve the player and video instances
+        player = nexplayerInstance;
+        video = videoElement;
+    };
+
+    // Create and initialize the player
+    nexplayer.Setup({
+        key: 'YOUR LICENSE KEY', 
+        div: document.getElementById('player'),     
+        callbacksForPlayer: callBackWithPlayers,
+        src: 'YOUR STREAM URL'
+        useNewRelicTracker: true,
+        // ...
+    });
+```
+
+Adding these two scripts and the property is all it takes for New Relic to work along NexPlayer. Note that the "agent" script is a customer's own file while "newrelic-video-nexplayer.min.js" is provided by our team and must be requested in order to make use of it. No extra steps are needed in order to set the communication between the player and the tracker as that is already managed via the latter script.
+
+#### Methods
+
+Custom data to be tracked can be added and removed using the following methods:
+ - [addTrackerData()](#addtrackerdata)
+ - [removeTrackerData()](#removetrackerdata)
+
+### Tizen Studio
+
+####  How to integerate NexPlayer Tizen SDK 
 
 This document describes the integration of the NexPlayer Tizen SDK and the detailed steps
 to create a sample application.
 
-### Prerequisites 
+#### Prerequisites 
 
-#### Setting Environment
+##### Setting Environment
 
 1. Download and Install the Tizen Studio IDE from this [link](http://developer.samsung.com/tv/develop/tools/tizen-studio/). Make sure to select the appropriate Operating System 
 ![Tizen Studio Install](asset/tizen_studio_install.png)
@@ -2275,9 +2326,9 @@ Follow [this](https://docs.tizen.org/application/vstools/tools/certificate-manag
 
 ------
 
-### How to create a simple Tizen TV application using NexPlayer Tizen SDK
+#### How to create a simple Tizen TV application using NexPlayer Tizen SDK
 
-#### Create a Basic Project using Tizen Studio
+##### Create a Basic Project using Tizen Studio
 
 1. Create a new project Click on File -> New -> Tizen Project. 
 ![Start Project Wizard](asset/NewProject1.PNG)
@@ -2353,7 +2404,7 @@ Follow [this](https://docs.tizen.org/application/vstools/tools/certificate-manag
 </html>
 ```
 
-#### Building and Running the Project
+##### Building and Running the Project
 
 To launch the project on Tizen TV Check [this](https://developer.samsung.com/smarttv/develop/getting-started/using-sdk/tv-device.html)
  guide.
@@ -2368,7 +2419,7 @@ While using Tizen Studio, if your app works in the simulator and it doesn't in a
 
 ```
 
-## PlayStation 5
+### PlayStation 5
 
 PlayStation 5 is supported from NexPlayer's version [3.2.1](https://nexplayer.github.io/TizenWebOS/#/releases?id=version-321)
 In order to be able to use NexPlayer's SDK for PS5, a JSON file is needed. This JSON file must be hosted in the root of the domain where the application is hosted. For example, if the app is hosted in https://example.com/app the JSON file must be accessible from the path https://example.com/userAppId.json.

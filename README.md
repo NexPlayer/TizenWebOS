@@ -80,27 +80,33 @@ NexPlayer supports several platforms and models:
   <tbody>
     <tr>
       <th class="titles" bgcolor="#C80000" scope="row">Platform </th>   
-      <th class="titles" bgcolor="#C80000" scope="row">Minimum model and year</th>             
+      <th class="titles" bgcolor="#C80000" scope="row">Minimum model and year</th>   
+      <th class="titles" bgcolor="#C80000" scope="row">Supported content</th>              
     </tr>
     <tr>
       <th  scope="row"><a href="https://developer.samsung.com/smarttv/develop/specifications/tv-model-groups.html">Samsung Tizen</a></th>      
-      <th  scope="row"><span> Tizen 2.3 (2015)</span> </th>       
+      <th  scope="row"><span>Tizen 2.3 (2015)</span> </th>       
+      <th  scope="row"><span>DASH/HLS + PlayReady/Widevine</span></th>       
     </tr>
     <tr>
        <th  scope="row"> <a href="https://webostv.developer.lge.com/discover/specifications/supported-media-formats/">LG WebOS</a></th>      
       <th  scope="row">WebOS 3.0 (2016)</th>         
+      <th  scope="row">DASH/HLS + PlayReady/Widevine</th>         
     </tr>
     <tr>
       <th  scope="row">PlayStation 4</th>      
       <th  scope="row"><span>Original (2013)</span></th>   
+      <th  scope="row"><span>DASH + PlayReady, HLS Clear</span></th>   
     </tr>
     <tr>
       <th  scope="row">PlayStation 5</th>      
       <th  scope="row"><span>Standard/Digital (2020)</span></th>   
+      <th  scope="row"><span>DASH/HLS + PlayReady</span></th>   
     </tr>
     <tr>
       <th  scope="row">Xbox One</th>      
       <th  scope="row"><span>Original (2014)</span></th>   
+      <th  scope="row"><span>DASH/HLS + PlayReady</span></th>   
     </tr>
     <!-- <tr>
       <th  scope="row">Xbox Series S/X</th>      

@@ -34,7 +34,7 @@ Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.c
 
  <body>
   <div id="player"></div>
-  <script src=""Latest SDK version."></script>
+  <script src="Latest SDK version."></script>
  </body>
 
  <script type="text/javascript">
@@ -44,6 +44,7 @@ Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.c
         key: 'ENTER YOUR LICENSE KEY HERE',
         div: document.getElementById("player"),
         src: 'https://livesim.dashif.org/dash/vod/testpic_2s/multi_subs.mpd',
+        autoplay: true,
     });
 </script>
 
@@ -51,6 +52,11 @@ Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.c
 ```
 
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that replacing the license key is mandatory. License key should have been already sent to your inbox or you can request one from support.madrid@nexplayer.com. </p>
+</div></div>
+
+<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>As for PS5, in order to be able to use NexPlayer's SDK for PS4, a JSON file is needed. This JSON file must be hosted in the root of the domain where the application is hosted. For example, if the app is hosted in https://example.com/app the JSON file must be accessible from the path https://example.com/userAppId.json.
+
+Please, contact NexPlayer's support (supportmadrid@nexplayer.com) to request this file.</p>
 </div></div>
 
 ### Step-by-Step
@@ -81,6 +87,7 @@ To integrate NexPlayer™ into your project you must complete the following step
         key: 'ENTER YOUR LICENSE KEY HERE',
         div: document.getElementById("player"),
         src: 'https://livesim.dashif.org/dash/vod/testpic_2s/multi_subs.mpd',
+        autoplay: true,
     });
 ```
 
@@ -98,9 +105,9 @@ There are a substantial number of customizable options for NexPlayer™ includin
     callbacksForPlayer: callback, // Optional callback called with the player instances
     debug: true, // Optional
     drm: [{
-        NexDRMType:'DRM Type (eg. com.widevine.alpha(', NexDRMKey: 'URI for the DRM Key', 
-        NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
-        NexCallback:OptionalDRMCallbackForFairPlay
+        NexDRMType: 'DRM Type (eg. com.widevine.alpha(', NexDRMKey: 'URI for the DRM Key', 
+        NexHeaders: [{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
+        NexCallback: OptionalDRMCallbackForFairPlay
     }], // Optional DRM information
     thumbnails: {
          canvas: HTMLCanvasElement; // Optional

@@ -4,6 +4,25 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.4.5
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.4.5_20210909/nexplayer.js
+```
+* **[Improved]** General improvements.
+
+Date: September 9th 2021
+
+#### Version 3.4.4
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.4.4_20210824/nexplayer.js
+```
+* **[Improved]** Fixed bug with VMAP ads that contain bumpers.
+* **[Improved]** Fixed issue that caused the player to stay black after an ad finishes.
+* **[Improved]** Fixed bug regarding the ads triggered when using the property "resumePosition" from the "Setup" method.
+* **[Improved]** Fixed pause issue after the ads are completed.
+
+Date: August 24th 2021
+
 #### Version 3.4.3
 ```
 https://nexplayer.nexplayersdk.com/HTML5/3.4.3_20210809/nexplayer.js

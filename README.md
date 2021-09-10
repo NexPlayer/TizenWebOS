@@ -12,70 +12,105 @@ NexPlayer™ provides a media player for Smart TVs operating on Tizen and WebOS 
 
 The default UI is easily customizable to fit the user&#xB4;s personal preferences (e.g. icons, colors, etc).
 
-<div class="listsContainer">
-<a href="https://nexplayer.github.io/TizenWebOS/#/" class="hideText"> Full Documentation </a>
-<div class="blocks">
-<h5 class="titleBlocks">VIDEO DELIVERY FORMATS</h5>
-  <ul class="list">  
-      <li>HLS </li>      
-      <li>DASH </li>  
-      <li>Progressive Download </li>      
-  </ul>
-</div>
-<div class="blocks">
-<h5 class="titleBlocks">FEATURES</h5>
-  <ul class="list">  
-      <li>Integrated UI </li>         
-      <li>Multiple audio/video tracks </li>      
-      <li>ABR and UHD video (4k and 8k) </li>
-      <li>Trick Play </li>     
-      <li>Time-shifting </li>   
-      <li>DVR Live Streaming </li>   
-      <li>Picture-in-picture </li>   
-      <li>Fully Customizable UI </li>         
-  </ul>
-</div>
-<div class="blocks">
-<h5 class="titleBlocks">PLAYBACK</h5>
-  <ul class="list">  
-      <li>VOD </li>      
-      <li>Live </li>             
-  </ul>
-</div>
-<div class="blocks">
-<h5 class="titleBlocks">AD INSERTION</h5>
-  <ul class="list">  
-      <li>VAST, VPAID, VMAP, Playslist </li>      
-      <li>Pre-Roll, Mid-Roll, Post-Roll </li>
-      <li>Integrated Client-Side Ad Insertion </li>
-      <li>IMA & PAL SDKs for Client-Side Ad Insertion </li>
-      <li>Server-Side Ad Insertion </li>
-  </ul>
-</div>
-<div class="blocks">
-<h5 class="titleBlocks">SUBTITLES & CC</h5>
-  <ul class="list">  
-      <li>WebVTT </li>      
-      <li>CEA 608/708 </li> 
-      <li>TTML </li> 
-      <li>SRT </li> 
-      <li>SMPTE-TT(2018+) </li> 
-  </ul>
-</div>
-<div class="blocks">
-<h5 class="titleBlocks">METADATA</h5>
-  <ul class="list">  
-      <li>ID3 Tags </li>
-  </ul>
-</div>
-<div class="blocks">
-<h5 class="titleBlocks">CONTENT PROTECTION</h5>
-  <ul class="list">  
-      <li>Widevine DRM </li>      
-      <li>PlayReady DRM </li>       
-      <li>AES </li>
-      <li>Custom HTTP headers</li>   
-      <li>CENC </li>        
-  </ul>
-</div>
-</div>
+<section class="abstractTable">
+  <div class="gridColumn">
+    <div class="titleCell">VIDEO DELIVERY FORMATS</div>
+    <div class="contentCell">
+      <div>HLS </div>      
+      <div>DASH </div>  
+      <div>Progressive Download </div>
+    </div>
+    <div class="titleCell">AD INSERTION</div>
+    <div class="contentCell">
+      <div>VAST, VPAID, VMAP, Playslist </div>      
+      <div>Pre-Roll, Mid-Roll, Post-Roll </div>
+      <div>Integrated Client-Side Ad Insertion </div>
+      <div>IMA SDK for Client-Side Ad Insertion </div>
+      <div>PAL SDK for Client-Side Ad Insertion </div>
+      <div>Server-Side Ad Insertion </div>
+    </div>
+    <div class="titleCell">METADATA</div>
+    <div class="contentCell">
+      <div>ID3 Tags</div>
+    </div>
+  </div>
+  <div class="gridColumn">
+    <div class="titleCell">FEATURES</div>
+    <div class="contentCell">
+      <div>Integrated UI </div>         
+      <div>Multiple audio/video tracks </div>      
+      <div>ABR and UHD video (4k and 8k) </div>
+      <div>Trick Play </div>     
+      <div>Time-shifting </div>   
+      <div>DVR Live Streaming </div>   
+      <div>Picture-in-picture </div>   
+      <div>Fully Customizable UI </div>     
+    </div>
+  </div>
+  <div class="gridColumn">
+    <div class="titleCell">PLAYBACK</div>
+    <div class="contentCell">
+      <div>VOD </div>      
+      <div>Live </div>  
+    </div>
+    <div class="titleCell">SUBTITLES & CC</div>
+    <div class="contentCell">
+      <div>WebVTT </div>      
+      <div>CEA 608/708 </div> 
+      <div>TTML </div> 
+      <div>SRT </div> 
+      <div>SMPTE-TT(2018+) </div> 
+    </div>
+    <div class="titleCell">CONTENT PROTECTION</div>
+    <div class="contentCell">
+      <div>Widevine DRM </div>      
+      <div>PlayReady DRM </div>       
+      <div>AES </div>
+      <div>Custom HTTP headers</div>   
+      <div>CENC </div>     
+    </div>
+  </div>
+</section>
+
+## Platforms support
+
+NexPlayer supports several platforms and models:
+
+<table style="display: table">
+  <tbody>
+    <tr>
+      <th class="titles" bgcolor="#C80000" scope="row">Platform </th>   
+      <th class="titles" bgcolor="#C80000" scope="row">Minimum model and year</th>   
+      <th class="titles" bgcolor="#C80000" scope="row">Supported content</th>              
+    </tr>
+    <tr>
+      <th  scope="row"><a href="https://developer.samsung.com/smarttv/develop/specifications/tv-model-groups.html">Samsung Tizen</a></th>      
+      <th  scope="row"><span>Tizen 2.3 (2015)</span> </th>       
+      <th  scope="row"><span>DASH/HLS + PlayReady/Widevine</span></th>       
+    </tr>
+    <tr>
+       <th  scope="row"> <a href="https://webostv.developer.lge.com/discover/specifications/supported-media-formats/">LG WebOS</a></th>      
+      <th  scope="row">WebOS 3.0 (2016)</th>         
+      <th  scope="row">DASH/HLS + PlayReady/Widevine</th>         
+    </tr>
+    <tr>
+      <th  scope="row">PlayStation 4</th>      
+      <th  scope="row"><span>Original (2013)</span></th>   
+      <th  scope="row"><span>DASH + PlayReady, HLS Clear</span></th>   
+    </tr>
+    <tr>
+      <th  scope="row">PlayStation 5</th>      
+      <th  scope="row"><span>Standard/Digital (2020)</span></th>   
+      <th  scope="row"><span>DASH/HLS + PlayReady</span></th>   
+    </tr>
+    <tr>
+      <th  scope="row">Xbox One</th>      
+      <th  scope="row"><span>Original (2014)</span></th>   
+      <th  scope="row"><span>DASH/HLS + PlayReady</span></th>   
+    </tr>
+    <!-- <tr>
+      <th  scope="row">Xbox Series S/X</th>      
+      <th  scope="row"><span>-</span></th>   
+    </tr> -->
+  </tbody>
+</table>

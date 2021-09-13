@@ -1953,7 +1953,7 @@ nexplayerInstance.seek(30);
 
 #### Picture in Picture
 
-Only supported by Tizen 4.0 (2018) or newer versions
+Only supported by platforms that actually allows picture in picture API.
 
 ```js
 var callBackWithPlayers = function (nexplayerInstance, videoElement) {

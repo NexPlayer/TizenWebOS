@@ -1953,7 +1953,7 @@ nexplayerInstance.seek(30);
 
 #### Picture in Picture
 
-Only supported by platforms that actually allows picture in picture API.
+Only supported by platforms that actually allow picture in picture API.
 
 ```js
 var callBackWithPlayers = function (nexplayerInstance, videoElement) {

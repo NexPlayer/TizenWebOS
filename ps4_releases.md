@@ -4,6 +4,17 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 1.2.4
+
+```
+https://nexplayer.nexplayersdk.com/NexHTML5/1.2.4_20210923/nexplayer.js
+```
+
+**New features:**
+- Implemented garbage collection for thumbnails in order to get rid of out of memory errors. Chunks that are out of the thumbnails loading range are removed from the loaded chunks array.
+
+Date: September 23rd 2021
+
 #### Version 1.2.3
 
 ```

@@ -1327,32 +1327,27 @@ NexPlayer™ supports several DRM technologies:
 
   <tbody>
     <tr>
-      <th class="titles" bgcolor="#C80000" scope="row">FEATURE </th>   
-      <th class="titles" bgcolor="#C80000" scope="row">AES 128</th>        
+      <th class="titles" bgcolor="#C80000" scope="row">FEATURE </th>       
       <th class="titles" bgcolor="#C80000" scope="row">PLAYREADY</th>        
       <th class="titles" bgcolor="#C80000" scope="row">WIDEVINE</th>        
     </tr>
     <tr>
-      <th  scope="row">Encrypted key </th>      
-      <th  scope="row">&#10060</th>      
+      <th  scope="row">Encrypted key </th>          
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
     </tr>
     <tr>
        <th  scope="row">Separate encryption key server </th>      
-      <th  scope="row">&#10060</th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
     </tr>
     <tr>
-      <th  scope="row">Hardware DRM </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
+      <th  scope="row">Hardware DRM </th>         
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>             
     </tr>
     <tr>
-      <th  scope="row">Custom Headers</th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
+      <th  scope="row">Custom Headers</th>        
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
     </tr>
@@ -1450,16 +1445,10 @@ nexplayer.Setup({
 
 #### AES
 
-NexPlayer™ supports HLS content encrypted with the AES-128 algorithm. If the key is transported inside the HLS manifest itself, it will automatically work without any modification on the developer's side.
+NexPlayer™ stopped the support for AES.
 
-<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>
-Please note that this method is not as secure as other DRMs.</p>
-</div></div>
-
-
-
-AES is supported with HLS
 #### Custom Headers
+
 Custom headers can be included in each HTTP petition, even without the use of DRM, to include extra information for the server.
 
 This information can be passed in the DRM array:
@@ -1953,7 +1942,7 @@ nexplayerInstance.seek(30);
 
 #### Picture in Picture
 
-Only supported by Tizen 4.0 (2018) or newer versions
+Only supported by platforms that actually allow picture in picture API.
 
 ```js
 var callBackWithPlayers = function (nexplayerInstance, videoElement) {

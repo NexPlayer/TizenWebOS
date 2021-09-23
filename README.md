@@ -64,8 +64,7 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
     <div class="titleCell">CONTENT PROTECTION</div>
     <div class="contentCell">
       <div>Widevine DRM </div>      
-      <div>PlayReady DRM </div>       
-      <div>AES </div>
+      <div>PlayReady DRM </div>
       <div>Custom HTTP headers</div>   
       <div>CENC </div>     
     </div>

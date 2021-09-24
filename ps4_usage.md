@@ -879,6 +879,30 @@ Set the volume of the ad.
 
 ### Events
 
+<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that if you want to listen to events that happen at the start of the player initialization (e.g. "playercreated" or "adpodsinfo" event when ads are provided), the listeners must be added before calling the initialization method of the player. Example: <br>
+</div></div>
+
+```js
+    var player = new nexplayer.NexPlayer();
+
+    // Adds a listener for the playing event
+    nexplayer.PlayerEvents("playing", function(e) {
+        console.log("playing", e);
+    });
+
+    // Adds a listener for the aderror event
+    nexplayer.AdsEvents("aderror", function(e) {
+        console.log("aderror", e);
+    });
+
+    player.init({
+        key: 'ENTER YOUR LICENSE KEY HERE',
+        div: document.getElementById("player"),
+        src: 'https://livesim.dashif.org/dash/vod/testpic_2s/multi_subs.mpd',
+        autoplay: true,
+    });
+```
+
 #### Player Events
 
 We have events to handle some different kind of player events. List of player events available:

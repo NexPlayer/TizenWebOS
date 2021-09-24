@@ -46,10 +46,6 @@ Date: July 30th 2021
 
 #### Version 1.2.1
 
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.2.1_20210729/nexplayer.js
-```
-
 **Bug fixes:**
   - Fixed thumbails width and height properties as they were swapped.
 

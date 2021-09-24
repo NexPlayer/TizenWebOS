@@ -17,10 +17,6 @@ Date: September 23rd 2021
 
 #### Version 1.2.3
 
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.2.3_20210810/nexplayer.js
-```
-
 **New features:**
 - Added property "adsParamsToEncode" that must provide an Array of strings specifying the parameters in the ad URL to be encoded. For example: ["video_url_to_fetch"]
 - Added new methods in order to fetch properties status (more info <a href="https://nexplayer.github.io/TizenWebOS/#/ps4_usage?id=getters-2">here</a>):
@@ -42,10 +38,6 @@ Date: August 10th 2021
 
 #### Version 1.2.2
 
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.2.2_20210730/nexplayer.js
-```
-
 **Bug fixes:**
   - Renamed Frame object "canvas" property to "thumbnail".
   - Fixed permanent pending promise when fetching thumbnails that lead to "undefined" resolutions.
@@ -65,9 +57,6 @@ Date: July 29th 2021
 
 #### Version 1.2.0
 
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.2.0_20210723/nexplayer.js
-```
 New features:
   - Added SSAI support for PS4. It can be used through the property 'ssaiMediaTailor'.
   
@@ -91,10 +80,6 @@ New features:
 Date: July 23rd 2021
 
 #### Version 1.1.9
-
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.1.9_20210525/nexplayer.js
-```
 
 **New features:**
   - Added New Relic support for PS4. It can be used through the property 'useNewRelicTracker'.
@@ -123,10 +108,6 @@ Date: May 25th 2021
 
 #### Version 1.1.8
 
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.1.8_20210420/nexplayer.js
-```
-
 **New features**:
   - Setup can be called prior to Unmount in order to reduce the delay when restarting
   the player. The configuration provided in the last Setup call is saved and will be 
@@ -138,10 +119,6 @@ https://nexplayer.nexplayersdk.com/NexHTML5/1.1.8_20210420/nexplayer.js
 Date: April 20th 2021
 
 #### Version 1.1.7
-
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.1.7_20210330/nexplayer.js
-```
 
 **New features**:
   - UnMount function has changed its return type. Now returns a Promise which is resolved when the player
@@ -161,10 +138,6 @@ Date: March 30th 2021
 
 #### Version 1.1.6
 
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.1.6_20210318/nexplayer.js
-```
-
 **New features:**
   - New player event "newsubtitlesdataloaded". It is fired when new text track are detected. Currently, embedded CC text track
   is detected later so this event can be fired several times. You should use this event for retrieving the current text tracks of the stream.
@@ -180,10 +153,6 @@ https://nexplayer.nexplayersdk.com/NexHTML5/1.1.6_20210318/nexplayer.js
 Date: March 18th 2021
 
 #### Version 1.1.5
-
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.1.5_20210309/nexplayer.js
-```
 
   - Added support for static and chunked thumbnails. Include the following property in Nexplayer's SetUp:
     > Static:
@@ -217,20 +186,12 @@ Date: March 9th 2021
 
 #### Version 1.1.4
 
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.1.4_20210304/nexplayer.js
-```
-
 **New features:**
   - Added property "detail" into the events objects for offering backwards compatibility with the legacy SDK.
 
 Date: March 4th 2021
 
 #### Version 1.1.3
-
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.1.3_20210226/nexplayer.js
-```
 
 **New features:**
   - New events regarding the progression of the video:
@@ -249,19 +210,11 @@ Date: February 26th 2021
 
 #### Version 1.1.2
 
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.1.2_20210223/nexplayer.js
-```
-
 - Official release containing all the features and bug fixes from the previous versions.
 
 Date: February 23rd 2021
 
 #### Version 1.1.1
-
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.1.1_20210218/nexplayer.js
-```
 
 **Bug fixes:**
 - Fixed state issue.
@@ -269,10 +222,6 @@ https://nexplayer.nexplayersdk.com/NexHTML5/1.1.1_20210218/nexplayer.js
 Date: February 18th 2021
 
 #### Version 1.1.0
-
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.1.0_20210217/nexplayer.js
-```
 
 **Bug fixes:**
   - DURATION_CHANGE event is triggered when the duration of the stream

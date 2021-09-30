@@ -287,7 +287,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [pause()](#pause)
  - [destroy(UnMount(player))](#destroy)
  - [on(callbackType, functionToBeCalled)](#on)
- - [off(callbackType)](#off)
+ - [off(eventId)](#off)
  - [enableABR()](#playerenableabr)
  - [addTrackerData()](#addtrackerdata)
  - [removeTrackerData()](#removetrackerdata)
@@ -539,9 +539,10 @@ method must be called from the 'nexplayer' instance and needs the 'player' eleme
 
    #### <a id="on"></a> player.on(callbackType, functionToBeCalled)
 
-Add a listener for a event.
+Add a listener of an event.
 
-**Type**: instance method of [<code>Player</code>](#Player)      
+**Type**: instance method of [<code>Player</code>](#Player)  
+**Return**: number -  id linked to the event listener created. You can use this number for removing the listener later.   
 **Parameters**:
 
 | Param              | Type                  | Description                   |
@@ -549,16 +550,16 @@ Add a listener for a event.
 | callbackType       | <code>NexEvent</code> | Event to listen for           |
 | functionToBeCalled | <code>Function</code> | Function called on each event |
 
-   #### <a id="off"></a> player.off(callbackType)
+   #### <a id="off"></a> player.off(eventId)
 
-Remove a listener for a event.
+Remove a listener of an event.
 
 **Type**: instance method of [<code>Player</code>](#Player)      
 **Parameters**:
 
 | Param              | Type                  | Description                   |
 | ------------------ | --------------------- | ----------------------------- |
-| callbackType       | <code>NexEvent</code> | Event to remove the listener from |
+| Id       | <code>Number</code> | Identifier of the event listener to remove |
 
    #### <a id="enableabr"></a> player.enableABR()
 
@@ -1793,7 +1794,7 @@ Advanced events such as a track change are available using the <code>on</code> m
 
  These events can be removed using the <code>off</code> method:
  ```js
- nexplayerInstance.off(nexplayer.Player.NexEvent.Track_Change);
+ nexplayerInstance.off(eventId);
  ```
 
 #### Ads events

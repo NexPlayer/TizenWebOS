@@ -559,7 +559,7 @@ Remove a listener of an event.
 
 | Param              | Type                  | Description                   |
 | ------------------ | --------------------- | ----------------------------- |
-| Id       | <code>Number</code> | Identifier of the event listener to remove |
+| eventId       | <code>Number</code> | Identifier of the event listener to remove |
 
    #### <a id="enableabr"></a> player.enableABR()
 

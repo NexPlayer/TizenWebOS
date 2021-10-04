@@ -6,14 +6,14 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 
 #### Version 3.4.5.1
 ```
-https://nexplayer.nexplayersdk.com/HTML5/3.4.5.1_20210929/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/3.4.5.1_20211004/nexplayer.js
 ```
 
 * **[Improved]** Fixed bugs related to VMAP and VAST ads.
 * **[Improved]** Babel regeneratorRuntime not defined issue fixed.
 * **[Added]** Error messages implemented for thumbnails.
 
-Date: September 29th 2021
+Date: Octuber 4th 2021
 
 #### Version 3.4.5
 

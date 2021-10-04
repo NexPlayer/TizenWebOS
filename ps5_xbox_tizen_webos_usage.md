@@ -209,6 +209,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     adsDelay: number, // Optional, used to add a delay before the ad starts playing. Specified in milliseconds
     adsMode: string, // Optional, used to select the ad library. Can be 'ima', 'pal' or 'default'.
     addRequestFilter: Function, // Optional, used for give filters to the drm request
+    adsParamsToEncode: [ e.g. "video_url_to_fetch"], // Optional. Array of strings that specifies the name of the VAST ad URL parameters to encode.
     autoplay: true, // Optional
     callbacksForLogger: callback, // Optional callback called with the logger instances
     callbacksForReturn: callback, // Optional callback called with the return button
@@ -238,7 +239,6 @@ There are a substantial number of customizable options for NexPlayer™ includin
     mutedAtStart: true, // Optional    
     preferredAudioCodec: Array, // This property can be used to give priority to a specific audio codec.
     poster: 'URL poster', // Optional
-    subtitle: 'Subtitle name of the video', // Optional
     reinitializeAfterAds: boolean, // Optional, used to avoid errors related to ads on Tizen 2020.
     resumePosition: number, // Optional, used for starting the video from the given position in seconds.
     showAdsUI: true, // Optional, used for showing the player controls when an ad is playing
@@ -250,15 +250,17 @@ There are a substantial number of customizable options for NexPlayer™ includin
     }, // Optional
     startFullscreen: true, // Optional
     startingBufferLength: 50, // Number of seconds the player will try to achieve when initializing
+    subtitle: 'Subtitle name of the video', // Optional
     title: 'Name of the Video', // Optional
-    trailer: boolean,// Optional, by default is set to false. Set to true when a stream should be considered a trailer, false when not.
+    trailer: boolean,
+    // Optional, by default is set to false. Set to true when a stream should be considered a trailer, 
+    // false when not.
     type_360: '360 visualisation type' // Optional, 'equirectangular' or 'cubemap'.
     useDefaultControls: true, // Optional, allows usage of remote controller
     useNewRelicTracker: boolean,
     // By default is set to false. Set to true in order to use the tracker. 
     // You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
     vast: 'URL with a VAST/VPAID/VMAP advertisement', // Optional
-    adsParamsToEncode: [ e.g. "video_url_to_fetch"], // Optional. Array of strings that specifies the name of the VAST ad URL parameters to encode.
 ```
 
 ## NexPlayer™ API
@@ -423,6 +425,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | adsDelay | <code>number</code> | Determines the delay before the ad starts playing. |
 | adsMode | <code>string</code> | Determines the ad library: 'ima', 'pal' or 'default'. |
 | addRequestFilter | <code>Function</code> | Sets a function that receives the DRM request as a parameter and changes its Headers. |
+| adsParamsToEncode| <code>Array<string></code> | Specifies the name of the VAST ad URL parameters to encode. |
 | autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
 | callbackForLogger | <code>Function</code> | Function to be called when the logger shows a message. |
 | callbackForReturn | <code>Function</code> | Sets a callback to be executed when the corresponding button is clicked. |
@@ -441,14 +444,14 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. False by default. |
 | preferredAudioCodec | <code>Array</code> | Determines the codec priority. |
 | poster | <code>string</code> | Video poster URL. |
-| subtitle | <code>string</code> | Subtitle name of the video. |
 | reinitializeAfterAds | <code>boolean</code> | Used to avoid errors related to ads on PS5, please set it to true on this platform. False by default. |
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
 | showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
-| staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and callback. |
+| staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and a callback which returns an <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=error">error</a> object. |
 | startFullScreen | <code>boolean</code> | Determines if the video will start on full screen. |
 | startingBufferLength | <code>number</code> | Determines the starting buffer lenght. |
+| subtitle | <code>string</code> | Subtitle name of the video. |
 | title | <code>string</code> | Video name. |
 | trailer | <code>boolean</code> | Determines if a stream should be considered a trailer. |
 | type_360 | <code>string</code> | Select the 360 video format to play. Possible values are 'equirectangular' and 'cubemap' |
@@ -456,7 +459,6 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this values is set to false. |
 | useNewRelicTracker | <code>boolean</code> | Determines if the New Relick tracker will be used. |
 | vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
-| adsParamsToEncode| <code>Array<string></code> | Specifies the name of the VAST ad URL parameters to encode. Maximum size of |
 
 #### <a id="changesource"></a> nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
@@ -1072,6 +1074,18 @@ Set the video quality level.
 | id | <code>number</code> | id of the stream. |
 | language | <code>string</code> | language of the stream. |
 | name | <code>string</code> | name of the stream. |
+
+#### <a id="error"></a> Error : <code>Object</code>
+
+**Type**: global typedef     
+**Properties**:  
+
+| Name    | Type                | Description                  |
+| ------- | ------------------- | ---------------------------- |
+| code    | <code>number</code> | Error code.                    |
+| message | <code>message</code> | Error detailed message.       |
+| src     | <code>src</code>  | Source link causing the error.   |
+| type    | <code>type</code> | File type causing the error.     |
 
 #### <a id="frame"></a> Frame : <code>Object</code>
 

@@ -9,8 +9,8 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 https://nexplayer.nexplayersdk.com/HTML5/3.4.5.1_20211004/nexplayer.js
 ```
 
-* **[Improved]** Optimized VMAP and VAST ads performance.
-* **[Improved]** Babel regeneratorRuntime defined.
+* **[Improved]** Fixed bugs related to VMAP and VAST ads.
+* **[Improved]** Babel regeneratorRuntime not defined issue fixed.
 * **[Added]** Error messages implemented for thumbnails.
 
 Date: Octuber 4th 2021

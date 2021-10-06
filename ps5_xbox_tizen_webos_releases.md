@@ -10,7 +10,7 @@ https://nexplayer.nexplayersdk.com/HTML5/3.4.6_20211006/nexplayer.js
 ```
 
 * **[Improved]** Fixed issue with subtitles not working with IMA.
-* **[Improved]** Fixed the time counter of trick play that is shown while the UI is deactivated
+* **[Improved]** Fixed the time counter of trick play that is shown while the UI is deactivated.
 
 Date: October 6th 2021
 

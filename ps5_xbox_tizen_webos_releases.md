@@ -15,9 +15,6 @@ https://nexplayer.nexplayersdk.com/HTML5/3.4.6_20211006/nexplayer.js
 Date: October 6th 2021
 
 #### Version 3.4.5.1
-```
-https://nexplayer.nexplayersdk.com/HTML5/3.4.5.1_20211004/nexplayer.js
-```
 
 * **[Improved]** Fixed bugs related to VMAP and VAST ads.
 * **[Improved]** Babel regeneratorRuntime not defined issue fixed.

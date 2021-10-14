@@ -4,10 +4,16 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 3.4.6.1
+```
+https://nexplayer.nexplayersdk.com/HTML5/3.4.6.1_20211013/nexplayer.js
+```
+
+* **[Improved]** Fixed issue with destroy method not working with some configurations.
+
+Date: October 14th 2021
+
 #### Version 3.4.6
-```
-https://nexplayer.nexplayersdk.com/HTML5/3.4.6_20211006/nexplayer.js
-```
 
 * **[Improved]** Fixed issue with subtitles not working with IMA.
 * **[Improved]** Fixed the time counter of trick play that is shown while the UI is deactivated.

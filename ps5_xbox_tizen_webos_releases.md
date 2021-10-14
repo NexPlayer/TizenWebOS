@@ -6,7 +6,7 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 
 #### Version 3.4.6.1
 ```
-https://nexplayer.nexplayersdk.com/HTML5/3.4.6.1_20211013/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/3.4.6.1_20211014/nexplayer.js
 ```
 
 * **[Improved]** Fixed issue with destroy method not working with some configurations.

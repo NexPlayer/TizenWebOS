@@ -367,6 +367,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
 
 
  - [AudioStream](#audiostream) : object
+ - [Error](#error) : object
  - [Frame](#frame) : object
  - [NexDRMInformation](#nexdrminformation) : object
  - [NexHeaders](#nexheaders) : object
@@ -448,7 +449,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
 | showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
-| staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and a callback which returns an <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=error">error</a> object. |
+| staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and a callback which returns an <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=error">error</a> object.|
 | startFullScreen | <code>boolean</code> | Determines if the video will start on full screen. |
 | startingBufferLength | <code>number</code> | Determines the starting buffer lenght. |
 | subtitle | <code>string</code> | Subtitle name of the video. |
@@ -1083,9 +1084,27 @@ Set the video quality level.
 | Name    | Type                | Description                  |
 | ------- | ------------------- | ---------------------------- |
 | code    | <code>number</code> | Error code.                    |
-| message | <code>message</code> | Error detailed message.       |
-| src     | <code>src</code>  | Source link causing the error.   |
-| type    | <code>type</code> | File type causing the error.     |
+| message | <code>string</code> | Error detailed message.       |
+| src     | <code>string</code>  | Source link causing the error.   |
+| type    | <code>string</code> | File type causing the error. **"Manifest"** and **"Image"** are the possible values.                                     **Manifest** indicates that the error has happened at the level of the thumbnails file e.g. the URL of the thumbnails files does not exist (error 404).   **Image** indicates that the error has ocurred at the level of a thumbnail image e.g the URL of a thumbnail image, which is specified inside the thumbnails    manifest, does not exist (error 404). |
+
+Possible error codes:
+
+**Manifest**:
+
+  404: Manifest not found
+
+  420: Manifest load error
+
+  422: Empty manifest | No thumbnails found
+
+  Other error codes come directly from the status code of the request's response.
+
+**Image**:
+
+  420: Image not loaded
+
+  422: Invalid image
 
 #### <a id="frame"></a> Frame : <code>Object</code>
 

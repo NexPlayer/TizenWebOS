@@ -1084,7 +1084,7 @@ Set the video quality level.
 | Name    | Type                | Description                  |
 | ------- | ------------------- | ---------------------------- |
 | code    | <code>number</code> | Error code.                    |
-| message | <code>string</code> | Error detailed message.       |
+| message | <code>string | Object</code> | Error detailed message. In case the message is an object, it will represent the request's response statusText parsed into an Object.      |
 | src     | <code>string</code>  | Source link causing the error.   |
 | type    | <code>string</code> | File type causing the error. **"Manifest"** and **"Image"** are the possible values.                                     **Manifest** indicates that the error has happened at the level of the thumbnails file e.g. the URL of the thumbnails files does not exist (error 404).   **Image** indicates that the error has ocurred at the level of a thumbnail image e.g the URL of a thumbnail image, which is specified inside the thumbnails    manifest, does not exist (error 404). |
 

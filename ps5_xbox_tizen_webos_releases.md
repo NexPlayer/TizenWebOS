@@ -4,10 +4,24 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.0.0
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.0.0_20211025/nexplayer.js
+```
+
+* **[Improved]** Fixed subtitles activation/deactivation issue with live streams.
+* **[Improved]** Fixed current tracks' bitrate property returning null for HLS streams.
+* **[Improved]** Fixed subtitles' style not displayed correctly, i.e. tags like \<i> were being displayed as they are and the text were not displayed as italics.
+
+
+* **[Added]** SSAI implementation using AWS MediaTailor.
+* **[Added]** Implemented method for adding VAST ads.
+* **[Added]** PlayReady DRM with HLS. Be aware of the possible restrictions on each platform.
+* **[Added]** Thumbnails garbage collection in order to release memory.
+* **[Added]** Seeking on live improved. It possible to seek throughout the range that can be retrieved using seekRange() method.
+* **[Added]** Parameter to control IMA's ads load timeout.
+
 #### Version 3.4.6.1
-```
-https://nexplayer.nexplayersdk.com/HTML5/3.4.6.1_20211014/nexplayer.js
-```
 
 * **[Improved]** Fixed issue with destroy method not working with some configurations.
 

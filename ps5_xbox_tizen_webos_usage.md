@@ -2153,8 +2153,6 @@ NexPlayer™ supports timed metadata for HLS and DASH content. The information i
 
 The following code is a sample to retrieve the metadata from the streams. It logs the active cues from the TexTrack corrsponding to the metadata.
 
-Use <a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/API?id=nexplayerdecodedatadata" target="_blank"> nexplayer.decodeData </a>  function to decode the VTTCue value['data'] property. This property is an ArrayBuffer.
-
 ```js
 
   var callBackWithPlayers = function (nexplayerInstance, videoElement) {
@@ -2179,15 +2177,9 @@ Use <a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/API?id=
         if (e.currentTarget[i].kind === "metadata") {
            // If the new TextTrack's kind is metadata change its mode to "hidden".
            // Otherwise, the mode is set to "disabled" and the "cuechange" events won't be received.
-           e.currentTarget[i].mode = "hidden";
-           e.currentTarget[i].addEventListener("cuechange", function (cueChangeEvent) {
-             let activeCues = cueChangeEvent.currentTarget.activeCues;
-             if (activeCues) {
-               for (let j = 0; j < activeCues.length; j++) {
-                 let data = nexplayer.decodeData(activeCues[j].value.data);
-                 console.log("Cue data converted to string ", data);
-                }
-              }
+            e.currentTarget[i].mode = "hidden";
+            e.currentTarget[i].addEventListener("cuechange", function (cueChangeEvent) {
+              let activeCues = cueChangeEvent.currentTarget.activeCues;
             });
           }
         }

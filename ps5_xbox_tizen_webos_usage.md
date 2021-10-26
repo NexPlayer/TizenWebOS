@@ -262,6 +262,16 @@ There are a substantial number of customizable options for NexPlayer™ includin
     // You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
     vast: 'URL with a VAST/VPAID/VMAP advertisement', // Optional
     adsLoadTimeout: 2000, // Number of milliseconds the player waits the ad to start.
+    // You need to pass an object containing the url with the following parameters.
+    ssaiMediaTailor:
+      {
+        baseURL: string, //Base URL for Video and Ads
+        playbackURL: string, //Video URL to be attached to the baseURL
+        adsParams:
+        {
+          "param1": string, //Ad URL to be attached to the baseURL
+                    }
+      },
 
 ```
 
@@ -464,6 +474,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | useNewRelicTracker | <code>boolean</code> | Determines if the New Relick tracker will be used. |
 | vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
 | adsLoadTimeout | <code>number</code> | Determines the time the player waits the ad to start. |
+| ssaiMediaTailor | <code><a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
 
 #### <a id="changesource"></a> nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
@@ -544,12 +555,11 @@ method must be called from the 'nexplayer' instance and needs the 'player' eleme
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
-   #### <a id="on"></a> player.on(callbackType, functionToBeCalled)
+### <a id="on"></a> player.on(callbackType, functionToBeCalled)
 
 Add a listener of an event.
 
-**Type**: instance method of [<code>Player</code>](#Player)  
-**Return**: number -  id linked to the event listener created. You can use this number for removing the listener later.   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Parameters**:
 
 | Param              | Type                  | Description                   |
@@ -557,7 +567,7 @@ Add a listener of an event.
 | callbackType       | <code>NexEvent</code> | Event to listen for           |
 | functionToBeCalled | <code>Function</code> | Function called on each event |
 
-   #### <a id="off"></a> player.off(eventId)
+   #### <a id="off"></a> player.off(callbackType, functionToBeCalled)
 
 Remove a listener of an event.
 
@@ -566,7 +576,8 @@ Remove a listener of an event.
 
 | Param              | Type                  | Description                   |
 | ------------------ | --------------------- | ----------------------------- |
-| eventId       | <code>Number</code> | Identifier of the event listener to remove |
+| callbackType       | <code>NexEvent</code> | Event to listen for           |
+| functionToBeCalled | <code>Function</code> | Function called on each event |
 
    #### <a id="enableabr"></a> player.enableABR()
 
@@ -1065,6 +1076,7 @@ Set the video quality level.
 | Track_Change | <code>number</code> | <code>0</code> | Fired when the player changes the current track.|
 | Fragment_Loading_Completed | <code>number</code> | <code>1</code> | Fired when a new fragment has been loaded.|
 | Buffering | <code>number</code> | <code>2</code> | Fired when the buffer state changes. Check payload for state. |
+| Error | <code>number</code> | <code>3</code> | Fired when an error occurs. Returns an object with the information, the object consists of an array with data about the error (not all errors include data), and the name of the error . |
 
 #### <a id="thumbtype"></a> Player.THUMB_TYPE : <code>enum</code>
 **Type**: static enum of [<code>Player</code>](#Player)  
@@ -1166,6 +1178,18 @@ Possible error codes:
 | height  | <code>number</code> | height of the video.  |
 | bitrate | <code>number</code> | bitrate of the video. |
 | id      | <code>number</code> | id of the video.      |
+
+#### <a id="ssaiobject"></a> SSAI Object : <code>Object</code>
+
+**Type**: global typedef     
+**Properties**:  
+
+| Name    | Type                | Description           |
+| ------- | ------------------- | --------------------- |
+| baseURL   | <code>string</code> | Base URL for Video and Ads.   |
+| playbackURL  | <code>string</code> | Video URL to be attached to the baseURL.  |
+| adsParams | <code>Object</code> | Contains "Params: string" this is the Ad URL to be attached to the baseURL. |
+
 
 ***
 
@@ -1335,13 +1359,15 @@ NexPlayer™ supports several DRM technologies:
       <th class="titles" bgcolor="#C80000" scope="row">MODELS </th>   
       <th class="titles" bgcolor="#C80000" scope="row">DASH+PlayReady</th>        
       <th class="titles" bgcolor="#C80000" scope="row">DASH+Widevine</th>        
-      <th class="titles" bgcolor="#C80000" scope="row">HLS+Widevine</th>        
+      <th class="titles" bgcolor="#C80000" scope="row">HLS+Widevine</th>
+      <th class="titles" bgcolor="#C80000" scope="row">HLS+Playready</th>      
     </tr>
     <tr>
       <th  scope="row">Samsung Tizen 
       <br> 2017-2018+ models</th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px; ">&#x2714;</span> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px; ">&#x2714;</span> </th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th> 
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
     </tr>
     <tr>
@@ -1349,19 +1375,22 @@ NexPlayer™ supports several DRM technologies:
        <br> 2015-2016 models</th>      
       <th  scope="row">&#10060</th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight:110; font-size:30px;">&#8505;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight: 900; font-weight:110; font-size:30px;">&#8505;</span></th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight: 900; font-weight:110; font-size:30px;">&#8505;</span></th>  
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>     
     </tr>
     <tr>
       <th  scope="row">LG WebOS 4.0+</th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th> 
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>             
     </tr>
     <tr>
       <th  scope="row">LG WebOS 3.0</th>      
       <th  scope="row">&#10060</th> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>             
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>           
     </tr>
   </tbody>
 </table>
@@ -1371,6 +1400,32 @@ NexPlayer™ supports several DRM technologies:
 *Widevine Classic was supported in these models, but ​it has been deprecated by Google. Itis no longer supported on Samsung TVs due to maintenance issues  
 </p>
 </div></div>
+
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
+<p>  
+  For using Playready on Tizen the security level must be 2000, the clients version less than 3.0 and WRMHEADER version of 4.0.0.0. or lower. <br/>
+  In Xbox the security level must be 150 on dev kit. <br/>
+  In LG devices capabilities and restrictions in the following <a href="https://webostv.developer.lge.com/discover/specifications/supported-media-formats/">link</a>. <br/>
+  And in PS5 must be included the next property in the setup:
+
+</p>
+</div></div>
+
+```js
+  nexplayer.Setup({
+    ...
+      configuration: {
+          drm: {
+              advanced: {
+                  'com.microsoft.playready': {
+                      distinctiveIdentifierRequired: true,
+                  },
+              }
+          },
+      },
+  });
+  ```
+
 
 <table class="table table-sm">
 
@@ -1643,7 +1698,7 @@ The video element emits the basic event, such as a change of the state of the vi
 
 The method <code>addEventListener</code> of the video element needs to be called with any of the available <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events" target="_blank">media events</a>.
 
-Some of the most important events are "playing", "pause", "waiting", and "timeupdate".
+Some of the most important events are "playing", "pause", "waiting", "timeupdate", "seeking" and "seeked".
 
 ```js
 videoElement.addEventListener("timeupdate", function() { console.log("The video playback has advanced to: "+videoElement.currentTime+", with the duration: "+videoElement.duration) }, true);
@@ -2092,30 +2147,69 @@ This feature tells the player whether to start playback with the volume muted or
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>mutedAtStart</b> parameter is false, so the player will start unmuted if <b>mutedAtStart</b> is not set to true.</p>
 </div></div>
 
+## Timed Metadata
+
+NexPlayer™ supports timed metadata for HLS and DASH content. The information is available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack </a> array of the video element.
+
+The following code is a sample to retrieve the metadata from the streams. It logs the active cues from the TexTrack corrsponding to the metadata.
+
+Use <a href="https://nexplayer.github.io/NexPlayer_HTML5_Documentation/#/API?id=nexplayerdecodedatadata" target="_blank"> nexplayer.decodeData </a>  function to decode the VTTCue value['data'] property. This property is an ArrayBuffer.
+
+```js
+
+  var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+    videoElement.addEventListener('loadedmetadata', function(event) {
+      if (videoElement.textTracks){
+        showTimedMetadata(videoElement);
+      }
+    });
+  };
+
+  nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'VIDEO URL',
+    callbacksForPlayer: callBackWithPlayers
+  });
+
+  var showTimedMetadata = function(videoElement) { 
+    videoElement.textTracks.addEventListener("addtrack", function (e) {
+      console.log("Add track", e.track);
+      for (let i = 0; i < e.currentTarget.length; i ++) {  
+        if (e.currentTarget[i].kind === "metadata") {
+           // If the new TextTrack's kind is metadata change its mode to "hidden".
+           // Otherwise, the mode is set to "disabled" and the "cuechange" events won't be received.
+           e.currentTarget[i].mode = "hidden";
+           e.currentTarget[i].addEventListener("cuechange", function (cueChangeEvent) {
+             let activeCues = cueChangeEvent.currentTarget.activeCues;
+             if (activeCues) {
+               for (let j = 0; j < activeCues.length; j++) {
+                 let data = nexplayer.decodeData(activeCues[j].value.data);
+                 console.log("Cue data converted to string ", data);
+                }
+              }
+            });
+          }
+        }
+    });	
+  };
+
+```
+
+***
+
 ### ID3 Tags
 
 NexPlayer™ supports timed metadata for HLS and DASH content. The information is available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack </a> array of the video element.
-```js
-var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-  videoElement.addEventListener('loadedmetadata', function(event) {
-    if (videoElement.textTracks) showTimedMetadata(videoElement);
-  });
-};
 
-nexplayer.Setup({
-  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
-  div: document.getElementById('player'),
-  src: 'VIDEO URL',
-  callbacksForPlayer: callBackWithPlayers
-});
 
-var showTimedMetadata = function(videoElement) {
-  videoElement.textTracks[1].addEventListener('cuechange', function (cueChangeEvent) {
-    var activeCues = cueChangeEvent.currentTarget.activeCues[0];
-      if (activeCues) console.log(activeCues['value']['data']);
-  });
-};
-```
+#### ID3
+
+ID3 is transported through .ts segments, usually in HLS.
+
+#### EMSG
+
+This type of metadata is contained in fMP4 segments (DASH & HLS). You can consult more information <a href="https://aomediacodec.github.io/id3-emsg/" target="_blank">here</a>
 
 ### CSS Customization
 

@@ -261,6 +261,8 @@ There are a substantial number of customizable options for NexPlayer™ includin
     // By default is set to false. Set to true in order to use the tracker. 
     // You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
     vast: 'URL with a VAST/VPAID/VMAP advertisement', // Optional
+    adsLoadTimeout: 2000, // Number of milliseconds the player waits the ad to start.
+
 ```
 
 ## NexPlayer™ API
@@ -294,6 +296,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [addTrackerData()](#addtrackerdata)
  - [removeTrackerData()](#removetrackerdata)
  - [trickplay(value)](#trickplay)
+ - [executeAd(vast url: String)](#executead)
 
 ##### Navigation
 
@@ -460,6 +463,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this values is set to false. |
 | useNewRelicTracker | <code>boolean</code> | Determines if the New Relick tracker will be used. |
 | vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
+| adsLoadTimeout | <code>number</code> | Determines the time the player waits the ad to start. |
 
 #### <a id="changesource"></a> nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
@@ -602,6 +606,17 @@ Sets the trick play value. A value bigger than 1 will move the seek time forward
 | Param | Type |Description |
 | --- | --- | --- |
 | value | Number | number of times per second to update the seek time. |
+
+#### <a id="executead"></a> player.executeAd(vast url: String)
+
+Execute the given ad during the video playback. The vast URL is mandatory.
+This method couldn't be used, until the ad block ends, if there are ads at the beggining of the video
+
+**Type**: instance method of [<code>Player</code>](#Player) 
+
+| Param | Type |Description |
+| --- | --- | --- |
+| vast url | String | URL of the ad which will be played. |
 
 ***
 
@@ -1559,7 +1574,22 @@ In order to use IMA or PAL, a script must be provided in the index, which are th
 <script src="https://nex360.s3.amazonaws.com/PAL/pal.js" ></script>
 ```
 
-#### Ad Methods
+#### Ads in runtime
+
+Since the 4.0.0 release the player has the feature to execute ads during a playback, is only needed use the player method **executeAd** and a vast url:
+
+```js
+player.executeAd("VASR URL")
+```
+
+<div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>
+Currently, this method couldn't be used, until the ad block ends, if there are ads at the beggining of the video.
+</div></div>
+
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>
+If you execute it sequentially the ads will be played one by one after the last ad.</p>
+</div></div>
+
 
 #### Ads methods
 

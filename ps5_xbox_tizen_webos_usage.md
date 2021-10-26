@@ -555,7 +555,7 @@ method must be called from the 'nexplayer' instance and needs the 'player' eleme
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
-### <a id="on"></a> player.on(callbackType, functionToBeCalled)
+#### <a id="on"></a> player.on(callbackType, functionToBeCalled)
 
 Add a listener of an event.
 
@@ -567,7 +567,7 @@ Add a listener of an event.
 | callbackType       | <code>NexEvent</code> | Event to listen for           |
 | functionToBeCalled | <code>Function</code> | Function called on each event |
 
-   #### <a id="off"></a> player.off(callbackType, functionToBeCalled)
+#### <a id="off"></a> player.off(callbackType, functionToBeCalled)
 
 Remove a listener of an event.
 
@@ -1076,7 +1076,7 @@ Set the video quality level.
 | Track_Change | <code>number</code> | <code>0</code> | Fired when the player changes the current track.|
 | Fragment_Loading_Completed | <code>number</code> | <code>1</code> | Fired when a new fragment has been loaded.|
 | Buffering | <code>number</code> | <code>2</code> | Fired when the buffer state changes. Check payload for state. |
-| Error | <code>number</code> | <code>3</code> | Fired when an error occurs. Returns an object with the information, the object consists of an array with data about the error (not all errors include data), and the name of the error . |
+| Error | <code>number</code> | <code>3</code> | Fired when an error occurs. Returns an object with the information of the error. The object contains an array with the data (not all errors include data), and the name. |
 
 #### <a id="thumbtype"></a> Player.THUMB_TYPE : <code>enum</code>
 **Type**: static enum of [<code>Player</code>](#Player)  

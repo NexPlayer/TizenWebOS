@@ -689,11 +689,13 @@ player.seek(120) // It seeks into minute 2:00 in the video (120 secs), must be a
 //Live video
 player.seek(-120) // It jumps back 2 minutes (120 secs) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
 ```
- #### <a id="seekRange"></a> player.seekRange()
+  #### <a id="seekRange"></a> player.seekRange()
 
 Returns an object, with start and ending times the player can seek to.
 
 **Returns**: object - {start: "number" , end: "number"}
+
+**Type**: instance method of [<code>Player</code>](#Player)
 
   #### <a id="seeklive"></a> player.seekLive()
 

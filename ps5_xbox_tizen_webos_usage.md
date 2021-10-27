@@ -318,6 +318,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [upFocus()](#upfocus)
  - [upSubtitle()](#upsubtitle)
  - [seek(value)](#seek)
+ - [seekRange()](#seekRange)
  - [seekLive()](#playerseekLive)
 
 ##### Player state
@@ -680,7 +681,7 @@ Set the currentTime property of the attached video element. (if isUTC is true, t
 
 | Param | Type  | Description                                    |
 | ----- | ----- | ---------------------------------------------- |
-| event | Event | value in seconds that the player will seek to. |
+| value | <code>number</code> | value in seconds that the player will seek to. |
 
 ```js
 //Non-live video 
@@ -688,6 +689,11 @@ player.seek(120) // It seeks into minute 2:00 in the video (120 secs), must be a
 //Live video
 player.seek(-120) // It jumps back 2 minutes (120 secs) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
 ```
+ #### <a id="seekRange"></a> player.seekRange()
+
+Returns an object, with start and ending times the player can seek to.
+
+**Returns**: object - {start: "number" , end: "number"}
 
   #### <a id="seeklive"></a> player.seekLive()
 

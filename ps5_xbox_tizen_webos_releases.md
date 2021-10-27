@@ -12,7 +12,7 @@ https://nexplayer.nexplayersdk.com/HTML5/4.0.0_20211025/nexplayer.js
 * **[Improved]** Fixed current tracks' bitrate property returning null for HLS streams.
 * **[Improved]** Fixed seek not working when including static thumbnails.
 * **[Improved]** Fixed subtitles activation/deactivation issue with live streams.
-* **[Improved]** Fixed subtitles' style not displayed correctly, i.e. tags like \<i> were being displayed as they are and the text were not displayed as italics.
+* **[Improved]** Fixed subtitles' style not displayed correctly, i.e. tags like \<i> were being displayed as they are and the text was not displayed as italics.
 * **[Improved]** Fixed <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=off">off</a> method not being defined
 * **[Improved]** Fixed thumbnails bug on fullscreen.
 

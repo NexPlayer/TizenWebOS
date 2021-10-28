@@ -301,7 +301,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [pause()](#pause)
  - [destroy(UnMount(player))](#destroy)
  - [on(callbackType, functionToBeCalled)](#on)
- - [off(eventId)](#off)
+ - [off(callbackType, functionToBeCalled)](#off)
  - [enableABR()](#playerenableabr)
  - [addTrackerData()](#addtrackerdata)
  - [removeTrackerData()](#removetrackerdata)

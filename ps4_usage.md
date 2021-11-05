@@ -929,9 +929,8 @@ We have events to handle some different kind of player events. List of player ev
 * **videomidpoint**: Event is fired when the 50% of the video’s duration has been reached.
 * **videothirdquartile**: Event is fired when the 75% of the video’s duration has been reached.
 * **ended**: Event launched when the stream has been finished.
-* **subtitlesdataloaded**: Event launched when captions are loaded.
 * **newsubtitlesdataloaded**: Event launched when new captions are loaded.
-* **ccnewdata**: Event launched when new captions are received.
+* **ccnewdata**: Event launched when new cues of the closed captions are received.
 * **thumbnaildata**: Event launched when a thumbnail data is received.
 * **thumbnailloaded**: Event launched when a thumbnail is loaded to the thumbnail array.
 * **thumbnailreply**: Event launched when a thumbnail is provided to the canvas.

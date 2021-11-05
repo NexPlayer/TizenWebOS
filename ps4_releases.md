@@ -4,6 +4,17 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 1.2.5
+
+```
+https://nexplayer.nexplayersdk.com/NexHTML5/1.2.5_20211025/nexplayer.js
+```
+
+**Bug fixes:**
+- Subtitles tracks were not being notified correctly when they were detected. Now, it is only necessary to listen to <a href="https://nexplayer.github.io/TizenWebOS/#/ps4_usage?id=player-events">"newsubtitlesdataloaded"</a>  event to be notified when a new subtitle is loaded.
+
+Date: October 25th 2021
+
 #### Version 1.2.4
 
 ```

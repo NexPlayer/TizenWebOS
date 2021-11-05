@@ -17,10 +17,6 @@ Date: October 25th 2021
 
 #### Version 1.2.4
 
-```
-https://nexplayer.nexplayersdk.com/NexHTML5/1.2.4_20210923/nexplayer.js
-```
-
 **New features:**
 - Implemented garbage collection for thumbnails in order to get rid of out of memory errors. Chunks that are out of the thumbnails loading range are removed from the loaded chunks array.
 

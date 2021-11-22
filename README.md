@@ -57,9 +57,7 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
     <div class="contentCell">
       <div>WebVTT </div>      
       <div>CEA 608/708 </div> 
-      <div>TTML </div> 
-      <div>SRT </div> 
-      <div>SMPTE-TT(2018+) </div> 
+      <div>TTML </div>
     </div>
     <div class="titleCell">CONTENT PROTECTION</div>
     <div class="contentCell">

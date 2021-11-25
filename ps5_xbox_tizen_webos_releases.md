@@ -11,7 +11,9 @@ https://nexplayer.nexplayersdk.com/HTML5/4.0.1_20211123/nexplayer.js
 
 * **[Improved]** Fixed issues with subtitles activation behaviour.
 * **[Improved]** Added error controls to the destroy method.
+* **[Improved]** Fixed bug related to the seek method on live streams and the seek range available.
 * **[Added]** Added support for escaped sequences on subtitles.
+* **[Added]** Implement decodeData function.
 
 Date: November 23th 2021
 

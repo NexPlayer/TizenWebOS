@@ -4,10 +4,18 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.0.1
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.0.1_20211123/nexplayer.js
+```
+
+* **[Improved]** Fixed issues with subtitles activation behaviour.
+* **[Improved]** Added error controls to the destroy method.
+* **[Added]** Added support for escaped sequences on subtitles.
+
+Date: November 23th 2021
+
 #### Version 4.0.0
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.0.0_20211025/nexplayer.js
-```
 
 * **[Improved]** Fixed current tracks' bitrate property returning null for HLS streams.
 * **[Improved]** Fixed seek not working when including static thumbnails.

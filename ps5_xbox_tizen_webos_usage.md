@@ -291,6 +291,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [IsReady()](#isready)
  - [AdsEvents()](#adsevents)
  - [RemoveAdsEvents()](#removeadsevents)
+ - [decodeData(data)](#decodedata)
 
 #### Player methods and objects
 
@@ -525,7 +526,17 @@ Add a listener for the specified ad event.
 Remove a listener for the specified ad event which has been previously registered.
 
 **Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
+	
+#### nexplayer.decodeData(data)
 
+Decodes an ArrayBuffer and converts it into a string. END OF TEXT (\u0003) and NULL (\u0000) unicode characters are cleaned.
+
+**Type**: function of [<code>nexplayer</code>](#nexplayer-methoods)
+
+**Param**: 
+   - **data** is the ArrayBuffer to decode.
+   
+**Returns**: decoded and cleaned string or null if the parameter provided is not an ArrayBuffer.
 ***
 
 ### Player methods and objects

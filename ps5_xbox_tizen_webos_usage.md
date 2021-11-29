@@ -527,7 +527,7 @@ Remove a listener for the specified ad event which has been previously registere
 
 **Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
 	
-#### nexplayer.decodeData(data)
+#### <a id="decodedata"></a> nexplayer.decodeData(data)
 
 Decodes an ArrayBuffer and converts it into a string. END OF TEXT (\u0003) and NULL (\u0000) unicode characters are cleaned.
 
@@ -700,6 +700,20 @@ player.seek(120) // It seeks into minute 2:00 in the video (120 secs), must be a
 //Live video
 player.seek(-120) // It jumps back 2 minutes (120 secs) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
 ```
+
+When using a live stream, the parameter’s value of the seek() method is a number that is added or subtracted to the current time of the video. Therefore, if the value provided plus the video’s current time is greater than the seek range end value the player will seek to the live point. When providing a negative value, it will be subtracted to the video’s current time so the player will seek range.
+
+In order to use the seek() method, you must ensure that the value used is between the end and start value returned by the seekRange() method, in seconds.
+- A value greater than the end seekRange value will seek to live.
+- A value lower than the start seekRange will seek to the start value of the range.
+
+```js
+  // "player" is the player instance
+  // "videoElem" is the HTMLVideoElement
+  var timeToSeek = player.seekRange().start - videoElem.currentTime;
+  player.seek(timeToSeek);
+```
+
   #### <a id="seekRange"></a> player.seekRange()
 
 Returns an object, with start and ending times the player can seek to.

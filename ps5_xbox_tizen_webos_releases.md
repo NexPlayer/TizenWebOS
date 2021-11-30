@@ -13,7 +13,7 @@ https://nexplayer.nexplayersdk.com/HTML5/4.0.1_20211123/nexplayer.js
 * **[Improved]** Added error controls to the destroy method.
 * **[Improved]** Fixed bug related to the seek method on live streams and the seek range available.
 * **[Added]** Added support for escaped sequences on subtitles.
-* **[Added]** Implement <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayerdecodedatadata">decodeData</a> function.
+* **[Added]** Implement <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=decodedata">decodeData</a> function.
 
 Date: November 23th 2021
 

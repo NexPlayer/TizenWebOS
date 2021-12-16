@@ -272,6 +272,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
           "param1": string, //Ad URL to be attached to the baseURL
                     }
       },
+    bitrateConfig: {startingBitrate: num , maxBitrate: num, minBitrate: num},
 
 ```
 
@@ -477,6 +478,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
 | adsLoadTimeout | <code>number</code> | Determines the time the player waits the ad to start. |
 | ssaiMediaTailor | <code><a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
+| bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default, and the tracks the abr will run at are the ones set between minBitrate and maxBitrate.  |
 
 #### <a id="changesource"></a> nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
@@ -1222,6 +1224,17 @@ Possible error codes:
 | baseURL   | <code>string</code> | Base URL for Video and Ads.   |
 | playbackURL  | <code>string</code> | Video URL to be attached to the baseURL.  |
 | adsParams | <code>Object</code> | Contains "Params: string" this is the Ad URL to be attached to the baseURL. |
+
+#### <a id="bitrateconfig"></a> bitrateConfig Object : <code>Object</code>
+
+**Type**: global typedef     
+**Properties**:  
+
+| Name    | Type                | Description           |
+| ------- | ------------------- | --------------------- |
+| minBitrate   | <code>num</code> | The player should ignore any bitrate profiles in the manifest under this value, and never play them   |
+| startingBitrate  | <code>num</code> |  The bitrate the player will try to start playing  |
+| maxBitrate | <code>num</code> | The player should ignore any bitrate profiles in the manifest above this value, and never play them |
 
 
 ***

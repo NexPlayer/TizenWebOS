@@ -4,10 +4,17 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+
+#### Version 4.0.2
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.0.2_20211216/nexplayer.js
+```
+* **[Improved]** Fixed issue where some previous cue data appear in the next cue change
+* **[Added]** Bitrate config parameter to the setup
+
+Date: December 16th 2021
+
 #### Version 4.0.1
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.0.1_20211123/nexplayer.js
-```
 
 * **[Improved]** Fixed issues with subtitles activation behaviour.
 * **[Improved]** Added error controls to the destroy method.

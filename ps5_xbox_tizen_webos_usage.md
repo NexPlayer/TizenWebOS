@@ -1286,7 +1286,7 @@ Get the available duration ad.
 **Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 **Returns**: Number - the duration ad to be played.
 
-   ####  <a id="getadpause"></a> nexplayer.AdInstance().getAdPause() ⇒ boolean
+   ####  <a id="getadpause"></a> nexplayer.AdInstance().getAdPaused() ⇒ boolean
 
 Get stating if the ad on stage is paused or not
 

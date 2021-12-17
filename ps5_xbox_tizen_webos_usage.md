@@ -215,7 +215,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     callbacksForReturn: callback, // Optional callback called with the return button
     callbackForSubtitles: callback, // Optional callback called with the subtitles instance
     callbacksForPlayer: callback, // Optional callback called with the player instances
-    cast: boolean, // Optioanl, used to determines if the cast will be enabled or not
+    cast: boolean, // Optional, used to determines if the cast will be enabled or not
     debug: true, // Optional
     defaultLanguage: string, // Optional
     disableKeyEvents: false, // Optional
@@ -331,7 +331,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [isCurrentAssetMuted()](#iscurrentassetmuted) ⇒ boolean
  - [isLanguageMenuOpen()](#islanguagemenuopen) ⇒ boolean
  - [isLive()](#islive) ⇒ boolean
- - [isPlaybackBarFocused()](#isplaybackbarfocused) ⇒ boolean
+ - [isPlayBackBarFocused()](#isplaybackbarfocused) ⇒ boolean
 
 ##### Toggle
 
@@ -352,7 +352,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [getDroppedFrames()](#getdroppedframes) ⇒ number
  - [getDuration()](#getduration) ⇒ number
  - [getMediaElement()](#getmediaelement) ⇒ HTMLVideoElement
- - [getPlayBackRate()](#getplaybackrate) ⇒ number
+ - [getPlaybackRate()](#getplaybackrate) ⇒ number
  - [getProtocol()](#getprotocol) ⇒ number
  - [getQualityLevels()](#getqualitylevels) ⇒ array
  - [getSubtitles()](#getsubtitles) ⇒ array
@@ -771,7 +771,7 @@ Indicates whether the ad or the main content is muted or not.
 
 **Returns**: boolean - *true* if the video is live, *false* otherwise.
 
-   #### <a id="isplaybackbarfocused"></a> player.isPlaybackBarFocus() ⇒ boolean
+   #### <a id="isplaybackbarfocused"></a> player.isPlayBackBarFocused() ⇒ boolean
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
@@ -1307,7 +1307,7 @@ Get the available title ad.
 **Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)     
 **Returns**: String - the title ad to be played.
 
-   ####  <a id="getisskippablead"></a> nexplayer.AdInstance().getIsSkippablead() ⇒ boolean
+   ####  <a id="getisskippablead"></a> nexplayer.AdInstance().getIsSkippableAd() ⇒ boolean
 
 Returns whether the ad can be skipped or not.
 

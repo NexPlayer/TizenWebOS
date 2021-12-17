@@ -10,7 +10,7 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 https://nexplayer.nexplayersdk.com/HTML5/4.0.2_20211216/nexplayer.js
 ```
 * **[Improved]** Fixed issue where some previous cue data appear in the next cue change
-* **[Added]** Bitrate config parameter to the setup
+* **[Added]** <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=bitrateconfig">Bitrate config</a> parameter to the setup
 
 Date: December 16th 2021
 

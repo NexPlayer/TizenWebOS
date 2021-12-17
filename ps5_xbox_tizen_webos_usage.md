@@ -404,7 +404,7 @@ Please, consult this <a href ="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox
  - [getAdCurrentTime()](#getadcurrenttime) ⇒ number
  - [getAdDescription()](#getaddescription) ⇒ string
  - [getAdDuration()](#getadduration) ⇒ number
- - [getAdPause()](#getadpause) ⇒ boolean
+ - [getAdPaused()](#getadpaused) ⇒ boolean
  - [getAdRemainingTime()](#getadremainingtime) ⇒ number
  - [getAdTitle()](#getadtitle) ⇒ string
  - [getIsSkippableAd()](#getisskippablead) ⇒ boolean
@@ -1286,7 +1286,7 @@ Get the available duration ad.
 **Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 **Returns**: Number - the duration ad to be played.
 
-   ####  <a id="getadpause"></a> nexplayer.AdInstance().getAdPaused() ⇒ boolean
+   ####  <a id="getadpaused"></a> nexplayer.AdInstance().getAdPaused() ⇒ boolean
 
 Get stating if the ad on stage is paused or not
 

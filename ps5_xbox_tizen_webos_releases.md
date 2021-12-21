@@ -11,7 +11,7 @@ https://nexplayer.nexplayersdk.com/HTML5/4.0.2_20211216/nexplayer.js
 ```
 * **[Improved]** Fixed issue where some previous cue data appear in the next cue change
 * **[Improved]** General ad improvements.
-* **[Improved]** Now the events that weren't being removed are properly removed on destroy.
+* **[Improved]** Now the event listeners that weren't being removed are properly removed on destroy.
 * **[Improved]** Optimized some methods to avoid high CPU consumption.
 * **[Added]** <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=bitrateconfig">Bitrate config</a> parameter to the setup
 

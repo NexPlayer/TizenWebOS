@@ -497,7 +497,7 @@ Change the url stream of the video. It is possible to set a new url with new drm
 
 #### <a id="unmount"></a> nexplayer.UnMount(player)
 
-Unmounts the player and its dependencies. In order to properly clear the player this method must be called after destroying the very same player. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/API?id=destroy">here</a>. 
+Unmounts the player and its dependencies. In order to properly clear the player this method must be called after destroying the very same player. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=destroy">here</a>. 
 
 **Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
 

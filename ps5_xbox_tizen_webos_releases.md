@@ -4,11 +4,19 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.0.3
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.0.3_20220107/nexplayer.js
+```
+* **[Improved]** Fixed ads issues on live. Ads are scheduled correctly on live.
+* **[Improved]** Ads are resized correctly to the player size and filtered by bandwidth.
+* **[Improved]** Fixed playback freezing on WebOS and Tizen.
+* **[Added]** Check for 4k support on WebOS devices. 4k tracks are dropped if the device does not support 4k even if the codecs are supported by MediaSource.
+
+Date: January 7th 2022
 
 #### Version 4.0.2
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.0.2_20211216/nexplayer.js
-```
+
 * **[Improved]** Fixed issue where some previous cue data appear in the next cue change
 * **[Improved]** General ad improvements.
 * **[Improved]** Now the event listeners that weren't being removed are properly removed on destroy.

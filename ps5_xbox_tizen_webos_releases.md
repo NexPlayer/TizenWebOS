@@ -10,7 +10,7 @@ https://nexplayer.nexplayersdk.com/HTML5/4.1.0_20220119/nexplayer.js
 ```
 * **[Improved]** Improved external subtitles' algorithm to avoid freezing on old devices when reading large files.
 * **[Improved]** Improved ad event's behaviour. Now it's possible to remove the event listeners at any time.
-* **[Added]** New <a href="./#/ps5_xbox_tizen_webos_usage?id=load">load</a> and <a href="./#/ps5_xbox_tizen_webos_usage?id=reload">reload</a> methods to change the videos and recover from failures without reinitializing the whole player.
+* **[Added]** New <a href="./#/ps5_xbox_tizen_webos_usage?id=load">load</a> and <a href="./#/ps5_xbox_tizen_webos_usage?id=reload">reload</a> methods to change between videos and recover from failures without reinitializing the player.
 
 Date: January 19th 2022
 

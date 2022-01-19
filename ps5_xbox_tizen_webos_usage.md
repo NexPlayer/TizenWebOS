@@ -294,6 +294,8 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [play()](#play)
  - [pause()](#pause)
  - [destroy(UnMount(player))](#destroy)
+ - [load(url, startTime, externalSubtitle)](#load)
+ - [reload()](#reload)
  - [on(callbackType, functionToBeCalled)](#on)
  - [off(callbackType, functionToBeCalled)](#off)
  - [enableABR()](#enableabr)
@@ -561,6 +563,26 @@ Pause the video.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
+   #### <a id="load"></a> player.load(url, startTime, externalSubtitles)
+
+Loads a manifest starting it at the given position. Note that if the video has DRM, the player will try to use the DRM license of the old video.
+
+**Type**: instance method of [<code>Player</code>](#Player)
+
+**Parameters**:
+
+| Param              | Type                  | Description                                |
+| ------------------ | --------------------- | ------------------------------------------ |
+| url                | <code>string</code>   | Manifest URL                               |
+| startTime          | <code>number</code>   | Starting time of the video                 |
+| externalSubtitles  | <code>{src: string, language: string}</code>   | Optional. External subtitles of the video  |
+
+   #### <a id="reload"></a> player.reload()
+
+Reloads the player with the same video and current time. This function may help to recover from errors.
+
+**Type**: instance method of [<code>Player</code>](#Player)
+
    #### <a id="destroy"></a> player.destroy().then(UnMount(document.getElementById('player')))
 
 Destroys the player. This method returns a promise which must call to UnMount as soon as it is resolved.
@@ -574,6 +596,7 @@ method must be called from the 'nexplayer' instance and needs the 'player' eleme
 Add a listener of an event.
 
 **Type**: instance method of [<code>Player</code>](#Player)
+
 **Parameters**:
 
 | Param              | Type                  | Description                   |
@@ -585,7 +608,8 @@ Add a listener of an event.
 
 Remove a listener of an event.
 
-**Type**: instance method of [<code>Player</code>](#Player)      
+**Type**: instance method of [<code>Player</code>](#Player)
+
 **Parameters**:
 
 | Param              | Type                  | Description                   |
@@ -603,7 +627,8 @@ Enable the ABR to change automatically between tracks.
 
 Adds custom data into New Relic's tracker if initialized.
 
-**Type**: instance method of [<code>Player</code>](#Player)  
+**Type**: instance method of [<code>Player</code>](#Player)
+
 **Parameters**:
 
 | Param | Type                | Description        |
@@ -615,7 +640,8 @@ Adds custom data into New Relic's tracker if initialized.
 
 Removes custom data from New Rellic's tracker if initialized.
 
-**Type**: instance method of [<code>Player</code>](#Player)  
+**Type**: instance method of [<code>Player</code>](#Player)
+
 **Parameters**:
 
 | Param | Type                | Description        |

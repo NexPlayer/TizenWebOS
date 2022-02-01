@@ -586,8 +586,7 @@ Reloads the player with the same video and current time. This function may help 
    #### <a id="destroy"></a> player.destroy().then(UnMount(document.getElementById('player')))
 
 Destroys the player. This method returns a promise which must call to UnMount as soon as it is resolved.
-This way, the player will be completely destroyed and new instances could be created afterwards. The UnMount
-method must be called from the 'nexplayer' instance and needs the 'player' element to be passed as argument.
+This way, the player will be completely destroyed and new instances could be created afterwards. The UnMount method must be called from the ‘nexplayer’ instance and needs the HTMLDivElement used to create the player in order to remove it.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 

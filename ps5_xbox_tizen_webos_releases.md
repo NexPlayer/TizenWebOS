@@ -4,10 +4,19 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.1.1
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.1.1_20220130/nexplayer.js
+```
+* **[Improved]** Fixed bugs related to AdsEvents, RemoveAdsEvents and isCurrentAssetAd functions.
+* **[Improved]** Fixed bug when destroying and creating the player and adding ads events
+* **[Improved]** Blocked play and seek when a ad playing.
+* **[Improved]** AdInstance reset when destroying the player.
+
+Date: January 30th 2022
+
 #### Version 4.1.0
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.1.0_20220119/nexplayer.js
-```
+
 * **[Improved]** Improved external subtitles' algorithm to avoid freezing on old devices when reading large files.
 * **[Improved]** Improved ad event's behaviour. Now it's possible to remove the event listeners at any time.
 * **[Added]** New <a href="./#/ps5_xbox_tizen_webos_usage?id=load">load</a> and <a href="./#/ps5_xbox_tizen_webos_usage?id=reload">reload</a> methods to change between videos and recover from failures without reinitializing the player.

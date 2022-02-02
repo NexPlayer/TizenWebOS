@@ -4,10 +4,18 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.1.2
+```
+https://nexplayer-html5-releases.s3.amazonaws.com/HTML5/4.1.2_20220202/nexplayer.js
+```
+* **[Improved]** Improve <a href="./#/ps5_xbox_tizen_webos_usage?id=destroy">destroy</a> method.
+* **[Improved]** Improve the cue data appear.
+* **[Added]** Added support for AES-128.
+
+Date: February 02nd 2022
+
 #### Version 4.1.1
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.1.1_20220130/nexplayer.js
-```
+
 * **[Improved]** Fixed bugs related to AdsEvents, RemoveAdsEvents and isCurrentAssetAd functions.
 * **[Improved]** Fixed bug when destroying and creating the player and adding ads events
 * **[Improved]** Blocked play and seek when a ad playing.
@@ -39,7 +47,7 @@ Date: January 7th 2022
 * **[Improved]** General ad improvements.
 * **[Improved]** Now the event listeners that weren't being removed are properly removed on destroy.
 * **[Improved]** Optimized some methods to avoid high CPU consumption.
-* **[Added]** <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=bitrateconfig">Bitrate config</a> parameter to the setup
+* **[Added]** <a href="./#/ps5_xbox_tizen_webos_usage?id=bitrateconfig">Bitrate config</a> parameter to the setup
 
 Date: December 16th 2021
 
@@ -49,7 +57,7 @@ Date: December 16th 2021
 * **[Improved]** Added error controls to the destroy method.
 * **[Improved]** Fixed bug related to the seek method on live streams and the seek range available.
 * **[Added]** Added support for escaped sequences on subtitles.
-* **[Added]** Implement <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayerdecodedatadata">decodeData</a> function.
+* **[Added]** Implement <a href="./#/ps5_xbox_tizen_webos_usage?id=nexplayerdecodedatadata">decodeData</a> function.
 
 Date: November 23th 2021
 
@@ -59,7 +67,7 @@ Date: November 23th 2021
 * **[Improved]** Fixed seek not working when including static thumbnails.
 * **[Improved]** Fixed subtitles activation/deactivation issue with live streams.
 * **[Improved]** Fixed subtitles' style not displayed correctly, i.e. tags like \<i> were being displayed as they are and the text was not displayed as italics.
-* **[Improved]** Fixed <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=off">off</a> method not being defined
+* **[Improved]** Fixed <a href="./#/ps5_xbox_tizen_webos_usage?id=off">off</a> method not being defined
 * **[Improved]** Fixed thumbnails bug on fullscreen.
 
 
@@ -113,7 +121,7 @@ Date: August 24th 2021
 
 #### Version 3.4.3
 
-* **[Added]** Implemented new property for encoding parameters of the VAST URLs. <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=setup">"adsParamsToEncode"</a>.
+* **[Added]** Implemented new property for encoding parameters of the VAST URLs. <a href="./#/ps5_xbox_tizen_webos_usage?id=setup">"adsParamsToEncode"</a>.
 * **[Improved]** Fixed playback after preroll ads.
 * **[Improved]** getDroppedFrames() method improved. Now returns accurate number of dropped frames.
 
@@ -121,8 +129,8 @@ Date: August 9th 2021
 
 #### Version 3.4.2
 
-* **[Added]** A UI for ads is now available using the property <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=setup">"showAdsUI"</a>.
-* **[Added]** Added new methods in order to fetch properties status (more info <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-api">here</a>):
+* **[Added]** A UI for ads is now available using the property <a href="./#/ps5_xbox_tizen_webos_usage?id=setup">"showAdsUI"</a>.
+* **[Added]** Added new methods in order to fetch properties status (more info <a href="./#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-api">here</a>):
     * **getCurrentContentType()**: string → returns the the type of the current asset (“ad”, “mainContent” or “none”).
     * **getCurrentTime()**: number → returns the current time of the video.
     * **getDroppedFrames()**: number → returns the number of frames dropped or NaN if not available or no frames were dropped.
@@ -131,7 +139,7 @@ Date: August 9th 2021
     * **getVersion()**: string → returns the version of the SDK.
     * **isCurrentAssetAd()**: boolean → indicates whether the current asset playing is an ad or not; 
     * **isCurrentAssetMuted()**: boolean → returns whether the ad or the main content is muted or not.
-* **[Added]** Added a new event, <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=buffertype">"bufferType"</a>. this new event will be fired when a buffering event occurs and it specifies what type of buffering occurred (connection, seek, initial, background).
+* **[Added]** Added a new event, <a href="./#/ps5_xbox_tizen_webos_usage?id=buffertype">"bufferType"</a>. this new event will be fired when a buffering event occurs and it specifies what type of buffering occurred (connection, seek, initial, background).
 
 * **[Improved]** Fixed non-resizing ads when using IMA.
 * **[Improved]** Fixed non-skipping ads when using IMA.
@@ -151,9 +159,9 @@ Date: July 27th 2021
 
 * **[Added]** Playlist ad format is now supported. 
 * **[Added]** Remote buttons handlers have been implemented.
-* **[Added]** IMA and PAL ad libraries are now supported. More information on how to use them <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ads">here</a>.
-* **[Added]** Implemented method for removing the listeners of ad events. More information on how to use these methods <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=removeadsevents">here</a>.
-* **[Added]** Implemented "off" method for player events removal. More information on how to use it <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer-events">here</a>.
+* **[Added]** IMA and PAL ad libraries are now supported. More information on how to use them <a href="./#/ps5_xbox_tizen_webos_usage?id=ads">here</a>.
+* **[Added]** Implemented method for removing the listeners of ad events. More information on how to use these methods <a href="./#/ps5_xbox_tizen_webos_usage?id=removeadsevents">here</a>.
+* **[Added]** Implemented "off" method for player events removal. More information on how to use it <a href="./#/ps5_xbox_tizen_webos_usage?id=nexplayer-events">here</a>.
 
 * **[Improved]** Black screen after ads has been fixed.
 * **[Improved]** Fixed unresponsive UI when no ads are triggered.
@@ -167,8 +175,8 @@ Date: July 20th 2021
 #### Version 3.3.11
 
 * **[Added]** Chunking properties are internally calculated depending on the number of thumbnails provided. Thus, "thumbChunking" property has been removed.
-* **[Added]** Added "mount" and "unmount" events in order to check when the player is initialized or destroyed. More information <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=mounted">here</a>.
-* **[Added]** Added IsReady() method in order to check if the player is ready to mount or not. More information <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=isready">here</a>.
+* **[Added]** Added "mount" and "unmount" events in order to check when the player is initialized or destroyed. More information <a href="./#/ps5_xbox_tizen_webos_usage?id=mounted">here</a>.
+* **[Added]** Added IsReady() method in order to check if the player is ready to mount or not. More information <a href="./#/ps5_xbox_tizen_webos_usage?id=isready">here</a>.
 
 * **[Improved]** Changed staticThumbnailsVTT to staticThumbnails and useDynamicThumbnails to dynamicThumbnails. "staticThumbnailsImg" property has been removed.
 * **[Improved]** Normalized event names throughout all projects. "adended" is now "adcomplete" and "adblockstarted" is now "adblockstart". 
@@ -181,9 +189,9 @@ Date: July 1st 2021
 
 #### Version 3.3.10
 
-* **[Added]** Implemented trickplay(value). Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=trickplay">here</a>.
-* **[Added]** Start time improvement. It can be used through the property <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration">"improveStartTime"</a>.
-* **[Added]** Callbacks for handling external subtitles and thumbnails errors. More information <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration">here</a>.
+* **[Added]** Implemented trickplay(value). Check more details <a href="./#/ps5_xbox_tizen_webos_usage?id=trickplay">here</a>.
+* **[Added]** Start time improvement. It can be used through the property <a href="./#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration">"improveStartTime"</a>.
+* **[Added]** Callbacks for handling external subtitles and thumbnails errors. More information <a href="./#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration">here</a>.
 
 * **[Improved]** Fixed "file not found" error.
 * **[Improved]** Fixed crash after mid-roll and pre-roll ads on Tizen.
@@ -193,10 +201,10 @@ Date: June 14th 2021
 
 #### Version 3.3.9
 
-* **[Added]** Milestone management for trailers and scrubbing. It can be used through the property <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration">"trailer"</a>
-* **[Added]** 60 seconds in event added. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=custom-events">here</a>.
+* **[Added]** Milestone management for trailers and scrubbing. It can be used through the property <a href="./#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration">"trailer"</a>
+* **[Added]** 60 seconds in event added. Check more details <a href="./#/ps5_xbox_tizen_webos_usage?id=custom-events">here</a>.
 
-* **[Improved]** Changed getThumbnailAt(time) to return a Promise instead of a thumbnail. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=getthumbnailat">here</a>.
+* **[Improved]** Changed getThumbnailAt(time) to return a Promise instead of a thumbnail. Check more details <a href="./#/ps5_xbox_tizen_webos_usage?id=getthumbnailat">here</a>.
 * **[Improved]** Fixed crash due to providing non-finite double values.
 
 
@@ -204,7 +212,7 @@ Date: May 31st 2021
 
 #### Version 3.3.8
 
-* **[Added]** Implemented getThumbnailAt(time) and getThumbnails() functions. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=getthumbnailat">here</a>.
+* **[Added]** Implemented getThumbnailAt(time) and getThumbnails() functions. Check more details <a href="./#/ps5_xbox_tizen_webos_usage?id=getthumbnailat">here</a>.
 * **[Added]** When choosing subtitles, playback stops until leaving the UI.
 
 * **[Improved]** Enhanced thumbnail fetch when hovering.
@@ -216,10 +224,10 @@ Date: May 14th 2021
 #### Version 3.3.7
 
 * **[Added]** Added the possibility to specify the codec priority. It can be used through a new property, 
-<a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration"> "preferredAudioCodec"</a>, in the nexplayer Setup method.
+<a href="./#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration"> "preferredAudioCodec"</a>, in the nexplayer Setup method.
 
 * **[Added]** A custom-sized initial buffer can now be set by passing the desired number of seconds to achieve. It can be used through a new property, 
-<a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration"> "startingBufferLength"</a>, in the nexplayer Setup method.
+<a href="./#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration"> "startingBufferLength"</a>, in the nexplayer Setup method.
 
 * **[Added]** Custom data can now be added to New Relic's tracker. Removing data can also be done. Check NexPlayer's API for more details.
 
@@ -242,11 +250,11 @@ Date: March 12th 2021
 
 #### Version 3.3.6
 
-* **[Added]** Video progress events for the 25%, 50%, 75% of the video's duration. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=custom-events">here</a>.
+* **[Added]** Video progress events for the 25%, 50%, 75% of the video's duration. Check more details <a href="./#/ps5_xbox_tizen_webos_usage?id=custom-events">here</a>.
 * **[Added]** Possibility to use a chunking algorithm in order to improve the efficiency of the thumbnails. It can be used through a new property, 
-<a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration"> "thumbChunking"</a>, in the nexplayer Setup method.
+<a href="./#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration"> "thumbChunking"</a>, in the nexplayer Setup method.
 
-* **[Added]** New Relic tracker. It can be used through the property <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration">"useNewRelicTracker"</a>
+* **[Added]** New Relic tracker. It can be used through the property <a href="./#/ps5_xbox_tizen_webos_usage?id=nexplayer%e2%84%a2-configuration">"useNewRelicTracker"</a>
 
 * **[Added]** Seek bar is not shown in live content.
 
@@ -324,11 +332,11 @@ Date: September 18th 2020
 
 #### Version 3.0.3
 
-* **[Added]** Added 'addEventListener' method on AdInstance() object. It is possible to subscribe for HTML video events for the ads. See <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=miscellaneous">Ads Method</a> at Advance Usage.
+* **[Added]** Added 'addEventListener' method on AdInstance() object. It is possible to subscribe for HTML video events for the ads. See <a href="./#/ps5_xbox_tizen_webos_usage?id=miscellaneous">Ads Method</a> at Advance Usage.
 
 #### Version 3.0.2
 
-* **[Added]** Added 'onstatechange' event. See  <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=custom-events">Custom Events</a> at Advance Usage.
+* **[Added]** Added 'onstatechange' event. See  <a href="./#/ps5_xbox_tizen_webos_usage?id=custom-events">Custom Events</a> at Advance Usage.
 
 #### Version 3.0.1
 

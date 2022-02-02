@@ -4,10 +4,46 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.1.1
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.1.1_20220130/nexplayer.js
+```
+* **[Improved]** Fixed bugs related to AdsEvents, RemoveAdsEvents and isCurrentAssetAd functions.
+* **[Improved]** Fixed bug when destroying and creating the player and adding ads events
+* **[Improved]** Blocked play and seek when a ad playing.
+* **[Improved]** AdInstance reset when destroying the player.
+
+Date: January 30th 2022
+
+#### Version 4.1.0
+
+* **[Improved]** Improved external subtitles' algorithm to avoid freezing on old devices when reading large files.
+* **[Improved]** Improved ad event's behaviour. Now it's possible to remove the event listeners at any time.
+* **[Added]** New <a href="./#/ps5_xbox_tizen_webos_usage?id=load">load</a> and <a href="./#/ps5_xbox_tizen_webos_usage?id=reload">reload</a> methods to change between videos and recover from failures without reinitializing the player.
+
+Date: January 19th 2022
+
+<a id="version-404"> </a>
+
+#### Version 4.0.3
+* **[Improved]** Fixed ads issues on live. Ads are scheduled correctly on live.
+* **[Improved]** Ads are resized correctly to the player size and filtered by bandwidth.
+* **[Improved]** Fixed playback freezing on WebOS and Tizen.
+* **[Added]** Check for 4k support on WebOS devices. 4k tracks are dropped if the device does not support 4k even if the codecs are supported by MediaSource.
+
+Date: January 7th 2022
+
+#### Version 4.0.2
+
+* **[Improved]** Fixed issue where some previous cue data appear in the next cue change
+* **[Improved]** General ad improvements.
+* **[Improved]** Now the event listeners that weren't being removed are properly removed on destroy.
+* **[Improved]** Optimized some methods to avoid high CPU consumption.
+* **[Added]** <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=bitrateconfig">Bitrate config</a> parameter to the setup
+
+Date: December 16th 2021
+
 #### Version 4.0.1
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.0.1_20211123/nexplayer.js
-```
 
 * **[Improved]** Fixed issues with subtitles activation behaviour.
 * **[Improved]** Added error controls to the destroy method.

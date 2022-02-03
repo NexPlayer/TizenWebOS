@@ -9,8 +9,8 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 https://nexplayer-html5-releases.s3.amazonaws.com/HTML5/4.1.2_20220202/nexplayer.js
 ```
 * **[Improved]** Improve <a href="./#/ps5_xbox_tizen_webos_usage?id=destroy">destroy</a> method.
-* **[Improved]** Improve the cue data appear.
-* **[Added]** Added support for AES-128.
+* **[Improved]** Improve the cue data management.
+* **[Added]** Support for AES-128.
 
 Date: February 02nd 2022
 

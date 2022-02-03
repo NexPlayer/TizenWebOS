@@ -17,7 +17,7 @@ Date: February 3rd 2022
 
 #### Version 4.1.2
 ```
-https://nexplayer.nexplayersdk.com/4.1.2_20220202/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.1.2_20220202/nexplayer.js
 ```
 * **[Improved]** Improve <a href="./#/ps5_xbox_tizen_webos_usage?id=destroy">destroy</a> method.
 * **[Improved]** Improve the cue data management.

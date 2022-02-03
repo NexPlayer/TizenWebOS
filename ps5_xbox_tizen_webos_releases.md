@@ -16,7 +16,7 @@ Date: February 02nd 2022
 
 #### Version 4.1.1
 
-* **[Improved]** Fixed bugs related to AdsEvents, RemoveAdsEvents and isCurrentAssetAd functions.
+* **[Improved]** Fixed bugs related to <a href="./#/ps5_xbox_tizen_webos_usage?id=adsevents">AdsEvents</a>, <a href="./#/ps5_xbox_tizen_webos_usage?id=removeadsevents">RemoveAdsEvents</a> and <a href="./#/ps5_xbox_tizen_webos_usage?id=iscurrentassetad">isCurrentAssetAd</a> functions.
 * **[Improved]** Fixed bug when destroying and creating the player and adding ads events
 * **[Improved]** Blocked play and seek when a ad playing.
 * **[Improved]** AdInstance reset when destroying the player.

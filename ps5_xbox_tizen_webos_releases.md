@@ -4,15 +4,26 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.1.1.1
+
+This version is a hotfix on version 4.1.1 and does not include 4.1.2 changes.
+
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.1.1.1_20220203/nexplayer.js
+```
+* **[Improved]** Fixed exception when playing ads on a TV that does not support navigator.connection API.
+
+Date: February 3rd 2022
+
 #### Version 4.1.2
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.1.2_20220202/nexplayer.js
+https://nexplayer.nexplayersdk.com/4.1.2_20220202/nexplayer.js
 ```
 * **[Improved]** Improve <a href="./#/ps5_xbox_tizen_webos_usage?id=destroy">destroy</a> method.
 * **[Improved]** Improve the cue data management.
 * **[Added]** Support for AES-128.
 
-Date: February 02nd 2022
+Date: February 2nd 2022
 
 #### Version 4.1.1
 

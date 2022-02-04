@@ -31,6 +31,7 @@ Date: February 2nd 2022
 * **[Improved]** Fixed bug when destroying and creating the player and adding ads events
 * **[Improved]** Blocked play and seek when a ad playing.
 * **[Improved]** AdInstance reset when destroying the player.
+* **[Improved]** Detect the size of the external subtitles and ignore them if necessary. If the external subtitles are ignored and there are internal subtitles available the internal ones are activated.
 
 Date: January 30th 2022
 

@@ -1717,7 +1717,7 @@ In order to use IMA or PAL, a script must be provided in the index, which are th
 Since the 4.0.0 release the player has the feature to execute ads during a playback, is only needed use the player method **executeAd** and a vast url:
 
 ```js
-player.executeAd("VASR URL")
+player.executeAd("VAST URL")
 ```
 
 <div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>

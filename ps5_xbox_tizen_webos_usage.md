@@ -206,7 +206,6 @@ There are a substantial number of customizable options for NexPlayer™ includin
     key: 'License key to validate the playback',
     div: document.getElementById('player'),
     src: 'URL video',
-    adsDelay: number,
     adsMode: string,
     addRequestFilter: Function,
     adsParamsToEncode: [ e.g. "video_url_to_fetch"],
@@ -302,7 +301,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [addTrackerData()](#addtrackerdata)
  - [removeTrackerData()](#removetrackerdata)
  - [trickplay(value)](#trickplay)
- - [executeAd(vast url: String)](#executead)
+ <!-- - [executeAd(vast url: String)](#executead) -->
 
 ##### Navigation
 
@@ -361,8 +360,8 @@ There are a substantial number of customizable options for NexPlayer™ includin
 ##### Setters
 
 
- - [setAudio(streamID)](#setaudio)
- - [setAudioStream(streamID)](#setaudiostream) ⇒ deprecated
+ <!-- - [setAudio(streamID)](#setaudio) -->
+ - [setAudioStream(streamID)](#setaudiostream)
  - [setCurrentTrack(trackID)](#setcurrenttrack)
  - [setSpeed(speed)](#setspeed)
  - [setSubtitle(subID)](#setsubtitle)
@@ -442,7 +441,6 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 
 | Param | Type | Description |
 | --- | --- | --- |
-| adsDelay | <code>number</code> | Determines the delay before the ad starts playing. |
 | adsMode | <code>string</code> | Determines the ad library: 'ima', 'pal' or 'default'. |
 | addRequestFilter | <code>Function</code> | Sets a function that receives the DRM request as a parameter and changes its Headers. |
 | adsParamsToEncode| <code>Array<string></code> | Specifies the name of the VAST ad URL parameters to encode. |
@@ -657,7 +655,7 @@ Sets the trick play value. A value bigger than 1 will move the seek time forward
 | --- | --- | --- |
 | value | Number | number of times per second to update the seek time. |
 
-#### <a id="executead"></a> player.executeAd(vast url: String)
+<!-- #### <a id="executead"></a> player.executeAd(vast url: String)
 
 Execute the given ad during the video playback. The vast URL is mandatory.
 This method couldn't be used, until the ad block ends, if there are ads at the beggining of the video
@@ -666,7 +664,7 @@ This method couldn't be used, until the ad block ends, if there are ads at the b
 
 | Param | Type |Description |
 | --- | --- | --- |
-| vast url | String | URL of the ad which will be played. |
+| vast url | String | URL of the ad which will be played. | -->
 
 ***
 
@@ -1051,7 +1049,7 @@ Retrieve the current version of the player.
 
 ***
 
-   #### <a id="setaudio"></a> player.setAudio(streamID)
+   <!-- #### <a id="setaudio"></a> player.setAudio(streamID)
 
 Set the current audio stream by using the UI.
 
@@ -1059,7 +1057,7 @@ Set the current audio stream by using the UI.
 | --- | --- | --- |
 | streamID | <code>number</code> | is the identifier of the audio stream to be selected. |
 
-**Type**: instance method of [<code>Player</code>](#Player)
+**Type**: instance method of [<code>Player</code>](#Player) -->
 
    #### <a id="setaudiostream"></a> player.setAudioStream(streamID)
 
@@ -1707,18 +1705,20 @@ In order to use IMA or PAL, a script must be provided in the index, which are th
 ```js
 <!-- IMA -->
 <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
+<!-- Currently, only IMA 3 is supported -->
+
 
 <!-- PAL -->
 <script src="https://nex360.s3.amazonaws.com/PAL/pal.js" ></script>
 ```
 
-#### Ads in runtime
+<!-- #### Ads in runtime
 
 Since the 4.0.0 release the player has the feature to execute ads during a playback, is only needed use the player method **executeAd** and a vast url:
 
 ```js
-player.executeAd("VASR URL")
-```
+player.executeAd("VAST URL")
+``` -->
 
 <div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>
 Currently, this method couldn't be used, until the ad block ends, if there are ads at the beggining of the video.
@@ -1758,15 +1758,22 @@ nexplayer.AdsEvents('adstarted', function(e){
 ```
 
 #### Miscellaneous
-* addEventListener(): add a listener to the ads video. The possible events to listen are the same as the HTML video element ones. Important: this method should be called when the 'adtagstartloading' event is fired. Example of use:
+
+* addEventListener(): add a listener to the ads video. The possible events to listen are the same as the HTML video element ones. Important: this method should be called inside the Setup's callback or after the player is initialized. Example of use:
 ```js
-nexplayer.AdsEvents('adtagstartloading', function (e) {
-	nexplayer.AdInstance().addEventListener('playing', function() {
-    console.log("PLAYING --- ");
-	});
-	nexplayer.AdInstance().addEventListener('waiting', function() {
-    console.log("WAITING --- ");
-	});
+var callBackForPlayers = function (nexplayerInstance, videoElement) {
+    nexplayer.AdInstance().addEventListener('playing', function() {
+      console.log("PLAYING --- ");
+    });
+    nexplayer.AdInstance().addEventListener('waiting', function() {
+      console.log("WAITING --- ");
+    });
+}
+...
+nexplayer.Setup({
+    key: ...
+
+    callbacksForPlayer: callBackForPlayers
 });
 ```
 
@@ -2004,7 +2011,7 @@ We also have events to handle some different kind of ads events.
 
 We have the next list of ad events available:
 
-* adtagstartloading
+* adtagstartloading Note: This event is not triggered when using IMA.
 * adloaded
 * addurationchange
 * adimpression

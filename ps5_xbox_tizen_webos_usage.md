@@ -542,7 +542,7 @@ Decodes an ArrayBuffer and converts it into a string. END OF TEXT (\u0003) and N
 **Returns**: decoded and cleaned string or null if the parameter provided is not an ArrayBuffer.
 ***
 
-#### <a id="getversion"></a> nexplayer.getVersion() 
+#### <a id="nexplayer-getversion"></a> nexplayer.getVersion() 
 
 Retrieve the current version of the player.
 

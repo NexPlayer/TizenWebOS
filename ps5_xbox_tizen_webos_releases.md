@@ -4,10 +4,21 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.2.0
+
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.2.0_20220302/nexplayer.js
+```
+* **[Added]** Support multplie external subtitles.
+* **[Added]** Support for SRT subtitles.
+* **[Added]** Method [getBandwidthEstimate()](ps5_xbox_tizen_webos_usage.md?id=getbandwidthestimate).
+* **[Improved]** Changed [player.getVersion()](ps5_xbox_tizen_webos_usage.md?id=getversion) to static method [nexplayer.getVersion()](ps5_xbox_tizen_webos_usage.md?id=nexplayer-getversion).
+* **[Improved]** Fixed loading issue when the playlist is desynchronized on hls.
+
+Date: March 2nd 2022
+
 #### Version 4.1.3.1
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.1.3.1_20220221/nexplayer.js
-```
+
 * **[Improved]** Fixed issue related to DRM with headers.
 
 Date: February 21th 2022
@@ -41,7 +52,7 @@ Date: February 2nd 2022
 
 * **[Improved]** Fixed bugs related to <a href="./#/ps5_xbox_tizen_webos_usage?id=adsevents">AdsEvents</a>, <a href="./#/ps5_xbox_tizen_webos_usage?id=removeadsevents">RemoveAdsEvents</a> and <a href="./#/ps5_xbox_tizen_webos_usage?id=iscurrentassetad">isCurrentAssetAd</a> functions.
 * **[Improved]** Fixed bug when destroying and creating the player and adding ads events
-* **[Improved]** Blocked play and seek when a ad playing.
+* **[Improved]** Blocked play and seek during ads playback.
 * **[Improved]** AdInstance reset when destroying the player.
 * **[Improved]** Detect the size of the external subtitles and ignore them if necessary. If the external subtitles are ignored and there are internal subtitles available the internal ones are activated.
 

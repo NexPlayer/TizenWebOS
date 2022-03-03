@@ -224,11 +224,11 @@ There are a substantial number of customizable options for NexPlayer™ includin
         NexCallback:OptionalDRMCallbackForFairPlay
     }],
     dynamicThumbnails: false,
-    externalSubtitles: {
-        src: "URL for the subtitles file",
+    externalSubtitles: [{
+        src: "Subtitles file URL",
         language: "Subtitle language",
         callback: function(e),
-    },
+    },…],
     hideControlBarOnStart: boolean,
     hideUITime: boolean,
     improveStartUp: boolean
@@ -293,7 +293,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [play()](#play)
  - [pause()](#pause)
  - [destroy(UnMount(player))](#destroy)
- - [load(url, startTime, externalSubtitle)](#load)
+ - [load(url, startTime, externalSubtitles)](#load)
  - [reload()](#reload)
  - [on(callbackType, functionToBeCalled)](#on)
  - [off(callbackType, functionToBeCalled)](#off)
@@ -333,7 +333,6 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [toggleLanguageMenu()](#togglelanguagemenu)
  - [togglePlayPause()](#toggleplaypause)
  - [toggleFullScreen()](#togglefullscreen)
- - [toggleLanguagesMenu()](#togglelanguagesmenu)
 
 ##### Getters
 
@@ -454,7 +453,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | defaultLanguage | <code>string</code> | Determines which is the default audio language. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video. |
 | drm | <code>Object</code> | Contains an object of DRM information. By default it’s set to null. |
-| externalSubtitles | <code>Object</code> | Used to provide a WEBVTT file as external subtitles. |
+| externalSubtitles | <code>Array</code> | Used to provide a sibtitle files as external subtitles. |
 | hideControlBarOnStart | <code>boolean</code> | Determines if the control bar will hide when the video starts. |
 | hideUITime | <code>boolean</code> | Determines if the time will be hidden in the UI. |
 | improveStartUp | <code>boolean</code> | Determines whether the video has to start at the lowet bitrate or not. |
@@ -573,7 +572,7 @@ Loads a manifest starting it at the given position. Note that if the video has D
 | ------------------ | --------------------- | ------------------------------------------ |
 | url                | <code>string</code>   | Manifest URL                               |
 | startTime          | <code>number</code>   | Starting time of the video                 |
-| externalSubtitles  | <code>{src: string, language: string}</code>   | Optional. External subtitles of the video  |
+| externalSubtitles  | <code>[{src: string, language: string, callback: function},…]</code>   | Optional. External subtitles of the video  |
 
    #### <a id="reload"></a> player.reload()
 
@@ -828,12 +827,6 @@ Toggle the video playback between the play and pause states.
  #### <a id="togglefullscreen"></a> player.toggleFullScreen()
 
 Enables toggle between full screen and window.
-
-**Type**: instance method of [<code>Player</code>](#Player)
-
- #### <a id="togglelanguagesmenu"></a> player.toggleLanguagesMenu()
-
-Toogles the subtitles menu options.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
@@ -2093,33 +2086,6 @@ The active subtitles mode is set to <code>showing</code>. The currently selected
 videoElement.textTracks[0].mode = "showing"; //0 -> the id of the textTrack
 ```
 
-##### SRT Subtitles
-
-NexPlayer supports the SRT subtitle format. You can insert an external SRT file by setting up the SRT source link and the language as shown below:
-
-```js
-nexplayer.Setup({
-    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
-    div: document.getElementById('player'),
-    src: 'VIDEO URL',
-    callbacksForPlayer: callBackWithPlayers
-    srtSubtitles: ['http://webs.nexstreaming.com/pd/function_local/Function_SRT_AOA_MV_H264_1920x1080_HP_2999K_24F_AAC_LC_5m26s.srt','en']
-});
-
-```
-
-
-<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>
-Please note that the first parameter is the source link and the second the language that will be displayed in the subtitles label. </p>
-</div></div>
-
-NexPlayer also supports adding SRT subtitles in runtime. Call <code>addSrtSubtitles</code> if you want to add a srt subtitle:
-
-```js
-nexplayerInstance.addSrtSubtitles(['source.srt', 'srclang']);
-```
-
-
 #### Audio
 
 Information about the current audio can be retrieved with the method <code>getCurrentAudioStream</code> of NexPlayer™. It returns all the audio information for that stream.
@@ -2462,7 +2428,7 @@ This behavior can be customized with the hover selector on the .nexplayer_icon C
 
 The nexplayer.js library is already minified, but to use even less space it's recommended to use gzip on the server where the library will be hosted. gzip is supported on the vast majority of servers.
 
-The <a href="#releases">hosted versions</a> in our CDN use gzip.
+The <a href="#ps5_xbox_tizen_webos_releases?">hosted versions</a> in our CDN use gzip.
 
 ### Cross-Origin Resource Sharing (CORS)
 
@@ -2474,7 +2440,7 @@ More information is available at <a href="https://developer.mozilla.org/en-US/do
 
 ### Upgrading to a New Version
 
-When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary. Here you can find the <a href="#/releases?" target = "_blank" >latest release</a>.
+When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary. Here you can find the <a href="#/ps5_xbox_tizen_webos_releases?" target = "_blank" >latest release</a>.
 
 Every new release of NexPlayer™ is backwards compatible.
 

@@ -22,7 +22,7 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
     </div>
     <div class="titleCell">AD INSERTION</div>
     <div class="contentCell">
-      <div>VAST, VPAID, VMAP, Playslist </div>      
+      <div>VAST, VPAID, VMAP, Playlist </div>      
       <div>Pre-Roll, Mid-Roll, Post-Roll </div>
       <div>Integrated Client-Side Ad Insertion </div>
       <div>IMA SDK for Client-Side Ad Insertion </div>

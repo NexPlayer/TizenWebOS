@@ -284,6 +284,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [AdsEvents()](#adsevents)
  - [RemoveAdsEvents()](#removeadsevents)
  - [decodeData(data)](#decodedata)
+ - [getVersion()](#getversion)
 
 #### Player methods and objects
 
@@ -338,6 +339,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
 
 
  - [getAudioStreams()](#getaudiostreams) ⇒ [Array\<AudioStream\>](#audiostream)
+ - [getBandwidthEstimate()](#getbandwidthestimate) ⇒ number
  - [getCurrentContentType()](#getcurrentcontenttype) ⇒ string
  - [getCurrentAudioStream()](#getcurrentaudiostream) ⇒ [AudioStream](#audiostream)
  - [getCurrentSubtitle()](#getcurrentsubtitle) ⇒ number
@@ -522,7 +524,7 @@ Add a listener for the specified ad event.
 
 **Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
 
-   #### <a id="removeadsevents"></a> nexplayer.RemoveAdsEvents([<code>"adEvent"</code>](#ads-events), function () {}) 
+#### <a id="removeadsevents"></a> nexplayer.RemoveAdsEvents([<code>"adEvent"</code>](#ads-events), function () {}) 
 
 Remove a listener for the specified ad event which has been previously registered.
 
@@ -539,6 +541,14 @@ Decodes an ArrayBuffer and converts it into a string. END OF TEXT (\u0003) and N
    
 **Returns**: decoded and cleaned string or null if the parameter provided is not an ArrayBuffer.
 ***
+
+#### <a id="getversion"></a> nexplayer.getVersion() 
+
+Retrieve the current version of the player.
+
+**Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
+
+**Returns**: string - identify the version of the player.
 
 ### Player methods and objects
 
@@ -851,6 +861,12 @@ AudioStream:
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: Array\<AudioStream\> - the list of the available audio streams.
 
+   #### <a id="getbandwidthestimate"></a> player.getBandwidthEstimate() ⇒ number
+
+Returns the method must be public and return the current bandwidth available in bytes.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: number - information about the bandwisth stimate.
    #### <a id="getcurrentaudiostream"></a> player.getCurrentAudioStream() ⇒ AudioStream
 
 Get the audio stream currently in use.
@@ -1030,7 +1046,7 @@ Returns the current stream's URL.
 
    #### <a id="getversion"></a> player.getVersion() ⇒ string
 
-Retrieve the current version of the player.
+The method getVersion() is deprecated, please use <a href="./#/ps5_xbox_tizen_webos_usage?id=getversion">nexplayer.getVersion()</a> instead
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 

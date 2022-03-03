@@ -4,10 +4,16 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.1.3.1
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.1.3.1_20220221/nexplayer.js
+```
+* **[Improved]** Fixed issue related to DRM with headers.
+
+Date: February 21th 2022
+
 #### Version 4.1.3
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.1.3_20220216/nexplayer.js
-```
+
 * **[Improved]** Fixed issue related to audio tracks changing automatically.
 * **[Improved]** Fixed reload method with live videos.
 * **[Improved]** Fixed IMA.

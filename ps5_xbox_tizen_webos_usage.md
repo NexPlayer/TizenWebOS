@@ -339,6 +339,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
 
 
  - [getAudioStreams()](#getaudiostreams) ⇒ [Array\<AudioStream\>](#audiostream)
+ - [getBandwidthEstimate()](#getbandwidthestimate) ⇒ number
  - [getCurrentContentType()](#getcurrentcontenttype) ⇒ string
  - [getCurrentAudioStream()](#getcurrentaudiostream) ⇒ [AudioStream](#audiostream)
  - [getCurrentSubtitle()](#getcurrentsubtitle) ⇒ number
@@ -858,6 +859,12 @@ AudioStream:
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: Array\<AudioStream\> - the list of the available audio streams.
 
+   #### <a id="getbandwidthestimate"></a> player.getBandwidthEstimate() ⇒ number
+
+Returns the method must be public and return the current bandwidth available in bytes.
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: number - information about the bandwisth stimate.
    #### <a id="getcurrentaudiostream"></a> player.getCurrentAudioStream() ⇒ AudioStream
 
 Get the audio stream currently in use.

@@ -8,7 +8,7 @@ This section explains how to integrate NexPlayer&#x2122; into your project. Note
 
 ### Sample
 
-Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.com/sample/index.html" download="" target="_blank">HTML5 file</a>:</p>
+Integrating NexPlayer&#x2122; into an HTML5 file:
 ```html
 <!DOCTYPE html>
 <html>
@@ -455,7 +455,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | defaultLanguage | <code>string</code> | Determines which is the default audio language. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video. |
 | drm | <code>Object</code> | Contains an object of DRM information. By default it’s set to null. |
-| externalSubtitles | <code>Array</code> | Used to provide a sibtitle files as external subtitles. |
+| externalSubtitles | <code>Array</code> | Used to provide a subtitle files as external subtitles. |
 | hideControlBarOnStart | <code>boolean</code> | Determines if the control bar will hide when the video starts. |
 | hideUITime | <code>boolean</code> | Determines if the time will be hidden in the UI. |
 | improveStartUp | <code>boolean</code> | Determines whether the video has to start at the lowet bitrate or not. |
@@ -758,7 +758,7 @@ Returns an object, with start and ending times the player can seek to.
 
   #### <a id="seeklive"></a> player.seekLive()
 
-Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). only works in livestream.
+Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). Only works in livestream.
 
 **Type**: instance method of [<code>Player</code>](#Player) 
 
@@ -863,10 +863,10 @@ AudioStream:
 
    #### <a id="getbandwidthestimate"></a> player.getBandwidthEstimate() ⇒ number
 
-Returns the method must be public and return the current bandwidth available in bytes.
+Returns the current bandwidth available in bytes.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
-**Returns**: number - information about the bandwisth stimate.
+**Returns**: number - information about the bandwidth estimate.
    #### <a id="getcurrentaudiostream"></a> player.getCurrentAudioStream() ⇒ AudioStream
 
 Get the audio stream currently in use.

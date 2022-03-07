@@ -9,11 +9,11 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/HTML5/4.2.0_20220302/nexplayer.js
 ```
-* **[Added]** Support multplie external subtitles.
+* **[Added]** Support multiple external subtitles.
 * **[Added]** Support for SRT subtitles.
 * **[Added]** Method [getBandwidthEstimate()](ps5_xbox_tizen_webos_usage.md?id=getbandwidthestimate).
 * **[Improved]** Changed [player.getVersion()](ps5_xbox_tizen_webos_usage.md?id=getversion) to static method [nexplayer.getVersion()](ps5_xbox_tizen_webos_usage.md?id=nexplayer-getversion).
-* **[Improved]** Fixed loading issue when the playlist is desynchronized on hls.
+* **[Improved]** Fixed loading issue when the playlist is desynchronized on HLS.
 
 Date: March 2nd 2022
 

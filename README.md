@@ -55,7 +55,8 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
     </div>
     <div class="titleCell">SUBTITLES & CC</div>
     <div class="contentCell">
-      <div>WebVTT </div>      
+      <div>WebVTT </div>   
+      <div>SRT </div>   
       <div>CEA 608/708 </div> 
       <div>TTML </div>
     </div>

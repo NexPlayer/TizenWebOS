@@ -236,7 +236,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     mutedAtStart: true,   
     preferredAudioCodec: Array,
     poster: 'URL poster', 
-    reinitializeAfterAds: boolean,
+    reinitializeAfterAds: boolean, // Deprecated
     resumePosition: number,
     showAdsUI: true,
     showingFullUI: true,
@@ -463,7 +463,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. False by default. |
 | preferredAudioCodec | <code>Array</code> |This property can be used to give priority to a specific audio codec. |
 | poster | <code>string</code> | Video poster URL. |
-| reinitializeAfterAds | <code>boolean</code> | Used to avoid errors related to ads on PS5, please set it to true on this platform. False by default. |
+| reinitializeAfterAds | <code>boolean</code> | *Deprecated* Used to avoid errors related to ads on PS5, please set it to true on this platform. False by default. |
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
 | showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |

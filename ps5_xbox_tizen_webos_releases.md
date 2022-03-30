@@ -63,6 +63,7 @@ Date: January 30th 2022
 * **[Improved]** Improved external subtitles' algorithm to avoid freezing on old devices when reading large files.
 * **[Improved]** Improved ad event's behaviour. Now it's possible to remove the event listeners at any time.
 * **[Added]** New <a href="./#/ps5_xbox_tizen_webos_usage?id=load">load</a> and <a href="./#/ps5_xbox_tizen_webos_usage?id=reload">reload</a> methods to change between videos and recover from failures without reinitializing the player.
+* **[Deprecated]** <a href="./#/ps5_xbox_tizen_webos_usage?id=setup">reinitializeAfterAds</a> property from the Setup method has been deprecated and its usage does nothing.
 
 Date: January 19th 2022
 

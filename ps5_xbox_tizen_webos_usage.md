@@ -238,6 +238,17 @@ There are a substantial number of customizable options for NexPlayer™ includin
     poster: 'URL poster', 
     reinitializeAfterAds: boolean, // Deprecated
     resumePosition: number,
+    retryParameters:
+      streaming: {
+        timeout: 30000,     // timeout in ms, after which we abort
+        stallTimeout: 5000, // stall timeout in ms, after which we abort
+        connectionTimeout: 10000, // connection timeout in ms, after which we abort
+        maxTries: 2,        // the maximum number of requests before we fail
+        retryDelay: 1000,   // the base delay in ms between retries
+      },
+      drm: {…},
+      manifest: {…}
+    },
     showAdsUI: true,
     showingFullUI: true,
     staticThumbnails: {
@@ -455,7 +466,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | defaultLanguage | <code>string</code> | Determines which is the default audio language. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video. |
 | drm | <code>Object</code> | Contains an object of DRM information. By default it’s set to null. |
-| externalSubtitles | <code>Array <[externalSubtitle](ps5_xbox_tizen_webos_usage.md?id=externalsubtitleobject)></code> | Used to provide a subtitle files as external subtitles. |
+| externalSubtitles | <code>Array [\<externalSubtitle\>](ps5_xbox_tizen_webos_usage.md?id=externalsubtitleobject)</code> | Used to provide a subtitle files as external subtitles. |
 | hideControlBarOnStart | <code>boolean</code> | Determines if the control bar will hide when the video starts. |
 | hideUITime | <code>boolean</code> | Determines if the time will be hidden in the UI. |
 | improveStartUp | <code>boolean</code> | Determines whether the video has to start at the lowet bitrate or not. |
@@ -465,6 +476,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | poster | <code>string</code> | Video poster URL. |
 | reinitializeAfterAds | <code>boolean</code> | *Deprecated* Used to avoid errors related to ads on PS5, please set it to true on this platform. False by default. |
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
+| retryParameters | <code>Object [\<retrySettings\>](ps5_xbox_tizen_webos_usage.md?id=retrySettings)</code> | Determines the retry parameters for DRM, manifest, and streaming requests. |
 | showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
 | staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and a callback which returns an <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=error">error</a> object.|
@@ -1290,6 +1302,30 @@ Possible error codes:
 | src   | <code>String</code> | Subtitles file URL |
 | language  | <code>String</code> |  Subtitle language identifier  |
 | callback | <code>Function</code> | Error callback |
+
+#### <a id="retrySettings"></a> retrySettings: <code>Object</code>
+
+**Type**: global typedef     
+**Properties**:  
+
+| Name    | Type                | Description           |
+| ------- | ------------------- | --------------------- |
+| drm   | <code>Object \<retryConfig\></code> | Subtitles file URL |
+| streaming   | <code>Object \<retryConfig\></code> | Subtitles file URL |
+| manifest   | <code>Object \<retryConfig\></code> | Subtitles file URL |
+
+#### <a id="retryConfig"></a> retryConfig: <code>Object</code>
+
+**Type**: global typedef     
+**Properties**:  
+
+| Name    | Type                | Description           |
+| ------- | ------------------- | --------------------- |
+| timeout   | <code>number</code> | Timeout in ms, after which we abort |
+| stallTimeout   | <code>number</code> | Stall timeout in ms, after which we abort |
+| connectionTimeout   | <code>number</code> | Connection timeout in ms, after which we abort |
+| maxTries   | <code>number</code> | The maximum number of requests before we fail |
+| retryDelay  | <code>number</code> |  The base delay in ms between retries |
 
 ***
 

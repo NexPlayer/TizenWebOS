@@ -1,243 +1,91 @@
-<a id="ps4usage-top"> </a>
+# NexPlayer API
 
-# PlayStation 4 Usage
+**Nexplayer methods**
 
-This section explains how to integrate NexPlayer&#x2122; for PS4 into your project.
+- [Setup(configObj)](#ps4setup)
+- [UnMount(div)](#unmount)
+- [PlayerEvents(event,callback)](#playerevents)
+- [AdsEvents(event,callback)](#adsevents)
 
-## NexPlayer™ Integration
+**Player methods**
 
-### Sample
+- [init(NexPlayerConfig)](#init)
+- [play()](#play)
+- [pause()](#pause)
+- [seek(value)](#seek)
+- [Environment](#environment)
+- [DefaultConfig](#defaultconfig)
+- [destroy()](#destroy)
 
-Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.com/sample/index.html" download="" target="_blank">HTML5 file</a>:</p>
+**Getters**
 
-```html
+- [getAudioStreams()](#getaudiostreams) ⇒ [Array\<AudioStream\>](#audiostream)
+- [getCurrentAudioTrack()](#getcurrentaudiotrack) ⇒ [AudioTrack](#audiotrack)
+- [getCurrentSubtitle()](#getcurrentsubtitle) ⇒ number
+- [getCurrentTime()](#getcurrenttime) ⇒ number
+- [getCurrentTrack()](#getcurrenttrack) ⇒ [Track](#track-object)
+- [getDuration()](#getduration) ⇒ number
+- [getQualityLevels()](#getqualitylevels) ⇒ Array
+- [getSubtitles()](#getsubtitles) ⇒ Array
+- [getThumbnailAt()](#getthumbnailat) ⇒ Promise
+- [getThumbnails()](#getthumbnails) ⇒ [Array\<Frame\>](#frame)
+- [getTracks()](#gettracks) ⇒ [Array\<Track\>](#track)
+- [getURL()](#geturl) ⇒ string
+- [getVersion()](#getversion) ⇒ string
+- [getPlayerDiv()](#getplayerdiv) ⇒ string
+- [getPlayerContainerDiv()](#getplayercontainerdiv) ⇒ string
+- [getAdInstance()](#getadinstance) ⇒ string
+- [getVolume()](#getvolume) ⇒ number
+- [getMute()](#getmute) ⇒ boolean
+- [getLogger()](#getlogger) ⇒ Logger
+- [isCurrentAssetAd()](#iscurrentassetad) ⇒ boolean
+- [isCurrentAssetMuted()](#iscurrentassetmuted) ⇒ boolean
+- [isSeeking()](#isseeking) ⇒ boolean
 
-<!DOCTYPE html>
-<html>
+**Setters**
 
-<head>
-    <!-- MANDATORY! LOAD JQUERY BY CDN OR LOCAL  -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <meta name="description" content="Nexplayer"/>
-    <title>NexPlayer</title>
-</head>
+- [setAudio(streamID)](#setaudio)
+- [setCurrentTrack(trackID)](#setcurrenttrack)
+- [setCurrentSubtitle(subID)](#setsubtitle)
+- [setVolume(number)](#setvolume)
+- [setMute(boolean)](#setmute)
+- [setLogger(logger)](#setlogger)
 
- <style>
-    #player_container {
-        width: 600px;
-        height: 100%;
-        margin: auto;
-        position: absolute;
-    }
- </style>
+**Global Typedefs**
 
- <body>
-  <div id="player"></div>
-  <script src="Latest SDK version."></script>
- </body>
+- [NexPlayerDRMOptions](#nexplayerdrmoptions) : object
+- [DRMCustomData](#drmcustomdata) : object
+- [Captions](#captions) : object
+- [Thumbnails](#thumbnails) : object
+- [ICaptionsDisplayer](#icaptionsdisplayer) : object
 
- <script type="text/javascript">
-    var player = new nexplayer.NexPlayer();
+**Ads methods**
 
-    player.init({
-        key: 'ENTER YOUR LICENSE KEY HERE',
-        div: document.getElementById("player"),
-        src: 'https://livesim.dashif.org/dash/vod/testpic_2s/multi_subs.mpd',
-        autoplay: true,
-    });
-</script>
+- [play()](#adplay)
+- [pause()](#adpause)
+- [registerPlugin(ads)](#registerplugin)
+- [isAdPlaying()](#isAdPlaying)
+- [skip()](#skip)
+- [checkInitialAds()](#checkinitialads)
+- [getAdType()](#getadtype) ⇒ string
+- [getAdTitle()](#getadtitle) ⇒ string
+- [getAdDuration()](#getadduration) ⇒ number
+- [getAdRemainingTime()](#getadremainingtime) ⇒ number
+- [getMute()](#getadmute) ⇒ boolean
+- [getVolume()](#getadvolume) ⇒ number
+- [getAdBreaks()](#getadbreaks) ⇒ Object
+- [setMute(state)](#setadmute)
+- [setVolume(value)](#setadvolume)
 
-</html>
-```
-
-<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that replacing the license key is mandatory. License key should have been already sent to your inbox or you can request one from support.madrid@nexplayer.com. </p>
-</div></div>
-
-<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>As for PS5, in order to be able to use NexPlayer's SDK for PS4, a JSON file is needed. This JSON file must be hosted in the root of the domain where the application is hosted. For example, if the app is hosted in https://example.com/app the JSON file must be accessible from the path https://example.com/userAppId.json.
-
-Please, contact NexPlayer's support (supportmadrid@nexplayer.com) to request this file.</p>
-</div></div>
-
-### Step-by-Step
-
-To integrate NexPlayer™ into your project you must complete the following steps:
-
-- The NexPlayer™ JavaScript library should be included in the HTML file:
-
-```html
-<script src="Latest SDK version." ></script>
-```
-
-<div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note that the use of https to call our library is mandatory. <br>
-</div></div>
-
-- A div that will contain the video and the UI has to be declared:
-```html
-<body>
-...
-    <div id="player"></div>
-...
-</body>
-```
-- The player should be initialized by entering the previous div to the init method:
-```js
-    var player = new nexplayer.NexPlayer();
-    player.init({
-        key: 'ENTER YOUR LICENSE KEY HERE',
-        div: document.getElementById("player"),
-        src: 'https://livesim.dashif.org/dash/vod/testpic_2s/multi_subs.mpd',
-        autoplay: true,
-    });
-```
-
-## NexPlayer™ Configuration
-
-There are a substantial number of customizable options for NexPlayer™ including: the name and subtitle format of the video, a logo for the company, the DRM information, a VAST link, and the thumbnail preview...
-
-```js
-    key: 'License key to validate the playback', // Mandatory
-    div: document.getElementById('player'), // Mandatory
-    src: 'URL video', // Mandatory
-    addRequestFilter: Function, // Optional, used for give filters to the drm request
-    adsParamsToEncode: Array<string>, // Optional, used to encode adURL parameters
-    autoplay: true, // Optional
-    callbacksForPlayer: callback, // Optional callback called with the player instances
-    debug: true, // Optional
-    drm: [{
-        NexDRMType: 'DRM Type (eg. com.widevine.alpha(', NexDRMKey: 'URI for the DRM Key', 
-        NexHeaders: [{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
-        NexCallback: OptionalDRMCallbackForFairPlay
-    }], // Optional DRM information
-    thumbnails: {
-         canvas: HTMLCanvasElement; // Optional
-         urlVtt: "VTT URL"; // Optional
-         urlImg: "string"; // Optional
-         chunkLimit: number; // Optional
-         chunkTotal: number; // Optional
-      }, // Optional 
-    externalSubtitles: {
-        src: "URL for the subtitles file",
-        language: "Subtitle language",
-    }, // Optional
-    mutedAtStart: true, // Optional    
-    resumePosition: number, // Optional, used for starting the video from the given position in seconds.
-    trailer: boolean,// Optional, by default is set to false. Set to true when a stream should be considered a trailer, false when not.
-    useNewRelicTracker: boolean,
-    // You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
-    vast: 'URL with a VAST/VPAID/VMAP advertisement', // Optional
-    adURL: string, // Optional
-    captionDisplayer: ICaptionsDisplayer, // Optional
-```
-
-## NexPlayer™ API
-
-***
-
-### Overview
-
-***
-
-#### Nexplayer methods
-
- - [Setup(configObj)](#ps4setup)
- - [UnMount(div)](#unmount)
- - [PlayerEvents(event,callback)](#playerevents)
- - [AdsEvents(event,callback)](#adsevents)
-
-#### Player methods
-
-##### Miscellaneous
-
- - [init(NexPlayerConfig)](#init)
- - [play()](#play)
- - [pause()](#pause)
- - [seek(value)](#seek)
- - [Environment](#environment)
- - [DefaultConfig](#defaultconfig)
- - [destroy()](#destroy)
-
-##### Getters
-
-
- - [getAudioStreams()](#getaudiostreams) ⇒ [Array\<AudioStream\>](#audiostream)
- - [getCurrentAudioTrack()](#getcurrentaudiotrack) ⇒ [AudioTrack](#audiotrack)
- - [getCurrentSubtitle()](#getcurrentsubtitle) ⇒ number
- - [getCurrentTime()](#getcurrenttime) ⇒ number
- - [getCurrentTrack()](#getcurrenttrack) ⇒ [Track](#track-object)
- - [getDuration()](#getduration) ⇒ number
- - [getQualityLevels()](#getqualitylevels) ⇒ Array
- - [getSubtitles()](#getsubtitles) ⇒ Array
- - [getThumbnailAt()](#getthumbnailat) ⇒ Promise
- - [getThumbnails()](#getthumbnails) ⇒ [Array\<Frame\>](#frame)
- - [getTracks()](#gettracks) ⇒ [Array\<Track\>](#track)
- - [getURL()](#geturl) ⇒ string
- - [getVersion()](#getversion) ⇒ string
- - [getPlayerDiv()](#getplayerdiv) ⇒ string
- - [getPlayerContainerDiv()](#getplayercontainerdiv) ⇒ string
- - [getAdInstance()](#getadinstance) ⇒ string
- - [getVolume()](#getvolume) ⇒ number
- - [getMute()](#getmute) ⇒ boolean
- - [getLogger()](#getlogger) ⇒ Logger
- - [isCurrentAssetAd()](#iscurrentassetad) ⇒ boolean
- - [isCurrentAssetMuted()](#iscurrentassetmuted) ⇒ boolean
- - [isSeeking()](#isseeking) ⇒ boolean
-
-##### Setters
-
-
- - [setAudio(streamID)](#setaudio)
- - [setCurrentTrack(trackID)](#setcurrenttrack)
- - [setCurrentSubtitle(subID)](#setsubtitle)
- - [setVolume(number)](#setvolume)
- - [setMute(boolean)](#setmute)
- - [setLogger(logger)](#setlogger)
-
-##### Global Typedefs
-
- - [NexPlayerDRMOptions](#nexplayerdrmoptions) : object
- - [DRMCustomData](#drmcustomdata) : object
- - [Captions](#captions) : object
- - [Thumbnails](#thumbnails) : object
- - [ICaptionsDisplayer](#icaptionsdisplayer) : object
-
-#### Ads methods
-
-##### Miscellaneous
-
- - [play()](#adplay)
- - [pause()](#adpause)
- - [registerPlugin(ads)](#registerplugin)
- - [isAdPlaying()](#isAdPlaying)
- - [skip()](#skip)
- - [checkInitialAds()](#checkinitialads)
-
-##### Getters
-
- - [getAdType()](#getadtype) ⇒ string
- - [getAdTitle()](#getadtitle) ⇒ string
- - [getAdDuration()](#getadduration) ⇒ number
- - [getAdRemainingTime()](#getadremainingtime) ⇒ number
- - [getMute()](#getadmute) ⇒ boolean
- - [getVolume()](#getadvolume) ⇒ number
- - [getAdBreaks()](#getadbreaks) ⇒ Object
-
-##### Setters
-
-  - [setMute(state)](#setadmute)
-  - [setVolume(value)](#setadvolume)
-
-***
 
 ### Nexplayer methods
 
-***
-
-#### <a id="ps4setup"></a> nexplayer.Setup(configObj)
+#### <a id="ps4setup"></a>nexplayer.Setup(configObj)
 
 Creates and initializes the player.
 
-**Type**: instance method of [<code>nexplayer</code>](#Player)   
+**Type**: instance method of `Player`   
+
 **Parameters**: <code>configObj</code> is an object which values could be:
 
 | Param | Type | Description |
@@ -260,11 +108,10 @@ Creates and initializes the player.
 | useNewRelicTracker | <code>boolean</code> | Determines if the New Relick tracker will be used. |
 | vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
 
-#### <a id="unmount"></a> nexplayer.UnMount(div)
+#### <a id="unmount"></a>nexplayer.UnMount(div)
 
 Unmounts the player and its dependencies.
 
-**Type**: instance method of [<code>nexplayer</code>](#Player)  
 **Parameters**:
 
 | Param | Type                | Description        |
@@ -272,11 +119,10 @@ Unmounts the player and its dependencies.
 | div | <code>HTMLElement</code> | Player tag |
 
 
-#### <a id="playerevents"></a> nexplayer.PlayerEvents(event, callback)
+#### <a id="playerevents"></a>nexplayer.PlayerEvents(event, callback)
 
 Listens for player events.
 
-**Type**: instance method of [<code>nexplayer</code>](#Player)  
 **Parameters**:
 
 | Param | Type                | Description        |
@@ -285,11 +131,10 @@ Listens for player events.
 | callback | <code>function</code> | Callback function |
 
 
-#### <a id="adsevents"></a> nexplayer.AdsEvents(event, callback)
+#### <a id="adsevents"></a>nexplayer.AdsEvents(event, callback)
 
 Listens for ads events.
 
-**Type**: instance method of [<code>nexplayer</code>](#Player)  
 **Parameters**:
 
 | Param | Type                | Description        |
@@ -297,286 +142,229 @@ Listens for ads events.
 | event | <code>string</code> | Event name |
 | callback | <code>function</code> | Callback function |
 
-***
-
 ### Player methods
-
-***
-
-#### Miscellaneous
-
-***
 
 <a id="init"></a>
 
-##### player.init(NexPlayerConfig)
+#### player.init(NexPlayerConfig)
 
 Initialize the player with the config Object given.
 
-**Type**: instance method of  [<code>Player</code>](#Player)
-
 <a id="play"></a>
 
-##### player.play()
+#### player.play()
 
 Plays the video when it is paused.
 
-**Type**: instance method of  [<code>Player</code>](#Player)
-
 <a id="pause"></a>
 
-##### player.pause()
+#### player.pause()
 
 Pauses the video when it is playing.
 
-**Type**: instance method of  [<code>Player</code>](#Player)
-
 <a id="seek"></a>
 
-##### player.seek(value)
+#### player.seek(value)
 
 Seek the video to the value given.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
-
 <a id="environment"></a>
 
-##### player.Environment()
+#### player.Environment()
 
 Returns which browser, platform and device type are set.
 
-**Type**: instance method of  [<code>Player</code>](#Player)
-
 <a id="defaultconfig"></a>
 
-##### player.DefaultConfig()
+#### player.DefaultConfig()
 
 Sends the default configuration in case the parameters are not specified in the init.
 
-**Type**: instance method of  [<code>Player</code>](#Player)
-
 <a id="destroy"></a>
 
-##### player.destroy()
+#### player.destroy()
 
 Destroy the player
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
-
-***
-
-#### Getters
-
-***
+### Getters
 
 <a id="getaudiostreams"> </a>
 
-##### player.getAudioStreams() ⇒ Array.< AudioStream >
+#### player.getAudioStreams() ⇒ Array.< AudioStream >
 
 Gets the available audio streams.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: An Array<AudioStream> - which contains the available audio streams.
 
 <a id="getcurrentaudiotrack"> </a>
 
-##### player.getCurrentAudioTrack() ⇒ AudioTrack
+#### player.getCurrentAudioTrack() ⇒ AudioTrack
 
 Gets the audio track currently in use.
-
-**Type**: instance method of [<code>Player</code>](#Player)   
+ 
 **Returns**: AudioTrack - The current audio track.
 
-<a id="getcurrentsubtitle"> </a>  
+<a id="getcurrentsubtitle"> </a> 
 
-##### player.getCurrentSubtitle() 
+#### player.getCurrentSubtitle() 
 
 Gets the current subtitle info.
 
-**Type**: instance method of [<code>Player</code>](#Player)     
 **Returns**: Current Subtitle - the current subtitle track (undefined if no subtitles are activated).
 
-<a id="getcurrenttime"> </a>  
+<a id="getcurrenttime"> </a> 
 
-##### player.getCurrentTime() ⇒ number
+#### player.getCurrentTime() ⇒ number
 
 Returns the currentTime taking into account isUTC (if isUTC is true, getCurrentTime's returned value will be different from the time of the video element).
-
-**Type**: instance method of [<code>Player</code>](#Player)    
+  
 **Returns**: number - the current time of the video.
 
 <a id="getcurrenttrack"> </a>
 
-##### player.getCurrentTrack() ⇒ Track
+#### player.getCurrentTrack() ⇒ Track
 
 Gets the current track information.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: Track - the current track.
 
-<a id="getduration"> </a>  
+<a id="getduration"> </a> 
 
-##### player.getDuration() ⇒ number
+#### player.getDuration() ⇒ number
 
 Returns the duration taking into account isUTC (if isUTC is true, getDuration's returned value will be different from the duration of the video element).
-
-**Type**: instance method of [<code>Player</code>](#Player)   
+  
 **Returns**: number - the duration of the video.
 
 <a id="getqualitylevels"> </a>
 
-##### player.getQualityLevels() ⇒ Array
+#### player.getQualityLevels() ⇒ Array
 
 Gets the video quality levels array.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: Array - quality levels array info
 
 <a id="getsubtitles"> </a>
 
-##### player.getSubtitles()
+#### player.getSubtitles()
    
 Gets all the avaliable subtitle tracks info.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: Array of subtitles - the subtitle tracks of the video.
 
-<a id="getthumbnailat"> </a>  
+<a id="getthumbnailat"> </a> 
 
-##### player.getThumbnailAt() ⇒ Promise
+#### player.getThumbnailAt() ⇒ Promise
 
 Returns a thumbnail loading promise in a specific time.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: Promise - Thumbnail loading promise in a specific time.
 
-<a id="getthumbnails"> </a>  
+<a id="getthumbnails"> </a> 
 
-##### player.getThumbnails() ⇒ Array < Frame >
+#### player.getThumbnails() ⇒ Array < Frame >
 
 Returns the loaded thumbnails.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: Array < Frame > - The loaded thumbnails.
 
 <a id="gettracks"> </a>
-   
-##### player.getTracks() ⇒ Array.< Track >
+  
+#### player.getTracks() ⇒ Array.< Track >
 
 Gets all of the videos avaliable tracks (different qualities).
-
-**Type**: instance method of [<code>Player</code>](#Player)     
+  
 **Returns**:: Array.< Track > - all the tracks available.
 
 <a id="geturl"> </a>
    
-##### player.getURL()
+#### player.getURL()
 
 Returns the current video URL.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: String
 
 <a id="getversion"></a>
 
-##### player.getVersion()
+#### player.getVersion()
 
 Returns the current version of the player.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
 **Returns**: String
 
 <a id="getplayerdiv"></a>
 
-##### player.getPlayerDiv()
+#### player.getPlayerDiv()
 
 Returns the video container.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
 **Returns**: HTMLDivElement
 
 <a id="getplayercontainerdiv"></a>
 
-##### player.getPlayerContainerDiv()
+#### player.getPlayerContainerDiv()
 
 Returns the player container.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
 **Returns**: HTMLDivElement
 
 <a id="getadinstance"></a>
 
-##### player.getAdInstance()
+#### player.getAdInstance()
 
 Returns the AdInstance Object.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
 **Returns**: Object
 
 <a id="getvolume"></a>
 
-##### player.getVolume()
+#### player.getVolume()
 
 Returns the current volume of the Player.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
 **Returns**: number
 
 <a id="getmute"></a>
 
-##### player.getMute()
+#### player.getMute()
 
 Returns true if the video is muted and false if not.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
 **Returns**: boolean
 
 <a id="getlogger"></a>
 
-##### player.getLogger()
+#### player.getLogger()
 
 Returns the logger of the Player.
 
-**Type**: instance method of  [<code>Player</code>](#Player)  
 **Returns**: Object
 
 <a id="iscurrentassetad"></a>
 
-##### player.isCurrentAssetAd()
+#### player.isCurrentAssetAd()
 
 Returns a boolean, true if the current playing asset is an ad, false if not.
 
-**Type**: instance method of  [<code>Player</code>](#Player)
-
 <a id="iscurrentassetmuted"></a>
 
-##### player.isCurrentAssetMuted()
+#### player.isCurrentAssetMuted()
 
 Returns a boolean, true if the current playing asset is muted, false if not.
 
-**Type**: instance method of  [<code>Player</code>](#Player)
-
 <a id="isseeking"></a>
 
-##### player.isSeeking()
+#### player.isSeeking()
 
 Returns a boolean, true if the player is seeking and false if not.
 
-**Type**: instance method of  [<code>Player</code>](#Player)
-
-***
-
-#### Setters
-
-***
+### Setters
 
 <a id="setaudio"></a>
 
-##### player.setAudio(streamID)
+#### player.setAudio(streamID)
 
 Sets the current audio stream.
-
-**Type**: instance method of [<code>Player</code>](#Player)   
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -584,11 +372,9 @@ Sets the current audio stream.
 
 <a id="setcurrenttrack"></a>
 
-##### player.setCurrentTrack(trackID)
+#### player.setCurrentTrack(trackID)
 
-Sets the current track.
-
-**Type**: instance method of [<code>Player</code>](#Player)   
+Sets the current track. 
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -596,11 +382,9 @@ Sets the current track.
 
 <a id="setsubtitle"></a>
 
-##### player.setCurrentSubtitle(subID)
+#### player.setCurrentSubtitle(subID)
 
 Sets the current subtitle.
-
-**Type**: instance method of [<code>Player</code>](#Player)   
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -608,7 +392,7 @@ Sets the current subtitle.
 
 <a id="setvolume"></a>
 
-##### player.setVolume(value)
+#### player.setVolume(value)
 
 Set the volume of the video.
 
@@ -618,7 +402,7 @@ Set the volume of the video.
 
 <a id="setmute"></a>
 
-##### player.setMute(boolean)
+#### player.setMute(boolean)
 
 Set mute or unmute to the video.
 
@@ -628,7 +412,7 @@ Set mute or unmute to the video.
 
 <a id="setlogger"></a>
 
-##### player.setLogger(logger)
+#### player.setLogger(logger)
 
 Set logger to the video.
 
@@ -637,17 +421,12 @@ Set logger to the video.
 | logger | <code>Object</code> | The logger to be used. |
 
 
-***
-
-#### Global typedefs
-
-***
+### Global typedefs
 
 <a id="nexplayerdrmoptions"></a>
 
-##### Player.NexPlayerDRMOptions : <code>Object</code>
+#### Player.NexPlayerDRMOptions : <code>Object</code>
 
-**Type**: global typedef
 **Properties**:
 
 | Name    | Type                | Description                  |
@@ -656,11 +435,10 @@ Set logger to the video.
 | license    | <code>string</code> | DRM's license. |
 | customData | <code>DRMCustomData</code> | Used to indicate the custom headers necessary to request the license. Optional. |
 
-<a id="drmcustomdata"></a> 
+<a id="drmcustomdata"></a>
 
-##### Player.DRMCustomData : <code>Object</code>
+#### Player.DRMCustomData : <code>Object</code>
 
-**Type**: global typedef
 **Properties**:
 
 | Name    | Type                | Description                  |
@@ -668,11 +446,10 @@ Set logger to the video.
 | fieldName  | <code>string</code> | Header's name .|
 | value    | <code>string</code> | Value used in the DRM's request. |
 
-<a id="captions"></a> 
+<a id="captions"></a>
 
-##### Player.Captions : <code>Object</code>
+#### Player.Captions : <code>Object</code>
 
-**Type**: global typedef
 **Properties**:
 
 | Name    | Type                | Description                  |
@@ -682,9 +459,8 @@ Set logger to the video.
 
 <a id="thumbnails"></a>
 
-##### Player.Thumbnails : <code>Object</code>
+#### Player.Thumbnails : <code>Object</code>
 
-**Type**: global typedef
 **Properties**:
 
 | Name    | Type                | Description                  |
@@ -697,9 +473,8 @@ Set logger to the video.
 
 <a id="icaptionsdisplayer"></a>
 
-##### Player.ICaptionsDisplayer : <code>Class</code>
+#### Player.ICaptionsDisplayer : <code>Class</code>
 
-**Type**: global typedef
 **Properties**:
 
 | Name    | Type                | Description                  |
@@ -718,144 +493,103 @@ Set logger to the video.
 | updateCue  | time: <code>number</code> | void | Called to update the current cues to display. |
 | displayCuesCC  | cuesCC:<code>Map<string, Object></code> | void | Displays the CC cues passed. Object properties: "text", "position", and "rgba". |
 
-***
-
-
 ### Ads methods
-
-***
-
-#### Miscellaneous
-
-***
 
 <a id="adplay"></a>
 
-##### nexplayer.AdInstance().play()
+#### nexplayer.AdInstance().play()
 
 Plays the ad when it is paused.
 
-**Type**: instance method of  [<code>nexplayer</code>](#Player)
-
 <a id="adpause"></a>
 
-##### nexplayer.AdInstance().pause()
+#### nexplayer.AdInstance().pause()
 
 Pauses the ad when it is playing.
 
-**Type**: instance method of  [<code>nexplayer</code>](#Player)
-
 <a id="registerplugin"></a>
 
-##### nexplayer.AdInstance().registerPlugin(ads)
+#### nexplayer.AdInstance().registerPlugin(ads)
 
 ads is an Object that implements IAds interface, The users can pass their own implementation in case they want to use another advertisement library or a custom one.
 
-**Type**: instance method of  [<code>nexplayer</code>](#Player)  
-
 <a id="isadplaying"></a>
 
-##### nexplayer.AdInstance().isAdPlaying()
+#### nexplayer.AdInstance().isAdPlaying()
 
 Return a boolean, true if the ad is playing and false if not.
 
-**Type**: instance method of  [<code>nexplayer</code>](#Player)
-
 <a id="skip"></a>
 
-##### nexplayer.AdInstance().skip()
+#### nexplayer.AdInstance().skip()
 
 Skip the current ad if possible.
 
-**Type**: instance method of  [<code>nexplayer</code>](#Player)
-
 <a id="checkinitialads"></a>
 
-##### nexplayer.AdInstance().checkInitialAds()
+#### nexplayer.AdInstance().checkInitialAds()
 
 Checks whether there ads
 
-**Type**: instance method of  [<code>nexplayer</code>](#Player)
-
-***
-
-#### Getters
-
-***
-
 <a id="getadtype"> </a>
 
-##### nexplayer.AdInstance().getAdType() ⇒ string
+#### nexplayer.AdInstance().getAdType() ⇒ string
 
 Gets the current Ad type.
 
-**Type**: instance method of [<code>nexplayer</code>](#Player)   
 **Returns**: String - The current ad type.
 
 <a id="getadtitle"> </a>
 
-##### nexplayer.AdInstance().getAdTitle() ⇒ string
+#### nexplayer.AdInstance().getAdTitle() ⇒ string
 
 Gets the Ad title.
 
-**Type**: instance method of [<code>nexplayer</code>](#Player)   
 **Returns**: String - The current ad title.
 
 <a id="getadduration"> </a>
 
-##### nexplayer.AdInstance().getAdDuration() ⇒ number
+#### nexplayer.AdInstance().getAdDuration() ⇒ number
 
 Gets the Ad duration.
 
-**Type**: instance method of [<code>nexplayer</code>](#Player)   
 **Returns**: number - The current ad duration.
 
 <a id="getadremainingtime"> </a>
 
-##### nexplayer.AdInstance().getAdRemainingTime() ⇒ number
+#### nexplayer.AdInstance().getAdRemainingTime() ⇒ number
 
 Gets the Ad remaining time.
 
-**Type**: instance method of [<code>nexplayer</code>](#Player)   
 **Returns**: number - The ad remaining time.
 
 <a id="getadmute"> </a>
 
-##### nexplayer.AdInstance().getMute() ⇒ boolean
+#### nexplayer.AdInstance().getMute() ⇒ boolean
 
 Gets the true if the video is muted or false if not.
 
-**Type**: instance method of [<code>nexplayer</code>](#Player)   
 **Returns**: boolean - True if the video is muted or false if not.
 
 <a id="getadvolume"> </a>
 
-##### nexplayer.AdInstance().getVolume() ⇒ number
+#### nexplayer.AdInstance().getVolume() ⇒ number
 
 Gets the Ad volume.
-
-**Type**: instance method of [<code>nexplayer</code>](#Player)   
+ 
 **Returns**: number - The ad volume.
 
 <a id="getadbreaks"> </a>
 
-##### nexplayer.AdInstance().getAdBreaks() ⇒ Object
+#### nexplayer.AdInstance().getAdBreaks() ⇒ Object
 
 Returns the break points when ads will trigger
 
-
-**Type**: instance method of [<code>nexplayer</code>](#Player)   
 **Returns**: Object - The break points when ads will trigger
-
-***
-
-#### Setters
-
-***
 
 <a id="setadmute"></a>
 
-##### nexplayer.AdInstance().setMute(state)
+#### nexplayer.AdInstance().setMute(state)
 
 Mutes or unmutes the ad.
 
@@ -865,15 +599,13 @@ Mutes or unmutes the ad.
 
 <a id="setadvolume"></a>
 
-##### nexplayer.AdInstance().setVolume(value)
+#### nexplayer.AdInstance().setVolume(value)
 
 Set the volume of the ad.
 
 | Param | Type | Description |
 | --- | --- | --- |
 | value | <code>number</code> | The volume level to be used. |
-
-***
 
 ## Advanced usage
 
@@ -973,54 +705,3 @@ We have events to handle some different kind of ads events. List of ad events av
         console.log("aderror", e);
     });
 ```
-
-## Integrations 
-
-### New Relic
-
-This document describes the integration of a New Relic tracker and NexPlayer. 
-
-#### Quick start
-
-The two following scripts must be included before NexPlayer does:
-
-```js
-    <!-- newrelic browser agent. REMEMBER TO REPLACE THIS SCRIPT WITH YOUR OWN BROWSER AGENT -->
-    <script type="text/javascript" src="./agent.js"></script>
-
-    <!-- newrelic tracker. Ask NexPlayer team for the library -->
-    <script type="text/javascript" src="./newrelic-video-nexplayer.min.js"></script>
-```
-
-In order to make New Relic work the property 'useNewRelicTracker' must be set to true in the Setup:
-
-```js
-    var player = null;
-    var video = null;
-
-    // Pass this function to the Setup method as below
-    var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-
-        // Retrieve the player and video instances
-        player = nexplayerInstance;
-        video = videoElement;
-    };
-
-    // Create and initialize the player
-    nexplayer.Setup({
-        key: 'YOUR LICENSE KEY', 
-        div: document.getElementById('player'),     
-        callbacksForPlayer: callBackWithPlayers,
-        src: 'YOUR STREAM URL'
-        useNewRelicTracker: true,
-        // ...
-    });
-```
-
-Adding these two scripts and the property is all it takes for New Relic to work along NexPlayer. Note that the "agent" script is a customer's own file while "newrelic-video-nexplayer.min.js" is provided by our team and must be requested in order to make use of it. No extra steps are needed in order to set the communication between the player and the tracker as that is already managed via the latter script.
-
-#### Methods
-
-Custom data to be tracked can be added and removed using the following methods:
- - [addTrackerData()](#addtrackerdata)
- - [removeTrackerData()](#removetrackerdata)

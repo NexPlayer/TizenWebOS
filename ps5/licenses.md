@@ -1,244 +1,8 @@
-<a id="introduction-top"> </a>
-
-<img width="30%" text-align="center" src="./assets/logo.png" alt="logo of docsify-awesome repository" >
-
-# NexPlayer SDK for Tizen, WebOS, Xbox and PlayStation
-
-NexPlayer™ provides a media player for Smart TVs operating on Tizen and WebOS and for consoles like Xbox and PlayStation 4, 5. It includes support for HLS, DASH, and progressive download.
-
-The default UI is easily customizable to fit the user's personal preferences (e.g. icons, colors, etc).
-
-<section class="abstractTable">
-  <div class="gridColumn">
-    <div class="titleCell">VIDEO DELIVERY FORMATS</div>
-    <div class="contentCell">
-      <div>HLS </div>      
-      <div>DASH </div>  
-      <div>Progressive Download </div>
-    </div>
-    <div class="titleCell">AD INSERTION</div>
-    <div class="contentCell">
-      <div>VAST, VPAID, VMAP, Playlist </div>      
-      <div>Pre-Roll, Mid-Roll, Post-Roll </div>
-      <div>Integrated Client-Side Ad Insertion </div>
-      <div>IMA SDK for Client-Side Ad Insertion </div>
-      <div>PAL SDK for Client-Side Ad Insertion </div>
-      <div>Server-Side Ad Insertion </div>
-    </div>
-    <div class="titleCell">METADATA</div>
-    <div class="contentCell">
-      <div>ID3 Tags</div>
-    </div>
-  </div>
-  <div class="gridColumn">
-    <div class="titleCell">FEATURES</div>
-    <div class="contentCell">
-      <div>Integrated UI </div>         
-      <div>Multiple audio/video tracks </div>      
-      <div>ABR and UHD video (4k and 8k) </div>
-      <div>Trick Play </div>     
-      <div>Time-shifting </div>   
-      <div>DVR Live Streaming </div>   
-      <div>Picture-in-picture </div>   
-      <div>Fully Customizable UI </div>     
-    </div>
-  </div>
-  <div class="gridColumn">
-    <div class="titleCell">PLAYBACK</div>
-    <div class="contentCell">
-      <div>VOD </div>      
-      <div>Live </div>  
-    </div>
-    <div class="titleCell">SUBTITLES & CC</div>
-    <div class="contentCell">
-      <div>WebVTT </div>   
-      <div>SRT </div>   
-      <div>CEA 608/708 </div> 
-      <div>TTML </div>
-    </div>
-    <div class="titleCell">CONTENT PROTECTION</div>
-    <div class="contentCell">
-      <div>Widevine DRM </div>      
-      <div>PlayReady DRM </div>
-      <div>Custom HTTP headers</div>   
-      <div>CENC </div>     
-    </div>
-  </div>
-</section>
-
-## Platform support
-
-NexPlayer supports several platforms and models:
-
-<table style="display: table">
-  <tbody>
-    <tr>
-      <th class="titleBlocks" scope="row">Platform </th>   
-      <th class="titleBlocks" scope="row">Minimum model and year</th>   
-      <th class="titleBlocks" scope="row">Supported content</th>              
-    </tr>
-    <tr>
-      <td  scope="row"><a href="https://developer.samsung.com/smarttv/develop/specifications/tv-model-groups.html">Samsung Tizen</a></td>      
-      <td  scope="row"><span>Tizen 2.3 (2015)</span> </td>       
-      <td  scope="row"><span>DASH/HLS + PlayReady/Widevine</span></td>
-    </tr>
-    <tr>
-       <td  scope="row"> <a href="https://webostv.developer.lge.com/discover/specifications/supported-media-formats/">LG WebOS</a></td>
-      <td  scope="row">WebOS 3.0 (2016)</td>
-      <td  scope="row">DASH/HLS + PlayReady/Widevine</td>
-    </tr>
-    <tr>
-      <td  scope="row">PlayStation 4</td>
-      <td  scope="row"><span>Original (2013)</span></td>
-      <td  scope="row"><span>DASH + PlayReady, HLS Clear</span></td>
-    </tr>
-    <tr>
-      <td  scope="row">PlayStation 5</td>
-      <td  scope="row"><span>Standard/Digital (2020)</span></td>
-      <td  scope="row"><span>DASH/HLS + PlayReady</span></td>
-    </tr>
-    <tr>
-      <td  scope="row">Xbox One</td>
-      <td  scope="row"><span>Original (2014)</span></td>
-      <td  scope="row"><span>DASH/HLS + PlayReady</span></td>
-    </tr>
-    <!-- <tr>
-      <td  scope="row">Xbox Series S/X</td>
-      <td  scope="row"><span>-</span></td>  
-    </tr> -->
-  </tbody>
-</table>
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-#### Third Party Licenses
+# Third Party Licenses
 
 This is a summary of all third party licenses. NexPlayer licenses will be provided upon purchase.
 
 ```
-promise-polyfill (https://github.com/taylorhakes/promise-polyfill):
-
-Copyright (c) 2014 Taylor Hakes
-Copyright (c) 2014 Forbes Lindesay
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
-
-React (https://github.com/facebook/react):
-
-MIT License
-
-Copyright (c) 2013-present, Facebook, Inc.
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-Redux (https://github.com/reactjs/redux):
-
-The MIT License (MIT)
-
-Copyright (c) 2015-present Dan Abramov
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-away (https://www.npmjs.com/package/away)
-
-screenfull.js (https://github.com/sindresorhus/screenfull.js):
-
-MIT License
-
-Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-element-resize-detector (https://github.com/wnr/element-resize-detector):
-
-The MIT License (MIT)
-
-Copyright (c) 2016 Lucas Wiener
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.
-
-script.js (https://github.com/ded/script.js)
-
-rmp-vast (https://github.com/radiantmediaplayer/rmp-vast#license):
-
-The MIT License (MIT)
-
-
 Shaka player (https://github.com/google/shaka-player):
 
                                  Apache License
@@ -442,5 +206,120 @@ Shaka player (https://github.com/google/shaka-player):
    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
    See the License for the specific language governing permissions and
    limitations under the License.
+
+promise-polyfill (https://github.com/taylorhakes/promise-polyfill):
+
+Copyright (c) 2014 Taylor Hakes
+Copyright (c) 2014 Forbes Lindesay
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in
+all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+THE SOFTWARE.
+
+React (https://github.com/facebook/react):
+
+MIT License
+
+Copyright (c) 2013-present, Facebook, Inc.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+Redux (https://github.com/reactjs/redux):
+
+The MIT License (MIT)
+
+Copyright (c) 2015-present Dan Abramov
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+away (https://www.npmjs.com/package/away)
+
+screenfull.js (https://github.com/sindresorhus/screenfull.js):
+
+MIT License
+
+Copyright (c) Sindre Sorhus <sindresorhus@gmail.com> (sindresorhus.com)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+element-resize-detector (https://github.com/wnr/element-resize-detector):
+
+The MIT License (MIT)
+
+Copyright (c) 2016 Lucas Wiener
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+script.js (https://github.com/ded/script.js)
+
+rmp-vast (https://github.com/radiantmediaplayer/rmp-vast#license):
+
+The MIT License (MIT)
 
 ```

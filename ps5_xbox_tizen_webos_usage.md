@@ -8,7 +8,7 @@ This section explains how to integrate NexPlayer&#x2122; into your project. Note
 
 ### Sample
 
-Integrating NexPlayer&#x2122; into an HTML5 file:
+Integrating NexPlayer&#x2122; into an  <a href="https://nexplayer.nexplayersdk.com/sample/index.html" download="" target="_blank">HTML5 file</a>:</p>
 ```html
 <!DOCTYPE html>
 <html>
@@ -203,68 +203,62 @@ document.addEventListener('keydown', function(e) {
 There are a substantial number of customizable options for NexPlayer™ including: the name and subtitle format of the video, a logo for the company, the DRM information, a VAST link, and the thumbnail preview...
 
 ```js
-    key: 'License key to validate the playback',
-    div: document.getElementById('player'),
-    src: 'URL video',
-    adsMode: string,
-    addRequestFilter: Function,
-    adsParamsToEncode: [ e.g. "video_url_to_fetch"],
-    autoplay: true,
-    callbacksForLogger: callback,
-    callbacksForReturn: callback,
-    callbackForSubtitles: callback,
-    callbacksForPlayer: callback,
-    cast: boolean,
-    debug: true,
-    defaultLanguage: string,
-    disableKeyEvents: false,
+    key: 'License key to validate the playback', // Mandatory
+    div: document.getElementById('player'), // Mandatory
+    src: 'URL video', // Mandatory
+    adsDelay: number, // Optional, used to add a delay before the ad starts playing. Specified in milliseconds
+    adsMode: string, // Optional, used to select the ad library. Can be 'ima', 'pal' or 'default'.
+    addRequestFilter: Function, // Optional, used for give filters to the drm request
+    autoplay: true, // Optional
+    callbacksForLogger: callback, // Optional callback called with the logger instances
+    callbacksForReturn: callback, // Optional callback called with the return button
+    callbackForSubtitles: callback, // Optional callback called with the subtitles instance
+    callbacksForPlayer: callback, // Optional callback called with the player instances
+    cast: boolean, // Optioanl, used to determines if the cast will be enabled or not
+    debug: true, // Optional
+    defaultLanguage: string, // Optional
+    disableKeyEvents: false, // Optional
     drm: [{
         NexDRMType:'DRM Type (eg. com.widevine.alpha(', NexDRMKey: 'URI for the DRM Key', 
         NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
         NexCallback:OptionalDRMCallbackForFairPlay
-    }],
-    dynamicThumbnails: false,
-    externalSubtitles: [{
-        src: "Subtitles file URL",
+    }], // Optional DRM information
+    dynamicThumbnails: false, // Optional, none of the following properties is required
+    externalSubtitles: {
+        src: "URL for the subtitles file",
         language: "Subtitle language",
-        callback: function(e),
-    },…],
-    hideControlBarOnStart: boolean,
-    hideUITime: boolean,
-    improveStartUp: boolean
-    logosrc: 'URL logo of the company',
-    mutedAtStart: true,   
-    preferredAudioCodec: Array,
-    poster: 'URL poster', 
-    reinitializeAfterAds: boolean, // Deprecated
-    resumePosition: number,
-    showAdsUI: true,
-    showingFullUI: true,
+        callback: function(e), // Error callback for subtitles (returns any received errors)
+    }, 
+    // Optional, only WEBVTT subtitles can be used. "language" property is a string that 
+    // define how the subtitle will be identified.
+    hideControlBarOnStart: boolean, // Optional
+    hideUITime: boolean, // Optional
+    improveStartUp: boolean // Optional
+    logosrc: 'URL logo of the company', // Optional
+    mutedAtStart: true, // Optional    
+    preferredAudioCodec: Array, // This property can be used to give priority to a specific audio codec.
+    poster: 'URL poster', // Optional
+    subtitle: 'Subtitle name of the video', // Optional
+    reinitializeAfterAds: boolean, // Optional, used to avoid errors related to ads on Tizen 2020.
+    resumePosition: number, // Optional, used for starting the video from the given position in seconds.
+    showAdsUI: true, // Optional, used for showing the player controls when an ad is playing
+    showingFullUI: true, // Optional, used for showing the player controls
     staticThumbnails: {
         src: 'URL of the VTT file',
         img: 'URL of the Image to fetch thumbs from',
-        callback: function(e),
-    },
-    startFullscreen: true,
-    startingBufferLength: 50,
-    subtitle: 'Subtitle name of the video',
-    title: 'Name of the Video',
-    trailer: boolean,
-    useDefaultControls: true,
+        callback: function(e), // Error callback for thumbnails (returns any received errors)
+    }, // Optional
+    startFullscreen: true, // Optional
+    startingBufferLength: 50, // Number of seconds the player will try to achieve when initializing
+    title: 'Name of the Video', // Optional
+    trailer: boolean,// Optional, by default is set to false. Set to true when a stream should be considered a trailer, false when not.
+    type_360: '360 visualisation type' // Optional, 'equirectangular' or 'cubemap'.
+    useDefaultControls: true, // Optional, allows usage of remote controller
     useNewRelicTracker: boolean,
-    vast: 'URL with a VAST/VPAID/VMAP advertisement',
-    adsLoadTimeout: 2000,
-    ssaiMediaTailor:
-      {
-        baseURL: string,
-        playbackURL: string,
-        adsParams:
-        {
-          "param1": string,
-                    }
-      },
-    bitrateConfig: {startingBitrate: num , maxBitrate: num, minBitrate: num},
-
+    // By default is set to false. Set to true in order to use the tracker. 
+    // You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
+    vast: 'URL with a VAST/VPAID/VMAP advertisement', // Optional
+    adsParamsToEncode: [ e.g. "video_url_to_fetch"], // Optional. Array of strings that specifies the name of the VAST ad URL parameters to encode.
 ```
 
 ## NexPlayer™ API
@@ -283,8 +277,6 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [IsReady()](#isready)
  - [AdsEvents()](#adsevents)
  - [RemoveAdsEvents()](#removeadsevents)
- - [decodeData(data)](#decodedata)
- - [getVersion()](#getversion)
 
 #### Player methods and objects
 
@@ -294,15 +286,12 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [play()](#play)
  - [pause()](#pause)
  - [destroy(UnMount(player))](#destroy)
- - [load(url, startTime, externalSubtitles)](#load)
- - [reload()](#reload)
  - [on(callbackType, functionToBeCalled)](#on)
- - [off(callbackType, functionToBeCalled)](#off)
- - [enableABR()](#enableabr)
+ - [off(eventId)](#off)
+ - [enableABR()](#playerenableabr)
  - [addTrackerData()](#addtrackerdata)
  - [removeTrackerData()](#removetrackerdata)
  - [trickplay(value)](#trickplay)
- <!-- - [executeAd(vast url: String)](#executead) -->
 
 ##### Navigation
 
@@ -314,8 +303,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [upFocus()](#upfocus)
  - [upSubtitle()](#upsubtitle)
  - [seek(value)](#seek)
- - [seekRange()](#seekRange)
- - [seekLive()](#seekLive)
+ - [seekLive()](#playerseekLive)
 
 ##### Player state
 
@@ -325,21 +313,19 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [isCurrentAssetMuted()](#iscurrentassetmuted) ⇒ boolean
  - [isLanguageMenuOpen()](#islanguagemenuopen) ⇒ boolean
  - [isLive()](#islive) ⇒ boolean
- - [isPlayBackBarFocused()](#isplaybackbarfocused) ⇒ boolean
+ - [isPlaybackBarFocused()](#isplaybackbarfocused) ⇒ boolean
 
 ##### Toggle
 
 
  - [toggleControlBar()](#togglecontrolbar)
- - [toggleLanguageMenu()](#togglelanguagemenu)
+ - [toggleLanguagesMenu()](#togglelanguagesmenu)
  - [togglePlayPause()](#toggleplaypause)
- - [toggleFullScreen()](#togglefullscreen)
 
 ##### Getters
 
 
  - [getAudioStreams()](#getaudiostreams) ⇒ [Array\<AudioStream\>](#audiostream)
- - [getBandwidthEstimate()](#getbandwidthestimate) ⇒ number
  - [getCurrentContentType()](#getcurrentcontenttype) ⇒ string
  - [getCurrentAudioStream()](#getcurrentaudiostream) ⇒ [AudioStream](#audiostream)
  - [getCurrentSubtitle()](#getcurrentsubtitle) ⇒ number
@@ -348,7 +334,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [getDroppedFrames()](#getdroppedframes) ⇒ number
  - [getDuration()](#getduration) ⇒ number
  - [getMediaElement()](#getmediaelement) ⇒ HTMLVideoElement
- - [getPlaybackRate()](#getplaybackrate) ⇒ number
+ - [getPlayBackRate()](#getplaybackrate) ⇒ number
  - [getProtocol()](#getprotocol) ⇒ number
  - [getQualityLevels()](#getqualitylevels) ⇒ array
  - [getSubtitles()](#getsubtitles) ⇒ array
@@ -361,8 +347,8 @@ There are a substantial number of customizable options for NexPlayer™ includin
 ##### Setters
 
 
- <!-- - [setAudio(streamID)](#setaudio) -->
- - [setAudioStream(streamID)](#setaudiostream)
+ - [setAudio(streamID)](#setaudio)
+ - [setAudioStream(streamID)](#setaudiostream) ⇒ deprecated
  - [setCurrentTrack(trackID)](#setcurrenttrack)
  - [setSpeed(speed)](#setspeed)
  - [setSubtitle(subID)](#setsubtitle)
@@ -379,7 +365,6 @@ There are a substantial number of customizable options for NexPlayer™ includin
 
 
  - [AudioStream](#audiostream) : object
- - [Error](#error) : object
  - [Frame](#frame) : object
  - [NexDRMInformation](#nexdrminformation) : object
  - [NexHeaders](#nexheaders) : object
@@ -393,6 +378,7 @@ Please, consult this <a href ="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox
 
  - [play()](#adplay)
  - [pause()](#adpause)
+ - [skipAd()](#adskiped)
 
 ##### Getters
 
@@ -400,7 +386,7 @@ Please, consult this <a href ="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox
  - [getAdCurrentTime()](#getadcurrenttime) ⇒ number
  - [getAdDescription()](#getaddescription) ⇒ string
  - [getAdDuration()](#getadduration) ⇒ number
- - [getAdPaused()](#getadpaused) ⇒ boolean
+ - [getAdPause()](#getadpause) ⇒ boolean
  - [getAdRemainingTime()](#getadremainingtime) ⇒ number
  - [getAdTitle()](#getadtitle) ⇒ string
  - [getIsSkippableAd()](#getisskippablead) ⇒ boolean
@@ -430,21 +416,14 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 
 **Parameters**: <code>configObj</code> is an object which values could be:
 
-##### Mandatory 
-
 | Param | Type | Description |
 | --- | --- | --- |
 | key | <code>string</code> | NexPlayer key to validate the playback. |
 | div | <code>HTMLDivElement</code> | The div container of the player. |
 | src | <code>string</code> | URL of the video to be played. |
-
-##### Optional
-
-| Param | Type | Description |
-| --- | --- | --- |
+| adsDelay | <code>number</code> | Determines the delay before the ad starts playing. |
 | adsMode | <code>string</code> | Determines the ad library: 'ima', 'pal' or 'default'. |
 | addRequestFilter | <code>Function</code> | Sets a function that receives the DRM request as a parameter and changes its Headers. |
-| adsParamsToEncode| <code>Array<string></code> | Specifies the name of the VAST ad URL parameters to encode. |
 | autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
 | callbackForLogger | <code>Function</code> | Function to be called when the logger shows a message. |
 | callbackForReturn | <code>Function</code> | Sets a callback to be executed when the corresponding button is clicked. |
@@ -455,31 +434,30 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | defaultLanguage | <code>string</code> | Determines which is the default audio language. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video. |
 | drm | <code>Object</code> | Contains an object of DRM information. By default it’s set to null. |
-| externalSubtitles | <code>Array <[externalSubtitle](ps5_xbox_tizen_webos_usage.md?id=externalsubtitleobject)></code> | Used to provide a subtitle files as external subtitles. |
+| externalSubtitles | <code>Object</code> | Used to provide a WEBVTT file as external subtitles. |
 | hideControlBarOnStart | <code>boolean</code> | Determines if the control bar will hide when the video starts. |
 | hideUITime | <code>boolean</code> | Determines if the time will be hidden in the UI. |
 | improveStartUp | <code>boolean</code> | Determines whether the video has to start at the lowet bitrate or not. |
 | logosrc | <code>string</code> | Company URL logo. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. False by default. |
-| preferredAudioCodec | <code>Array</code> |This property can be used to give priority to a specific audio codec. |
+| preferredAudioCodec | <code>Array</code> | Determines the codec priority. |
 | poster | <code>string</code> | Video poster URL. |
-| reinitializeAfterAds | <code>boolean</code> | *Deprecated* Used to avoid errors related to ads on PS5, please set it to true on this platform. False by default. |
+| subtitle | <code>string</code> | Subtitle name of the video. |
+| reinitializeAfterAds | <code>boolean</code> | Used to avoid errors related to ads on PS5, please set it to true on this platform. False by default. |
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
 | showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
-| staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and a callback which returns an <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=error">error</a> object.|
+| staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and callback. |
 | startFullScreen | <code>boolean</code> | Determines if the video will start on full screen. |
 | startingBufferLength | <code>number</code> | Determines the starting buffer lenght. |
-| subtitle | <code>string</code> | Subtitle name of the video. |
 | title | <code>string</code> | Video name. |
 | trailer | <code>boolean</code> | Determines if a stream should be considered a trailer. |
+| type_360 | <code>string</code> | Select the 360 video format to play. Possible values are 'equirectangular' and 'cubemap' |
 | useDefaultControls | <code>boolean</code> | Determines if the tv controller will be able to be used to navigate in the UI. |
 | useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this values is set to false. |
 | useNewRelicTracker | <code>boolean</code> | Determines if the New Relick tracker will be used. |
 | vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
-| adsLoadTimeout | <code>number</code> | Determines the time the player waits the ad to start. |
-| ssaiMediaTailor | <code><a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
-| bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default, and the tracks the abr will run at are the ones set between minBitrate and maxBitrate.  |
+| adsParamsToEncode| <code>Array<string></code> | Specifies the name of the VAST ad URL parameters to encode. Maximum size of |
 
 #### <a id="changesource"></a> nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
@@ -498,7 +476,7 @@ Change the url stream of the video. It is possible to set a new url with new drm
 
 #### <a id="unmount"></a> nexplayer.UnMount(player)
 
-Unmounts the player and its dependencies. In order to properly clear the player this method must be called after destroying the very same player. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=destroy">here</a>. 
+Unmounts the player and its dependencies. In order to properly clear the player this method must be called after destroying the very same player. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/API?id=destroy">here</a>. 
 
 **Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
 
@@ -524,31 +502,13 @@ Add a listener for the specified ad event.
 
 **Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
 
-#### <a id="removeadsevents"></a> nexplayer.RemoveAdsEvents([<code>"adEvent"</code>](#ads-events), function () {}) 
+   #### <a id="removeadsevents"></a> nexplayer.RemoveAdsEvents([<code>"adEvent"</code>](#ads-events), function () {}) 
 
 Remove a listener for the specified ad event which has been previously registered.
 
 **Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
-	
-#### <a id="decodedata"></a> nexplayer.decodeData(data)
 
-Decodes an ArrayBuffer and converts it into a string. END OF TEXT (\u0003) and NULL (\u0000) unicode characters are cleaned.
-
-**Type**: function of [<code>nexplayer</code>](#nexplayer-methoods)
-
-**Param**: 
-   - **data** is the ArrayBuffer to decode.
-   
-**Returns**: decoded and cleaned string or null if the parameter provided is not an ArrayBuffer.
 ***
-
-#### <a id="nexplayer-getversion"></a> nexplayer.getVersion() 
-
-Retrieve the current version of the player.
-
-**Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
-
-**Returns**: string - identify the version of the player.
 
 ### Player methods and objects
 
@@ -570,39 +530,20 @@ Pause the video.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
-   #### <a id="load"></a> player.load(url, startTime, externalSubtitles)
-
-Loads a manifest starting it at the given position. Note that if the video has DRM, the player will try to use the DRM license of the old video.
-
-**Type**: instance method of [<code>Player</code>](#Player)
-
-**Parameters**:
-
-| Param              | Type                  | Description                                |
-| ------------------ | --------------------- | ------------------------------------------ |
-| url                | <code>string</code>   | Manifest URL                               |
-| startTime          | <code>number</code>   | Starting time of the video                 |
-| externalSubtitles  | <code>[{src: string, language: string, callback: function},…]</code>   | Optional. External subtitles of the video  |
-
-   #### <a id="reload"></a> player.reload()
-
-Reloads the player with the same video and current time. This function may help to recover from errors.
-
-**Type**: instance method of [<code>Player</code>](#Player)
-
    #### <a id="destroy"></a> player.destroy().then(UnMount(document.getElementById('player')))
 
 Destroys the player. This method returns a promise which must call to UnMount as soon as it is resolved.
-This way, the player will be completely destroyed and new instances could be created afterwards. The UnMount method must be called from the ‘nexplayer’ instance and needs the HTMLDivElement used to create the player in order to remove it.
+This way, the player will be completely destroyed and new instances could be created afterwards. The UnMount
+method must be called from the 'nexplayer' instance and needs the 'player' element to be passed as argument.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
-#### <a id="on"></a> player.on(callbackType, functionToBeCalled)
+   #### <a id="on"></a> player.on(callbackType, functionToBeCalled)
 
 Add a listener of an event.
 
-**Type**: instance method of [<code>Player</code>](#Player)
-
+**Type**: instance method of [<code>Player</code>](#Player)  
+**Return**: number -  id linked to the event listener created. You can use this number for removing the listener later.   
 **Parameters**:
 
 | Param              | Type                  | Description                   |
@@ -610,18 +551,16 @@ Add a listener of an event.
 | callbackType       | <code>NexEvent</code> | Event to listen for           |
 | functionToBeCalled | <code>Function</code> | Function called on each event |
 
-#### <a id="off"></a> player.off(callbackType, functionToBeCalled)
+   #### <a id="off"></a> player.off(eventId)
 
 Remove a listener of an event.
 
-**Type**: instance method of [<code>Player</code>](#Player)
-
+**Type**: instance method of [<code>Player</code>](#Player)      
 **Parameters**:
 
 | Param              | Type                  | Description                   |
 | ------------------ | --------------------- | ----------------------------- |
-| callbackType       | <code>NexEvent</code> | Event to listen for           |
-| functionToBeCalled | <code>Function</code> | Function called on each event |
+| eventId       | <code>Number</code> | Identifier of the event listener to remove |
 
    #### <a id="enableabr"></a> player.enableABR()
 
@@ -633,8 +572,7 @@ Enable the ABR to change automatically between tracks.
 
 Adds custom data into New Relic's tracker if initialized.
 
-**Type**: instance method of [<code>Player</code>](#Player)
-
+**Type**: instance method of [<code>Player</code>](#Player)  
 **Parameters**:
 
 | Param | Type                | Description        |
@@ -646,8 +584,7 @@ Adds custom data into New Relic's tracker if initialized.
 
 Removes custom data from New Rellic's tracker if initialized.
 
-**Type**: instance method of [<code>Player</code>](#Player)
-
+**Type**: instance method of [<code>Player</code>](#Player)  
 **Parameters**:
 
 | Param | Type                | Description        |
@@ -663,17 +600,6 @@ Sets the trick play value. A value bigger than 1 will move the seek time forward
 | Param | Type |Description |
 | --- | --- | --- |
 | value | Number | number of times per second to update the seek time. |
-
-<!-- #### <a id="executead"></a> player.executeAd(vast url: String)
-
-Execute the given ad during the video playback. The vast URL is mandatory.
-This method couldn't be used, until the ad block ends, if there are ads at the beggining of the video
-
-**Type**: instance method of [<code>Player</code>](#Player) 
-
-| Param | Type |Description |
-| --- | --- | --- |
-| vast url | String | URL of the ad which will be played. | -->
 
 ***
 
@@ -726,7 +652,7 @@ Set the currentTime property of the attached video element. (if isUTC is true, t
 
 | Param | Type  | Description                                    |
 | ----- | ----- | ---------------------------------------------- |
-| value | <code>number</code> | value in seconds that the player will seek to. |
+| event | Event | value in seconds that the player will seek to. |
 
 ```js
 //Non-live video 
@@ -735,30 +661,9 @@ player.seek(120) // It seeks into minute 2:00 in the video (120 secs), must be a
 player.seek(-120) // It jumps back 2 minutes (120 secs) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
 ```
 
-When using a live stream, the parameter’s value of the seek() method is a number that is added or subtracted to the current time of the video. Therefore, if the value provided plus the video’s current time is greater than the seek range end value the player will seek to the live point. When providing a negative value, it will be subtracted to the video’s current time so the player will seek range.
-
-In order to use the seek() method, you must ensure that the value used is between the end and start value returned by the seekRange() method, in seconds.
-- A value greater than the end seekRange value will seek to live.
-- A value lower than the start seekRange will seek to the start value of the range.
-
-```js
-  // "player" is the player instance
-  // "videoElem" is the HTMLVideoElement
-  var timeToSeek = player.seekRange().start - videoElem.currentTime;
-  player.seek(timeToSeek);
-```
-
-  #### <a id="seekRange"></a> player.seekRange()
-
-Returns an object, with start and ending times the player can seek to.
-
-**Returns**: object - {start: "number" , end: "number"}
-
-**Type**: instance method of [<code>Player</code>](#Player)
-
   #### <a id="seeklive"></a> player.seekLive()
 
-Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). Only works in livestream.
+Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). only works in livestream.
 
 **Type**: instance method of [<code>Player</code>](#Player) 
 
@@ -803,7 +708,7 @@ Indicates whether the ad or the main content is muted or not.
 
 **Returns**: boolean - *true* if the video is live, *false* otherwise.
 
-   #### <a id="isplaybackbarfocused"></a> player.isPlayBackBarFocused() ⇒ boolean
+   #### <a id="isplaybackbarfocused"></a> player.isPlaybackBarFocus() ⇒ boolean
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
@@ -822,7 +727,7 @@ Shows or hides the bottom bar.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
-  #### <a id="togglelanguagemenu"></a> player.toggleLanguageMenu()
+  #### <a id="togglelanguagesmenu"></a> player.toggleLanguagesMenu()
 
 Opens or closes the language menu.
 
@@ -831,12 +736,6 @@ Opens or closes the language menu.
   #### <a id="toggleplaypause"></a> player.togglePlayPause()
 
 Toggle the video playback between the play and pause states.
-
-**Type**: instance method of [<code>Player</code>](#Player)
-
- #### <a id="togglefullscreen"></a> player.toggleFullScreen()
-
-Enables toggle between full screen and window.
 
 **Type**: instance method of [<code>Player</code>](#Player)
 
@@ -861,12 +760,6 @@ AudioStream:
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: Array\<AudioStream\> - the list of the available audio streams.
 
-   #### <a id="getbandwidthestimate"></a> player.getBandwidthEstimate() ⇒ number
-
-Returns the current bandwidth available in bytes.
-
-**Type**: instance method of [<code>Player</code>](#Player)   
-**Returns**: number - information about the bandwidth estimate.
    #### <a id="getcurrentaudiostream"></a> player.getCurrentAudioStream() ⇒ AudioStream
 
 Get the audio stream currently in use.
@@ -1046,7 +939,7 @@ Returns the current stream's URL.
 
    #### <a id="getversion"></a> player.getVersion() ⇒ string
 
-The method getVersion() is deprecated, please use <a href="./#/ps5_xbox_tizen_webos_usage?id=getversion">nexplayer.getVersion()</a> instead
+Retrieve the current version of the player.
 
 **Type**: instance method of [<code>Player</code>](#Player)     
 
@@ -1058,7 +951,7 @@ The method getVersion() is deprecated, please use <a href="./#/ps5_xbox_tizen_we
 
 ***
 
-   <!-- #### <a id="setaudio"></a> player.setAudio(streamID)
+   #### <a id="setaudio"></a> player.setAudio(streamID)
 
 Set the current audio stream by using the UI.
 
@@ -1066,7 +959,7 @@ Set the current audio stream by using the UI.
 | --- | --- | --- |
 | streamID | <code>number</code> | is the identifier of the audio stream to be selected. |
 
-**Type**: instance method of [<code>Player</code>](#Player) -->
+**Type**: instance method of [<code>Player</code>](#Player)
 
    #### <a id="setaudiostream"></a> player.setAudioStream(streamID)
 
@@ -1155,7 +1048,6 @@ Set the video quality level.
 | Track_Change | <code>number</code> | <code>0</code> | Fired when the player changes the current track.|
 | Fragment_Loading_Completed | <code>number</code> | <code>1</code> | Fired when a new fragment has been loaded.|
 | Buffering | <code>number</code> | <code>2</code> | Fired when the buffer state changes. Check payload for state. |
-| Error | <code>number</code> | <code>3</code> | Fired when an error occurs. Returns an object with the information of the error. The object contains an array with the data (not all errors include data), and the name. |
 
 #### <a id="thumbtype"></a> Player.THUMB_TYPE : <code>enum</code>
 **Type**: static enum of [<code>Player</code>](#Player)  
@@ -1181,36 +1073,6 @@ Set the video quality level.
 | id | <code>number</code> | id of the stream. |
 | language | <code>string</code> | language of the stream. |
 | name | <code>string</code> | name of the stream. |
-
-#### <a id="error"></a> Error : <code>Object</code>
-
-**Type**: global typedef     
-**Properties**:  
-
-| Name    | Type                | Description                  |
-| ------- | ------------------- | ---------------------------- |
-| code    | <code>number</code> | Error code.                    |
-| message | <code>string</code> or <code>Object</code> | Error detailed message. In case the message is an Object, it will represent the request's response statusText parsed into an Object.      |
-| src     | <code>string</code>  | Source link causing the error.   |
-| type    | <code>string</code> | File type causing the error. **"Manifest"** and **"Image"** are the possible values.                                     **Manifest** indicates that the error has happened at the level of the thumbnails file e.g. the URL of the thumbnails files does not exist (error 404).   **Image** indicates that the error has ocurred at the level of a thumbnail image e.g the URL of a thumbnail image, which is specified inside the thumbnails    manifest, does not exist (error 404). |
-
-Possible error codes:
-
-**Manifest**:
-
-  404: Manifest not found
-
-  420: Manifest load error
-
-  422: Empty manifest | No thumbnails found
-
-  Other error codes come directly from the status code of the request's response.
-
-**Image**:
-
-  420: Image not loaded
-
-  422: Invalid image
 
 #### <a id="frame"></a> Frame : <code>Object</code>
 
@@ -1258,39 +1120,6 @@ Possible error codes:
 | bitrate | <code>number</code> | bitrate of the video. |
 | id      | <code>number</code> | id of the video.      |
 
-#### <a id="ssaiobject"></a> SSAI Object : <code>Object</code>
-
-**Type**: global typedef     
-**Properties**:  
-
-| Name    | Type                | Description           |
-| ------- | ------------------- | --------------------- |
-| baseURL   | <code>string</code> | Base URL for Video and Ads.   |
-| playbackURL  | <code>string</code> | Video URL to be attached to the baseURL.  |
-| adsParams | <code>Object</code> | Contains "Params: string" this is the Ad URL to be attached to the baseURL. |
-
-#### <a id="bitrateconfig"></a> bitrateConfig Object : <code>Object</code>
-
-**Type**: global typedef     
-**Properties**:  
-
-| Name    | Type                | Description           |
-| ------- | ------------------- | --------------------- |
-| minBitrate   | <code>num</code> | The player should ignore any bitrate profiles in the manifest under this value, and never play them   |
-| startingBitrate  | <code>num</code> |  The bitrate the player will try to start playing  |
-| maxBitrate | <code>num</code> | The player should ignore any bitrate profiles in the manifest above this value, and never play them |
-
-#### <a id="externalsubtitleobject"></a> externalSubtitle: <code>Object</code>
-
-**Type**: global typedef     
-**Properties**:  
-
-| Name    | Type                | Description           |
-| ------- | ------------------- | --------------------- |
-| src   | <code>String</code> | Subtitles file URL |
-| language  | <code>String</code> |  Subtitle language identifier  |
-| callback | <code>Function</code> | Error callback |
-
 ***
 
 ### Ads methods
@@ -1310,6 +1139,12 @@ Play the ad
    #### <a id="adpause"></a> nexplayer.AdInstance().pause() 
 
 Pause the current ad.
+
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
+
+ #### <a id="adskiped"></a> nexplayer.AdInstance().skipAd() 
+
+This method only has an effect if the ad on stage is a skippable ad and can be skipped (e.g. getIsSkippableAd returns true
 
 **Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 
@@ -1340,7 +1175,7 @@ Get the available duration ad.
 **Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
 **Returns**: Number - the duration ad to be played.
 
-   ####  <a id="getadpaused"></a> nexplayer.AdInstance().getAdPaused() ⇒ boolean
+   ####  <a id="getadpause"></a> nexplayer.AdInstance().getAdPause() ⇒ boolean
 
 Get stating if the ad on stage is paused or not
 
@@ -1361,7 +1196,7 @@ Get the available title ad.
 **Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)     
 **Returns**: String - the title ad to be played.
 
-   ####  <a id="getisskippablead"></a> nexplayer.AdInstance().getIsSkippableAd() ⇒ boolean
+   ####  <a id="getisskippablead"></a> nexplayer.AdInstance().getIsSkippablead() ⇒ boolean
 
 Returns whether the ad can be skipped or not.
 
@@ -1459,15 +1294,13 @@ NexPlayer™ supports several DRM technologies:
       <th class="titles" bgcolor="#C80000" scope="row">MODELS </th>   
       <th class="titles" bgcolor="#C80000" scope="row">DASH+PlayReady</th>        
       <th class="titles" bgcolor="#C80000" scope="row">DASH+Widevine</th>        
-      <th class="titles" bgcolor="#C80000" scope="row">HLS+Widevine</th>
-      <th class="titles" bgcolor="#C80000" scope="row">HLS+Playready</th>      
+      <th class="titles" bgcolor="#C80000" scope="row">HLS+Widevine</th>        
     </tr>
     <tr>
       <th  scope="row">Samsung Tizen 
       <br> 2017-2018+ models</th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px; ">&#x2714;</span> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px; ">&#x2714;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th> 
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
     </tr>
     <tr>
@@ -1475,22 +1308,19 @@ NexPlayer™ supports several DRM technologies:
        <br> 2015-2016 models</th>      
       <th  scope="row">&#10060</th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight:110; font-size:30px;">&#8505;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight: 900; font-weight:110; font-size:30px;">&#8505;</span></th>  
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>     
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight: 900; font-weight:110; font-size:30px;">&#8505;</span></th>      
     </tr>
     <tr>
       <th  scope="row">LG WebOS 4.0+</th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th> 
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>             
     </tr>
     <tr>
       <th  scope="row">LG WebOS 3.0</th>      
       <th  scope="row">&#10060</th> </th>      
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>           
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>             
     </tr>
   </tbody>
 </table>
@@ -1500,32 +1330,6 @@ NexPlayer™ supports several DRM technologies:
 *Widevine Classic was supported in these models, but ​it has been deprecated by Google. Itis no longer supported on Samsung TVs due to maintenance issues  
 </p>
 </div></div>
-
-<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
-<p>  
-  For using Playready on Tizen the security level must be 2000, the clients version less than 3.0 and WRMHEADER version of 4.0.0.0. or lower. <br/>
-  In Xbox the security level must be 150 on dev kit. <br/>
-  In LG devices capabilities and restrictions in the following <a href="https://webostv.developer.lge.com/discover/specifications/supported-media-formats/">link</a>. <br/>
-  And in PS5 must be included the next property in the setup:
-
-</p>
-</div></div>
-
-```js
-  nexplayer.Setup({
-    ...
-      configuration: {
-          drm: {
-              advanced: {
-                  'com.microsoft.playready': {
-                      distinctiveIdentifierRequired: true,
-                  },
-              }
-          },
-      },
-  });
-  ```
-
 
 <table class="table table-sm">
 
@@ -1724,29 +1528,12 @@ In order to use IMA or PAL, a script must be provided in the index, which are th
 ```js
 <!-- IMA -->
 <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
-<!-- Currently, only IMA 3 is supported -->
-
 
 <!-- PAL -->
 <script src="https://nex360.s3.amazonaws.com/PAL/pal.js" ></script>
 ```
 
-<!-- #### Ads in runtime
-
-Since the 4.0.0 release the player has the feature to execute ads during a playback, is only needed use the player method **executeAd** and a vast url:
-
-```js
-player.executeAd("VAST URL")
-``` -->
-
-<div class="alert alert-warning hints-alert"><div class="hints-icon"><i class="fa fa-warning"></i></div><div class="hints-container"><p>
-Currently, this method couldn't be used, until the ad block ends, if there are ads at the beggining of the video.
-</div></div>
-
-<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>
-If you execute it sequentially the ads will be played one by one after the last ad.</p>
-</div></div>
-
+#### Ad Methods
 
 #### Ads methods
 
@@ -1777,22 +1564,15 @@ nexplayer.AdsEvents('adstarted', function(e){
 ```
 
 #### Miscellaneous
-
-* addEventListener(): add a listener to the ads video. The possible events to listen are the same as the HTML video element ones. Important: this method should be called inside the Setup's callback or after the player is initialized. Example of use:
+* addEventListener(): add a listener to the ads video. The possible events to listen are the same as the HTML video element ones. Important: this method should be called when the 'adtagstartloading' event is fired. Example of use:
 ```js
-var callBackForPlayers = function (nexplayerInstance, videoElement) {
-    nexplayer.AdInstance().addEventListener('playing', function() {
-      console.log("PLAYING --- ");
-    });
-    nexplayer.AdInstance().addEventListener('waiting', function() {
-      console.log("WAITING --- ");
-    });
-}
-...
-nexplayer.Setup({
-    key: ...
-
-    callbacksForPlayer: callBackForPlayers
+nexplayer.AdsEvents('adtagstartloading', function (e) {
+	nexplayer.AdInstance().addEventListener('playing', function() {
+    console.log("PLAYING --- ");
+	});
+	nexplayer.AdInstance().addEventListener('waiting', function() {
+    console.log("WAITING --- ");
+	});
 });
 ```
 
@@ -1807,7 +1587,7 @@ The video element emits the basic event, such as a change of the state of the vi
 
 The method <code>addEventListener</code> of the video element needs to be called with any of the available <a href="https://developer.mozilla.org/en-US/docs/Web/Guide/Events/Media_events" target="_blank">media events</a>.
 
-Some of the most important events are "playing", "pause", "waiting", "timeupdate", "seeking" and "seeked".
+Some of the most important events are "playing", "pause", "waiting", and "timeupdate".
 
 ```js
 videoElement.addEventListener("timeupdate", function() { console.log("The video playback has advanced to: "+videoElement.currentTime+", with the duration: "+videoElement.duration) }, true);
@@ -2030,7 +1810,7 @@ We also have events to handle some different kind of ads events.
 
 We have the next list of ad events available:
 
-* adtagstartloading Note: This event is not triggered when using IMA.
+* adtagstartloading
 * adloaded
 * addurationchange
 * adimpression
@@ -2111,6 +1891,33 @@ The active subtitles mode is set to <code>showing</code>. The currently selected
 ```js
 videoElement.textTracks[0].mode = "showing"; //0 -> the id of the textTrack
 ```
+
+##### SRT Subtitles
+
+NexPlayer supports the SRT subtitle format. You can insert an external SRT file by setting up the SRT source link and the language as shown below:
+
+```js
+nexplayer.Setup({
+    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+    div: document.getElementById('player'),
+    src: 'VIDEO URL',
+    callbacksForPlayer: callBackWithPlayers
+    srtSubtitles: ['http://webs.nexstreaming.com/pd/function_local/Function_SRT_AOA_MV_H264_1920x1080_HP_2999K_24F_AAC_LC_5m26s.srt','en']
+});
+
+```
+
+
+<div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>
+Please note that the first parameter is the source link and the second the language that will be displayed in the subtitles label. </p>
+</div></div>
+
+NexPlayer also supports adding SRT subtitles in runtime. Call <code>addSrtSubtitles</code> if you want to add a srt subtitle:
+
+```js
+nexplayerInstance.addSrtSubtitles(['source.srt', 'srclang']);
+```
+
 
 #### Audio
 
@@ -2229,61 +2036,30 @@ This feature tells the player whether to start playback with the volume muted or
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container"><p>Please note that the default value of the <b>mutedAtStart</b> parameter is false, so the player will start unmuted if <b>mutedAtStart</b> is not set to true.</p>
 </div></div>
 
-## Timed Metadata
-
-NexPlayer™ supports timed metadata for HLS and DASH content. The information is available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack </a> array of the video element.
-
-The following code is a sample to retrieve the metadata from the streams. It logs the active cues from the TexTrack corrsponding to the metadata.
-
-```js
-
-  var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-    videoElement.addEventListener('loadedmetadata', function(event) {
-      if (videoElement.textTracks){
-        showTimedMetadata(videoElement);
-      }
-    });
-  };
-
-  nexplayer.Setup({
-    key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
-    div: document.getElementById('player'),
-    src: 'VIDEO URL',
-    callbacksForPlayer: callBackWithPlayers
-  });
-
-  var showTimedMetadata = function(videoElement) { 
-    videoElement.textTracks.addEventListener("addtrack", function (e) {
-      console.log("Add track", e.track);
-      for (let i = 0; i < e.currentTarget.length; i ++) {  
-        if (e.currentTarget[i].kind === "metadata") {
-           // If the new TextTrack's kind is metadata change its mode to "hidden".
-           // Otherwise, the mode is set to "disabled" and the "cuechange" events won't be received.
-            e.currentTarget[i].mode = "hidden";
-            e.currentTarget[i].addEventListener("cuechange", function (cueChangeEvent) {
-              let activeCues = cueChangeEvent.currentTarget.activeCues;
-            });
-          }
-        }
-    });	
-  };
-
-```
-
-***
-
 ### ID3 Tags
 
 NexPlayer™ supports timed metadata for HLS and DASH content. The information is available in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/TextTrack" target="_blank">TextTrack </a> array of the video element.
+```js
+var callBackWithPlayers = function (nexplayerInstance, videoElement) {
+  videoElement.addEventListener('loadedmetadata', function(event) {
+    if (videoElement.textTracks) showTimedMetadata(videoElement);
+  });
+};
 
+nexplayer.Setup({
+  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+  div: document.getElementById('player'),
+  src: 'VIDEO URL',
+  callbacksForPlayer: callBackWithPlayers
+});
 
-#### ID3
-
-ID3 is transported through .ts segments, usually in HLS.
-
-#### EMSG
-
-This type of metadata is contained in fMP4 segments (DASH & HLS). You can consult more information <a href="https://aomediacodec.github.io/id3-emsg/" target="_blank">here</a>
+var showTimedMetadata = function(videoElement) {
+  videoElement.textTracks[1].addEventListener('cuechange', function (cueChangeEvent) {
+    var activeCues = cueChangeEvent.currentTarget.activeCues[0];
+      if (activeCues) console.log(activeCues['value']['data']);
+  });
+};
+```
 
 ### CSS Customization
 
@@ -2454,7 +2230,7 @@ This behavior can be customized with the hover selector on the .nexplayer_icon C
 
 The nexplayer.js library is already minified, but to use even less space it's recommended to use gzip on the server where the library will be hosted. gzip is supported on the vast majority of servers.
 
-The <a href="#ps5_xbox_tizen_webos_releases?">hosted versions</a> in our CDN use gzip.
+The <a href="#releases">hosted versions</a> in our CDN use gzip.
 
 ### Cross-Origin Resource Sharing (CORS)
 
@@ -2466,13 +2242,12 @@ More information is available at <a href="https://developer.mozilla.org/en-US/do
 
 ### Upgrading to a New Version
 
-When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary. Here you can find the <a href="#/ps5_xbox_tizen_webos_releases?" target = "_blank" >latest release</a>.
+When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary. Here you can find the <a href="#/releases?" target = "_blank" >latest release</a>.
 
 Every new release of NexPlayer™ is backwards compatible.
 
 
 ## Integrations 
-***
 
 ### New Relic
 
@@ -2522,8 +2297,6 @@ Adding these two scripts and the property is all it takes for New Relic to work 
 Custom data to be tracked can be added and removed using the following methods:
  - [addTrackerData()](#addtrackerdata)
  - [removeTrackerData()](#removetrackerdata)
-
-***
 
 ### Tizen Studio
 
@@ -2643,89 +2416,12 @@ While using Tizen Studio, if your app works in the simulator and it doesn't in a
 
 ```
 
-***
-
 ### PlayStation 5
 
 PlayStation 5 is supported from NexPlayer's version [3.2.1](https://nexplayer.github.io/TizenWebOS/#/releases?id=version-321)
 In order to be able to use NexPlayer's SDK for PS5, a JSON file is needed. This JSON file must be hosted in the root of the domain where the application is hosted. For example, if the app is hosted in https://example.com/app the JSON file must be accessible from the path https://example.com/userAppId.json.
 
 Please, contact NexPlayer's support (supportmadrid@nexplayer.com) to request this file.
-
-***
-<a id="verimatrix-top"> </a>
-
-### Verimatrix Watermarking
-
-Verimatrix Watermarking provides additional security into the contents by adding a imperceptible watermark on the video.
-
-#### Using with the player
-
-To start, you need to request a watermark.min.js file from Verimatrix here https://www.verimatrix.com/products/watermarking/.
-
-
-```html
-
-<!DOCTYPE html>
-<html>
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <title>NexPlayer</title>
-  <link rel="stylesheet" href="your-style.css">
-</head>
-
-<body>
-  <div id="player_container">
-    <div id="player" width="560" height="315"></div>
-  </div>
-  <script src="Your nexplayer.js file."></script>
-  <script>
-
-    var player = null;
-    var videoElem = null;
-    var callBackWithPlayers = function (nexplayerInstance, videoElement) {
-      player = nexplayerInstance;
-      videoElem = videoElement;
-    }
-
-    nexplayer.Setup({
-      key: "LICENSE KEY",
-      div: document.getElementById('player'),
-      autoplay: true,
-      mutedAtStart: true,
-      debug: false,
-      callbacksForPlayer: callBackWithPlayers,
-      src: 'STREAM SRC',
-      wmInfo = {
-        strength: 255,
-        transactionId: 12424,
-        apiToken: 't1EKhe8A',
-        logoImage: "Image URL",
-        logoPos: [5, 5, 340, 90]
-      }
-    });
-
-  </script>
-</body>
-
-</html>
-
-```
-
-
-#### wmInfo Object
-
-| Param | Type | Description |
-| --- | --- | --- |
-| strength | Integer | Watermark strength.<br/> Valid values:<br/>• 255: Visible watermark for debugging <br/>• 1 to 100: Production watermark strength<br/>(1 = weakest, 100 = strongest/possibly visible) <br/>A stronger watermark is faster to extract.<br/>Values of 50 or less require very long videos to extract.<br/> Default: 80 |
-| transactionId | Unsigned <br/> integer | Transaction or user identifier. <br/> Required for watermarking initialization. <br/> Size: 36 bits <br/> Valid values: 0 to 687194767365 | 
-| operatorId | Unsigned <br/> integer | Operator identifier.<br/> You do not need to provide operatorId as it is hard-coded to an operator-specific value in the software.
-| logoImage | String | Optional.<br/>URL for a visible image to draw in addition to the imperceptible watermark.<br/>Default: None | 
-| logoPos | Array \<number\> | Optional.<br/>Set coordinates for the logo image.<br/>Format: [x, y, width, height]<br/>Valid values for x and y: 0 to 100 <br/> Default: Upper left corner of the video.| 
-| apiToken | String | Optional.<br/>Opaque string for activating subsequent API actions. |
-
 
 ## Third Party Licenses
 

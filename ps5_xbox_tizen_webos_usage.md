@@ -346,7 +346,8 @@ There are a substantial number of customizable options for NexPlayer™ includin
 
 ##### Setters
 
-
+ - [setVolume()](#setvolume)
+ - [setMute()](#setmute)
  - [setAudio(streamID)](#setaudio)
  - [setAudioStream(streamID)](#setaudiostream) ⇒ deprecated
  - [setCurrentTrack(trackID)](#setcurrenttrack)
@@ -529,6 +530,7 @@ Play the video.
 Pause the video.
 
 **Type**: instance method of [<code>Player</code>](#Player)
+
 
    #### <a id="destroy"></a> player.destroy().then(UnMount(document.getElementById('player')))
 
@@ -950,6 +952,17 @@ Retrieve the current version of the player.
 #### Setters
 
 ***
+#### <a id="setvolume"></a> player.setVolume()
+
+Set value should be a Number between 0 (minimum volume) and 1 (maximum volume).
+
+**Type**: instance method of [<code>Player</code>](#Player)
+
+ #### <a id="setmute"></a> player.setMute()
+
+Indicates whether the main content is muted or not.
+
+**Type**: instance method of [<code>Player</code>](#Player)
 
    #### <a id="setaudio"></a> player.setAudio(streamID)
 

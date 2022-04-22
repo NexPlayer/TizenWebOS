@@ -4,11 +4,20 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
-#### Version 4.2.0
+#### Version 4.3.1
 
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.2.0_20220302/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.3.1_20220422/nexplayer.js
 ```
+* **[Added]** Support DAI with IMA.
+* **[Added]** Implement a retry property.
+* **[Added]** Implement a <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl">pageUrl</a> for IMA.
+* **[Added]** Implement the verimatrix watermark.
+
+Date: March 22nd 2022
+
+#### Version 4.2.0
+
 * **[Added]** Support multiple external subtitles.
 * **[Added]** Support for SRT subtitles.
 * **[Added]** Method [getBandwidthEstimate()](ps5_xbox_tizen_webos_usage.md?id=getbandwidthestimate).

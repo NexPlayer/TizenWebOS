@@ -275,6 +275,11 @@ There are a substantial number of customizable options for NexPlayer™ includin
                     }
       },
     bitrateConfig: {startingBitrate: num , maxBitrate: num, minBitrate: num},
+    daiConfig: {
+            ASSET_KEY : string,
+            CONTENT_SOURCE_ID : string,
+            VIDEO_ID : string,
+          },
 
 ```
 
@@ -1755,13 +1760,31 @@ nexplayer.Setup({
 ```
 Sample VAST links can be found on the <a href =https://developers.google.com/interactive-media-ads/docs/sdks/html5/tags target="_blank">Google Website</a>.
 
-In order to use IMA or PAL, a script must be provided in the index, which are the following respectively:
+DAI libraries can be used for ad playback, as well as the NexPlayer solution itself.
+
+```js
+nexplayer.Setup({
+  key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+  div: document.getElementById('player'),
+  daiConfig: {
+    ASSET_KEY : 'KEY',
+    CONTENT_SOURCE_ID : 'ID',
+    VIDEO_ID : 'ID',
+  },
+  adsmode: 'dai / default',
+});
+```
+Get started  <a href =https://developers.google.com/interactive-media-ads/docs/sdks/other target="_blank">Google Website</a>.
+
+In order to use IMA, DAI or PAL, a script must be provided in the index, which are the following respectively:
 
 ```js
 <!-- IMA -->
 <script src="https://imasdk.googleapis.com/js/sdkloader/ima3.js"></script>
 <!-- Currently, only IMA 3 is supported -->
 
+<!-- DAI -->
+<script src="https://imasdk.googleapis.com/js/sdkloader/ima3_dai.js"></script>
 
 <!-- PAL -->
 <script src="https://nex360.s3.amazonaws.com/PAL/pal.js" ></script>

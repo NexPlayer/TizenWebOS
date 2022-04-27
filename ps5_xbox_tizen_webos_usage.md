@@ -275,6 +275,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
                     }
       },
     bitrateConfig: {startingBitrate: num , maxBitrate: num, minBitrate: num},
+    pageUrl: 'https://mydomain.com',
     daiConfig: {
             ASSET_KEY : string,
             CONTENT_SOURCE_ID : string,
@@ -497,6 +498,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | adsLoadTimeout | <code>number</code> | Determines the time the player waits the ad to start. |
 | ssaiMediaTailor | <code><a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
 | bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default, and the tracks the abr will run at are the ones set between minBitrate and maxBitrate.  |
+| pageUrl | <code>string</code> | Adds a parameter to the ad request to keep track of the domain that sent the request. For targeting purposes. <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl"> More info </a>. |
 
 #### <a id="changesource"></a> nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 

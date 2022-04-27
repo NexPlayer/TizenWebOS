@@ -10,9 +10,9 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 https://nexplayer.nexplayersdk.com/HTML5/4.3.1_20220422/nexplayer.js
 ```
 * **[Added]** Support DAI with IMA.
-* **[Added]** Implement a retry property.
-* **[Added]** Implement a <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl">pageUrl</a> for IMA.
-* **[Added]** Implement the verimatrix watermark.
+* **[Added]** Implemented retry property.
+* **[Added]** Implemented <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl">pageUrl</a> for IMA. More info <a href="./#/ps5_xbox_tizen_webos_usage?id=setup"> here </a>
+* **[Added]** Implemented Verimatrix watermark.
 
 Date: March 22nd 2022
 

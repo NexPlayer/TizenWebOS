@@ -11,7 +11,7 @@ https://nexplayer.nexplayersdk.com/HTML5/4.3.1_20220422/nexplayer.js
 ```
 * **[Added]** Support DAI with IMA.
 * **[Added]** Implemented retry property.
-* **[Added]** Implemented <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl">pageUrl</a> for IMA. More info <a href="./#/ps5_xbox_tizen_webos_usage?id=setup"> here </a>
+* **[Added]** Implemented <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl">pageUrl</a> for IMA. More info <a href="./#/ps5_xbox_tizen_webos_usage?id=setup">here</a>
 * **[Added]** Implemented Verimatrix watermark.
 
 Date: April 22nd 2022

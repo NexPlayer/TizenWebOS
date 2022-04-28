@@ -358,6 +358,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
  - [getAudioStreams()](#getaudiostreams) ⇒ [Array\<AudioStream\>](#audiostream)
  - [getBandwidthEstimate()](#getbandwidthestimate) ⇒ number
  - [getCurrentContentType()](#getcurrentcontenttype) ⇒ string
+ - [getCurrentSegmentContainer()](#getcurrentsegmentcontainer) ⇒ Object
  - [getCurrentAudioStream()](#getcurrentaudiostream) ⇒ [AudioStream](#audiostream)
  - [getCurrentSubtitle()](#getcurrentsubtitle) ⇒ number
  - [getCurrentTime()](#getcurrenttime) ⇒ number
@@ -887,6 +888,21 @@ Returns the current bandwidth available in bytes.
 
 **Type**: instance method of [<code>Player</code>](#Player)   
 **Returns**: number - information about the bandwidth estimate.
+
+   #### <a id="getcurrentsegmentcontainer"></a> player.getCurrentSegmentContainer() ⇒ Object
+
+Get the current audio and video segment type.
+
+This object contain the following information:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| audio | <code>String</code> | Audio segment container (for ts segments, this value will be null as this type of segment contains the video and audio in the same segment.)|
+| video | <code>String</code> | Video segment container |
+
+**Type**: instance method of [<code>Player</code>](#Player)   
+**Returns**: Object - Current audio and video segment container type.
+
    #### <a id="getcurrentaudiostream"></a> player.getCurrentAudioStream() ⇒ AudioStream
 
 Get the audio stream currently in use.

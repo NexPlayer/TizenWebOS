@@ -4,11 +4,18 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
-#### Version 4.3.1
+#### Version 4.3.1.1
 
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.3.1_20220422/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.3.1.1_20220428/nexplayer.js
 ```
+* **[Improved]** Fixed player behavior on long seek.
+* **[Added]** Implemented [getCurrentSegmentContainer()](ps5_xbox_tizen_webos_usage.md?id=getCurrentSegmentContainer) method.
+* **[Added]** Additional information through adstarted event for default ads mode.
+
+Date: April 28nd 2022
+#### Version 4.3.1
+
 * **[Added]** Support DAI with IMA.
 * **[Added]** Implemented retry property.
 * **[Added]** Implemented <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl">pageUrl</a> for IMA. More info <a href="./#/ps5_xbox_tizen_webos_usage?id=setup">here</a>

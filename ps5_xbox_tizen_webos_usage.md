@@ -459,7 +459,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 
 | Param | Type | Description |
 | --- | --- | --- |
-| adsMode | <code>string</code> | Determines the ad library: 'ima', 'pal' or 'default'. |
+| adsMode | <code>string</code> | Determines the ad library: 'ima', 'pal', 'dai' or 'default'. Note that 'dai' needs a [daiConfig](ps5_xbox_tizen_webos_usage?id=daiConfig) object to work, while 'ima' and 'pal' require a 'vast' string |
 | addRequestFilter | <code>Function</code> | Sets a function that receives the DRM request as a parameter and changes its Headers. |
 | adsParamsToEncode| <code>Array<string></code> | Specifies the name of the VAST ad URL parameters to encode. |
 | autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
@@ -499,6 +499,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 | ssaiMediaTailor | <code><a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
 | bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default, and the tracks the abr will run at are the ones set between minBitrate and maxBitrate.  |
 | pageUrl | <code>string</code> | Adds a parameter to the ad request to keep track of the domain that sent the request. For targeting purposes. <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl"> More info </a>. |
+| daiConfig | <code><a href="./#/ps5_xbox_tizen_webos_usage?id=daiConfig">Object</a></code> | Used to initialize the DAI stream. |
 
 #### <a id="changesource"></a> nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
@@ -1333,6 +1334,17 @@ Possible error codes:
 | connectionTimeout   | <code>number</code> | Connection timeout in ms, after which we abort |
 | maxTries   | <code>number</code> | The maximum number of requests before we fail |
 | retryDelay  | <code>number</code> |  The base delay in ms between retries |
+
+#### <a id="daiConfig"></a> daiConfig: <code>Object</code>
+
+**Type**: global typedef    
+**Properties**:
+
+| Name    | Type                | Description           |
+| ------- | ------------------- | --------------------- |
+| ASSET_KEY   | <code>string</code> | Identifier of the live content that wants to be played. <a href="https://support.google.com/admanager/answer/7294289#locate-a-live-linear-stream-url-and-asset-key">More info</a>. Live streams only. |
+| CONTENT_SOURCE_ID   | <code>number</code> | Unique identifier for the publisher content, from a CMS. VOD only. |
+| VIDEO_ID   | <code>string</code> |Identifier for the video content source. VOD only. |
 
 ***
 

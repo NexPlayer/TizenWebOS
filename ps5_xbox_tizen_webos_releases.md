@@ -11,14 +11,14 @@ https://nexplayer.nexplayersdk.com/HTML5/4.3.1.1_20220428/nexplayer.js
 ```
 * **[Improved]** Fixed player behavior on long seek.
 * **[Added]** Implemented [getCurrentSegmentContainer()](ps5_xbox_tizen_webos_usage.md?id=getCurrentSegmentContainer) method.
-* **[Added]** Additional information through adstarted event for default ads mode.
+* **[Added]** Additional information through "adstarted" event for default ads mode.
 
-Date: April 28nd 2022
+Date: April 28th 2022
 #### Version 4.3.1
 
 * **[Added]** Support DAI with IMA.
 * **[Added]** Implemented retry property.
-* **[Added]** Implemented <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl">pageUrl</a> for IMA. More info <a href="./#/ps5_xbox_tizen_webos_usage?id=setup">here</a>
+* **[Added]** Implemented <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl">pageUrl</a> for IMA. More info <a href="./#/ps5_xbox_tizen_webos_usage?id=setup">here</a>.
 * **[Added]** Implemented Verimatrix watermark.
 
 Date: April 22nd 2022
@@ -37,7 +37,7 @@ Date: March 2nd 2022
 
 * **[Improved]** Fixed issue related to DRM with headers.
 
-Date: February 21th 2022
+Date: February 21st 2022
 
 #### Version 4.1.3
 
@@ -67,7 +67,7 @@ Date: February 2nd 2022
 #### Version 4.1.1
 
 * **[Improved]** Fixed bugs related to <a href="./#/ps5_xbox_tizen_webos_usage?id=adsevents">AdsEvents</a>, <a href="./#/ps5_xbox_tizen_webos_usage?id=removeadsevents">RemoveAdsEvents</a> and <a href="./#/ps5_xbox_tizen_webos_usage?id=iscurrentassetad">isCurrentAssetAd</a> functions.
-* **[Improved]** Fixed bug when destroying and creating the player and adding ads events
+* **[Improved]** Fixed bug when destroying and creating the player and adding ads events.
 * **[Improved]** Blocked play and seek during ads playback.
 * **[Improved]** AdInstance reset when destroying the player.
 * **[Improved]** Detect the size of the external subtitles and ignore them if necessary. If the external subtitles are ignored and there are internal subtitles available the internal ones are activated.
@@ -111,7 +111,7 @@ Date: December 16th 2021
 * **[Added]** Added support for escaped sequences on subtitles.
 * **[Added]** Implement <a href="./#/ps5_xbox_tizen_webos_usage?id=nexplayerdecodedatadata">decodeData</a> function.
 
-Date: November 23th 2021
+Date: November 23rd 2021
 
 #### Version 4.0.0
 
@@ -119,7 +119,7 @@ Date: November 23th 2021
 * **[Improved]** Fixed seek not working when including static thumbnails.
 * **[Improved]** Fixed subtitles activation/deactivation issue with live streams.
 * **[Improved]** Fixed subtitles' style not displayed correctly, i.e. tags like \<i> were being displayed as they are and the text was not displayed as italics.
-* **[Improved]** Fixed <a href="./#/ps5_xbox_tizen_webos_usage?id=off">off</a> method not being defined
+* **[Improved]** Fixed <a href="./#/ps5_xbox_tizen_webos_usage?id=off">off</a> method not being defined.
 * **[Improved]** Fixed thumbnails bug on fullscreen.
 
 
@@ -173,7 +173,7 @@ Date: August 24th 2021
 
 #### Version 3.4.3
 
-* **[Added]** Implemented new property for encoding parameters of the VAST URLs. <a href="./#/ps5_xbox_tizen_webos_usage?id=setup">"adsParamsToEncode"</a>.
+* **[Added]** Implemented new property for encoding parameters of the VAST URLs <a href="./#/ps5_xbox_tizen_webos_usage?id=setup">"adsParamsToEncode"</a>.
 * **[Improved]** Fixed playback after preroll ads.
 * **[Improved]** getDroppedFrames() method improved. Now returns accurate number of dropped frames.
 
@@ -375,7 +375,7 @@ Date: September 18th 2020
 
 #### Version 3.1.1
 
-* **[Improved]** Fixed error that avoids ads events to be fired when multiples ads are available.
+* **[Improved]** Fixed error that avoids ads events to be fired when multiple ads are available.
 
 #### Version 3.1.0
 
@@ -402,7 +402,7 @@ Date: September 18th 2020
 
 #### Version 2.3.13
 
-* **[Improved]** Fixed issue that made the lives streams not start at the live edge, but at the limit of the availability window
+* **[Improved]** Fixed issue that made the lives streams not start at the live edge, but at the limit of the availability window.
 * **[Improved]** Change the NexEvent.Buffering behaviour. It now receives as parameter an object containing the state of the buffer. True for buffering, false for finishing loading.
 
 

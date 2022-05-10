@@ -271,6 +271,12 @@ There are a substantial number of customizable options for NexPlayer including: 
                     }
       },
     bitrateConfig: {startingBitrate: num , maxBitrate: num, minBitrate: num},
+    daiConfig: {
+        ASSET_KEY : string,
+        CONTENT_SOURCE_ID : string,
+        VIDEO_ID : string,
+      },
+
 
 ```
 

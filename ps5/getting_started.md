@@ -271,6 +271,7 @@ There are a substantial number of customizable options for NexPlayer including: 
                     }
       },
     bitrateConfig: {startingBitrate: num , maxBitrate: num, minBitrate: num},
+    pageUrl: 'https://mydomain.com',
     daiConfig: {
         ASSET_KEY : string,
         CONTENT_SOURCE_ID : string,

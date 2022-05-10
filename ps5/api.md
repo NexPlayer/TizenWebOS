@@ -160,7 +160,6 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 | reinitializeAfterAds | <code>boolean</code> | *Deprecated* Used to avoid errors related to ads on PS5, please set it to true on this platform. False by default. |
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
 | retryParameters | <code>Object [\<retrySettings\>](ps5_xbox_tizen_webos_usage.md?id=retrySettings)</code> | Determines the retry parameters for DRM, manifest, and streaming requests. |
-
 | showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
 | staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and a callback which returns an <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=error">error</a> object.|
@@ -176,6 +175,9 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 | adsLoadTimeout | <code>number</code> | Determines the time the player waits the ad to start. |
 | ssaiMediaTailor | <code><a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
 | bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default, and the tracks the abr will run at are the ones set between minBitrate and maxBitrate.  |
+| pageUrl | <code>string</code> | Adds a parameter to the ad request to keep track of the domain that sent the request. For targeting purposes. <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl"> More info </a>. |
+
+
 
 #### <a id="changesource"></a>nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 

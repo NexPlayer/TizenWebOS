@@ -234,6 +234,17 @@ There are a substantial number of customizable options for NexPlayer including: 
     poster: 'URL poster', 
     reinitializeAfterAds: boolean, // Deprecated
     resumePosition: number,
+    retryParameters:
+    	streaming: {
+			timeout: 30000,     // timeout in ms, after which we abort
+        	stallTimeout: 5000, // stall timeout in ms, after which we abort
+        	connectionTimeout: 10000, // connection timeout in ms, after which we abort
+        	maxTries: 2,        // the maximum number of requests before we fail
+			retryDelay: 1000,   // the base delay in ms between retries
+      },
+      drm: {…},
+      manifest: {…}
+    },
     showAdsUI: true,
     showingFullUI: true,
     staticThumbnails: {

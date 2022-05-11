@@ -102,6 +102,7 @@
 
 - [play()](#adplay)
 - [pause()](#adpause)
+- [skipAd()](#adskiped)
 - [getAdCurrentTime()](#getadcurrenttime) ⇒ number
 - [getAdDescription()](#getaddescription) ⇒ string
 - [getAdDuration()](#getadduration) ⇒ number
@@ -856,6 +857,10 @@ Play the ad
 #### <a id="adpause"></a>nexplayer.AdInstance().pause() 
 
 Pause the current ad.
+
+ #### <a id="adskiped"></a> nexplayer.AdInstance().skipAd() 
+
+This method only has an effect if the ad on stage is a skippable ad and can be skipped (e.g. getIsSkippableAd returns true, we can skip the ad)
 
 #### Getters
 

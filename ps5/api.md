@@ -73,7 +73,7 @@
 - [getThumbnails()](#getthumbnails) ⇒ [Array\<Frame\>](#frame)
 - [getTracks()](#gettracks) ⇒ [Array\<Track\>](#track)
 - [getURL()](#geturl) ⇒ string
-- [getVersion()](#getversion) ⇒ string
+- [getVersion()](#getversion) ⇒ string *[Deprecated]*
 
 **Setters**
 
@@ -120,7 +120,7 @@
 
 Creates and initializes the player.
 
-Set NexPlayer settings using the configuration object as described in NexPlayer Configuratio section.
+Set NexPlayer settings using the configuration object as described in NexPlayer Configuration section.
 
 **Parameters**: <code>configObj</code> is an object which values could be:
 
@@ -157,7 +157,7 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. False by default. |
 | preferredAudioCodec | <code>Array</code> |This property can be used to give priority to a specific audio codec. |
 | poster | <code>string</code> | Video poster URL. |
-| reinitializeAfterAds | <code>boolean</code> | *Deprecated* Used to avoid errors related to ads on PS5, please set it to true on this platform. False by default. |
+| reinitializeAfterAds | <code>boolean</code> | *[Deprecated]* Used to avoid errors related to ads on PS5, please set it to true on this platform. False by default. |
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
 | retryParameters | <code>Object [\<retrySettings\>](ps5_xbox_tizen_webos_usage.md?id=retrySettings)</code> | Determines the retry parameters for DRM, manifest, and streaming requests. |
 | showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
@@ -387,23 +387,23 @@ Jump to the livestream current time from the current position (if isUTC is true,
 
 #### <a id="iscontrolbaropen"></a>player.isControlBarOpen() ⇒ boolean
 
-**Returns**: boolean - *true* if the bar is showing. *false* otherwise.
+**Returns**: boolean - *true* if the bar is showing, *false* otherwise.
 
 #### <a id="iscurrentassetad"></a>player.isCurrentAssetAd() ⇒ boolean
 
 Indicates whether the current asset playing is an ad or not
 
-**Returns**: boolean - *true* if the current asset is an ad. *false* otherwise.
+**Returns**: boolean - *true* if the current asset is an ad, *false* otherwise.
 
 #### <a id="iscurrentassetmuted"></a>player.isCurrentAssetMuted() ⇒ boolean
 
 Indicates whether the ad or the main content is muted or not.
 
-**Returns**: boolean - *true* if the current asset is muted. *false* otherwise.
+**Returns**: boolean - *true* if the current asset is muted, *false* otherwise.
 
 #### <a id="islanguagemenuopen"></a>player.isLanguageMenuOpen() ⇒ boolean
 
-**Returns**: boolean - *true* if the Language/Subtitle menu is showing. *false* otherwise.
+**Returns**: boolean - *true* if the Language/Subtitle menu is showing, *false* otherwise.
 
 #### <a id="islive"></a>player.isLive() ⇒ boolean
 
@@ -442,8 +442,8 @@ AudioStream:
 | Property | Type | Description |
 | --- | --- | --- |
 | id | <code>number</code> | of the audio to be played. |
-| language | <code>string<NexDRMInformation></code> | that contains an string with languages audio available (by default it is empty). |
-| name | <code>string<NexDRMInformation></code> | that contains an string with name of audio files available (by default it is empty). |
+| language | <code>string<NexDRMInformation></code> | that contains a string with the languages audio available (by default it is empty). |
+| name | <code>string<NexDRMInformation></code> | that contains a string with the names of audio files available (by default it is empty). |
  
 **Returns**: Array\<AudioStream\> - the list of the available audio streams.
 
@@ -462,8 +462,8 @@ AudioStream:
 | Property | Type | Description |
 | --- | --- | --- |
 | id | <code>number</code> | of the audio to be played. |
-| language | <code>string<NexDRMInformation></code> | that contains an string with languages audio stream currently in use (by default it is empty). |
-| name | <code>string<NexDRMInformation></code> | that contains an string with name of audio stream currently in use (by default it is empty). |
+| language | <code>string<NexDRMInformation></code> | that contains a string with languages audio stream currently in use (by default it is empty). |
+| name | <code>string<NexDRMInformation></code> | that contains a string with name of audio stream currently in use (by default it is empty). |
 
 **Returns**: Array\<TrackInfo\> - information about the current audio track.
 
@@ -475,7 +475,7 @@ Returns the the type of the current asset (“ad”, “mainContent” or “non
 
 #### <a id="getcurrentsubtitle"></a>player.getCurrentSubtitle() ⇒ number
 
-Retrieve the number id of the current subtitle. If the returned value is -1 no subtitle is selected.
+Retrieves the number id of the current subtitle. If the returned value is -1, no subtitle is selected.
 
 **Returns**: number - id of the current subtitle.
 
@@ -493,10 +493,10 @@ Track:
 
 | Property | Type | Description |
 | --- | --- | --- |
-| width | <code>number</code> | that contains an number with width of current track |
-| height | <code>number<NexDRMInformation></code> | that contains an number with height of current track |
-| bitrate | <code>number<NexDRMInformation></code> | that contains an number with bitrate of current track |
-| id | <code>number<NexDRMInformation></code> | of current track |
+| width | <code>number</code> | that contains a number with the width of the current track. |
+| height | <code>number<NexDRMInformation></code> | that contains a number with the height of the current track. |
+| bitrate | <code>number<NexDRMInformation></code> | that contains a number with the bitrate of the current track. |
+| id | <code>number<NexDRMInformation></code> | of the current track. |
 
 **Returns** Array\<TrackInfo\> - information about the current video track.
 
@@ -508,7 +508,7 @@ Returns the number of frames dropped. 0 is returned if not available or no frame
 
 #### <a id="getduration"></a>player.getDuration() ⇒ number
 
-Returns the duration taking of the video element.
+Returns the video duration.
 
 **Returns**: number - the duration of the video.
 
@@ -533,16 +533,16 @@ Returns the stream's protocol ID, the number correspond to the [NexProtocol](#ne
 
 #### <a id="getqualitylevels"></a>player.getQualityLevels() ⇒ array
 
-Get the video quality levels array.
+Get an array of video quality levels.
 
-This array contain the following information:
+This array contains the following information:
 
 | Param | Type | Description |
 | --- | --- | --- |
-| id | <code>number</code> | of this track |
-| width | <code>number</code> | that contains an number with width of this track |
-| height | <code>number</code> | that contains an number with height of this track |
-| bitrate | <code>number</code> | that contains an number with bitrate of this track |
+| id | <code>number</code> | of this track. |
+| width | <code>number</code> | that contains a number with the width of this track. |
+| height | <code>number</code> | that contains a number with the height of this track. |
+| bitrate | <code>number</code> | that contains a number with the bitrate of this track. |
 
 **Returns**: array - contains all video quality levels.
 
@@ -555,7 +555,7 @@ The returned array contains objects with the following properties:
 | Property | Type                                   | Description                                                  |
 | -------- | -------------------------------------- | ------------------------------------------------------------ |
 | id       | <code>number</code>                    | is the identifier of each subtitle. It can be used to select the subtitle. |
-| language | <code>string<NexDRMInformation></code> | that contains an string with subtitle stream (by default it is empty). | 
+| language | <code>string<NexDRMInformation></code> | that contains a string with subtitle stream (by default it is empty). | 
 
 **Returns**: Array - all the subtitles availables in the stream.
 
@@ -583,18 +583,18 @@ Each array's element contains the next information:
 
 #### <a id="gettracks"></a>player.getTracks() ⇒ Array< Track >
 
-Get all the video avaliable tracks (different qualities).
+Get all the available video tracks (different qualities).
 
 Each array's element contains the next information:
 
 | Param   | Type                | Description                                        |
 | ------- | ------------------- | -------------------------------------------------- |
-| id      | <code>number</code> | of all tracks                                      |
-| width   | <code>number</code> | that contains an number with width of all tracks   |
-| height  | <code>number</code> | that contains an number with height of all tracks  |
-| bitrate | <code>number</code> | that contains an number with bitrate of all tracks |
+| id      | <code>number</code> | of all tracks.                                      |
+| width   | <code>number</code> | that contains a number with the width of all tracks.   |
+| height  | <code>number</code> | that contains a number with the height of all tracks.  |
+| bitrate | <code>number</code> | that contains a number with the bitrate of all tracks. |
 
-**Returns**: Array< Track > - all the video avaliable tracks and its different levels of quality.
+**Returns**: Array< Track > - all the available video tracks and its different levels of quality.
 
 #### <a id="geturl"></a>player.getURL() ⇒ string
 
@@ -791,9 +791,9 @@ Possible error codes:
 
 | Name    | Type                | Description           |
 | ------- | ------------------- | --------------------- |
-| minBitrate   | <code>num</code> | The player should ignore any bitrate profiles in the manifest under this value, and never play them   |
-| startingBitrate  | <code>num</code> |  The bitrate the player will try to start playing  |
-| maxBitrate | <code>num</code> | The player should ignore any bitrate profiles in the manifest above this value, and never play them |
+| minBitrate   | <code>num</code> | The player should ignore any bitrate profiles in the manifest under this value, and never play them.   |
+| startingBitrate  | <code>num</code> |  The bitrate the player will try to start playing.  |
+| maxBitrate | <code>num</code> | The player should ignore any bitrate profiles in the manifest above this value, and never play them. |
 
 #### <a id="externalsubtitleobject"></a>externalSubtitle: <code>Object</code> 
 
@@ -826,11 +826,11 @@ Possible error codes:
 
 | Name    | Type                | Description           |
 | ------- | ------------------- | --------------------- |
-| timeout   | <code>number</code> | Timeout in ms, after which player aborts |
-| stallTimeout   | <code>number</code> | Stall timeout in ms, after which player aborts |
-| connectionTimeout   | <code>number</code> | Connection timeout in ms, after which player aborst |
-| maxTries   | <code>number</code> | The maximum number of requests before player fails |
-| retryDelay  | <code>number</code> |  The base delay in ms between retries |
+| timeout   | <code>number</code> | Timeout in ms, after which the player aborts. |
+| stallTimeout   | <code>number</code> | Stall timeout in ms, after which the player aborts. |
+| connectionTimeout   | <code>number</code> | Connection timeout in ms, after which the player aborts. |
+| maxTries   | <code>number</code> | The maximum number of requests before player fails. |
+| retryDelay  | <code>number</code> |  The base delay in ms between retries. |
 
 
 #### <a id="daiConfig"></a> daiConfig: <code>Object</code>
@@ -1581,9 +1581,9 @@ nexplayer.RemoveAdsEvents('event name', f);
 
 #### Ads custom events
 
-* adstarted: Start an individual ad, contain the ad position in the block in the detail attribute.
-* adblockstart: Contain the number of ads in the block in the detail attribute.
-* adpodsinfo: Contain all ad pods information.
+* adstarted: Start an individual ad, contains the ad position in the block in the detail attribute.
+* adblockstart: Contains the number of ads in the block in the detail attribute.
+* adpodsinfo: Contains all ad pods information.
 * adblockend: Event launched when an ad block (some ads in the same timestamp) ends.
 
 ```js
@@ -1684,7 +1684,7 @@ var callBackWithPlayers = function (nexplayerInstance, videoElement) {
 
 This property is a function that receives the request as parameter , where the following properties can be changed:
 
-| Propperty | Type |
+| Property | Type |
 | --- | --- |
 | headers | Object.<string, string> |
 | body | String |

@@ -35,7 +35,7 @@ Date: March 2nd 2022
 
 * **[Improved]** Fixed issue related to DRM with headers.
 
-Date: February 21th 2022
+Date: February 21st 2022
 
 #### Version 4.1.3
 
@@ -65,7 +65,7 @@ Date: February 2nd 2022
 #### Version 4.1.1
 
 * **[Improved]** Fixed bugs related to <a href="./#/ps5_xbox_tizen_webos_usage?id=adsevents">AdsEvents</a>, <a href="./#/ps5_xbox_tizen_webos_usage?id=removeadsevents">RemoveAdsEvents</a> and <a href="./#/ps5_xbox_tizen_webos_usage?id=iscurrentassetad">isCurrentAssetAd</a> functions.
-* **[Improved]** Fixed bug when destroying and creating the player and adding ads events
+* **[Improved]** Fixed bug when destroying and creating the player and adding ads events.
 * **[Improved]** Blocked play and seek during ads playback.
 * **[Improved]** AdInstance reset when destroying the player.
 * **[Improved]** Detect the size of the external subtitles and ignore them if necessary. If the external subtitles are ignored and there are internal subtitles available the internal ones are activated.
@@ -87,17 +87,18 @@ Date: January 19th 2022
 * **[Improved]** Fixed ads issues on live. Ads are scheduled correctly on live.
 * **[Improved]** Ads are resized correctly to the player size and filtered by bandwidth.
 * **[Improved]** Fixed playback freezing on WebOS and Tizen.
-* **[Added]** Check for 4k support on WebOS devices. 4k tracks are dropped if the device does not support 4k even if the codecs are supported by MediaSource.
+* **[Added]** Check for 4K support on WebOS devices. 4K tracks are dropped if the device does not support 4k even if the codecs are supported by MediaSource.
+* **[Removed]** Removed adding ads in runtime method.
 
 Date: January 7th 2022
 
 #### Version 4.0.2
 
-* **[Improved]** Fixed issue where some previous cue data appear in the next cue change
+* **[Improved]** Fixed issue where some previous cue data appear in the next cue change.
 * **[Improved]** General ad improvements.
 * **[Improved]** Now the event listeners that weren't being removed are properly removed on destroy.
 * **[Improved]** Optimized some methods to avoid high CPU consumption.
-* **[Added]** <a href="./#/ps5_xbox_tizen_webos_usage?id=bitrateconfig">Bitrate config</a> parameter to the setup
+* **[Added]** <a href="./#/ps5_xbox_tizen_webos_usage?id=bitrateconfig">Bitrate config</a> parameter to the setup.
 
 Date: December 16th 2021
 
@@ -109,7 +110,7 @@ Date: December 16th 2021
 * **[Added]** Added support for escaped sequences on subtitles.
 * **[Added]** Implement <a href="./#/ps5_xbox_tizen_webos_usage?id=nexplayerdecodedatadata">decodeData</a> function.
 
-Date: November 23th 2021
+Date: November 23rd 2021
 
 #### Version 4.0.0
 
@@ -117,7 +118,7 @@ Date: November 23th 2021
 * **[Improved]** Fixed seek not working when including static thumbnails.
 * **[Improved]** Fixed subtitles activation/deactivation issue with live streams.
 * **[Improved]** Fixed subtitles' style not displayed correctly, i.e. tags like \<i> were being displayed as they are and the text was not displayed as italics.
-* **[Improved]** Fixed <a href="./#/ps5_xbox_tizen_webos_usage?id=off">off</a> method not being defined
+* **[Improved]** Fixed <a href="./#/ps5_xbox_tizen_webos_usage?id=off">off</a> method not being defined.
 * **[Improved]** Fixed thumbnails bug on fullscreen.
 
 
@@ -185,9 +186,9 @@ Date: August 9th 2021
     * **getCurrentTime()**: number → returns the current time of the video.
     * **getDroppedFrames()**: number → returns the number of frames dropped or NaN if not available or no frames were dropped.
     * **getPlaybackRate()**: number → returns the playback rate/speed of the video.
-    * **getProtocol()**: NexProtocol  → returns the protocol of the stream used: 
+    * **getProtocol()**: NexProtocol  → returns the protocol of the stream used. 
     * **getVersion()**: string → returns the version of the SDK.
-    * **isCurrentAssetAd()**: boolean → indicates whether the current asset playing is an ad or not; 
+    * **isCurrentAssetAd()**: boolean → indicates whether the current asset playing is an ad or not.
     * **isCurrentAssetMuted()**: boolean → returns whether the ad or the main content is muted or not.
 * **[Added]** Added a new event, <a href="./#/ps5_xbox_tizen_webos_usage?id=buffertype">"bufferType"</a>. this new event will be fired when a buffering event occurs and it specifies what type of buffering occurred (connection, seek, initial, background).
 

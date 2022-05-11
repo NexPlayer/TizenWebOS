@@ -149,39 +149,39 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 | defaultLanguage | <code>string</code> | Determines which is the default audio language. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video. |
 | drm | <code>Object</code> | Contains an object of DRM information. By default it’s set to null. |
-| externalSubtitles | <code>Array [\<externalSubtitle\>](ps5_xbox_tizen_webos_usage.md?id=externalsubtitleobject)</code> | Used to provide a subtitle files as external subtitles. |
+| externalSubtitles | <code>Array [\<externalSubtitle\>](#externalsubtitleobject)</code> | Used to provide a subtitle files as external subtitles. |
 | hideControlBarOnStart | <code>boolean</code> | Determines if the control bar will hide when the video starts. |
 | hideUITime | <code>boolean</code> | Determines if the time will be hidden in the UI. |
-| improveStartUp | <code>boolean</code> | Determines whether the video has to start at the lowet bitrate or not. |
+| improveStartUp | <code>boolean</code> | Determines whether the video has to start at the lowest bitrate or not. |
 | logosrc | <code>string</code> | Company URL logo. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. False by default. |
 | preferredAudioCodec | <code>Array</code> |This property can be used to give priority to a specific audio codec. |
 | poster | <code>string</code> | Video poster URL. |
 | reinitializeAfterAds | <code>boolean</code> | *[Deprecated]* Used to avoid errors related to ads on PS5, please set it to true on this platform. False by default. |
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
-| retryParameters | <code>Object [\<retrySettings\>](ps5_xbox_tizen_webos_usage.md?id=retrySettings)</code> | Determines the retry parameters for DRM, manifest, and streaming requests. |
+| retryParameters | <code>Object [\<retrySettings\>](#retrysettings)</code> | Determines the retry parameters for DRM, manifest, and streaming requests. |
 | showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
 | staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and a callback which returns an <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=error">error</a> object.|
 | startFullScreen | <code>boolean</code> | Determines if the video will start on full screen. |
-| startingBufferLength | <code>number</code> | Determines the starting buffer lenght. |
+| startingBufferLength | <code>number</code> | Determines the starting buffer length. |
 | subtitle | <code>string</code> | Subtitle name of the video. |
 | title | <code>string</code> | Video name. |
-| trailer | <code>boolean</code> | Determines if a stream should be considered a trailer. |
+| trailer | <code>boolean</code> | Determines if a stream should be considered as a trailer. |
 | useDefaultControls | <code>boolean</code> | Determines if the tv controller will be able to be used to navigate in the UI. |
 | useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this values is set to false. |
-| useNewRelicTracker | <code>boolean</code> | Determines if the New Relick tracker will be used. |
+| useNewRelicTracker | <code>boolean</code> | Determines if the New Relic tracker will be used. |
 | vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
-| adsLoadTimeout | <code>number</code> | Determines the time the player waits the ad to start. |
+| adsLoadTimeout | <code>number</code> | Determines the time the player waits for the ad to start. |
 | ssaiMediaTailor | <code><a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
-| bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default, and the tracks the abr will run at are the ones set between minBitrate and maxBitrate.  |
+| bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default. The tracks the ABR will select are the ones #nexdrminformationbetween minBitrate and maxBitrate.  |
 | pageUrl | <code>string</code> | Adds a parameter to the ad request to keep track of the domain that sent the request. For targeting purposes. <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl"> More info </a>. |
-| daiConfig | <code><a href="./#/ps5_xbox_tizen_webos_usage?id=daiConfig">Object</a></code> | Used to initialize the DAI stream. |
+| daiConfig | <code><a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=daiConfig">Object</a></code> | Used to initialize the DAI stream. |
 
 
 #### <a id="changesource"></a>nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
-Change the url stream of the video. It is possible to set a new url with new drm config if necessary.
+Change the url stream of the video. It is possible to set a new url with new DRM config if necessary.
 
 **Parameters**: <code>configObj</code> is an object which values could be:
 
@@ -326,7 +326,7 @@ Focuses the element of the UI situated directly below the element currently focu
 
 #### <a id="downsubtitle"></a>player.downSubtitle()
 
-Changes the current subtitles to the previous one in the subtiltle track playlist.
+Changes the current subtitles to the previous one in the subtitle track playlist.
 
 #### <a id="focusonbuttonbar"></a>player.focusOnButtonBar()
 
@@ -336,13 +336,13 @@ Changes the focus to the play/pause button.
 
 Changes the focus to the video's seekbar.
 
-#### <a id="upfocus"></a>player.upFocus()
+#### <a id="upfocus"></a>player.upFocus()s
 
 Focuses the element of the UI situated directly above the element currently focused.
 
 #### <a id="upsubtitle"></a>player.upSubtitle()
 
-Changes the current subtitles to the following one in the subtiltle track playlist.
+Changes the current subtitles to the following one in the subtitle track playlist.
 
 #### <a id="seek"></a>player.seek(value)
 
@@ -443,7 +443,7 @@ AudioStream:
 | --- | --- | --- |
 | id | <code>number</code> | of the audio to be played. |
 | language | <code>string<NexDRMInformation></code> | that contains a string with the languages audio available (by default it is empty). |
-| name | <code>string<NexDRMInformation></code> | that contains a string with the names of audio files available (by default it is empty). |
+| name | <code>string<NexDRMInformation></code> | that contains a string with the names of audio files available (by default it is empty). |S
  
 **Returns**: Array\<AudioStream\> - the list of the available audio streams.
 
@@ -762,7 +762,7 @@ Possible error codes:
 | Name       | Type                | Description         |
 | ---------- | ------------------- | ------------------- |
 | FieldName  | <code>string</code> | of the HTTPHeaders. |
-| FiledValue | <code>string</code> | of the HTTPHeaders. |
+| FieldValue | <code>string</code> | of the HTTPHeaders. |
 
 #### <a id="track"></a>Track : <code>Object</code>
   
@@ -806,7 +806,7 @@ Possible error codes:
 | callback | <code>Function</code> | Error callback |
 
 
-#### <a id="retrySettings"></a> retrySettings: <code>Object</code>
+#### <a id="retrysettings"></a> retrySettings: <code>Object</code>
 
 **Type**: global typedef   
   
@@ -1085,7 +1085,7 @@ var nexDRMInformationWidevine = {
   NexDRMType:'com.widevine.alpha',
   NexDRMKey: 'DRM key URL',
   NexHeaders:[{FieldName: 'Optional field name', //Optional
-               FiledValue: 'Optional field value'}] //Optional
+               FieldValue: 'Optional field value'}] //Optional
 };
 nexplayer.Setup({
   key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
@@ -1107,7 +1107,7 @@ var nexDRMInformationPlayReady = {
 NexDRMType:'com.microsoft.playready',
  NexDRMKey: 'DRM key URL',
 NexHeaders:[{FieldName: 'Optional field name',  //Optional
-            FiledValue: 'Optional field value'}]}; //Optional
+            FieldValue: 'Optional field value'}]}; //Optional
 
 nexplayer.Setup({
   key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
@@ -1130,13 +1130,13 @@ For example, Widevine and PlayReady can be used with the same DASH manifest and 
 var nexDRMInformationWidevine = {NexDRMType:'com.widevine.alpha',
  NexDRMKey: 'DRM key URL',
             NexHeaders:[{FieldName: 'Optional field name',  //Optional
-            FiledValue: 'Optional field value'}]}; //Optional
+            FieldValue: 'Optional field value'}]}; //Optional
 
 // PlayReady
 var nexDRMInformationPlayReady = {NexDRMType:'com.microsoft.playready',
  NexDRMKey: 'DRM key URL',
             NexHeaders:[{FieldName: 'Optional field name', //Optional
-            FiledValue: 'Optional field value'}]}; //Optional
+            FieldValue: 'Optional field value'}]}; //Optional
 
 nexplayer.Setup({
   key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
@@ -1158,7 +1158,7 @@ Custom headers can be included in each HTTP petition, even without the use of DR
 This information can be passed in the DRM array:
 
 ```js
-drmCustomHeaders = {NexHeaders:[{FieldName: 'Optional field name', FiledValue: 'Optional field value'}]};
+drmCustomHeaders = {NexHeaders:[{FieldName: 'Optional field name', FieldValue: 'Optional field value'}]};
 
 nexplayer.Setup({
   key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
@@ -1193,12 +1193,12 @@ To enter the same configuration in our player it should be done like this (PlayR
 var nexDRMInformationPlayReady = {
     NexDRMType: 'DRM NAME (e.g. com.microsoft.playready)',     
     NexDRMKey: 'REPLACE THIS WITH YOUR LICENSE SERVER URL',
-    NexHeaders:[{FieldName: 'X-AxDRM-Message' FiledValue:',REPLACE THIS WITH YOUR CUSTOM DATA,'}]
+    NexHeaders:[{FieldName: 'X-AxDRM-Message' FieldValue:'REPLACE THIS WITH YOUR CUSTOM DATA'}]
 };
 src:  'REPLACE THIS WITH YOUR MEDIA URL',
 ```
 
-FieldName should be specified (if you don’t know this field, please enter 'X-AxDRM-Message') and as FiledValue should be included the wanted custom data.
+FieldName should be specified (if you don’t know this field, please enter 'X-AxDRM-Message') and as FieldValue should be included the wanted custom data.
 
 ### Ads
 
@@ -1206,7 +1206,7 @@ NexPlayer supports the VAST, VPAID, and VMAP ad formats.
 
 IMA and PAL libraries can be used for ad playback as well as NexPlayer's own solution.
 
-You can insert any pre/mid/post roll ad by setting up the ad links as shown below:
+You can insert any pre/mid/post roll ad by setting up the ad links as below:
 
 ```js
 nexplayer.Setup({
@@ -1250,24 +1250,20 @@ In order to use IMA, DAI or PAL, a script must be provided in the index, which a
 <script src="https://nex360.s3.amazonaws.com/PAL/pal.js" ></script>
 ```
 
-> Currently, this method couldn't be used, until the ad block ends, if there are ads at the beggining of the video.
-
-?> If you execute it sequentially the ads will be played one by one after the last ad.
-
 ### Ads methods
 
 The following methods should be queried after the adstarted event has fired for accurate data with nexplayer.AdInstance()
 
 #### Get methods
 
-* `getAdTitle() ⇒ String` : Represents the VAST AdTitle tag.
-* `getAdDescription() ⇒ String`, Represents the VAST Description tag.
+* `getAdTitle() ⇒ String` Represents the VAST AdTitle tag.
+* `getAdDescription() ⇒ String` Represents the VAST Description tag.
 * `getAdDuration() ⇒ Number` Represents the duration of the selected linear creative in milliseconds. Returns -1 if this value is not available.
-* `getAdCurrentTime() ⇒ Number` in ms, representing the current timestamp in the selected linear creative. Returns -1 if this value is not available.
-* `getAdRemainingTime() ⇒ Number` in ms, representing the current time remaining in the selected linear creative. Returns -1 if this value is not available.
-* `getIsSkippableAd() ⇒ Boolean`, States if the loaded linear ad is a VAST skippable ad - can be queried when adloaded event fires.
-* `getVolume() ⇒ Number`, Represents the level of volume in the ad.
-* `getMute() ⇒ boolean`, this indicates if the ad is mute.
+* `getAdCurrentTime() ⇒ Number` Represents the current timestamp in the selected linear creative in milliseconds. Returns -1 if this value is not available.
+* `getAdRemainingTime() ⇒ Number` Represents the current time remaining in the selected linear creative in milliseconds. Returns -1 if this value is not available.
+* `getIsSkippableAd() ⇒ Boolean` States if the loaded linear ad is a VAST skippable ad - can be queried when adloaded event fires.
+* `getVolume() ⇒ Number` Represents the volume level in the ad.
+* `getMute() ⇒ boolean` Indicates if the ad is mute.
 
 ```js
 nexplayer.AdsEvents('adstarted', function(e){

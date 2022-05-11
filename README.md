@@ -24,6 +24,7 @@ The default UI is easily customizable to fit the user's personal preferences (e.
       <div>IMA SDK for Client-Side Ad Insertion </div>
       <div>PAL SDK for Client-Side Ad Insertion </div>
       <div>Server-Side Ad Insertion </div>
+      <div>IMA DAI SDK for Server-Side Ad Insertion </div>
     </div>
     <div class="titleCell">METADATA</div>
     <div class="contentCell">
@@ -35,7 +36,7 @@ The default UI is easily customizable to fit the user's personal preferences (e.
     <div class="contentCell">
       <div>Integrated UI </div>         
       <div>Multiple audio/video tracks </div>      
-      <div>ABR and UHD video (4k and 8k) </div>
+      <div>ABR and UHD video (4K and 8K) </div>
       <div>Trick Play </div>     
       <div>Time-shifting </div>   
       <div>DVR Live Streaming </div>   
@@ -90,7 +91,7 @@ NexPlayer supports several platforms and models:
     <tr>
       <td  scope="row">PlayStation 4</td>
       <td  scope="row"><span>Original (2013)</span></td>
-      <td  scope="row"><span>DASH + PlayReady, HLS Clear</span></td>
+      <td  scope="row"><span>DASH + PlayReady<sup><a href="#/README?id=bn1" id="ref1">1</a></sup>, HLS Clear</span></td>
     </tr>
     <tr>
       <td  scope="row">PlayStation 5</td>
@@ -108,3 +109,4 @@ NexPlayer supports several platforms and models:
     </tr> -->
   </tbody>
 </table>
+<blockquote id="bn1"> <sup><a href="#/README?id=ref1">1</a></sup> PS4 only supports security levels up to SL 2000 </blockquote>

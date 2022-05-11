@@ -191,7 +191,7 @@ document.addEventListener('keydown', function(e) {
     switch (e.keyCode) {        
         "YOUR CONTROLS HERE"            
     }
-}      
+}),      
 ```
 
 ## NexPlayer Configuration
@@ -215,8 +215,8 @@ There are a substantial number of customizable options for NexPlayer including: 
     defaultLanguage: string,
     disableKeyEvents: false,
     drm: [{
-        NexDRMType:'DRM Type (eg. com.widevine.alpha(', NexDRMKey: 'URI for the DRM Key', 
-        NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
+        NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
+        NexHeaders:[{FieldName: 'Header Field Name', FieldValue: 'Header Field Value'}],
         NexCallback:OptionalDRMCallbackForFairPlay
     }],
     dynamicThumbnails: false,
@@ -227,14 +227,14 @@ There are a substantial number of customizable options for NexPlayer including: 
     },…],
     hideControlBarOnStart: boolean,
     hideUITime: boolean,
-    improveStartUp: boolean
+    improveStartUp: boolean,
     logosrc: 'URL logo of the company',
     mutedAtStart: true,   
     preferredAudioCodec: Array,
     poster: 'URL poster', 
     reinitializeAfterAds: boolean, // Deprecated
     resumePosition: number,
-    retryParameters:
+    retryParameters: {
     	streaming: {
 			timeout: 30000,     // timeout in ms, after which we abort
         	stallTimeout: 5000, // stall timeout in ms, after which we abort
@@ -255,7 +255,7 @@ There are a substantial number of customizable options for NexPlayer including: 
     startFullscreen: true,
     startingBufferLength: 50,
     subtitle: 'Subtitle name of the video',
-    title: 'Name of the Video',
+    title: 'Name of the video',
     trailer: boolean,
     useDefaultControls: true,
     useNewRelicTracker: boolean,

@@ -98,14 +98,14 @@ Creates and initializes the player.
 | adURL | <code>string</code> | Contains an object of DRM information. By default it's set to null. |
 | autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
 | callbacksForPlayer | <code>Function</code> | Used for retrieving the NexPlayer instance and video element. This is necessary for getting the instance and use the NexPlayer API. |
-| captionDisplayer | <code>ICaptionsDisplayer</code> | Used to provide a custom CaptionDisplayer. Tihs allows to implement the internal logic for the captions. |
+| captionDisplayer | <code>ICaptionsDisplayer</code> | Used to provide a custom CaptionDisplayer. This allows to implement the internal logic for the captions. |
 | debug | <code>boolean</code> | Determines if log information is showed. By default is set to true. |
 | externalSubtitles | <code>Captions</code> | Used to provide a WEBVTT file as external subtitles. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. False by default. |
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
 | thumbnails | <code>Thumbnails</code> | Thumbnails to be shown. Static and dynamic thumbnails are supported. |
 | trailer | <code>boolean</code> | Determines if a stream should be considered a trailer. |
-| useNewRelicTracker | <code>boolean</code> | Determines if the New Relick tracker will be used. |
+| useNewRelicTracker | <code>boolean</code> | Determines if the New Relic tracker will be used. |
 | vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
 
 #### <a id="unmount"></a>nexplayer.UnMount(div)
@@ -685,7 +685,7 @@ We have events to handle some different kind of ads events. List of ad events av
 * **adpodsinfo**: Contains all ad pods information.
 * **adblockstarted**: Contains the number of ads in the block in the detail attribute.
 * **adblockend**: Event launched when an ad block (some ads in the same timestamp) ends.
-* **adstarted**: Event launched when when the ad has started, contain the ad position in the block in the detail attribute.
+* **adstarted**: Event launched when when the ad has started, contains the ad position in the block in the detail attribute.
 * **adtagstartloading**: Event launched when the ad starts.
 * **adloaded**: Event launched when the ad has been loaded.
 * **adcomplete**: Event launched when the ad has ended.

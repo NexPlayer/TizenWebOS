@@ -58,6 +58,7 @@
 - [getAudioStreams()](#getaudiostreams) ⇒ [Array\<AudioStream\>](#audiostream)
 - [getBandwidthEstimate()](#getbandwidthestimate) ⇒ number
 - [getCurrentContentType()](#getcurrentcontenttype) ⇒ string
+- [getCurrentSegmentContainer()](#getcurrentsegmentcontainer) ⇒ Object
 - [getCurrentAudioStream()](#getcurrentaudiostream) ⇒ [AudioStream](#audiostream)
 - [getCurrentSubtitle()](#getcurrentsubtitle) ⇒ number
 - [getCurrentTime()](#getcurrenttime) ⇒ number
@@ -163,7 +164,7 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 | retryParameters | <code>Object [\<retrySettings\>](#retrysettings)</code> | Determines the retry parameters for DRM, manifest, and streaming requests. |
 | showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
-| staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and a callback which returns an <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=error">error</a> object.|
+| staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and a callback which returns an <a href="/#/ps5/api?id=error">error</a> object.|
 | startFullScreen | <code>boolean</code> | Determines if the video will start on full screen. |
 | startingBufferLength | <code>number</code> | Determines the starting buffer length. |
 | subtitle | <code>string</code> | Subtitle name of the video. |
@@ -174,10 +175,10 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 | useNewRelicTracker | <code>boolean</code> | Determines if the New Relic tracker will be used. |
 | vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
 | adsLoadTimeout | <code>number</code> | Determines the time the player waits for the ad to start. |
-| ssaiMediaTailor | <code><a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
+| ssaiMediaTailor | <code><a href="/#/ps5/api?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
 | bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default. The tracks that the ABR will be able to select are the ones between minBitrate and maxBitrate.  |
 | pageUrl | <code>string</code> | Adds a parameter to the ad request to keep track of the domain that sent the request. For targeting purposes. <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl"> More info </a>. |
-| daiConfig | <code><a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=daiConfig">Object</a></code> | Used to initialize the DAI stream. |
+| daiConfig | <code><a href="/#/ps5/api?id=daiConfig">Object</a></code> | Used to initialize the DAI stream. |
 
 
 #### <a id="changesource"></a>nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
@@ -194,7 +195,7 @@ Change the url stream of the video. It is possible to set a new url with new DRM
 
 #### <a id="unmount"></a>nexplayer.UnMount(player)
 
-Unmounts the player and its dependencies. In order to properly clear the player this method must be called after destroying the very same player. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=destroy">here</a>. 
+Unmounts the player and its dependencies. In order to properly clear the player this method must be called after destroying the very same player. Check more details <a href="/#/ps5/api?id=destroy">here</a>. 
 
 **Parameters**:
 
@@ -445,7 +446,7 @@ AudioStream:
 | id | <code>number</code> | of the audio to be played. |
 | language | <code>string<NexDRMInformation></code> | that contains a string with the languages audio available (by default it is empty). |
 | name | <code>string<NexDRMInformation></code> | that contains a string with the names of audio files available (by default it is empty). |
- 
+
 **Returns**: Array\<AudioStream\> - the list of the available audio streams.
 
 #### <a id="getbandwidthestimate"></a>player.getBandwidthEstimate() ⇒ number
@@ -453,6 +454,19 @@ AudioStream:
 Returns the current bandwidth available in bytes.
 
 **Returns**: number - information about the bandwidth estimate.
+
+ #### <a id="getcurrentsegmentcontainer"></a> player.getCurrentSegmentContainer() ⇒ Object
+
+Get the current audio and video segment type.
+
+This object contains the following information:
+
+| Property | Type | Description |
+| --- | --- | --- |
+| audio | <code>String</code> | Audio segment container (for ts segments, this value will be null as this type of segment contains the video and audio in the same segment.)|
+| video | <code>String</code> | Video segment container |
+
+**Returns**: Object - Current audio and video segment container type.
 
 #### <a id="getcurrentaudiostream"></a>player.getCurrentAudioStream() ⇒ AudioStream
 
@@ -605,7 +619,7 @@ Returns the current stream's URL.
 
 #### <a id="getversion"></a>player.getVersion() ⇒ string
 
-The method getVersion() is deprecated, please use <a href="./#/ps5_xbox_tizen_webos_usage?id=getversion">nexplayer.getVersion()</a> instead  
+The method getVersion() is deprecated, please use <a href="./#/ps5/api?id=getversion">nexplayer.getVersion()</a> instead  
 
 **Returns**: string - identify the version of the player.
 
@@ -959,12 +973,12 @@ nexplayer.Setup({
 If you want to reuse the same div for different videos, the container div must be unmounted properly. The way this is done has changed recently, now the following command must be used:
 
 ```js
-player.destroy().then(nexplayer.UnMount(document.getElementById('player'));
+player.destroy().then(nexplayer.UnMount(document.getElementById('player')));
 ```
 
 #### Unmounted and mounted events
 
-In the case of using an await procedure to unmount the player, it is convenient to ensure that the Setup is called after the UnMount method is finished. This can be done via the <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=isready">IsReady</a> method that returns a boolean value which indicates whether the player can be mounted or not. The recommended way to do this is via events, which are the following:
+In the case of using an await procedure to unmount the player, it is convenient to ensure that the Setup is called after the UnMount method is finished. This can be done via the <a href="/#/ps5/api?id=isready">IsReady</a> method that returns a boolean value which indicates whether the player can be mounted or not. The recommended way to do this is via events, which are the following:
 
 * mounted
 * unmounted
@@ -1310,7 +1324,7 @@ nexplayer.Setup({
 
 ### Events
 
-References to the <a href="#/advanceusage?id=access-to-the-player-instances">player instances</a> are needed to register callbacks.
+References to the <a href="#/ps5/api?id=access-to-the-player-instances">player instances</a> are needed to register callbacks.
 There are two types of emitted events that can be listened to.
 
 #### Video Element Events
@@ -1593,7 +1607,7 @@ nexplayer.AdsEvents('custom event name', function (e) {console.log("this is an e
 
 ### Custom Actions
 
-Advanced actions can be performed with a player instance. For the full action list, check <a href="#/API" target="_blank">NexPlayer API</a>
+Advanced actions can be performed with a player instance. For the full action list, check <a href="#/ps5/api" target="_blank">NexPlayer API</a>
 
 #### ABR
 
@@ -1617,7 +1631,7 @@ Setting a fixed track can be achieved by calling the method <code>setTrack</code
 nexplayerInstance.setTrack(nexplayerInstance.getTracks()[0].id);
 ```
 
-A change in the current track can be detected with the NexPlayer™ <a href="#/advanceusage?id=callbacks" >callbacks</a>.
+A change in the current track can be detected with the NexPlayer™ <a href="#/ps5/api?id=callbacks" >callbacks</a>.
 
 #### Subtitles
 
@@ -1735,7 +1749,7 @@ This feature enables/disables autoplay. This can be configured in the player by 
 }
 ```
 
-?> Please note that the default value of the <b>autoplay</b> parameter is true, so the player will star without any user action.
+?> Please note that the default value of the <b>autoplay</b> parameter is true, so the player will start without any user action.
 
 
 ### Mute
@@ -1756,7 +1770,7 @@ This feature tells the player whether to start playback with the volume muted or
 
 The nexplayer.js library is already minified, but to use even less space it's recommended to use gzip on the server where the library will be hosted. gzip is supported on the vast majority of servers.
 
-The <a href="#ps5_xbox_tizen_webos_releases?">hosted versions</a> in our CDN use gzip.
+The <a href="#/ps5/releases?">hosted versions</a> in our CDN use gzip.
 
 ## Cross-Origin Resource Sharing (CORS)
 
@@ -1768,6 +1782,6 @@ More information is available at <a href="https://developer.mozilla.org/en-US/do
 
 ## Upgrading to a New Version
 
-When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary. Here you can find the <a href="#/ps5_xbox_tizen_webos_releases?" target = "_blank" >latest release</a>.
+When a specific version of the library is used, the URL of the hosted library should be upgraded. If the library is hosted on a custom server, replacing nexplayer.js is necessary. Here you can find the <a href="#/ps5/releases?" target = "_blank" >latest release</a>.
 
 Every new release of NexPlayer is backwards compatible.

@@ -11,7 +11,7 @@ https://nexplayer.nexplayersdk.com/NexHTML5/1.2.5_20211025/nexplayer.js
 ```
 
 **Bug fixes:**
-- Subtitles tracks were not being notified correctly when they were detected. Now, it is only necessary to listen to <a href="https://nexplayer.github.io/TizenWebOS/#/ps4_usage?id=player-events">"newsubtitlesdataloaded"</a>  event to be notified when a new subtitle is loaded.
+- Subtitles tracks were not being notified correctly when they were detected. Now, it is only necessary to listen to <a href="#/ps4_usage?id=player-events">"newsubtitlesdataloaded"</a>  event to be notified when a new subtitle is loaded.
 
 Date: October 25th 2021
 
@@ -26,7 +26,7 @@ Date: September 23rd 2021
 
 **New features:**
 - Added property "adsParamsToEncode" that must provide an Array of strings specifying the parameters in the ad URL to be encoded. For example: ["video_url_to_fetch"]
-- Added new methods in order to fetch properties status (more info <a href="https://nexplayer.github.io/TizenWebOS/#/ps4_usage?id=getters-2">here</a>):
+- Added new methods in order to fetch properties status (more info <a href="#/ps4/api?id=getters-2">here</a>):
 
     * **getCurrentContentType()**: string → returns the the type of the current asset (“Ad”, “Main content” or “None”).
     * **getCurrentTime()**: number → returns the current time of the video.
@@ -36,7 +36,7 @@ Date: September 23rd 2021
     * **isCurrentAssetAd()**: boolean → indicates whether the current asset playing is an ad or not; 
     * **isCurrentAssetMuted()**: boolean → returns whether the ad or the main content is muted or not.
 
-- Added a new event, “bufferType”. this new event will be fired when a buffering event occurs and it specifies what type of buffering occurred ("Connection", "Seek", "Initial", "Background"). More info about events <a href="https://nexplayer.github.io/TizenWebOS/#/ps4_usage?id=playerevents">here</a>.
+- Added a new event, “bufferType”. this new event will be fired when a buffering event occurs and it specifies what type of buffering occurred ("Connection", "Seek", "Initial", "Background"). More info about events <a href="#/ps4/api?id=playerevents">here</a>.
 
 **Bug fixes:**
 - Fixed non-resolving promises which lead to out of memory errors when fetching thumbnails
@@ -130,7 +130,7 @@ Date: April 20th 2021
     * destroy(): Promise<any>;
     * export declare var UnMount: (div: HTMLDivElement) => Promise<any>;
     
-  Check the <a href="https://nexplayer.github.io/TizenWebOS/#/ps4usage?id=unmount">API</a> for more info.
+  Check the <a href="#/ps4/api?id=unmount">API</a> for more info.
 
 **Bug fixes:**
   - Seeking becomes broken after we destroy the player while 'seeking' previous content.

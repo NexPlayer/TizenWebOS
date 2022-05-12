@@ -100,7 +100,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     callbacksForPlayer: callback, // Optional callback called with the player instances
     debug: true, // Optional
     drm: [{
-        NexDRMType: 'DRM Type (eg. com.widevine.alpha(', NexDRMKey: 'URI for the DRM Key', 
+        NexDRMType: 'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
         NexHeaders: [{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
         NexCallback: OptionalDRMCallbackForFairPlay
     }], // Optional DRM information

@@ -46,5 +46,5 @@ Adding these two scripts and the property is all it takes for New Relic to work 
 ### Methods
 
 Custom data to be tracked can be added and removed using the following methods:
- - [addTrackerData()](#addtrackerdata)
- - [removeTrackerData()](#removetrackerdata)
+ - [addTrackerData()](ps5/api.md?id=addtrackerdata)
+ - [removeTrackerData()](ps5/api.md?id#removetrackerdata)

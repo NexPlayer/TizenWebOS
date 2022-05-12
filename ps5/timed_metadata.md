@@ -47,4 +47,4 @@ ID3 is transported through .ts segments, usually in HLS.
 
 ### EMSG
 
-This type of metadata is contained in fMP4 segments (DASH & HLS). You can consult more information <a href="https://aomediacodec.github.io/id3-emsg/" target="_blank">here</a>
+This type of metadata is contained in fMP4 segments (DASH & HLS). You can consult more information <a href="https://aomediacodec.github.io/id3-emsg/" target="_blank">here.</a>

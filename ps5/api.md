@@ -49,7 +49,7 @@
 **Toggle**
 
 - [toggleControlBar()](#togglecontrolbar)
-- [toggleLanguageMenu()](#togglelanguagemenu)
+- [toggleLanguagesMenu()](#togglelanguagesmenu)
 - [togglePlayPause()](#toggleplaypause)
 - [toggleFullScreen()](#togglefullscreen)
 
@@ -175,7 +175,7 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 | vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
 | adsLoadTimeout | <code>number</code> | Determines the time the player waits for the ad to start. |
 | ssaiMediaTailor | <code><a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
-| bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default. The tracks the ABR will select are the ones #nexdrminformationbetween minBitrate and maxBitrate.  |
+| bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default. The tracks that the ABR will be able to select are the ones between minBitrate and maxBitrate.  |
 | pageUrl | <code>string</code> | Adds a parameter to the ad request to keep track of the domain that sent the request. For targeting purposes. <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl"> More info </a>. |
 | daiConfig | <code><a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=daiConfig">Object</a></code> | Used to initialize the DAI stream. |
 
@@ -337,7 +337,7 @@ Changes the focus to the play/pause button.
 
 Changes the focus to the video's seekbar.
 
-#### <a id="upfocus"></a>player.upFocus()s
+#### <a id="upfocus"></a>player.upFocus()
 
 Focuses the element of the UI situated directly above the element currently focused.
 
@@ -420,7 +420,7 @@ Indicates whether the ad or the main content is muted or not.
 
 Shows or hides the bottom bar.
 
-#### <a id="togglelanguagemenu"></a>player.toggleLanguageMenu()
+#### <a id="togglelanguagesmenu"></a>player.toggleLanguagesMenu()
 
 Opens or closes the language menu.
 
@@ -444,7 +444,7 @@ AudioStream:
 | --- | --- | --- |
 | id | <code>number</code> | of the audio to be played. |
 | language | <code>string<NexDRMInformation></code> | that contains a string with the languages audio available (by default it is empty). |
-| name | <code>string<NexDRMInformation></code> | that contains a string with the names of audio files available (by default it is empty). |S
+| name | <code>string<NexDRMInformation></code> | that contains a string with the names of audio files available (by default it is empty). |
  
 **Returns**: Array\<AudioStream\> - the list of the available audio streams.
 

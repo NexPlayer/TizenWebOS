@@ -4,24 +4,26 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.3.1.1
+
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.3.1.1_20220428/nexplayer.js
+```
+* **[Improved]** Fixed player behavior on long seek.
+* **[Added]** Implemented [getCurrentSegmentContainer()](ps5_xbox_tizen_webos_usage.md?id=getCurrentSegmentContainer) method.
+* **[Added]** Additional information through "adstarted" event for default ads mode.
+
+Date: April 28th 2022
 #### Version 4.3.1
 
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.3.1_20220422/nexplayer.js
-```
-
 * **[Added]** Support DAI with IMA.
-* **[Added]** Implement a retry property.
-* **[Added]** Implement a <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl">pageUrl</a> for IMA.
-* **[Added]** Implement the Verimatrix watermark.
+* **[Added]** Implemented retry property.
+* **[Added]** Implemented <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl">pageUrl</a> for IMA. More info <a href="./#/ps5_xbox_tizen_webos_usage?id=setup">here</a>.
+* **[Added]** Implemented Verimatrix watermark.
 
-Date: March 22nd 2022
+Date: April 22nd 2022
 
 #### Version 4.2.0
-
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.2.0_20220302/nexplayer.js
-```
 
 * **[Added]** Support multiple external subtitles.
 * **[Added]** Support for SRT subtitles.
@@ -172,7 +174,7 @@ Date: August 24th 2021
 
 #### Version 3.4.3
 
-* **[Added]** Implemented new property for encoding parameters of the VAST URLs. <a href="./#/ps5_xbox_tizen_webos_usage?id=setup">"adsParamsToEncode"</a>.
+* **[Added]** Implemented new property for encoding parameters of the VAST URLs <a href="./#/ps5_xbox_tizen_webos_usage?id=setup">"adsParamsToEncode"</a>.
 * **[Improved]** Fixed playback after preroll ads.
 * **[Improved]** getDroppedFrames() method improved. Now returns accurate number of dropped frames.
 
@@ -374,7 +376,7 @@ Date: September 18th 2020
 
 #### Version 3.1.1
 
-* **[Improved]** Fixed error that avoids ads events to be fired when multiples ads are available.
+* **[Improved]** Fixed error that avoids ads events to be fired when multiple ads are available.
 
 #### Version 3.1.0
 
@@ -401,7 +403,7 @@ Date: September 18th 2020
 
 #### Version 2.3.13
 
-* **[Improved]** Fixed issue that made the lives streams not start at the live edge, but at the limit of the availability window
+* **[Improved]** Fixed issue that made the lives streams not start at the live edge, but at the limit of the availability window.
 * **[Improved]** Change the NexEvent.Buffering behaviour. It now receives as parameter an object containing the state of the buffer. True for buffering, false for finishing loading.
 
 

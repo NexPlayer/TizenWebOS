@@ -1700,7 +1700,7 @@ nexplayer.Setup({
 	div: document.getElementById('player'),
 	src: 'VIDEO URL',
 	callbacksForPlayer: 'YOUR CALLBACK VAR',
-	drm:['YOR DRM'],
+	drm:['YOUR DRM'],
 	addRequestFilter: filter,
 });
 
@@ -1717,7 +1717,7 @@ nexplayer.Setup({
 	div: document.getElementById('player'),
 	src: 'VIDEO URL',
 	callbacksForPlayer: 'YOUR CALLBACK VAR',
-	drm:['YOR DRM'],
+	drm:['YOUR DRM'],
 	preferredAudioCodec: ['The priority codec as ac-3', 'mp4a.40.2'],
 });
 

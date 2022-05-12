@@ -94,7 +94,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     key: 'License key to validate the playback', // Mandatory
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
-    addRequestFilter: Function, // Optional, used for give filters to the drm request
+    addRequestFilter: Function, // Optional, used for give filters to the DRM request
     adsParamsToEncode: Array<string>, // Optional, used to encode adURL parameters
     autoplay: true, // Optional
     callbacksForPlayer: callback, // Optional callback called with the player instances

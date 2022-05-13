@@ -1,6 +1,6 @@
 # CSS Customization
 
-<img width="100%" text-align="center" src="../assets/customUIfin.png"  >
+<img width="100%" text-align="center" src="assets/customUIfin.png"  >
 
 This document provides an explanation of the UI and all the related CSS classes that can be modified to customize the default UI of the player.
 

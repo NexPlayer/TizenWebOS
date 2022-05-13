@@ -261,8 +261,7 @@ There are a substantial number of customizable options for NexPlayer including: 
     useNewRelicTracker: boolean,
     vast: 'URL with a VAST/VPAID/VMAP advertisement',
     adsLoadTimeout: 2000,
-    ssaiMediaTailor:
-      {
+    ssaiMediaTailor: {
         baseURL: string,
         playbackURL: string,
         adsParams:

@@ -11,7 +11,7 @@ https://nexplayer.nexplayersdk.com/NexHTML5/1.2.5_20211025/nexplayer.js
 ```
 
 **Bug fixes:**
-- Subtitles tracks were not being notified correctly when they were detected. Now, it is only necessary to listen to <a href="#/ps4_usage?id=player-events">"newsubtitlesdataloaded"</a>  event to be notified when a new subtitle is loaded.
+- Subtitles tracks were not being notified correctly when they were detected. Now, it is only necessary to listen to <a href="#/ps4/api?id=player-events">"newsubtitlesdataloaded"</a>  event to be notified when a new subtitle is loaded.
 
 Date: October 25th 2021
 

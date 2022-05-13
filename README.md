@@ -1,16 +1,12 @@
 <a id="introduction-top"> </a>
 
+<img width="30%" text-align="center" src="./assets/logo.png" alt="logo of docsify-awesome repository" >
 
-<img width="30%" text-align="center" src="./_images/logo.png" alt="logo of docsify-awesome repository" >
+# NexPlayer SDK for Tizen, WebOS, Xbox and PlayStation
 
-***
-
-# NexPlayer SDK for Tizen, WebOS, Xbox and PlayStation<!-- {docsify-ignore-all} -->
-
-## Abstract
 NexPlayer™ provides a media player for Smart TVs operating on Tizen and WebOS and for consoles like Xbox and PlayStation 4, 5. It includes support for HLS, DASH, and progressive download.
 
-The default UI is easily customizable to fit the user&#xB4;s personal preferences (e.g. icons, colors, etc).
+The default UI is easily customizable to fit the user's personal preferences (e.g. icons, colors, etc).
 
 <section class="abstractTable">
   <div class="gridColumn">
@@ -28,6 +24,7 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
       <div>IMA SDK for Client-Side Ad Insertion </div>
       <div>PAL SDK for Client-Side Ad Insertion </div>
       <div>Server-Side Ad Insertion </div>
+      <div>IMA DAI SDK for Server-Side Ad Insertion </div>
     </div>
     <div class="titleCell">METADATA</div>
     <div class="contentCell">
@@ -39,7 +36,7 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
     <div class="contentCell">
       <div>Integrated UI </div>         
       <div>Multiple audio/video tracks </div>      
-      <div>ABR and UHD video (4k and 8k) </div>
+      <div>ABR and UHD video (4K and 8K) </div>
       <div>Trick Play </div>     
       <div>Time-shifting </div>   
       <div>DVR Live Streaming </div>   
@@ -70,45 +67,46 @@ The default UI is easily customizable to fit the user&#xB4;s personal preference
   </div>
 </section>
 
-## Platforms support
+## Platform support
 
 NexPlayer supports several platforms and models:
 
 <table style="display: table">
   <tbody>
     <tr>
-      <th class="titles" bgcolor="#C80000" scope="row">Platform </th>   
-      <th class="titles" bgcolor="#C80000" scope="row">Minimum model and year</th>   
-      <th class="titles" bgcolor="#C80000" scope="row">Supported content</th>              
+      <th class="titleBlocks" scope="row">Platform </th>   
+      <th class="titleBlocks" scope="row">Minimum model and year</th>   
+      <th class="titleBlocks" scope="row">Supported content</th>              
     </tr>
     <tr>
-      <th  scope="row"><a href="https://developer.samsung.com/smarttv/develop/specifications/tv-model-groups.html">Samsung Tizen</a></th>      
-      <th  scope="row"><span>Tizen 2.3 (2015)</span> </th>       
-      <th  scope="row"><span>DASH/HLS + PlayReady/Widevine</span></th>       
+      <td  scope="row"><a href="https://developer.samsung.com/smarttv/develop/specifications/tv-model-groups.html">Samsung Tizen</a></td>      
+      <td  scope="row"><span>Tizen 2.3 (2015)</span> </td>       
+      <td  scope="row"><span>DASH/HLS + PlayReady/Widevine</span></td>
     </tr>
     <tr>
-       <th  scope="row"> <a href="https://webostv.developer.lge.com/discover/specifications/supported-media-formats/">LG WebOS</a></th>      
-      <th  scope="row">WebOS 3.0 (2016)</th>         
-      <th  scope="row">DASH/HLS + PlayReady/Widevine</th>         
+       <td  scope="row"> <a href="https://webostv.developer.lge.com/discover/specifications/supported-media-formats/">LG WebOS</a></td>
+      <td  scope="row">WebOS 3.0 (2016)</td>
+      <td  scope="row">DASH/HLS + PlayReady/Widevine</td>
     </tr>
     <tr>
-      <th  scope="row">PlayStation 4</th>      
-      <th  scope="row"><span>Original (2013)</span></th>   
-      <th  scope="row"><span>DASH + PlayReady, HLS Clear</span></th>   
+      <td  scope="row">PlayStation 4</td>
+      <td  scope="row"><span>Original (2013)</span></td>
+      <td  scope="row"><span>DASH + PlayReady<sup><a href="#/README?id=bn1" id="ref1">1</a></sup>, HLS Clear</span></td>
     </tr>
     <tr>
-      <th  scope="row">PlayStation 5</th>      
-      <th  scope="row"><span>Standard/Digital (2020)</span></th>   
-      <th  scope="row"><span>DASH/HLS + PlayReady</span></th>   
+      <td  scope="row">PlayStation 5</td>
+      <td  scope="row"><span>Standard/Digital (2020)</span></td>
+      <td  scope="row"><span>DASH/HLS + PlayReady</span></td>
     </tr>
     <tr>
-      <th  scope="row">Xbox One</th>      
-      <th  scope="row"><span>Original (2014)</span></th>   
-      <th  scope="row"><span>DASH/HLS + PlayReady</span></th>   
+      <td  scope="row">Xbox One</td>
+      <td  scope="row"><span>Original (2014)</span></td>
+      <td  scope="row"><span>DASH/HLS + PlayReady</span></td>
     </tr>
     <!-- <tr>
-      <th  scope="row">Xbox Series S/X</th>      
-      <th  scope="row"><span>-</span></th>   
+      <td  scope="row">Xbox Series S/X</td>
+      <td  scope="row"><span>-</span></td>  
     </tr> -->
   </tbody>
 </table>
+<blockquote id="bn1"> <sup><a href="#/README?id=ref1">1</a></sup> PS4 only supports security levels up to SL 2000 </blockquote>

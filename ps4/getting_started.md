@@ -3,7 +3,7 @@
 
 ### Sample Integration
 
-Integrating NexPlayer into an  <a href="https://nexplayer.nexplayersdk.com/sample/index.html" download="" target="_blank">HTML5 file</a>:</p>
+Integrating NexPlayer into an HTML5 file:
 
 ```html
 
@@ -94,14 +94,13 @@ There are a substantial number of customizable options for NexPlayer™ includin
     key: 'License key to validate the playback', // Mandatory
     div: document.getElementById('player'), // Mandatory
     src: 'URL video', // Mandatory
-    addRequestFilter: Function, // Optional, used for give filters to the DRM request
     adsParamsToEncode: Array<string>, // Optional, used to encode adURL parameters
     autoplay: true, // Optional
     callbacksForPlayer: callback, // Optional callback called with the player instances
     debug: true, // Optional
     drm: [{
-        NexDRMType: 'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
-        NexHeaders: [{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
+        keySystem: 'DRM Type (eg. com.widevine.alpha)', license: 'URI for the DRM Key', 
+        customData: [{fieldName: 'Header Field Name', value: 'Header Field Value'}],
         NexCallback: OptionalDRMCallbackForFairPlay
     }], // Optional DRM information
     thumbnails: {
@@ -117,7 +116,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     }, // Optional
     mutedAtStart: true, // Optional    
     resumePosition: number, // Optional, used for starting the video from the given position in seconds.
-    trailer: boolean,// Optional, by default is set to false. Set to true when a stream should be considered a trailer, false when not.
+    trailer: boolean,// Optional, by default is set to false. Set to true when a stream should be considered a trailer.
     useNewRelicTracker: boolean,
     // You need the tracker library in order to be able to use the tracker. Ask NexPlayer team for it.
     vast: 'URL with a VAST/VPAID/VMAP advertisement', // Optional

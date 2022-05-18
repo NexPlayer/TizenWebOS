@@ -100,7 +100,7 @@ Creates and initializes the player.
 | callbacksForPlayer | <code>Function</code> | Used for retrieving the NexPlayer instance and video element. This is necessary for getting the instance and use the NexPlayer API. |
 | captionDisplayer | <code>ICaptionsDisplayer</code> | Used to provide a custom CaptionDisplayer. This allows to implement the internal logic for the captions. |
 | debug | <code>boolean</code> | Determines if log information is showed. By default is set to true. |
-| externalSubtitles | <code>Captions</code> | Used to provide a WEBVTT file as external subtitles. |
+| externalSubtitles | <code>Captions</code> | Used to provide subtitle files as external subtitles. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. False by default. |
 | resumePosition | <code>number</code> | Determines the position where the video will start playing. |
 | thumbnails | <code>Thumbnails</code> | Thumbnails to be shown. Static and dynamic thumbnails are supported. |
@@ -148,7 +148,7 @@ Listens for ads events.
 
 #### player.init(NexPlayerConfig)
 
-Initialize the player with the config Object given.
+Initializes the player with the config Object given.
 
 <a id="play"></a>
 
@@ -166,7 +166,7 @@ Pauses the video when it is playing.
 
 #### player.seek(value)
 
-Seek the video to the value given.
+Seeks the video to the value given.
 
 <a id="environment"></a>
 
@@ -184,7 +184,7 @@ Sends the default configuration in case the parameters are not specified in the 
 
 #### player.destroy()
 
-Destroy the player
+Destroys the player
 
 ### Getters
 
@@ -499,19 +499,19 @@ Set logger to the video.
 
 #### nexplayer.AdInstance().play()
 
-Plays the ad when it is paused.
+Play the ad when it is paused.
 
 <a id="adpause"></a>
 
 #### nexplayer.AdInstance().pause()
 
-Pauses the ad when it is playing.
+Pause the ad when it is playing.
 
 <a id="registerplugin"></a>
 
 #### nexplayer.AdInstance().registerPlugin(ads)
 
-ads is an Object that implements IAds interface, The users can pass their own implementation in case they want to use another advertisement library or a custom one.
+Ads is an Object that implements IAds interface, The users can pass their own implementation in case they want to use another advertisement library or a custom one.
 
 <a id="isadplaying"></a>
 
@@ -529,13 +529,13 @@ Skip the current ad if possible.
 
 #### nexplayer.AdInstance().checkInitialAds()
 
-Checks whether there ads
+Check whether there ads
 
 <a id="getadtype"> </a>
 
 #### nexplayer.AdInstance().getAdType() ⇒ string
 
-Gets the current Ad type.
+Get the current Ad type.
 
 **Returns**: String - The current ad type.
 
@@ -543,7 +543,7 @@ Gets the current Ad type.
 
 #### nexplayer.AdInstance().getAdTitle() ⇒ string
 
-Gets the Ad title.
+Get the Ad title.
 
 **Returns**: String - The current ad title.
 
@@ -551,7 +551,7 @@ Gets the Ad title.
 
 #### nexplayer.AdInstance().getAdDuration() ⇒ number
 
-Gets the Ad duration.
+Get the Ad duration.
 
 **Returns**: number - The current ad duration.
 
@@ -559,7 +559,7 @@ Gets the Ad duration.
 
 #### nexplayer.AdInstance().getAdRemainingTime() ⇒ number
 
-Gets the Ad remaining time.
+Get the Ad remaining time.
 
 **Returns**: number - The ad remaining time.
 
@@ -567,7 +567,7 @@ Gets the Ad remaining time.
 
 #### nexplayer.AdInstance().getMute() ⇒ boolean
 
-Gets the true if the video is muted or false if not.
+Get the true if the video is muted or false if not.
 
 **Returns**: boolean - True if the video is muted or false if not.
 
@@ -575,7 +575,7 @@ Gets the true if the video is muted or false if not.
 
 #### nexplayer.AdInstance().getVolume() ⇒ number
 
-Gets the Ad volume.
+Get the Ad volume.
  
 **Returns**: number - The ad volume.
 

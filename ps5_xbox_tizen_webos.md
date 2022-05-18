@@ -2,7 +2,7 @@
 
 # PlayStation 5, Xbox, Tizen and WebOS Documentation
 
-This section explains how to integrate NexPlayer&#x2122; into your project. Note that PS4 uses a different SDK which is fully explained in <a href="/#/ps4?id=ps4usage-top">here</a>.
+This section explains how to integrate NexPlayer&#x2122; into your project. Note that PS4 uses a different SDK which is fully explained in <a href="/#/ps4.md?id=ps4usage-top">here</a>.
 
 - [Getting Started](/ps5/getting_started.md)
 - [NexPlayer API](/ps5/api.md)

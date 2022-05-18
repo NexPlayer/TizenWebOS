@@ -151,7 +151,7 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 | defaultLanguage | <code>string</code> | Determines which is the default audio language. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video. |
 | drm | <code>Object</code> | Contains an object of DRM information. By default it’s set to null. |
-| externalSubtitles | <code>Array [\<externalSubtitle\>](#externalsubtitleobject)</code> | Used to provide a subtitle files as external subtitles. |
+| externalSubtitles | <code>Array [\<externalSubtitle\>](#externalsubtitleobject)</code> | Used to provide subtitle files as external subtitles. |
 | hideControlBarOnStart | <code>boolean</code> | Determines if the control bar will hide when the video starts. |
 | hideUITime | <code>boolean</code> | Determines if the time will be hidden in the UI. |
 | improveStartUp | <code>boolean</code> | Determines whether the video has to start at the lowest bitrate or not. |

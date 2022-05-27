@@ -7,7 +7,7 @@ Integrating NexPlayer into an HTML5 file:
 ```html
 <!DOCTYPE html>
 <html>
-<head> 
+<head>
     <!-- MANDATORY! LOAD JQUERY BY CDN OR LOCAL  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="UTF-8">
@@ -25,7 +25,7 @@ Integrating NexPlayer into an HTML5 file:
             #player_container {
                 width: 50%;
                 padding-top: 28.125%; /* 16:9 Aspect Ratio 56.25 * 0.5 */
-            }            
+            }
         }
         h1 {
             text-align: center;
@@ -183,15 +183,15 @@ Navigating inside the NexPlayer UI can be done by shifting the focus from one el
 
 > Please note the need for a <b>'break;'</b> line to exit each controller action
 
-All cases must be placed inside a listener to be able to operate at runtime: 
+All cases must be placed inside a listener to be able to operate at runtime:
 
 ```js
 document.addEventListener('keydown', function(e) {
     console.log('Key pressed ---> ' + e.keyCode);
-    switch (e.keyCode) {        
-        "YOUR CONTROLS HERE"            
+    switch (e.keyCode) {
+        "YOUR CONTROLS HERE"
     }
-}),      
+}),
 ```
 
 ## NexPlayer Configuration
@@ -215,7 +215,7 @@ There are a substantial number of customizable options for NexPlayer including: 
     defaultLanguage: string,
     disableKeyEvents: false,
     drm: [{
-        NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key', 
+        NexDRMType:'DRM Type (eg. com.widevine.alpha)', NexDRMKey: 'URI for the DRM Key',
         NexHeaders:[{FieldName: 'Header Field Name', FieldValue: 'Header Field Value'}],
         NexCallback:OptionalDRMCallbackForFairPlay
     }],
@@ -229,9 +229,10 @@ There are a substantial number of customizable options for NexPlayer including: 
     hideUITime: boolean,
     improveStartUp: boolean,
     logosrc: 'URL logo of the company',
-    mutedAtStart: true,   
+    mutedAtStart: true,
     preferredAudioCodec: Array,
-    poster: 'URL poster', 
+    preferredVideoCodec: Array,
+    poster: 'URL poster',
     reinitializeAfterAds: boolean, // Deprecated
     resumePosition: number,
     retryParameters: {

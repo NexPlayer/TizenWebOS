@@ -26,7 +26,7 @@ Date: April 22nd 2022
 
 #### Version 4.2.0
 
-* **[Added]** Support multiple external subtitles.
+* **[Added]** Support multiple external subtitles. In order to add the support for multiple text tracks, had to change the property "externalSubtitles" of the <a href="https://nexplayer.github.io/TizenWebOS/#/ps5/api?id=setup">"Setup"</a>, to use it you should pass an array of objects with the format specified <a href="https://nexplayer.github.io/TizenWebOS/#/ps5/api?id=externalsubtitleobject">here</a>.
 * **[Added]** Support for SRT subtitles.
 * **[Added]** Method [getBandwidthEstimate()](ps5/api.md?id=getbandwidthestimate).
 * **[Improved]** Changed [player.getVersion()](ps5/api.md?id=getversion) to static method [nexplayer.getVersion()](ps5/api.md?id=nexplayer-getversion).

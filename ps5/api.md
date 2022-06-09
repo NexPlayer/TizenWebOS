@@ -24,6 +24,7 @@
 - [addTrackerData()](#addtrackerdata)
 - [removeTrackerData()](#removetrackerdata)
 - [trickplay(value)](#trickplay)
+- [setVolume(value)](#setvolume)
 
 **Navigation**
 
@@ -319,6 +320,14 @@ Sets the trick play value. A value bigger than 1 will move the seek time forward
 | Param | Type |Description |
 | --- | --- | --- |
 | value | Number | number of times per second to update the seek time. |
+
+#### <a id="setvolume"></a>player.setVolume(value)
+
+Sets the new volume of the video. The value must be a number between 0 and 1.
+
+| Param | Type |Description |
+| --- | --- | --- |
+| value | Number | new volume of the video. |
 
 ## Navigation
 

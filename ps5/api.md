@@ -327,7 +327,7 @@ Sets the new volume of the video. The value must be a number between 0 and 1.
 
 | Param | Type |Description |
 | --- | --- | --- |
-| value | Number | new volume of the video. |
+| value | Number | New volume of the video. |
 
 ## Navigation
 

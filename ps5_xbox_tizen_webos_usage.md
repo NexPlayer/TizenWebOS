@@ -12,7 +12,7 @@ Integrating NexPlayer&#x2122; into an HTML5 file:
 ```html
 <!DOCTYPE html>
 <html>
-<head> 
+<head>
     <!-- MANDATORY! LOAD JQUERY BY CDN OR LOCAL  -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <meta charset="UTF-8">
@@ -30,7 +30,7 @@ Integrating NexPlayer&#x2122; into an HTML5 file:
             #player_container {
                 width: 50%;
                 padding-top: 28.125%; /* 16:9 Aspect Ratio 56.25 * 0.5 */
-            }            
+            }
         }
         h1 {
             text-align: center;
@@ -187,14 +187,14 @@ Navigating inside the NexPlayer™ UI can be done by shifting the focus from one
 <div class="alert alert-success hints-alert"><div class="hints-icon"><i class="fa fa-mortar-board"></i></div><div class="hints-container"><p>Please note the need for a <b>'break;'</b> line to exit each controller action </p>
 </div></div>
 
-All cases must be placed inside a listener to be able to operate at runtime: 
+All cases must be placed inside a listener to be able to operate at runtime:
 ```js
 document.addEventListener('keydown', function(e) {
     console.log('Key pressed ---> ' + e.keyCode);
-    switch (e.keyCode) {        
-        "YOUR CONTROLS HERE"            
+    switch (e.keyCode) {
+        "YOUR CONTROLS HERE"
     }
-}      
+}
 ```
 
 
@@ -219,7 +219,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     defaultLanguage: string,
     disableKeyEvents: false,
     drm: [{
-        NexDRMType:'DRM Type (eg. com.widevine.alpha(', NexDRMKey: 'URI for the DRM Key', 
+        NexDRMType:'DRM Type (eg. com.widevine.alpha(', NexDRMKey: 'URI for the DRM Key',
         NexHeaders:[{FieldName: 'Header Field Name', FiledValue: 'Header Field Value'}],
         NexCallback:OptionalDRMCallbackForFairPlay
     }],
@@ -233,9 +233,9 @@ There are a substantial number of customizable options for NexPlayer™ includin
     hideUITime: boolean,
     improveStartUp: boolean
     logosrc: 'URL logo of the company',
-    mutedAtStart: true,   
+    mutedAtStart: true,
     preferredAudioCodec: Array,
-    poster: 'URL poster', 
+    poster: 'URL poster',
     reinitializeAfterAds: boolean, // Deprecated
     resumePosition: number,
     showAdsUI: true,
@@ -430,7 +430,7 @@ Set NexPlayer settings using the configuration object as is indicated in this <a
 
 **Parameters**: <code>configObj</code> is an object which values could be:
 
-##### Mandatory 
+##### Mandatory
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -498,7 +498,7 @@ Change the url stream of the video. It is possible to set a new url with new drm
 
 #### <a id="unmount"></a> nexplayer.UnMount(player)
 
-Unmounts the player and its dependencies. In order to properly clear the player this method must be called after destroying the very same player. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=destroy">here</a>. 
+Unmounts the player and its dependencies. In order to properly clear the player this method must be called after destroying the very same player. Check more details <a href="https://nexplayer.github.io/TizenWebOS/#/ps5_xbox_tizen_webos_usage?id=destroy">here</a>.
 
 **Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
 
@@ -518,31 +518,31 @@ Fetches the player mount/unmount status. If true, it can be mounted again.
 
 **Returns**: boolean - Whether the player is ready to be mounted or not.
 
-#### <a id="adsevents"></a> nexplayer.AdsEvents([<code>"adEvent"</code>](#ads-events), function () {}) 
+#### <a id="adsevents"></a> nexplayer.AdsEvents([<code>"adEvent"</code>](#ads-events), function () {})
 
 Add a listener for the specified ad event.
 
 **Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
 
-#### <a id="removeadsevents"></a> nexplayer.RemoveAdsEvents([<code>"adEvent"</code>](#ads-events), function () {}) 
+#### <a id="removeadsevents"></a> nexplayer.RemoveAdsEvents([<code>"adEvent"</code>](#ads-events), function () {})
 
 Remove a listener for the specified ad event which has been previously registered.
 
 **Type**: method of [<code>nexplayer</code>](#nexplayer-methods)
-	
+
 #### <a id="decodedata"></a> nexplayer.decodeData(data)
 
 Decodes an ArrayBuffer and converts it into a string. END OF TEXT (\u0003) and NULL (\u0000) unicode characters are cleaned.
 
 **Type**: function of [<code>nexplayer</code>](#nexplayer-methoods)
 
-**Param**: 
+**Param**:
    - **data** is the ArrayBuffer to decode.
-   
+
 **Returns**: decoded and cleaned string or null if the parameter provided is not an ArrayBuffer.
 ***
 
-#### <a id="nexplayer-getversion"></a> nexplayer.getVersion() 
+#### <a id="nexplayer-getversion"></a> nexplayer.getVersion()
 
 Retrieve the current version of the player.
 
@@ -627,7 +627,7 @@ Remove a listener of an event.
 
 Enable the ABR to change automatically between tracks.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 
    #### <a id="addtrackerdata"></a> player.addTrackerData(key, value)
 
@@ -658,7 +658,7 @@ Removes custom data from New Rellic's tracker if initialized.
 
 Sets the trick play value. A value bigger than 1 will move the seek time forward. A value negative will move it backward. Setting trick play value to 1 will end trick play and seek to the calculated seek time. This seek time results from the provided value which will increase the time to seek depending on how much time the trickplay is executed. Then, it will trigger an event trickPlayStarted when the value is changed, a trickPlayTimeUpdate event will be thrown every time the seek time changes, and trickPlayEnded event when the trick play stops. Use player.play(), player.stop() or player.seek() will finish the trick play.
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
 | Param | Type |Description |
 | --- | --- | --- |
@@ -669,7 +669,7 @@ Sets the trick play value. A value bigger than 1 will move the seek time forward
 Execute the given ad during the video playback. The vast URL is mandatory.
 This method couldn't be used, until the ad block ends, if there are ads at the beggining of the video
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
 | Param | Type |Description |
 | --- | --- | --- |
@@ -722,14 +722,14 @@ Changes the current subtitles to the following one in the subtiltle track playli
 
 Set the currentTime property of the attached video element. (if isUTC is true, the seek value will be in a different format than the currentTime of the video element).
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
 | Param | Type  | Description                                    |
 | ----- | ----- | ---------------------------------------------- |
 | value | <code>number</code> | value in seconds that the player will seek to. |
 
 ```js
-//Non-live video 
+//Non-live video
 player.seek(120) // It seeks into minute 2:00 in the video (120 secs), must be a positive number ranging from 0 to the full duration of the video in seconds
 //Live video
 player.seek(-120) // It jumps back 2 minutes (120 secs) from the current live time, must be a negative number ranging from minus {the DVR window size} to 0
@@ -760,7 +760,7 @@ Returns an object, with start and ending times the player can seek to.
 
 Jump to the livestream current time from the current position (if isUTC is true, the seek value will be in a different format than the currentTime of the video element). Only works in livestream.
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
 
 ***
@@ -858,14 +858,14 @@ AudioStream:
 | language | <code>string<NexDRMInformation></code> | that contains an string with languages audio available (by default it is empty). |
 | name | <code>string<NexDRMInformation></code> | that contains an string with name of audio files available (by default it is empty). |
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: Array\<AudioStream\> - the list of the available audio streams.
 
    #### <a id="getbandwidthestimate"></a> player.getBandwidthEstimate() ⇒ number
 
 Returns the current bandwidth available in bytes.
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: number - information about the bandwidth estimate.
    #### <a id="getcurrentaudiostream"></a> player.getCurrentAudioStream() ⇒ AudioStream
 
@@ -879,21 +879,21 @@ AudioStream:
 | language | <code>string<NexDRMInformation></code> | that contains an string with languages audio stream currently in use (by default it is empty). |
 | name | <code>string<NexDRMInformation></code> | that contains an string with name of audio stream currently in use (by default it is empty). |
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: Array\<TrackInfo\> - information about the current audio track.
 
    #### <a id="getcurrentcontenttype"></a> player.getCurrentContentType() ⇒ string
 
 Returns the the type of the current asset (“ad”, “mainContent” or “none”)
 
-**Type**: instance method of [<code>Player</code>](#Player)   
+**Type**: instance method of [<code>Player</code>](#Player)
 **Returns**: string - information about the current audio track.
 
    #### <a id="getcurrentsubtitle"></a> player.getCurrentSubtitle() ⇒ number
 
 Retrieve the number id of the current subtitle. If the returned value is -1 no subtitle is selected.
 
-**Type**: instance method of [<code>Player</code>](#Player)     
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: number - id of the current subtitle.
 
@@ -901,7 +901,7 @@ Retrieve the number id of the current subtitle. If the returned value is -1 no s
 
 Returns the current time of the video element.
 
-**Type**: instance method of [<code>Player</code>](#Player) 
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: number - the current time of the video.
 
@@ -989,7 +989,7 @@ The returned array contains objects with the following properties:
 | id       | <code>number</code>                    | is the identifier of each subtitle. It can be used to select the subtitle. |
 | language | <code>string<NexDRMInformation></code> | that contains an string with subtitle stream (by default it is empty). |
 
-**Type**: instance method of [<code>Player</code>](#Player)     
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: Array - all the subtitles availables in the stream.
 
@@ -997,7 +997,7 @@ The returned array contains objects with the following properties:
 
 Get the thumbnail at a specific video time.
 
-**Type**: instance method of [<code>Player</code>](#Player)     
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: Promise - waits for a specific thumbnail to load.
 
@@ -1015,7 +1015,7 @@ Each array's element contains the next information:
 | st      | <code>number</code> | Thumbnail starting time.     |
 | ft      | <code>number</code> | Thumbnail ending time.       |
 
-**Type**: instance method of [<code>Player</code>](#Player)     
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: Array< Frame > - all the avaliable thumbnails.
 
@@ -1032,7 +1032,7 @@ Each array's element contains the next information:
 | height  | <code>number</code> | that contains an number with height of all tracks  |
 | bitrate | <code>number</code> | that contains an number with bitrate of all tracks |
 
-**Type**: instance method of [<code>Player</code>](#Player)     
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: Array< Track > - all the video avaliable tracks and its different levels of quality.
 
@@ -1040,7 +1040,7 @@ Each array's element contains the next information:
 
 Returns the current stream's URL.
 
-**Type**: instance method of [<code>Player</code>](#Player)     
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: string - stream URL.
 
@@ -1048,7 +1048,7 @@ Returns the current stream's URL.
 
 The method getVersion() is deprecated, please use <a href="./#/ps5_xbox_tizen_webos_usage?id=getversion">nexplayer.getVersion()</a> instead
 
-**Type**: instance method of [<code>Player</code>](#Player)     
+**Type**: instance method of [<code>Player</code>](#Player)
 
 **Returns**: string - identify the version of the player.
 
@@ -1134,8 +1134,8 @@ Set the video quality level.
 ***
 
 #### <a id="nexprotocol"></a> Player.NexProtocol : <code>enum</code>
-**Type**: static enum of [<code>Player</code>](#Player)  
-**Read only**: true  
+**Type**: static enum of [<code>Player</code>](#Player)
+**Read only**: true
 **Properties**:
 
 | Name | Type | Default |
@@ -1146,8 +1146,8 @@ Set the video quality level.
 | UNKNOWN | <code>number</code> | <code>3</code> |
 
 #### <a id="nexevent"></a> Player.NexEvent : <code>enum</code>
-**Type**: static enum of [<code>Player</code>](#Player)  
-**Read only**: true  
+**Type**: static enum of [<code>Player</code>](#Player)
+**Read only**: true
 **Properties**:
 
 | Name | Type | Default | Explanation |
@@ -1158,8 +1158,8 @@ Set the video quality level.
 | Error | <code>number</code> | <code>3</code> | Fired when an error occurs. Returns an object with the information of the error. The object contains an array with the data (not all errors include data), and the name. |
 
 #### <a id="thumbtype"></a> Player.THUMB_TYPE : <code>enum</code>
-**Type**: static enum of [<code>Player</code>](#Player)  
-**Read only**: true  
+**Type**: static enum of [<code>Player</code>](#Player)
+**Read only**: true
 **Properties**:
 
 | Name | Type | Default |
@@ -1173,8 +1173,8 @@ Set the video quality level.
 ***
 
 #### <a id="audiostream"></a> AudioStream : <code>Object</code>
-**Type**: global typedef  
-**Properties**:  
+**Type**: global typedef
+**Properties**:
 
 | Name | Type | Description |
 | --- | --- | --- |
@@ -1184,8 +1184,8 @@ Set the video quality level.
 
 #### <a id="error"></a> Error : <code>Object</code>
 
-**Type**: global typedef     
-**Properties**:  
+**Type**: global typedef
+**Properties**:
 
 | Name    | Type                | Description                  |
 | ------- | ------------------- | ---------------------------- |
@@ -1214,8 +1214,8 @@ Possible error codes:
 
 #### <a id="frame"></a> Frame : <code>Object</code>
 
-**Type**: global typedef     
-**Properties**:  
+**Type**: global typedef
+**Properties**:
 
 | Name    | Type                | Description                  |
 | ------- | ------------------- | ---------------------------- |
@@ -1227,7 +1227,7 @@ Possible error codes:
 
 #### <a id="nexdrminformation"></a> NexDRMInformation : <code>Object</code>
 
-**Type**: global typedef  
+**Type**: global typedef
 **Properties**:
 
 | Name       | Type                                                 | Description              |
@@ -1238,7 +1238,7 @@ Possible error codes:
 
 #### <a id="nexheaders"></a> NexHeaders : <code>Object</code>
 
-**Type**: global typedef  
+**Type**: global typedef
 **Properties**:
 
 | Name       | Type                | Description         |
@@ -1248,8 +1248,8 @@ Possible error codes:
 
 #### <a id="track"></a> Track : <code>Object</code>
 
-**Type**: global typedef     
-**Properties**:  
+**Type**: global typedef
+**Properties**:
 
 | Name    | Type                | Description           |
 | ------- | ------------------- | --------------------- |
@@ -1260,8 +1260,8 @@ Possible error codes:
 
 #### <a id="ssaiobject"></a> SSAI Object : <code>Object</code>
 
-**Type**: global typedef     
-**Properties**:  
+**Type**: global typedef
+**Properties**:
 
 | Name    | Type                | Description           |
 | ------- | ------------------- | --------------------- |
@@ -1271,8 +1271,8 @@ Possible error codes:
 
 #### <a id="bitrateconfig"></a> bitrateConfig Object : <code>Object</code>
 
-**Type**: global typedef     
-**Properties**:  
+**Type**: global typedef
+**Properties**:
 
 | Name    | Type                | Description           |
 | ------- | ------------------- | --------------------- |
@@ -1282,8 +1282,8 @@ Possible error codes:
 
 #### <a id="externalsubtitleobject"></a> externalSubtitle: <code>Object</code>
 
-**Type**: global typedef     
-**Properties**:  
+**Type**: global typedef
+**Properties**:
 
 | Name    | Type                | Description           |
 | ------- | ------------------- | --------------------- |
@@ -1301,13 +1301,13 @@ Possible error codes:
 
 ***
 
-   #### <a id="adplay"></a> nexplayer.AdInstance().play() 
+   #### <a id="adplay"></a> nexplayer.AdInstance().play()
 
 Play the ad
 
 **Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 
-   #### <a id="adpause"></a> nexplayer.AdInstance().pause() 
+   #### <a id="adpause"></a> nexplayer.AdInstance().pause()
 
 Pause the current ad.
 
@@ -1323,63 +1323,63 @@ Pause the current ad.
 
 Get the current time ad.
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 **Returns**: Number - the current time ad to be played.
 
    ####  <a id="getaddescription"></a> nexplayer.AdInstance().getAdDescription() ⇒ string
 
 Get the available description ad.
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 **Returns**: String - the description ad to be played.
 
    ####  <a id="getadduration"></a> nexplayer.AdInstance().getAdDuration() ⇒ number
 
 Get the available duration ad.
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 **Returns**: Number - the duration ad to be played.
 
    ####  <a id="getadpaused"></a> nexplayer.AdInstance().getAdPaused() ⇒ boolean
 
 Get stating if the ad on stage is paused or not
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 **Returns**: boolean - *true* if the ad on stage is paused *false* if it is not.
 
    ####  <a id="getadremainingtime"></a> nexplayer.AdInstance().getAdRemainingTime() ⇒ number
 
 Get the remaining time ad.
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 **Returns**: Number - the remaining time ad to be played.
 
    #### <a id="getadtitle"></a> nexplayer.AdInstance().getAdTitle() ⇒ string
 
 Get the available title ad.
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)     
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 **Returns**: String - the title ad to be played.
 
    ####  <a id="getisskippablead"></a> nexplayer.AdInstance().getIsSkippableAd() ⇒ boolean
 
 Returns whether the ad can be skipped or not.
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 **Returns**: boolean - *true* if the video can be skip. *false* if it is not.
 
    ####  <a id="getmute"></a> nexplayer.AdInstance().getMute() ⇒ boolean
 
 Get the mute state of an ad depending on what is on stage.
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 **Returns**: boolean - *true* if the ad can is mute. *false* if it is not.
 
    ####  <a id="getvolume"></a> nexplayer.AdInstance().getVolume() ⇒ number
 
 Get the volume of ad depending on what is on stage.
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 **Returns**: number - is a number between 0 and 1. -1 is returned if this value is not available.
 
 ***
@@ -1388,17 +1388,17 @@ Get the volume of ad depending on what is on stage.
 
 ***
 
-   ####  <a id="setmute"></a> nexplayer.AdInstance().setMute(state) 
+   ####  <a id="setmute"></a> nexplayer.AdInstance().setMute(state)
 
 Set value should be a Boolean. True for muting and false for unmuting.
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 
    ####  <a id="setvolume"></a> nexplayer.AdInstance().setVolume(value)
 
 Set value should be a Number between 0 (minimum volume) and 1 (maximum volume).
 
-**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)  
+**Type**: instance method of [<code>nexplayer.AdInstance()</code>](#Ads)
 
 
 ## Advanced Usage
@@ -1456,53 +1456,53 @@ NexPlayer™ supports several DRM technologies:
 <table class="table table-sm">
   <tbody>
     <tr>
-      <th class="titles" bgcolor="#C80000" scope="row">MODELS </th>   
-      <th class="titles" bgcolor="#C80000" scope="row">DASH+PlayReady</th>        
-      <th class="titles" bgcolor="#C80000" scope="row">DASH+Widevine</th>        
+      <th class="titles" bgcolor="#C80000" scope="row">MODELS </th>
+      <th class="titles" bgcolor="#C80000" scope="row">DASH+PlayReady</th>
+      <th class="titles" bgcolor="#C80000" scope="row">DASH+Widevine</th>
       <th class="titles" bgcolor="#C80000" scope="row">HLS+Widevine</th>
-      <th class="titles" bgcolor="#C80000" scope="row">HLS+Playready</th>      
+      <th class="titles" bgcolor="#C80000" scope="row">HLS+Playready</th>
     </tr>
     <tr>
-      <th  scope="row">Samsung Tizen 
-      <br> 2017-2018+ models</th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px; ">&#x2714;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px; ">&#x2714;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th> 
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
-    </tr>
-    <tr>
-       <th  scope="row">Samsung Tizen 
-       <br> 2015-2016 models</th>      
-      <th  scope="row">&#10060</th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight:110; font-size:30px;">&#8505;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight: 900; font-weight:110; font-size:30px;">&#8505;</span></th>  
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>     
-    </tr>
-    <tr>
-      <th  scope="row">LG WebOS 4.0+</th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th> 
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>             
-    </tr>
-    <tr>
-      <th  scope="row">LG WebOS 3.0</th>      
-      <th  scope="row">&#10060</th> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
+      <th  scope="row">Samsung Tizen
+      <br> 2017-2018+ models</th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px; ">&#x2714;</span> </th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px; ">&#x2714;</span> </th>
       <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>           
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
+    </tr>
+    <tr>
+       <th  scope="row">Samsung Tizen
+       <br> 2015-2016 models</th>
+      <th  scope="row">&#10060</th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight:110; font-size:30px;">&#8505;</span> </th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(49, 112, 143); font-weight: 900; font-weight:110; font-size:30px;">&#8505;</span></th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
+    </tr>
+    <tr>
+      <th  scope="row">LG WebOS 4.0+</th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
+    </tr>
+    <tr>
+      <th  scope="row">LG WebOS 3.0</th>
+      <th  scope="row">&#10060</th> </th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
     </tr>
   </tbody>
 </table>
 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
-<p>  
-*Widevine Classic was supported in these models, but ​it has been deprecated by Google. Itis no longer supported on Samsung TVs due to maintenance issues  
+<p>
+*Widevine Classic was supported in these models, but ​it has been deprecated by Google. Itis no longer supported on Samsung TVs due to maintenance issues
 </p>
 </div></div>
 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
-<p>  
+<p>
   For using Playready on Tizen the security level must be 2000, the clients version less than 3.0 and WRMHEADER version of 4.0.0.0. or lower. <br/>
   In Xbox the security level must be 150 on dev kit. <br/>
   In LG devices capabilities and restrictions in the following <a href="https://webostv.developer.lge.com/discover/specifications/supported-media-formats/">link</a>. <br/>
@@ -1531,29 +1531,29 @@ NexPlayer™ supports several DRM technologies:
 
   <tbody>
     <tr>
-      <th class="titles" bgcolor="#C80000" scope="row">FEATURE </th>       
-      <th class="titles" bgcolor="#C80000" scope="row">PLAYREADY</th>        
-      <th class="titles" bgcolor="#C80000" scope="row">WIDEVINE</th>        
+      <th class="titles" bgcolor="#C80000" scope="row">FEATURE </th>
+      <th class="titles" bgcolor="#C80000" scope="row">PLAYREADY</th>
+      <th class="titles" bgcolor="#C80000" scope="row">WIDEVINE</th>
     </tr>
     <tr>
-      <th  scope="row">Encrypted key </th>          
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
+      <th  scope="row">Encrypted key </th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
     </tr>
     <tr>
-       <th  scope="row">Separate encryption key server </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
+       <th  scope="row">Separate encryption key server </th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
     </tr>
     <tr>
-      <th  scope="row">Hardware DRM </th>         
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>             
+      <th  scope="row">Hardware DRM </th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
     </tr>
     <tr>
-      <th  scope="row">Custom Headers</th>        
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>      
-      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>      
+      <th  scope="row">Custom Headers</th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span> </th>
+      <th  scope="row"><span style="color: transparent;  text-shadow: 0 0 0 rgb(42, 170, 82); font-weight:100; font-size:25px;">&#x2714;</span></th>
     </tr>
 
   </tbody>
@@ -1563,8 +1563,8 @@ NexPlayer™ supports several DRM technologies:
 
 <div class="alert alert-info hints-alert"><div class="hints-icon"><i class="fa fa-info-circle"></i></div><div class="hints-container">
 <p>
-*For Tizen, DRM is supported from 2017 device models and higher<br>    
-*For WebOS, DRM is supported from WebOS 3.0 and higher  
+*For Tizen, DRM is supported from 2017 device models and higher<br>
+*For WebOS, DRM is supported from WebOS 3.0 and higher
 </p>
 </div></div>
 
@@ -1692,7 +1692,7 @@ To enter the same configuration in our player it should be done like this (PlayR
 
 ```js
 var nexDRMInformationPlayReady = {
-    NexDRMType: 'DRM NAME (e.g. com.microsoft.playready)',     
+    NexDRMType: 'DRM NAME (e.g. com.microsoft.playready)',
     NexDRMKey: 'REPLACE THIS WITH YOUR LICENSE SERVER URL',
     NexHeaders:[{FieldName: 'X-AxDRM-Message' FiledValue:',REPLACE THIS WITH YOUR CUSTOM DATA,'}]
 };
@@ -1844,7 +1844,7 @@ var errorMessage = event.detail;
 
 ##### onstatechange
 
-This event is fired when the state of player is changed. The **event** parameter for the callback function has a property called **detail** 
+This event is fired when the state of player is changed. The **event** parameter for the callback function has a property called **detail**
 that stores the current state of the player:
 ```js
 // Accessing the current state of the player
@@ -1861,7 +1861,7 @@ var currentState = event.detail;
 
 ##### videofirstquartile
 
-This event is fired when the 25% of the video's duration has been reached. The **event** parameter for the callback function has a property called **detail** 
+This event is fired when the 25% of the video's duration has been reached. The **event** parameter for the callback function has a property called **detail**
 that stores the time of the quartile:
 ```js
 // Accessing the time of the quartile
@@ -1878,7 +1878,7 @@ videoElement.addEventListener('videofirstquartile', function(e){
 
 ##### videomidpoint
 
-This event is fired when the 50% of the video's duration has been reached. The **event** parameter for the callback function has a property called **detail** 
+This event is fired when the 50% of the video's duration has been reached. The **event** parameter for the callback function has a property called **detail**
 that stores the time of the quartile:
 ```js
 // Accessing the time of the quartile
@@ -1895,7 +1895,7 @@ videoElement.addEventListener('videomidpoint', function(e){
 
 ##### videothirdquartile
 
-This event is fired when the 75% of the video's duration has been reached. The **event** parameter for the callback function has a property called **detail** 
+This event is fired when the 75% of the video's duration has been reached. The **event** parameter for the callback function has a property called **detail**
 that stores the time of the quartile:
 ```js
 // Accessing the time of the quartile
@@ -1907,6 +1907,19 @@ var thirdQuartile = event.detail;
 ```js
 videoElement.addEventListener('videothirdquartile', function(e){
   console.log("VIDEO THIRD QUARTILE -----> ", e);
+});
+```
+
+##### videoProgressTime
+
+This event is fired when the (5%, 15%, 25%, 50%, 75%, 85%, 95%) of the video's duration has been reached. The **event** parameter for the callback function has a property called **detail**
+that stores the percentage time:
+
+**detail** type is string and returns the percentage time (5%, 15%, ...)
+
+```js
+videoElement.addEventListener('videoProgressTime', function(e){
+  console.log("VIDEO PROGRESS TIME -----> ", e.detail);
 });
 ```
 
@@ -2252,10 +2265,10 @@ The following code is a sample to retrieve the metadata from the streams. It log
     callbacksForPlayer: callBackWithPlayers
   });
 
-  var showTimedMetadata = function(videoElement) { 
+  var showTimedMetadata = function(videoElement) {
     videoElement.textTracks.addEventListener("addtrack", function (e) {
       console.log("Add track", e.track);
-      for (let i = 0; i < e.currentTarget.length; i ++) {  
+      for (let i = 0; i < e.currentTarget.length; i ++) {
         if (e.currentTarget[i].kind === "metadata") {
            // If the new TextTrack's kind is metadata change its mode to "hidden".
            // Otherwise, the mode is set to "disabled" and the "cuechange" events won't be received.
@@ -2265,7 +2278,7 @@ The following code is a sample to retrieve the metadata from the streams. It log
             });
           }
         }
-    });	
+    });
   };
 
 ```
@@ -2309,7 +2322,7 @@ This document provides an explanation of the UI and all the related CSS classes 
 | .nexplayer_playback_position | Customize the already played part of the seekbar |
 | .nexplayer_bufferlevel_position | Customize the buffered part of the seekbar |
 | .nexplayer_base_seekbar | Customize the default part of the seekbar |
-| .nexplayer_circleBase | Customize the current postion marker of the seekbar |  
+| .nexplayer_circleBase | Customize the current postion marker of the seekbar |
 
 Please take into account that the seekbar and the volume control bar are the same component. So if you modify the .nexplayer_playback_position, .nexplayer_bufferlevel_position, .nexplayer_base_seekbar, or .nexplayer_circleBase css classes, then the volume control bar will change accordingly.
 
@@ -2476,7 +2489,7 @@ Every new release of NexPlayer™ is backwards compatible.
 
 ### New Relic
 
-This document describes the integration of a New Relic tracker and NexPlayer. 
+This document describes the integration of a New Relic tracker and NexPlayer.
 
 #### Quick start
 
@@ -2506,8 +2519,8 @@ In order to make New Relic work the property 'useNewRelicTracker' must be set to
 
     // Create and initialize the player
     nexplayer.Setup({
-        key: 'YOUR LICENSE KEY', 
-        div: document.getElementById('player'),     
+        key: 'YOUR LICENSE KEY',
+        div: document.getElementById('player'),
         callbacksForPlayer: callBackWithPlayers,
         src: 'YOUR STREAM URL'
         useNewRelicTracker: true,
@@ -2527,16 +2540,16 @@ Custom data to be tracked can be added and removed using the following methods:
 
 ### Tizen Studio
 
-####  How to integerate NexPlayer Tizen SDK 
+####  How to integerate NexPlayer Tizen SDK
 
 This document describes the integration of the NexPlayer Tizen SDK and the detailed steps
 to create a sample application.
 
-#### Prerequisites 
+#### Prerequisites
 
 ##### Setting Environment
 
-1. Download and Install the Tizen Studio IDE from this [link](http://developer.samsung.com/tv/develop/tools/tizen-studio/). Make sure to select the appropriate Operating System 
+1. Download and Install the Tizen Studio IDE from this [link](http://developer.samsung.com/tv/develop/tools/tizen-studio/). Make sure to select the appropriate Operating System
 ![Tizen Studio Install](asset/tizen_studio_install.png)
 
 2. Install the Tizen TV SDK from [here]( http://developer.samsung.com/tv/develop/tools/tv-extension/download).
@@ -2554,26 +2567,26 @@ Follow [this](https://docs.tizen.org/application/vstools/tools/certificate-manag
 
 ##### Create a Basic Project using Tizen Studio
 
-1. Create a new project Click on File -> New -> Tizen Project. 
+1. Create a new project Click on File -> New -> Tizen Project.
 ![Start Project Wizard](asset/NewProject1.PNG)
 
-2. Select the type of the project.  
+2. Select the type of the project.
 ![Type of Project](asset/NewProject2.PNG)
 
-3. Now select web aplication.  
+3. Now select web aplication.
 ![TV App Properties](asset/NewProject3.PNG)
 
-4. To finish select basic project.  
+4. To finish select basic project.
 ![TV App Properties](asset/NewProject4.PNG)
 
-4. Open the next index.  
+4. Open the next index.
 ![App Setup](asset/NewProject5.PNG)
 
 5. And you can use the following code.
 ```html
   <!DOCTYPE html>
 <html>
-<head> 
+<head>
     <!-- MANDATORY! LOAD JQUERY BY CDN OR LOCAL  -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
@@ -2589,7 +2602,7 @@ Follow [this](https://docs.tizen.org/application/vstools/tools/certificate-manag
             #player_container {
                 width: 50%;
                 padding-top: 28.125%; /* 16:9 Aspect Ratio 56.25 * 0.5 */
-            }            
+            }
         }
         h1 {
             text-align: center;
@@ -2720,10 +2733,10 @@ To start, you need to request a watermark.min.js file from Verimatrix here https
 | Param | Type | Description |
 | --- | --- | --- |
 | strength | Integer | Watermark strength.<br/> Valid values:<br/>• 255: Visible watermark for debugging <br/>• 1 to 100: Production watermark strength<br/>(1 = weakest, 100 = strongest/possibly visible) <br/>A stronger watermark is faster to extract.<br/>Values of 50 or less require very long videos to extract.<br/> Default: 80 |
-| transactionId | Unsigned <br/> integer | Transaction or user identifier. <br/> Required for watermarking initialization. <br/> Size: 36 bits <br/> Valid values: 0 to 687194767365 | 
+| transactionId | Unsigned <br/> integer | Transaction or user identifier. <br/> Required for watermarking initialization. <br/> Size: 36 bits <br/> Valid values: 0 to 687194767365 |
 | operatorId | Unsigned <br/> integer | Operator identifier.<br/> You do not need to provide operatorId as it is hard-coded to an operator-specific value in the software.
-| logoImage | String | Optional.<br/>URL for a visible image to draw in addition to the imperceptible watermark.<br/>Default: None | 
-| logoPos | Array \<number\> | Optional.<br/>Set coordinates for the logo image.<br/>Format: [x, y, width, height]<br/>Valid values for x and y: 0 to 100 <br/> Default: Upper left corner of the video.| 
+| logoImage | String | Optional.<br/>URL for a visible image to draw in addition to the imperceptible watermark.<br/>Default: None |
+| logoPos | Array \<number\> | Optional.<br/>Set coordinates for the logo image.<br/>Format: [x, y, width, height]<br/>Valid values for x and y: 0 to 100 <br/> Default: Upper left corner of the video.|
 | apiToken | String | Optional.<br/>Opaque string for activating subsequent API actions. |
 
 

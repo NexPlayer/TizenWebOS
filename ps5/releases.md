@@ -4,11 +4,17 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
-#### Version 4.3.1.1
+#### Version 4.3.1.2
 
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.3.1.1_20220428/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.3.1.2_20220613/nexplayer.js
 ```
+* **[Added]** <a href="./#/ps5_xbox_tizen_webos_usage?id=videoprogresstime">videoProgressTime</a> event.
+* **[Improved]** Fixed the audio track change, now is immediate.
+
+Date: June 13th 2022
+#### Version 4.3.1.1
+
 * **[Improved]** Fixed player behavior on long seek.
 * **[Added]** Implemented [getCurrentSegmentContainer()](ps5/api.md?id=getCurrentSegmentContainer) method.
 * **[Added]** Additional information through "adstarted" event for default ads mode.
@@ -189,7 +195,7 @@ Date: August 9th 2021
     * **getCurrentTime()**: number → returns the current time of the video.
     * **getDroppedFrames()**: number → returns the number of frames dropped or NaN if not available or no frames were dropped.
     * **getPlaybackRate()**: number → returns the playback rate/speed of the video.
-    * **getProtocol()**: NexProtocol  → returns the protocol of the stream used. 
+    * **getProtocol()**: NexProtocol  → returns the protocol of the stream used.
     * **getVersion()**: string → returns the version of the SDK.
     * **isCurrentAssetAd()**: boolean → indicates whether the current asset playing is an ad or not.
     * **isCurrentAssetMuted()**: boolean → returns whether the ad or the main content is muted or not.
@@ -199,7 +205,7 @@ Date: August 9th 2021
 * **[Improved]** Fixed non-skipping ads when using IMA.
 
 
-Date: August 3rd 2021 
+Date: August 3rd 2021
 
 #### Version 3.4.1
 
@@ -207,11 +213,11 @@ Date: August 3rd 2021
 * **[Improved]** Fixed ads errors and improved ads behavior.
 
 
-Date: July 27th 2021 
+Date: July 27th 2021
 
 #### Version 3.4.0
 
-* **[Added]** Playlist ad format is now supported. 
+* **[Added]** Playlist ad format is now supported.
 * **[Added]** Remote buttons handlers have been implemented.
 * **[Added]** IMA and PAL ad libraries are now supported. More information on how to use them <a href="./#/ps5/api?id=ads">here</a>.
 * **[Added]** Implemented method for removing the listeners of ad events. More information on how to use these methods <a href="./#/ps5/api?id=removeadsevents">here</a>.
@@ -224,7 +230,7 @@ Date: July 27th 2021
 * **[Improved]** Fixed non-triggering events when linear inline ads were being played.
 
 
-Date: July 20th 2021 
+Date: July 20th 2021
 
 #### Version 3.3.11
 
@@ -233,13 +239,13 @@ Date: July 20th 2021
 * **[Added]** Added IsReady() method in order to check if the player is ready to mount or not. More information <a href="./#/ps5/api?id=isready">here</a>.
 
 * **[Improved]** Changed staticThumbnailsVTT to staticThumbnails and useDynamicThumbnails to dynamicThumbnails. "staticThumbnailsImg" property has been removed.
-* **[Improved]** Normalized event names throughout all projects. "adended" is now "adcomplete" and "adblockstarted" is now "adblockstart". 
+* **[Improved]** Normalized event names throughout all projects. "adended" is now "adcomplete" and "adblockstarted" is now "adblockstart".
 * **[Improved]** Fixed non-finite value issue when seeking multiple times via controller.
 * **[Improved]** Fixed VTT parsing error which led the URL to be corrupted.
 * **[Improved]** Fixed error when seeking to 0 on VODs.
 
 
-Date: July 1st 2021 
+Date: July 1st 2021
 
 #### Version 3.3.10
 
@@ -251,7 +257,7 @@ Date: July 1st 2021
 * **[Improved]** Fixed crash after mid-roll and pre-roll ads on Tizen.
 
 
-Date: June 14th 2021 
+Date: June 14th 2021
 
 #### Version 3.3.9
 
@@ -262,7 +268,7 @@ Date: June 14th 2021
 * **[Improved]** Fixed crash due to providing non-finite double values.
 
 
-Date: May 31st 2021 
+Date: May 31st 2021
 
 #### Version 3.3.8
 
@@ -273,14 +279,14 @@ Date: May 31st 2021
 * **[Improved]** staticThumbnailsVTT can now provide a VTT reference instead of an actual VTT.
 
 
-Date: May 14th 2021 
+Date: May 14th 2021
 
 #### Version 3.3.7
 
-* **[Added]** Added the possibility to specify the codec priority. It can be used through a new property, 
+* **[Added]** Added the possibility to specify the codec priority. It can be used through a new property,
 <a href="./#/ps5/api?id=setup"> "preferredAudioCodec"</a>, in the nexplayer Setup method.
 
-* **[Added]** A custom-sized initial buffer can now be set by passing the desired number of seconds to achieve. It can be used through a new property, 
+* **[Added]** A custom-sized initial buffer can now be set by passing the desired number of seconds to achieve. It can be used through a new property,
 <a href="./#/ps5/api?id=setup"> "startingBufferLength"</a>, in the nexplayer Setup method.
 
 * **[Added]** Custom data can now be added to New Relic's tracker. Removing data can also be done. Check NexPlayer's API for more details.
@@ -290,7 +296,7 @@ Date: May 14th 2021
 * **[Improved]** Video now ends before any postroll starts playing.
 
 
-Date: April 27th 2021 
+Date: April 27th 2021
 
 #### Version 3.3.6.1
 
@@ -300,29 +306,29 @@ Date: April 27th 2021
 * **[Improved]** Fixed file not found issue.
 * **[Improved]** Fixed non-finite value issue on seek.
 
-Date: March 12th 2021 
+Date: March 12th 2021
 
 #### Version 3.3.6
 
 * **[Added]** Video progress events for the 25%, 50%, 75% of the video's duration. Check more details <a href="./#/ps5/api?id=custom-events">here</a>.
-* **[Added]** Possibility to use a chunking algorithm in order to improve the efficiency of the thumbnails. It can be used through a new property, 
+* **[Added]** Possibility to use a chunking algorithm in order to improve the efficiency of the thumbnails. It can be used through a new property,
 <a href="./#/ps5/api?id=setup"> "thumbChunking"</a>, in the nexplayer Setup method.
 
 * **[Added]** New Relic tracker. It can be used through the property <a href="./#/ps5/api?id=setup">"useNewRelicTracker"</a>
 
 * **[Added]** Seek bar is not shown in live content.
 
-Date: March 9th 2021 
+Date: March 9th 2021
 
 #### Version 3.3.5
 
-* **[Improved]** Solved visual bug related with subtitles on PS5. 
+* **[Improved]** Solved visual bug related with subtitles on PS5.
 
 Date: February 19th 2021
 
 #### Version 3.3.4
 
-* **[Added]** DRM request filter. 
+* **[Added]** DRM request filter.
 * **[Added]** Support for static thumbnails using only a VTT file.
 * **[Added]** Implemented getURL(), getPlaybackRate() and getMediaElement() functions.
 * **[Improved]** Fixed language UI bug.
@@ -334,8 +340,8 @@ Date: February 16th 2021
 
 #### Version 3.3.3
 
-* **[Added]** WebOS 3.X support including 2017 and older LG smart TVs. 
-* **[Improved]** Resolved issues regarding TTML subtitles displaying badly and slow playback caused by CC. 
+* **[Added]** WebOS 3.X support including 2017 and older LG smart TVs.
+* **[Improved]** Resolved issues regarding TTML subtitles displaying badly and slow playback caused by CC.
 
 Date: January 29th 2021
 
@@ -371,7 +377,7 @@ Date: September 18th 2020
 
 #### Version 3.1.3
 
-* **[Improved]** Filter out .WEBM files for the ads in PS5, because they contain VP8 codec that is not supported in this platform. 
+* **[Improved]** Filter out .WEBM files for the ads in PS5, because they contain VP8 codec that is not supported in this platform.
 
 #### Version 3.1.2
 
@@ -439,8 +445,8 @@ Date: September 18th 2020
 
 #### Version 2.3.6
 
-* **[Improved]** Fixed crash when VAST XML response is empty 
-* **[Improved]** Not sending ad breaks events when their VAST XML response is empty 
+* **[Improved]** Fixed crash when VAST XML response is empty
+* **[Improved]** Not sending ad breaks events when their VAST XML response is empty
 
 #### Version 2.3.5
 
@@ -520,7 +526,7 @@ Date: September 18th 2020
 <br>
 <br>
 
---- 
+---
 
 #### Third Party Licenses
 

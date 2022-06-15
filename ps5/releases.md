@@ -9,7 +9,7 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/HTML5/4.3.1.2_20220613/nexplayer.js
 ```
-* **[Added]** <a href="./#/ps5_xbox_tizen_webos_usage?id=videoprogresstime">videoProgressTime</a> event.
+* **[Added]** <a href="./#/ps5/api?id=videoprogresstime">videoProgressTime</a> event.
 * **[Improved]** Fixed the audio track change, now is immediate.
 
 Date: June 13th 2022

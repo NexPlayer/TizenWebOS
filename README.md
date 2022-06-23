@@ -24,7 +24,7 @@ The default UI is easily customizable to fit the user's personal preferences (e.
       <div>IMA SDK for Client-Side Ad Insertion </div>
       <div>PAL SDK for Client-Side Ad Insertion </div>
       <div>Server-Side Ad Insertion </div>
-      <div>IMA DAI SDK for Server-Side Ad Insertion </div>
+      <div>IMA DAI SDK for Server-Side Ad Insertion <a href="#/README?id=bn2" id="ref2">1</a></sup> </div>
     </div>
     <div class="titleCell">METADATA</div>
     <div class="contentCell">
@@ -66,6 +66,8 @@ The default UI is easily customizable to fit the user's personal preferences (e.
     </div>
   </div>
 </section>
+
+<blockquote id="bn2"> <sup><a href="#/README?id=ref2">1</a></sup> IMA is currently not supported for Xbox </blockquote>
 
 ## Platform support
 

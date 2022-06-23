@@ -139,7 +139,7 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| adsMode | <code>string</code> | Determines the ad library: 'ima', 'pal', 'dai' or 'default'. Note that 'dai' needs a `[daiConfig]` object to work, while 'ima' and 'pal' require a 'vast' string |
+| adsMode | <code>string</code> | Determines the ad library: 'ima', 'pal', 'dai' or 'default'. Note that 'dai' needs a <a href="#/ps5/api?id=daiConfig">`[daiConfig]`</a> object to work, while 'ima' and 'pal' require a VAST string. |
 | addRequestFilter | <code>Function</code> | Sets a function that receives the DRM request as a parameter and changes its Headers. |
 | adsParamsToEncode| <code>Array<string></code> | Specifies the name of the VAST ad URL parameters to encode. |
 | autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
@@ -165,26 +165,26 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 | retryParameters | <code>Object [\<retrySettings\>](#retrysettings)</code> | Determines the retry parameters for DRM, manifest, and streaming requests. |
 | showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
-| staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and a callback which returns an <a href="/#/ps5/api?id=error">error</a> object.|
+| staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and a callback which returns an <a href="#/ps5/api?id=error">error</a> object.|
 | startFullScreen | <code>boolean</code> | Determines if the video will start on full screen. |
 | startingBufferLength | <code>number</code> | Determines the starting buffer length. |
 | subtitle | <code>string</code> | Subtitle name of the video. |
 | title | <code>string</code> | Video name. |
 | trailer | <code>boolean</code> | Determines if a stream should be considered as a trailer. |
-| useDefaultControls | <code>boolean</code> | Determines if the tv controller will be able to be used to navigate in the UI. |
+| useDefaultControls | <code>boolean</code> | Determines if the TV controller will be able to be used to navigate in the UI. |
 | useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this values is set to false. |
 | useNewRelicTracker | <code>boolean</code> | Determines if the New Relic tracker will be used. |
-| vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
-| adsLoadTimeout | <code>number</code> | Determines the time the player waits for the ad to start. |
-| ssaiMediaTailor | <code><a href="/#/ps5/api?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
+| vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID, VMAP are supported. |
+| adsLoadTimeout | <code>number</code> | Determines the time the player waits for the ad to start. Parameter for IMA. |
+| ssaiMediaTailor | <code><a href="#/ps5/api?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
 | bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default. The tracks that the ABR will be able to select are the ones between minBitrate and maxBitrate.  |
-| pageUrl | <code>string</code> | Adds a parameter to the ad request to keep track of the domain that sent the request. For targeting purposes. <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl"> More info </a>. |
-| daiConfig | <code><a href="/#/ps5/api?id=daiConfig">Object</a></code> | Used to initialize the DAI stream. |
+| pageUrl | <code>string</code> | Adds a parameter to the ad request to keep track of the domain that sent the request. For targeting purposes. <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl"> More info </a>. Parameter for IMA. |
+| daiConfig | <code><a href="#/ps5/api?id=daiConfig">Object</a></code> | Used to initialize the DAI stream. |
 
 
 #### <a id="changesource"></a>nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 
-Change the url stream of the video. It is possible to set a new url with new DRM config if necessary.
+Change the URL stream of the video. It is possible to set a new URL with new DRM config if necessary.
 
 **Parameters**: <code>configObj</code> is an object which values could be:
 
@@ -196,7 +196,7 @@ Change the url stream of the video. It is possible to set a new url with new DRM
 
 #### <a id="unmount"></a>nexplayer.UnMount(player)
 
-Unmounts the player and its dependencies. In order to properly clear the player this method must be called after destroying the very same player. Check more details <a href="/#/ps5/api?id=destroy">here</a>.
+Unmounts the player and its dependencies. In order to properly clear the player this method must be called after destroying the very same player. Check more details <a href="#/ps5/api?id=destroy">here</a>.
 
 **Parameters**:
 
@@ -226,7 +226,6 @@ Decodes an ArrayBuffer and converts it into a string. END OF TEXT (\u0003) and N
    - **data** is the ArrayBuffer to decode.
 
 **Returns**: decoded and cleaned string or null if the parameter provided is not an ArrayBuffer.
-***
 
 #### <a id="nexplayer-getversion"></a>nexplayer.getVersion()
 
@@ -628,7 +627,7 @@ Returns the current stream's URL.
 
 #### <a id="getversion"></a>player.getVersion() ⇒ string
 
-The method getVersion() is deprecated, please use <a href="./#/ps5/api?id=getversion">nexplayer.getVersion()</a> instead
+The method getVersion() is deprecated, please use <a href="./#/ps5/api?id=nexplayer-getversion">nexplayer.getVersion()</a> instead.
 
 **Returns**: string - identify the version of the player.
 
@@ -987,7 +986,7 @@ player.destroy().then(nexplayer.UnMount(document.getElementById('player')));
 
 #### Unmounted and mounted events
 
-In the case of using an await procedure to unmount the player, it is convenient to ensure that the Setup is called after the UnMount method is finished. This can be done via the <a href="/#/ps5/api?id=isready">IsReady</a> method that returns a boolean value which indicates whether the player can be mounted or not. The recommended way to do this is via events, which are the following:
+In the case of using an await procedure to unmount the player, it is convenient to ensure that the Setup is called after the UnMount method is finished. This can be done via the <a href="#/ps5/api?id=isready">IsReady</a> method that returns a boolean value which indicates whether the player can be mounted or not. The recommended way to do this is via events, which are the following:
 
 * mounted
 * unmounted
@@ -1242,7 +1241,7 @@ nexplayer.Setup({
   div: document.getElementById('player'),
   src: 'VIDEO URL',
   vast: 'VAST / VPAID / VMAP link',
-  adsmode: 'pal / ima / default',
+  adsMode: 'pal / ima / default',
 });
 ```
 
@@ -1259,7 +1258,7 @@ nexplayer.Setup({
     CONTENT_SOURCE_ID : 'ID',
     VIDEO_ID : 'ID',
   },
-  adsmode: 'dai / default',
+  adsMode: 'dai / default',
 });
 ```
 Get started  <a href =https://developers.google.com/interactive-media-ads/docs/sdks/other target="_blank">Google Website</a>.

@@ -106,7 +106,7 @@ Creates and initializes the player.
 | thumbnails | <code>Thumbnails</code> | Thumbnails to be shown. Static and dynamic thumbnails are supported. |
 | trailer | <code>boolean</code> | Determines if a stream should be considered a trailer. |
 | useNewRelicTracker | <code>boolean</code> | Determines if the New Relic tracker will be used. |
-| vast | <code>string</code> | Advertisement url that is going to be played. VAST, VPAID, VMAP are supported. |
+| vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID, VMAP are supported. |
 
 #### <a id="unmount"></a>nexplayer.UnMount(div)
 

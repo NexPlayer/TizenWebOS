@@ -249,7 +249,7 @@ Date: July 1st 2021
 
 #### Version 3.3.10
 
-* **[Added]** Implemented trickplay(value). Check more details <a href="./#/ps5/api?id=trickplay">here</a>.
+* **[Added]** Implemented trickPlay(value). Check more details <a href="./#/ps5/api?id=trickplay">here</a>.
 * **[Added]** Start time improvement. It can be used through the property <a href="./#/ps5/api?id=setup">"improveStartTime"</a>.
 * **[Added]** Callbacks for handling external subtitles and thumbnails errors. More information <a href="./#/ps5/api?id=setup">here</a>.
 

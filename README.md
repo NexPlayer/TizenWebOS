@@ -21,10 +21,10 @@ The default UI is easily customizable to fit the user's personal preferences (e.
       <div>VAST, VPAID, VMAP, Playlist </div>      
       <div>Pre-Roll, Mid-Roll, Post-Roll </div>
       <div>Integrated Client-Side Ad Insertion </div>
-      <div>IMA SDK for Client-Side Ad Insertion<sup><a href="#/README?id=bn2" id="ref2">1</a></sup> </div>
-      <div>PAL SDK for Client-Side Ad Insertion<sup><a href="#/README?id=bn2" id="ref2">1</a></sup> </div>
+      <div><p>IMA SDK for Client-Side Ad Insertion<sup><a href="#/README?id=bn2" id="ref2">1</a></sup></p> </div>
+      <div><p>PAL SDK for Client-Side Ad Insertion<sup><a href="#/README?id=bn2" id="ref2">1</a></sup></p> </div>
       <div>Server-Side Ad Insertion </div>
-      <div>IMA DAI SDK for Server-Side Ad Insertion<sup><a href="#/README?id=bn2" id="ref2">1</a></sup> </div>
+      <div><p>IMA DAI SDK for Server-Side Ad Insertion<sup><a href="#/README?id=bn2" id="ref2">1</a></sup></p> </div>
     </div>
     <div class="titleCell">METADATA</div>
     <div class="contentCell">

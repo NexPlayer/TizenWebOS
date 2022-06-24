@@ -23,7 +23,7 @@
 - [enableABR()](#enableabr)
 - [addTrackerData()](#addtrackerdata)
 - [removeTrackerData()](#removetrackerdata)
-- [trickplay(value)](#trickplay)
+- [trickPlay(value)](#trickplay)
 - [setVolume(value)](#setvolume)
 
 **Navigation**
@@ -312,7 +312,7 @@ Removes custom data from New Rellic's tracker if initialized.
 | ----- | ------------------- | ------------------ |
 | key   | <code>string</code> | Data variable name |
 
-#### <a id="trickplay"></a>player.trickplay(value)
+#### <a id="trickplay"></a>player.trickPlay(value)
 
 Sets the trick play value. A value bigger than 1 will move the seek time forward. A value negative will move it backward. Setting trick play value to 1 will end trick play and seek to the calculated seek time. This seek time results from the provided value which will increase the time to seek depending on how much time the trickplay is executed. Then, it will trigger an event trickPlayStarted when the value is changed, a trickPlayTimeUpdate event will be thrown every time the seek time changes, and trickPlayEnded event when the trick play stops. Use player.play(), player.stop() or player.seek() will finish the trick play.
 

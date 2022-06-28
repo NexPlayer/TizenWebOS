@@ -4,13 +4,22 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
-#### Version 4.3.1.2
+#### Version 4.3.1.4
 
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.3.1.2_20220613/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.3.1.4_20220624/nexplayer.js
 ```
-* **[Added]** <a href="./#/ps5/api?id=videoprogresstime">videoProgressTime</a> event.
+* **[Added]** Added the label information from the manifest into the <a href="/#/ps5/api?id=audiostream">AudioStream</a> object.
+
+Date: June 24th 2022
+#### Version 4.3.1.3
+
 * **[Improved]** Fixed the audio track change, now is immediate.
+
+Date: June 21st 2022
+#### Version 4.3.1.2
+
+* **[Added]** <a href="./#/ps5/api?id=videoprogresstime">videoProgressTime</a> event.
 
 Date: June 13th 2022
 #### Version 4.3.1.1

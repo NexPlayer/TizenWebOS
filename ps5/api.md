@@ -452,8 +452,9 @@ AudioStream:
 | Property | Type | Description |
 | --- | --- | --- |
 | id | <code>number</code> | of the audio to be played. |
-| language | <code>string<NexDRMInformation></code> | that contains a string with the languages audio available (by default it is empty). |
-| name | <code>string<NexDRMInformation></code> | that contains a string with the names of audio files available (by default it is empty). |
+| language | <code>string</code> | contains a string with the languages audio available (by default it is empty). |
+| name | <code>string</code> | contains a string with the names of audio files available (by default it is empty). |
+| label | <code>string</code> | contains information about the label tag inside the manifest. Empty if not specified. |
 
 **Returns**: Array\<AudioStream\> - the list of the available audio streams.
 
@@ -487,6 +488,7 @@ AudioStream:
 | id | <code>number</code> | of the audio to be played. |
 | language | <code>string<NexDRMInformation></code> | that contains a string with languages audio stream currently in use (by default it is empty). |
 | name | <code>string<NexDRMInformation></code> | that contains a string with name of audio stream currently in use (by default it is empty). |
+| label | <code>string</code> | contains information about the label tag inside the manifest. Empty if not specified. |
 
 **Returns**: Array\<TrackInfo\> - information about the current audio track.
 
@@ -726,6 +728,7 @@ Set the video quality level.
 | id | <code>number</code> | id of the stream. |
 | language | <code>string</code> | language of the stream. |
 | name | <code>string</code> | name of the stream. |
+| label | <code>string</code> | contains information about the label tag inside the manifest. Empty if not specified. |
 
 #### <a id="error"></a>Error : <code>Object</code>
 

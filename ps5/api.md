@@ -1350,7 +1350,8 @@ Some of the most important events are "playing", "pause", "waiting", "timeupdate
 videoElement.addEventListener("timeupdate", function() { console.log("The video playback has advanced to: "+videoElement.currentTime+", with the duration: "+videoElement.duration) }, true);
 ```
 
-#### Custom Events
+#### <a id="customevents"></a>Custom Events
+
 
 We also have custom events to handle some different kind of video events.
 ```js
@@ -1618,7 +1619,7 @@ To remove the event, do the following:
 nexplayer.RemoveAdsEvents('event name', f);
 ```
 
-#### Ads custom events
+#### <a id="adscustomevents"></a>Ads custom events
 
 * adstarted: Start an individual ad, contains the ad position in the block in the detail attribute.
 * adblockstart: Contains the number of ads in the block in the detail attribute.
@@ -1757,6 +1758,22 @@ nexplayer.Setup({
 	callbacksForPlayer: 'YOUR CALLBACK VAR',
 	drm:['YOUR DRM'],
 	preferredAudioCodec: ['The priority codec as ac-3', 'mp4a.40.2'],
+});
+
+```
+#### <a id="preferredvideocodec"></a>preferredVideoCodec
+
+This property gives priority to a specific video codec.
+
+```js
+
+nexplayer.Setup({
+	key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+	div: document.getElementById('player'),
+	src: 'VIDEO URL',
+	callbacksForPlayer: 'YOUR CALLBACK VAR',
+	drm:['YOUR DRM'],
+	preferredVideoCodec: ['The priority codec as H.265', 'avc1.4d481f'],
 });
 
 ```

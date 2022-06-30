@@ -4,11 +4,27 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
-#### Version 4.3.1.4
+#### Version 4.4.1
 
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.3.1.4_20220624/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.4.1_20220627/nexplayer.js
 ```
+
+* **[Improved]** Fixed playback error on PS5 when multiple #EXT-X-KEY HLS tags are present in a manifest.
+* **[Improved]** Fixed subtitles being changed automatically after ads when using IMA.
+* **[Improved]** Fixed [seekLive()](ps5/api.md?id=seeklive) with long live streams.
+* **[Improved]** Fixed buffering issue when the times of audio and video playlists are not perfectly synchronized.
+* **[Improved]** Fixed issue on Hisense where subtitles were disappearing after seeking.
+* **[Added]** Added [events](ps5/api.md?id=customevents) triggered when the player reaches 5, 15, 85, and 95% of the video. TODO: Create doc of the events
+* **[Added]** Now the [adstarted](ps5/api.md?id=adscustomevents) event sends the content id, its placement, and the ad break's duration when using IMA.
+* **[Added]** Implemented a new parameter [preferredVideoCodec](ps5/api.md?id=preferredvideocodec) to select the preferred video codec.
+* **[Added]** Added support for HLS' Byte-Range manifest format.
+* **[Added]** Implemented CDN seamless switch for DASH when there's a failure in the original CDN. TODO: Create doc CDN
+
+Date: June 27th 2022
+
+#### Version 4.3.1.4
+
 * **[Added]** Added the label information from the manifest into the <a href="https://nexplayer.github.io/TizenWebOS/#/ps5/api?id=audiostream">AudioStream</a> object.
 
 Date: June 24th 2022

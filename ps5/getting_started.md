@@ -231,6 +231,7 @@ There are a substantial number of customizable options for NexPlayer including: 
     logosrc: 'URL logo of the company',
     mutedAtStart: true,   
     preferredAudioCodec: Array,
+    preferredVideoCodec: Array,
     poster: 'URL poster', 
     reinitializeAfterAds: boolean, // Deprecated
     resumePosition: number,

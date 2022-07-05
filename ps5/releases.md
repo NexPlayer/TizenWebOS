@@ -22,6 +22,11 @@ https://nexplayer.nexplayersdk.com/HTML5/4.4.1_20220627/nexplayer.js
 
 Date: June 27th 2022
 
+#### Version 4.3.1.5
+
+* **[Improved]** Fixed issue when using the property <a href="./#/ps5/api?id=setup">adsParamsToEncode</a>. When a value in the ad URL parameters was duplicated the ad URL was cut off.
+
+Date: July 4th 2022
 #### Version 4.3.1.4
 
 * **[Added]** Added the label information from the manifest into the <a href="https://nexplayer.github.io/TizenWebOS/#/ps5/api?id=audiostream">AudioStream</a> object.

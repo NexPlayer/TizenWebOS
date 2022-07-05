@@ -15,11 +15,10 @@ https://nexplayer.nexplayersdk.com/HTML5/4.4.1_20220627/nexplayer.js
 * **[Improved]** Fixed [seekLive()](ps5/api.md?id=seeklive) with long live streams.
 * **[Improved]** Fixed buffering issue when the times of audio and video playlists are not perfectly synchronized.
 * **[Improved]** Fixed issue on Hisense where subtitles were disappearing after seeking.
-* **[Added]** Added [events](ps5/api.md?id=customevents) triggered when the player reaches 5, 15, 85, and 95% of the video. TODO: Create doc of the events
 * **[Added]** Now the [adstarted](ps5/api.md?id=adscustomevents) event sends the content id, its placement, and the ad break's duration when using IMA.
 * **[Added]** Implemented a new parameter [preferredVideoCodec](ps5/api.md?id=preferredvideocodec) to select the preferred video codec.
 * **[Added]** Added support for HLS' Byte-Range manifest format.
-* **[Added]** Implemented CDN seamless switch for DASH when there's a failure in the original CDN. TODO: Create doc CDN
+* **[Added]** Implemented CDN seamless switch for DASH when there's a failure in the original CDN.
 
 Date: June 27th 2022
 
@@ -35,7 +34,7 @@ Date: June 24th 2022
 Date: June 21st 2022
 #### Version 4.3.1.2
 
-* **[Added]** <a href="./#/ps5/api?id=videoprogresstime">videoProgressTime</a> event.
+* **[Added]** Added [event videoProgressTime](ps5/api.md?id=customevents) triggered when the player reaches 5, 15, 85, and 95% of the video.
 
 Date: June 13th 2022
 #### Version 4.3.1.1

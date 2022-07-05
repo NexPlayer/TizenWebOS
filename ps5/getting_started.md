@@ -243,8 +243,8 @@ There are a substantial number of customizable options for NexPlayer including: 
         	maxTries: 2,        // the maximum number of requests before we fail
 			retryDelay: 1000,   // the base delay in ms between retries
       },
-      drm: {…},
-      manifest: {…}
+      drm: {…}, // Same properties as streaming
+      manifest: {…}  // Same properties as streaming
     },
     showAdsUI: true,
     showingFullUI: true,

@@ -4,6 +4,21 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 1.2.6
+
+```
+https://nexplayer.nexplayersdk.com/NexHTML5/1.2.6_20220705/nexplayer.js
+```
+
+**New features:**
+- Implemented videoProgressTime event.
+- Update logic for differentiating DV.
+
+**Bug fixes:**
+- Fixed issue when using the property adsParamsToEncode. When a value in the ad URL parameters was duplicated the ad URL was cut off.
+
+Date: July 5th 2022
+
 #### Version 1.2.5
 
 ```
@@ -31,9 +46,9 @@ Date: September 23rd 2021
     * **getCurrentContentType()**: string → returns the the type of the current asset (“Ad”, “Main content” or “None”).
     * **getCurrentTime()**: number → returns the current time of the video.
     * **getPlaybackRate()**: number → returns the playback rate/speed of the video.
-    * **getProtocol()**: NexProtocol  → returns the protocol of the stream used: 
+    * **getProtocol()**: NexProtocol  → returns the protocol of the stream used:
     * **getVersion()**: string → returns the version of the SDK.
-    * **isCurrentAssetAd()**: boolean → indicates whether the current asset playing is an ad or not; 
+    * **isCurrentAssetAd()**: boolean → indicates whether the current asset playing is an ad or not;
     * **isCurrentAssetMuted()**: boolean → returns whether the ad or the main content is muted or not.
 
 - Added a new event, “bufferType”. this new event will be fired when a buffering event occurs and it specifies what type of buffering occurred ("Connection", "Seek", "Initial", "Background"). More info about events <a href="#/ps4/api?id=playerevents">here</a>.
@@ -62,7 +77,7 @@ Date: July 29th 2021
 
 New features:
   - Added SSAI support for PS4. It can be used through the property 'ssaiMediaTailor'.
-  
+
     Property:
     * ssaiMediaTailor:
     {
@@ -73,11 +88,11 @@ New features:
         "param1": string, //Ad URL to be attached to the baseURL
       }
     }
-    
+
   - Thumbnail enhancements. The method getThumbnailAt(time) now returns a promise instead of a
   thumbnail.
-  
-    * getThumbnailAt(time) // returns a Promise awaiting the corresponding thumbnail in a specific 
+
+    * getThumbnailAt(time) // returns a Promise awaiting the corresponding thumbnail in a specific
     time value
 
 Date: July 23rd 2021
@@ -87,23 +102,23 @@ Date: July 23rd 2021
 **New features:**
   - Added New Relic support for PS4. It can be used through the property 'useNewRelicTracker'.
   A tracker library and agent must be included for this feature to work. Ask NexPlayer team for it.
-  Custom data methods have also been added: 
-  
+  Custom data methods have also been added:
+
     Property:
     * useNewRelicTracker: boolean, // true when enabling New Relic, false when not
-    
+
     Methods:
-    * addTrackerData(key: string, value: any) 
+    * addTrackerData(key: string, value: any)
     * removeTrackerData(key: string, value: any)
-  - Added milestone management for trailers and scrubbing. 
+  - Added milestone management for trailers and scrubbing.
   A stream will be considered as a trailer when using the following property in the Setup:
     * trailer: boolean, // true when stream should be considered a trailer, false when not
-  - 60 seconds in event added. When the video current time is at least 60 seconds, this 
+  - 60 seconds in event added. When the video current time is at least 60 seconds, this
   event gets triggered. This just happens once for each player instance. Usage:
     * addEventListener('60secondsin', function)
   - Added PS4 SDK protection using an external app ID.
-  - Thumbnail enhancements. Vtts can now reference another Vtt inside them. 
-  Two new methods for thumbnail retrieval have been added: 
+  - Thumbnail enhancements. Vtts can now reference another Vtt inside them.
+  Two new methods for thumbnail retrieval have been added:
     * getThumbnails() // returns the current loaded thubmnails
     * getThumbnailAt(time) // returns the corresponding thumbnail in a specific time value
 
@@ -113,7 +128,7 @@ Date: May 25th 2021
 
 **New features**:
   - Setup can be called prior to Unmount in order to reduce the delay when restarting
-  the player. The configuration provided in the last Setup call is saved and will be 
+  the player. The configuration provided in the last Setup call is saved and will be
   used to initialize the player as soon as Unmount ends.
   - CC style has been changed to use text shadows instead of a background colour.
   - Increased log interval when waiting for player to unmount and reduced the time until
@@ -126,10 +141,10 @@ Date: April 20th 2021
 **New features**:
   - UnMount function has changed its return type. Now returns a Promise which is resolved when the player
   is the destroyed completely, as well as the method destroy of the player:
-  
+
     * destroy(): Promise<any>;
     * export declare var UnMount: (div: HTMLDivElement) => Promise<any>;
-    
+
   Check the <a href="#/ps4/api?id=unmount">API</a> for more info.
 
 **Bug fixes:**
@@ -256,7 +271,7 @@ Date: February 17th 2021
 <br>
 <br>
 
---- 
+---
 
 #### Third Party Licenses
 

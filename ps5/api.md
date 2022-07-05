@@ -1350,7 +1350,8 @@ Some of the most important events are "playing", "pause", "waiting", "timeupdate
 videoElement.addEventListener("timeupdate", function() { console.log("The video playback has advanced to: "+videoElement.currentTime+", with the duration: "+videoElement.duration) }, true);
 ```
 
-#### Custom Events
+#### <a id="customevents"></a>Custom Events
+
 
 We also have custom events to handle some different kind of video events.
 ```js
@@ -1618,7 +1619,7 @@ To remove the event, do the following:
 nexplayer.RemoveAdsEvents('event name', f);
 ```
 
-#### Ads custom events
+#### <a id="adscustomevents"></a>Ads custom events
 
 * adstarted: Start an individual ad, contains the ad position in the block in the detail attribute.
 * adblockstart: Contains the number of ads in the block in the detail attribute.
@@ -1760,6 +1761,22 @@ nexplayer.Setup({
 });
 
 ```
+#### <a id="preferredvideocodec"></a>preferredVideoCodec
+
+This property gives priority to a specific video codec.
+
+```js
+
+nexplayer.Setup({
+	key: 'REPLACE THIS WITH YOUR CUSTOMER KEY',
+	div: document.getElementById('player'),
+	src: 'VIDEO URL',
+	callbacksForPlayer: 'YOUR CALLBACK VAR',
+	drm:['YOUR DRM'],
+	preferredVideoCodec: ['The priority codec as H.265', 'avc1.4d481f'],
+});
+
+```
 
 ### Autoplay
 
@@ -1789,6 +1806,46 @@ This feature tells the player whether to start playback with the volume muted or
 ```
 
 ?> Please note that the default value of the <b>mutedAtStart</b> parameter is false, so the player will start unmuted if <b>mutedAtStart</b> is not set to true.
+
+### CDN seamless switch
+
+?> Please note that this feature is currently **only available for live DASH** streams and the backup manifests MUST have the same properties as the original one (codecs, container format, timestamps, etc.).
+
+It's possible to set one or multiple backup manifests so the player can switch to them in case the original fails. That way, if the original manifest throws a server error, the player will try to use the backup manifests and, if at least one of them is available, the player will keep playing using that manifest without any buffering or pause.
+
+To use it, add the property *backupManifest* to the setup configuration object. This property is an array of strings, each string being an URL of a manifest.
+
+```js
+{
+  ...
+  backupManifest: [
+    "https://dash.akamaized.net/akamai/bbb_30fps/bbb_30fps.mpd",
+    "https://this.is.an.example.com/manifest1/bbb_30fps.mpd",
+    "https://this.is.an.example.com/manifest2/bbb_30fps.mpd",
+    "https://this.is.an.example.com/manifest3/bbb_30fps.mpd"
+  ],
+  ...
+}
+```
+
+It's also possible to set the number of retries before the player decides it's impossible to keep playing.
+
+```js
+{
+  ...
+  retryParameters: {
+    streaming: {
+      maxTries: 6
+    },
+    manifest: {
+      maxTries: 6
+    }
+  }
+  ...
+}
+```
+
+*retryParameters.streaming.maxTries* is the number of tries the player will try to fetch a segment before the stream fails, while *retryParameters.manifest.maxTries* is the number of tries before a manifest fails and the player tries a different one. The default value of each one is *2*.
 
 ## Decreasing the Size of the Build
 

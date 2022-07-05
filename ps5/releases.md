@@ -8,12 +8,12 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/HTML5/4.3.1.5_20220704/nexplayer.js
 ```
-* **[Improved]** Fixed issue when using the property <a href="/#/ps5/api?id=setup">adsParamsToEncode</a>. When a value in the ad URL parameters was duplicated the ad URL was cut off.
+* **[Improved]** Fixed issue when using the property <a href="./#/ps5/api?id=setup">adsParamsToEncode</a>. When a value in the ad URL parameters was duplicated the ad URL was cut off.
 
 Date: July 4th 2022
 #### Version 4.3.1.4
 
-* **[Added]** Added the label information from the manifest into the <a href="/#/ps5/api?id=audiostream">AudioStream</a> object.
+* **[Added]** Added the label information from the manifest into the <a href="./#/ps5/api?id=audiostream">AudioStream</a> object.
 
 Date: June 24th 2022
 #### Version 4.3.1.3

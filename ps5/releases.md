@@ -6,7 +6,7 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 
 #### Version 4.3.1.5
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.3.1.4_20220624/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.3.1.5_20220704/nexplayer.js
 ```
 * **[Improved]** Fixed issue when using the property <a href="/#/ps5/api?id=setup">adsParamsToEncode</a>. When a value in the ad URL parameters was duplicated the ad URL was cut off.
 

@@ -673,7 +673,7 @@ We have events to handle some different kind of player events. List of player ev
 * **videofirstquartile**:  Event is fired when the 25% of the video’s duration has been reached.
 * **videomidpoint**: Event is fired when the 50% of the video’s duration has been reached.
 * **videothirdquartile**: Event is fired when the 75% of the video’s duration has been reached.
-* **videoProgressTime**: Event is fired when the (5%, 15%, 25%, 50%, 75%, 85%, 95%) of the video's duration has been reached, it returns a string with the percentage in the detail.progressTime, property of the event's payload.
+* **videoProgressTime**: <a id="videoProgressTimeEvent"> </a> Event is fired when the (5%, 15%, 25%, 50%, 75%, 85%, 95%) of the video's duration has been reached, it returns a string with the percentage in the detail.progressTime, property of the event's payload.
 * **ended**: Event launched when the stream has been finished.
 * **newsubtitlesdataloaded**: Event launched when new captions are loaded.
 * **ccnewdata**: Event launched when new cues of the closed captions are received.

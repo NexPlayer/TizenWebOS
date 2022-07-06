@@ -11,8 +11,8 @@ https://nexplayer.nexplayersdk.com/NexHTML5/1.2.6_20220705/nexplayer.js
 ```
 
 **New features:**
-- Implemented videoProgressTime event.
-- Update logic for differentiating DV.
+- Implemented <a href="#/ps4/api?id=videoProgressTimeEvent"> videoProgressTime </a> event.
+- Now <a href="#/ps4/api?id=audiostream"> audioStream </a> object includes a name property with a unique name to differentiate the tracks in case they have same language.
 
 **Bug fixes:**
 - Fixed issue when using the property adsParamsToEncode. When a value in the ad URL parameters was duplicated the ad URL was cut off.

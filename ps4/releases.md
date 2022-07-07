@@ -9,6 +9,7 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 ```
 https://nexplayer.nexplayersdk.com/NexHTML5/1.2.6_20220705/nexplayer.js
 ```
+> :warning: Since this version it is mandatory to use a WebMAF version higger or equal than 2.6.0.
 
 **New features:**
 - Implemented <a href="#/ps4/api?id=videoProgressTimeEvent"> videoProgressTime </a> event.

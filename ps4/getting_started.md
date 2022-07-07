@@ -1,6 +1,8 @@
 
 # Getting Started
 
+> :warning: Since the version 1.2.6 it is mandatory to use a WebMAF version higger or equal than 2.6.0.
+
 ### Sample Integration
 
 Integrating NexPlayer into an HTML5 file:
@@ -99,7 +101,7 @@ There are a substantial number of customizable options for NexPlayer™ includin
     callbacksForPlayer: callback, // Optional callback called with the player instances
     debug: true, // Optional
     drm: [{
-        keySystem: 'DRM Type (eg. com.widevine.alpha)', license: 'URI for the DRM Key', 
+        keySystem: 'DRM Type (eg. com.widevine.alpha)', license: 'URI for the DRM Key',
         customData: [{fieldName: 'Header Field Name', value: 'Header Field Value'}],
         NexCallback: OptionalDRMCallbackForFairPlay
     }], // Optional DRM information
@@ -109,12 +111,12 @@ There are a substantial number of customizable options for NexPlayer™ includin
          urlImg: "string"; // Optional
          chunkLimit: number; // Optional
          chunkTotal: number; // Optional
-      }, // Optional 
+      }, // Optional
     externalSubtitles: {
         src: "URL for the subtitles file",
         language: "Subtitle language",
     }, // Optional
-    mutedAtStart: true, // Optional    
+    mutedAtStart: true, // Optional
     resumePosition: number, // Optional, used for starting the video from the given position in seconds.
     trailer: boolean,// Optional, by default is set to false. Set to true when a stream should be considered a trailer.
     useNewRelicTracker: boolean,

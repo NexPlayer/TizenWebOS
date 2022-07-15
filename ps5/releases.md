@@ -18,7 +18,7 @@ https://nexplayer.nexplayersdk.com/HTML5/4.4.1_20220627/nexplayer.js
 * **[Added]** Now the [adstarted](ps5/api.md?id=adscustomevents) event sends the content id, its placement, and the ad break's duration when using IMA.
 * **[Added]** Implemented a new parameter [preferredVideoCodec](ps5/api.md?id=preferredvideocodec) to select the preferred video codec.
 * **[Added]** Added support for HLS' Byte-Range manifest format.
-* **[Added]** Implemented CDN seamless switch for DASH when there's a failure in the original CDN.
+* **[Added]** Implemented [CDN seamless switch for DASH](ps5/api.md?id=cdnseamless) when there's a failure in the original CDN.
 
 Date: June 27th 2022
 

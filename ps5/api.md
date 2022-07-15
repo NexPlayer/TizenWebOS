@@ -943,6 +943,30 @@ Get the volume of ad depending on what is on stage.
 
 **Returns**: number - is a number between 0 and 1. -1 is returned if this value is not available.
 
+<a id="getAdErrorMessage"></a>
+
+#### nexplayer.AdInstance().getAdErrorMessage() ⇒ string
+
+Returns the error message for the current ad error.
+
+**Returns**: string - The error message for the current error.
+
+<a id="getAdVastErrorCode"></a>
+
+#### nexplayer.AdInstance().getAdVastErrorCode() ⇒ number
+
+Returns the VAST error code for the current ad error.
+
+**Returns**: number - The VAST error code for the current error. -1 is returned if this value is not available.
+
+<a id="getAdErrorType"></a>
+
+#### nexplayer.AdInstance().getAdErrorType() ⇒ string
+
+Returns the detected ad error type for the current ad error.
+
+**Returns**: string - The detected ad error type, possible values: 'adLoadError', 'adPlayError' or '' (if unknown error type).
+
 #### Setters
 
 #### <a id="setmute"></a>nexplayer.AdInstance().setMute(state)

@@ -114,6 +114,9 @@
 - [getIsSkippableAd()](#getisskippablead) ⇒ boolean
 - [getMute()](#getmute) ⇒ boolean
 - [getVolume()](#getvolume) ⇒ number
+- [getAdErrorMessage()](#getAdErrorMessage) ⇒ string
+- [getAdVastErrorCode()](#getAdVastErrorCode) ⇒ number
+- [getAdErrorType()](#getgetAdErrorTypevolume) ⇒ string
 - [setMute(state)](#setmute)
 - [setVolume(value)](#setvolume)
 
@@ -1317,6 +1320,9 @@ The following methods should be queried after the adstarted event has fired fo
 * `getAdRemainingTime() ⇒ Number` Represents the current time remaining in the selected linear creative in milliseconds. Returns -1 if this value is not available.
 * `getIsSkippableAd() ⇒ Boolean` States if the loaded linear ad is a VAST skippable ad - can be queried when adloaded event fires.
 * `getVolume() ⇒ Number` Represents the volume level in the ad.
+* `getAdErrorMessage() ⇒ String` Represents the error message of the current ad error.
+* `getAdVastErrorCode() ⇒ Number` Represents the VAST error code of the current ad error.
+* `getAdErrorType() ⇒ String` Represents the error type of the current ad error.
 * `getMute() ⇒ boolean` Indicates if the ad is mute.
 
 ```js

@@ -1807,7 +1807,7 @@ This feature tells the player whether to start playback with the volume muted or
 
 ?> Please note that the default value of the <b>mutedAtStart</b> parameter is false, so the player will start unmuted if <b>mutedAtStart</b> is not set to true.
 
-### CDN seamless switch
+### CDN seamless switch <a id="cdnseamless"></a>
 
 ?> Please note that this feature is currently **only available for live DASH** streams and the backup manifests MUST have the same properties as the original one (codecs, container format, timestamps, etc.).
 

@@ -53,6 +53,7 @@
 
 **Global Typedefs**
 
+- [AudioStream](#AudioStream) : object
 - [NexPlayerDRMOptions](#nexplayerdrmoptions) : object
 - [DRMCustomData](#drmcustomdata) : object
 - [Captions](#captions) : object
@@ -84,7 +85,7 @@
 
 Creates and initializes the player.
 
-**Type**: instance method of `Player`   
+**Type**: instance method of `Player`
 
 **Parameters**: <code>configObj</code> is an object which values could be:
 
@@ -201,23 +202,23 @@ Gets the available audio streams.
 #### player.getCurrentAudioTrack() ⇒ AudioTrack
 
 Gets the audio track currently in use.
- 
+
 **Returns**: AudioTrack - The current audio track.
 
-<a id="getcurrentsubtitle"> </a> 
+<a id="getcurrentsubtitle"> </a>
 
-#### player.getCurrentSubtitle() 
+#### player.getCurrentSubtitle()
 
 Gets the current subtitle info.
 
 **Returns**: Current Subtitle - the current subtitle track (undefined if no subtitles are activated).
 
-<a id="getcurrenttime"> </a> 
+<a id="getcurrenttime"> </a>
 
 #### player.getCurrentTime() ⇒ number
 
 Returns the currentTime taking into account isUTC (if isUTC is true, getCurrentTime's returned value will be different from the time of the video element).
-  
+
 **Returns**: number - the current time of the video.
 
 <a id="getcurrenttrack"> </a>
@@ -228,12 +229,12 @@ Gets the current track information.
 
 **Returns**: Track - the current track.
 
-<a id="getduration"> </a> 
+<a id="getduration"> </a>
 
 #### player.getDuration() ⇒ number
 
 Returns the duration taking into account isUTC (if isUTC is true, getDuration's returned value will be different from the duration of the video element).
-  
+
 **Returns**: number - the duration of the video.
 
 <a id="getqualitylevels"> </a>
@@ -247,12 +248,12 @@ Gets the video quality levels array.
 <a id="getsubtitles"> </a>
 
 #### player.getSubtitles()
-   
+
 Gets all the avaliable subtitle tracks info.
 
 **Returns**: Array of subtitles - the subtitle tracks of the video.
 
-<a id="getthumbnailat"> </a> 
+<a id="getthumbnailat"> </a>
 
 #### player.getThumbnailAt() ⇒ Promise
 
@@ -260,7 +261,7 @@ Returns a thumbnail loading promise in a specific time.
 
 **Returns**: Promise - Thumbnail loading promise in a specific time.
 
-<a id="getthumbnails"> </a> 
+<a id="getthumbnails"> </a>
 
 #### player.getThumbnails() ⇒ Array < Frame >
 
@@ -269,15 +270,15 @@ Returns the loaded thumbnails.
 **Returns**: Array < Frame > - The loaded thumbnails.
 
 <a id="gettracks"> </a>
-  
+
 #### player.getTracks() ⇒ Array.< Track >
 
 Gets all of the videos avaliable tracks (different qualities).
-  
+
 **Returns**:: Array.< Track > - all the tracks available.
 
 <a id="geturl"> </a>
-   
+
 #### player.getURL()
 
 Returns the current video URL.
@@ -374,7 +375,7 @@ Sets the current audio stream.
 
 #### player.setCurrentTrack(trackID)
 
-Sets the current track. 
+Sets the current track.
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -422,6 +423,18 @@ Set logger to the video.
 
 
 ### Global typedefs
+
+## Global typedefs
+
+#### <a id="audiostream"></a>AudioStream : <code>Object</code>
+
+**Properties**:
+
+| Name | Type | Description |
+| --- | --- | --- |
+| id | <code>number</code> | id of the stream. |
+| language | <code>string</code> | language of the stream. |
+| name | <code>string</code> | name of the stream. |
 
 <a id="nexplayerdrmoptions"></a>
 
@@ -576,7 +589,7 @@ Get the true if the video is muted or false if not.
 #### nexplayer.AdInstance().getVolume() ⇒ number
 
 Get the Ad volume.
- 
+
 **Returns**: number - The ad volume.
 
 <a id="getadbreaks"> </a>
@@ -660,6 +673,7 @@ We have events to handle some different kind of player events. List of player ev
 * **videofirstquartile**:  Event is fired when the 25% of the video’s duration has been reached.
 * **videomidpoint**: Event is fired when the 50% of the video’s duration has been reached.
 * **videothirdquartile**: Event is fired when the 75% of the video’s duration has been reached.
+* **videoProgressTime**: <a id="videoProgressTimeEvent"> </a> Event is fired when the (5%, 15%, 25%, 50%, 75%, 85%, 95%) of the video's duration has been reached, it returns a string with the percentage in the detail.progressTime, property of the event's payload.
 * **ended**: Event launched when the stream has been finished.
 * **newsubtitlesdataloaded**: Event launched when new captions are loaded.
 * **ccnewdata**: Event launched when new cues of the closed captions are received.

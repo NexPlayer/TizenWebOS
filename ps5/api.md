@@ -114,6 +114,9 @@
 - [getIsSkippableAd()](#getisskippablead) ⇒ boolean
 - [getMute()](#getmute) ⇒ boolean
 - [getVolume()](#getvolume) ⇒ number
+- [getAdErrorMessage()](#getAdErrorMessage) ⇒ string
+- [getAdVastErrorCode()](#getAdVastErrorCode) ⇒ number
+- [getAdErrorType()](#getgetAdErrorTypevolume) ⇒ string
 - [setMute(state)](#setmute)
 - [setVolume(value)](#setvolume)
 
@@ -943,6 +946,30 @@ Get the volume of ad depending on what is on stage.
 
 **Returns**: number - is a number between 0 and 1. -1 is returned if this value is not available.
 
+<a id="getAdErrorMessage"></a>
+
+#### nexplayer.AdInstance().getAdErrorMessage() ⇒ string
+
+Returns the error message for the current ad error.
+
+**Returns**: string - The error message for the current error.
+
+<a id="getAdVastErrorCode"></a>
+
+#### nexplayer.AdInstance().getAdVastErrorCode() ⇒ number
+
+Returns the VAST error code for the current ad error.
+
+**Returns**: number - The VAST error code for the current error. -1 is returned if this value is not available.
+
+<a id="getAdErrorType"></a>
+
+#### nexplayer.AdInstance().getAdErrorType() ⇒ string
+
+Returns the detected ad error type for the current ad error.
+
+**Returns**: string - The detected ad error type, possible values: 'adLoadError', 'adPlayError' or '' (if unknown error type).
+
 #### Setters
 
 #### <a id="setmute"></a>nexplayer.AdInstance().setMute(state)
@@ -1293,6 +1320,9 @@ The following methods should be queried after the adstarted event has fired fo
 * `getAdRemainingTime() ⇒ Number` Represents the current time remaining in the selected linear creative in milliseconds. Returns -1 if this value is not available.
 * `getIsSkippableAd() ⇒ Boolean` States if the loaded linear ad is a VAST skippable ad - can be queried when adloaded event fires.
 * `getVolume() ⇒ Number` Represents the volume level in the ad.
+* `getAdErrorMessage() ⇒ String` Represents the error message of the current ad error.
+* `getAdVastErrorCode() ⇒ Number` Represents the VAST error code of the current ad error.
+* `getAdErrorType() ⇒ String` Represents the error type of the current ad error.
 * `getMute() ⇒ boolean` Indicates if the ad is mute.
 
 ```js

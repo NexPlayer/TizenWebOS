@@ -4,11 +4,25 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
-#### Version 4.4.1
+#### Version 4.4.2
 
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.4.1_20220627/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.4.2_20220714/nexplayer.js
 ```
+
+* **[Improved]** Fixed buffering and repeating frames issue on live streams with audio and video time differences.
+* **[Improved]** DAI streams now are working with IMA DAI SDK.
+* **[Improved]** Fixed frozen playback when using resumePosition.
+* **[Improved]** Fixed bug related to the ads when using the resumePosition feature.
+* **[Improved]** Fixed bug related to the ads where the ads did not resume the content after ending.
+* **[Improved]** The adError event with IMA now works as expected.
+* **[Improved]** Trick play behavior.
+* **[Improved]** Trick play now is disabled during ads.
+* **[Added]** Support for Hisense TVs, please note that each device could have different capabilities.
+
+Date: July 14th 2022
+
+#### Version 4.4.1
 
 * **[Improved]** Fixed playback error on PS5 when multiple #EXT-X-KEY HLS tags are present in a manifest.
 * **[Improved]** Fixed subtitles being changed automatically after ads when using IMA.

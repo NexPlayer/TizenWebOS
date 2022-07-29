@@ -4,11 +4,17 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
-#### Version 4.4.2
+#### Version 4.4.3
 
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.4.2_20220714/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.4.3_20220722/nexplayer.js
 ```
+
+* **[Improved]** Fixed video errors when using pre-roll ads.
+
+Date July 22nd 2022
+
+#### Version 4.4.2
 
 * **[Improved]** Fixed buffering and repeating frames issue on live streams with audio and video time differences.
 * **[Improved]** DAI streams now are working with IMA DAI SDK.

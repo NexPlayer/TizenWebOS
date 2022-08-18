@@ -10,15 +10,11 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 https://nexplayer.nexplayersdk.com/HTML5/4.4.3.1_20220816/nexplayer.js
 ```
 
-* **[Improved]** Fixed CC issue on Xbox related to subtitles being parsed wrongly on the videoElement.
+* **[Improved]** Fixed CC issue on Xbox related to subtitles being parsed wrongly on the HTMLVideoElement.
 
 Date August 16th 2022
 
 #### Version 4.4.3
-
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.4.3_20220722/nexplayer.js
-```
 
 * **[Improved]** Fixed video errors when using pre-roll ads.
 

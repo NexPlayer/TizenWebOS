@@ -4,6 +4,16 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.4.3.1
+
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.4.3.1_20220816/nexplayer.js
+```
+
+* **[Improved]** Fixed CC issue on Xbox related to subtitles being parsed wrongly on the videoElement.
+
+Date August 16th 2022
+
 #### Version 4.4.3
 
 ```

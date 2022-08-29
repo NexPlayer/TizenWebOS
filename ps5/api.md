@@ -511,7 +511,7 @@ Retrieves the number id of the current subtitle. If the returned value is -1, no
 
 Returns the current time of the video element.
 
-**Returns**: number - the current time of the video.
+**Returns**: number - the current time of the video in seconds.
 
 #### <a id="getcurrenttrack"></a>player.getCurrentTrack() ⇒ Track
 

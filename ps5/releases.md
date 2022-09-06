@@ -13,7 +13,7 @@ https://nexplayer.nexplayersdk.com/HTML5/4.4.4_20220901/nexplayer.js
 * **[Improved]** Optimized manifest parse algorithm for HLS.
 * **[Improved]** Fixed ABR not working if startingBitrate property is used.
 * **[Improved]** Fixed SSAI with some streams that weren't working.
-* **[Improved]** Now ads doesn't launch more than once when usin DAI with IMA.
+* **[Improved]** Now ads are not displayed multiple times when using DAI with IMA.
 * **[Improved]** Fixed UI when using IMA.
 * **[Added]** [Stall detected event](ps5/api.md?id=nexevent).
 

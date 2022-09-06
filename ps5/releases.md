@@ -4,11 +4,22 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
-#### Version 4.4.3.1
+#### Version 4.4.4
 
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.4.3.1_20220816/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.4.4_20220901/nexplayer.js
 ```
+
+* **[Improved]** Optimized manifest parse algorithm for HLS.
+* **[Improved]** Fixed ABR not working if startingBitrate property is used.
+* **[Improved]** Fixed SSAI with some streams that weren't working.
+* **[Improved]** Now ads doesn't launch more than once when usin DAI with IMA.
+* **[Improved]** Fixed UI when using IMA.
+* **[Added]** [Stall detected event](ps5/api.md?id=nexevent).
+
+Date September 1st 2022
+
+#### Version 4.4.3.1
 
 * **[Improved]** Fixed CC issue on Xbox related to subtitles being parsed wrongly on the HTMLVideoElement.
 

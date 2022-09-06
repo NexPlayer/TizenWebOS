@@ -7,7 +7,7 @@ Each version of the SDK is hosted in a CDN to allow faster and more efficient de
 #### Version 4.4.4
 
 ```
- https://nexplayer.nexplayersdk.com/HTML5/4.4.4_20220901/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.4.4_20220901/nexplayer.js
 ```
 
 * **[Improved]** Optimized manifest parse algorithm for HLS.

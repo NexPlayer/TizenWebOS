@@ -511,7 +511,7 @@ Retrieves the number id of the current subtitle. If the returned value is -1, no
 
 Returns the current time of the video element.
 
-**Returns**: number - the current time of the video.
+**Returns**: number - the current time of the video in seconds.
 
 #### <a id="getcurrenttrack"></a>player.getCurrentTrack() ⇒ Track
 
@@ -709,6 +709,7 @@ Set the video quality level.
 | Fragment_Loading_Completed | <code>number</code> | <code>1</code> | Fired when a new fragment has been loaded.|
 | Buffering | <code>number</code> | <code>2</code> | Fired when the buffer state changes. Check payload for state. |
 | Error | <code>number</code> | <code>3</code> | Fired when an error occurs. Returns an object with the information of the error. The object contains an array with the data (not all errors include data), and the name. |
+| Stall_Detected | <code>number</code> | <code>5</code> | Fired when a stall is detected. |
 
 #### <a id="thumbtype"></a>player.THUMB_TYPE : <code>enum</code>
 

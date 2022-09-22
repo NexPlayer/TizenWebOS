@@ -4,11 +4,37 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
-#### Version 4.4.3
+#### Version 4.4.3.2
 
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.4.3_20220722/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.4.3.2_20220902/nexplayer.js
 ```
+
+* **[Improved]** Fixed issue when resuming a VOD and reaching a mid-roll ad.
+
+Date September 2nd 2022
+#### Version 4.4.4
+
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.4.4_20220901/nexplayer.js
+```
+
+* **[Improved]** Optimized manifest parse algorithm for HLS.
+* **[Improved]** Fixed ABR not working if startingBitrate property is used.
+* **[Improved]** Fixed SSAI with some streams that weren't working.
+* **[Improved]** Now ads are not displayed multiple times when using DAI with IMA.
+* **[Improved]** Fixed UI when using IMA.
+* **[Added]** [Stall detected event](ps5/api.md?id=nexevent).
+
+Date September 1st 2022
+
+#### Version 4.4.3.1
+
+* **[Improved]** Fixed CC issue on Xbox related to subtitles being parsed wrongly on the HTMLVideoElement.
+
+Date August 16th 2022
+
+#### Version 4.4.3
 
 * **[Improved]** Fixed video errors when using pre-roll ads.
 

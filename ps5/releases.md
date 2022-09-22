@@ -4,6 +4,15 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.4.3.2
+
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.4.3.2_20220902/nexplayer.js
+```
+
+* **[Improved]** Fixed issue when resuming a VOD and reaching a mid-roll ad.
+
+Date September 2nd 2022
 #### Version 4.4.4
 
 ```

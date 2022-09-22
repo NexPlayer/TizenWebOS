@@ -2,9 +2,9 @@
 
 <img width="30%" text-align="center" src="./assets/logo.png" alt="logo of docsify-awesome repository" >
 
-# NexPlayer SDK for Tizen, WebOS, Xbox and PlayStation
+# NexPlayer SDK for Tizen, WebOS, Hisense, Xbox and PlayStation
 
-NexPlayer™ provides a media player for Smart TVs operating on Tizen and WebOS and for consoles like Xbox and PlayStation 4, 5. It includes support for HLS, DASH, and progressive download.
+NexPlayer™ provides a media player for Smart TVs operating on Tizen, WebOS and Hisense and for consoles such as Xbox, PlayStation 4 and PlayStation 5. It includes support for HLS, DASH, and progressive download.
 
 The default UI is easily customizable to fit the user's personal preferences (e.g. icons, colors, etc).
 

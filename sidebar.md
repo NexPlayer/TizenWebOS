@@ -1,5 +1,5 @@
-- [NexPlayer SDK for PlayStation Xbox Tizen WebOS](/)
-- [PS5 Xbox Tizen WebOS Documentation](/ps5_xbox_tizen_webos.md)
+- [NexPlayer SDK](/)
+- [PS5 Xbox Tizen WebOS Hisense Documentation](/ps5_xbox_tizen_webos.md)
 	- [Getting Started](/ps5/getting_started.md)
 	- [NexPlayer API](/ps5/api.md)
 	- [CSS Customizarions](/ps5/css_customizations.md)

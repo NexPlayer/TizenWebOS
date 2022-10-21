@@ -76,6 +76,9 @@
 - [getTracks()](#gettracks) ⇒ [Array\<Track\>](#track)
 - [getURL()](#geturl) ⇒ string
 - [getVersion()](#getversion) ⇒ string *[Deprecated]*
+- [getAvailabilityStartTime()](#getavailabilitystarttime) ⇒ number
+- [getPublishTime()](#getpublishtime) ⇒ number
+- [getTimeShiftBufferDepth()](#gettimeshiftbufferdepth) ⇒ number
 
 **Setters**
 
@@ -635,6 +638,27 @@ Returns the current stream's URL.
 The method getVersion() is deprecated, please use <a href="./#/ps5/api?id=nexplayer-getversion">nexplayer.getVersion()</a> instead.
 
 **Returns**: string - identify the version of the player.
+
+#### <a id="getavailabilitystarttime"></a>player.getAvailabilityStartTime() ⇒ number
+
+The start time is the anchor for the MPD in wall-clock time.
+
+**Returns**: number.
+
+
+#### <a id="getpublishtime"></a>player.getPublishTime() ⇒ number | null
+
+Specifies the wall-clock time when the MPD was generated and published at the origin server.
+This method is not supported for HLS streams and the return value is null.
+
+**Returns**: number.
+
+
+#### <a id="gettimeshiftbufferdepth"></a>player.getTimeShiftBufferDepth() ⇒ number
+
+Time shift buffer depth in seconds of the media presentation.
+
+**Returns**: number.
 
 ## Setters
 
@@ -1378,7 +1402,7 @@ The method <code>addEventListener</code> of the video element needs to be called
 Some of the most important events are "playing", "pause", "waiting", "timeupdate", "seeking" and "seeked".
 
 ```js
-videoElement.addEventListener("timeupdate", function() { console.log("The video playback has advanced to: "+videoElement.currentTime+", with the duration: "+videoElement.duration) }, true);
+HTMLVideoElement.addEventListener("timeupdate", function() { console.log("The video playback has advanced to: "+videoElement.currentTime+", with the duration: "+videoElement.duration) }, true);
 ```
 
 #### <a id="customevents"></a>Custom Events
@@ -1386,7 +1410,7 @@ videoElement.addEventListener("timeupdate", function() { console.log("The video 
 
 We also have custom events to handle some different kind of video events.
 ```js
-videoElement.addEventListener("customEvent", function(event) { console.log("Custom Event") });
+HTMLVideoElement.addEventListener("customEvent", function(event) { console.log("Custom Event") });
 ```
 
 ##### bufferType
@@ -1400,7 +1424,7 @@ var bufferType = event.detail;
 **detail** Contains a string indicating the type of buffering: connection, seek, initial or background.
 
 ```js
-videoElement.addEventListener("bufferType", function(e) { console.log("Buffer Type", e) });
+HTMLVideoElement.addEventListener("bufferType", function(e) { console.log("Buffer Type", e) });
 ```
 
 ##### nexplayererror
@@ -1442,7 +1466,7 @@ var firstQuartile = event.detail;
 **detail** type is number and returns the quartile time
 
 ```js
-videoElement.addEventListener('videofirstquartile', function(e){
+HTMLVideoElement.addEventListener('videofirstquartile', function(e){
   console.log("VIDEO FIRST QUARTILE -----> ", e);
 });
 ```
@@ -1459,7 +1483,7 @@ var midPoint = event.detail;
 **detail** type is number and returns the quartile time
 
 ```js
-videoElement.addEventListener('videomidpoint', function(e){
+HTMLVideoElement.addEventListener('videomidpoint', function(e){
   console.log("VIDEO MID POINT -----> ", e);
 });
 ```
@@ -1476,7 +1500,7 @@ var thirdQuartile = event.detail;
 **detail** type is number and returns the quartile time
 
 ```js
-videoElement.addEventListener('videothirdquartile', function(e){
+HTMLVideoElement.addEventListener('videothirdquartile', function(e){
   console.log("VIDEO THIRD QUARTILE -----> ", e);
 });
 ```
@@ -1489,7 +1513,7 @@ that stores the percentage time:
 **detail** type is string and returns the percentage time (5%, 15%, ...)
 
 ```js
-videoElement.addEventListener('videoProgressTime', function(e){
+HTMLVideoElement.addEventListener('videoProgressTime', function(e){
   console.log("VIDEO PROGRESS TIME -----> ", e.detail);
 });
 ```
@@ -1505,7 +1529,7 @@ var sixtysecondsin = event.detail;
 **detail** type is number and returns the quartile time
 
 ```js
-videoElement.addEventListener('60secondsin', function(e){
+HTMLVideoElement.addEventListener('60secondsin', function(e){
   console.log("60 SECONDS IN -----> ", e);
 });
 ```
@@ -1522,7 +1546,7 @@ var trickPlayTime = event.detail;
 **detail** type is number and returns time when trick play started (currentTime when trick play value changed).
 
 ```js
-videoElement.addEventListener('trickPlayStarted', function(e){
+HTMLVideoElement.addEventListener('trickPlayStarted', function(e){
   console.log("Trick play changed at time:", e.detail);
 });
 ```
@@ -1540,7 +1564,7 @@ var trickPlayTime = event.detail;
 **detail** type is number and returns the time where trick play is.
 
 ```js
-videoElement.addEventListener('trickPlayTimeUpdate', function(e){
+HTMLVideoElement.addEventListener('trickPlayTimeUpdate', function(e){
   console.log("Trick play updated at time:", e.detail);
 });
 ```
@@ -1556,7 +1580,7 @@ var trickPlayTime = event.detail;
 **detail** type is number and returns the time where trick play is.
 
 ```js
-videoElement.addEventListener('trickPlayEnded', function(e){
+HTMLVideoElement.addEventListener('trickPlayEnded', function(e){
   console.log("Trick play ended at time:", e.detail);
 });
 ```
@@ -1599,6 +1623,20 @@ nexplayer.Setup({
   div: document.getElementById('player'),
   ...
 })
+```
+
+##### subtitlesready
+
+This event is triggered when all the subtitles are available.
+
+```js
+HTMLVideoElement.addEventListener("subtitlesready", function (event) {
+
+  // The subtitles are ready to be used
+  console.log("Subtitles ready: ", nexplayerInstance.getSubtitles());
+  // At this point it is posibble to select any subtitle available
+  nexplayerInstance.setSubtitle(0);
+});
 ```
 
 #### Nexplayer Events

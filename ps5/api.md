@@ -641,7 +641,7 @@ The method getVersion() is deprecated, please use <a href="./#/ps5/api?id=nexpla
 
 #### <a id="getavailabilitystarttime"></a>player.getAvailabilityStartTime() ⇒ number
 
-The start time is the anchor for the MPD in wall-clock time.
+The presentation's start time in seconds.
 
 **Returns**: number.
 
@@ -656,7 +656,7 @@ This method is not supported for HLS streams and the return value is null.
 
 #### <a id="gettimeshiftbufferdepth"></a>player.getTimeShiftBufferDepth() ⇒ number
 
-Time shift buffer depth in seconds of the media presentation.
+Gets the presentation's segment availability duration.
 
 **Returns**: number.
 

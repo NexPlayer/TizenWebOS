@@ -4,20 +4,39 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
-#### Version 4.4.3.2
+#### Version 4.4.3.3
 
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.4.3.2_20220902/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.4.3.3_20221104/nexplayer.js
 ```
+
+* **[Added]** Implemented setting for enabling and disabling the usage of VPAID ads. [enableVpaid](ps5/api?id=setup) is a boolean that allows the player to execute VPAID ads, otherwise, the player will play other media that is available in the ad.
+
+Date November 4th 2022
+
+#### Version 4.4.5
+
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.4.5_20221018/nexplayer.js
+```
+
+* **[Improved]** Fixed parsing of HLS streams with EXT-X-BYTERANGE tags.
+* **[Improved]** Fixed issue using 'adsMode' and 'ssaiMediaTailor' properties. 'adsMode' decides what kind of ad module will be used, so in case the 'ssaiMediaTailor' property is provided it will only work if 'adsMode' is set to 'ssai'.
+* **[Improved]** Fixed issue with IMA DAI streams. Now the last ad skipped is displayed in case the player seeks to the end of the video.
+* **[Added]** Created an [event](ps5/api?id=subtitlesready) to detect when the subtitles are available.
+* **[Added]** Detection of the device maximum resolution supported and restriction of the video tracks with greater resolution than the maximum allowed.
+* **[Added]** Support for low latency on Smart TVs and video consoles. The minimum Chrome version supported is version 66.
+* **[Added]** APIs to retrieve [availabilityStartTime](ps5/api?id=getAvailabilityStartTime), [publishTime](ps5/api?id=getPublishTime) and [timeShiftBufferDepth](ps5/api?id=getTimeShiftBufferDepth) information from the manifests.
+
+Date October 18th 2022
+
+#### Version 4.4.3.2
 
 * **[Improved]** Fixed issue when resuming a VOD and reaching a mid-roll ad.
 
 Date September 2nd 2022
-#### Version 4.4.4
 
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.4.4_20220901/nexplayer.js
-```
+#### Version 4.4.4
 
 * **[Improved]** Optimized manifest parse algorithm for HLS.
 * **[Improved]** Fixed ABR not working if startingBitrate property is used.

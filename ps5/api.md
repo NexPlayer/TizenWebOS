@@ -145,25 +145,30 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 
 | Param | Type | Description |
 | --- | --- | --- |
-| adsMode | <code>string</code> | Determines the ad library: 'ima', 'pal', 'dai' or 'default'. Note that 'dai' needs a <a href="#/ps5/api?id=daiConfig">`[daiConfig]`</a> object to work, while 'ima' and 'pal' require a VAST string. |
 | addRequestFilter | <code>Function</code> | Sets a function that receives the DRM request as a parameter and changes its Headers. |
+| adsLoadTimeout | <code>number</code> | Determines the time the player waits for the ad to start. Parameter for IMA. |
+| adsMode | <code>string</code> | Determines the ad library: 'ima', 'pal', 'dai' or 'default'. Note that 'dai' needs a <a href="#/ps5/api?id=daiConfig">`[daiConfig]`</a> object to work, while 'ima' and 'pal' require a VAST string. |
 | adsParamsToEncode| <code>Array<string></code> | Specifies the name of the VAST ad URL parameters to encode. |
 | autoplay | <code>boolean</code> | Determines if the video must start playing or paused. True by default. |
+| bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default. The tracks that the ABR will be able to select are the ones between minBitrate and maxBitrate.  |
 | callbackForLogger | <code>Function</code> | Function to be called when the logger shows a message. |
 | callbackForReturn | <code>Function</code> | Sets a callback to be executed when the corresponding button is clicked. |
 | callbackForSubtitles | <code>Function</code> | Sets a callback to be executed when the corresponding subtitle is loaded. |
 | callbacksWithPlayers | <code>Function</code> | Used for retrieving the nexplayer instance and video element. This is necessary for getting the instance and use the NexPlayer API. |
 | cast | <code>boolean</code> | Determines if the cast will be enabled or not. |
+| daiConfig | <code><a href="#/ps5/api?id=daiConfig">Object</a></code> | Used to initialize the DAI stream. |
 | debug | <code>boolean</code> | Determines if log information is showed. By default is set to true. |
 | defaultLanguage | <code>string</code> | Determines which is the default audio language. |
 | disableKeyEvents | <code>boolean</code> | Determines if the keyboard keys can be used to control the video. |
 | drm | <code>Object</code> | Contains an object of DRM information. By default it’s set to null. |
+| enableVpaid | <code>boolean</code> | If it is set to true the player can execute VPAID ads, otherwise, the player will play other media that is available in the ad. In case no other media files are included in the ad an error will be fired. |
 | externalSubtitles | <code>Array [\<externalSubtitle\>](#externalsubtitleobject)</code> | Used to provide subtitle files as external subtitles. |
 | hideControlBarOnStart | <code>boolean</code> | Determines if the control bar will hide when the video starts. |
 | hideUITime | <code>boolean</code> | Determines if the time will be hidden in the UI. |
 | improveStartUp | <code>boolean</code> | Determines whether the video has to start at the lowest bitrate or not. |
 | logosrc | <code>string</code> | Company URL logo. |
 | mutedAtStart | <code>boolean</code> | Determines if the video will start playing muted or not. False by default. |
+| pageUrl | <code>string</code> | Adds a parameter to the ad request to keep track of the domain that sent the request. For targeting purposes. <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl"> More info </a>. Parameter for IMA. |
 | preferredAudioCodec | <code>Array</code> |This property can be used to give priority to a specific audio codec. |
 | poster | <code>string</code> | Video poster URL. |
 | reinitializeAfterAds | <code>boolean</code> | *[Deprecated]* Used to avoid errors related to ads on PS5, please set it to true on this platform. False by default. |
@@ -171,6 +176,7 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 | retryParameters | <code>Object [\<retrySettings\>](#retrysettings)</code> | Determines the retry parameters for DRM, manifest, and streaming requests. |
 | showAdsUI | <code>boolean</code> | Determines if the UI for ads is hidden or not. |
 | showingFullUI | <code>boolean</code> | Determines if the UI is hidden or not. |
+| ssaiMediaTailor | <code><a href="#/ps5/api?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
 | staticThumbnails | <code>Object</code> | Thumbnail properties: VTT URL, image URL and a callback which returns an <a href="#/ps5/api?id=error">error</a> object.|
 | startFullScreen | <code>boolean</code> | Determines if the video will start on full screen. |
 | startingBufferLength | <code>number</code> | Determines the starting buffer length. |
@@ -181,12 +187,6 @@ Set NexPlayer settings using the configuration object as described in NexPlayer 
 | useDynamicThumbnails | <code>boolean</code> | Determines if dynamic thumbnails are used. By default this values is set to false. |
 | useNewRelicTracker | <code>boolean</code> | Determines if the New Relic tracker will be used. |
 | vast | <code>string</code> | Advertisement URL that is going to be played. VAST, VPAID, VMAP are supported. |
-| adsLoadTimeout | <code>number</code> | Determines the time the player waits for the ad to start. Parameter for IMA. |
-| ssaiMediaTailor | <code><a href="#/ps5/api?id=ssaiobject">Object</a> </code> | Configuration object for setting AWS MediaTailor endpoint and use SSAI. |
-| bitrateConfig | <code>Object</code> | Determines whether the video will start playing at the bitrate you set by default. The tracks that the ABR will be able to select are the ones between minBitrate and maxBitrate.  |
-| pageUrl | <code>string</code> | Adds a parameter to the ad request to keep track of the domain that sent the request. For targeting purposes. <a href="https://developers.google.com/interactive-media-ads/docs/sdks/html5/client-side/reference/js/google.ima.AdsRequest#pageUrl"> More info </a>. Parameter for IMA. |
-| daiConfig | <code><a href="#/ps5/api?id=daiConfig">Object</a></code> | Used to initialize the DAI stream. |
-
 
 #### <a id="changesource"></a>nexplayer.ChangeSource({src: newSrc, drm: newDrm}))
 

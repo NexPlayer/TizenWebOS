@@ -4,6 +4,16 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
+#### Version 4.4.3.3
+
+```
+https://nexplayer.nexplayersdk.com/HTML5/4.4.3.3_20221104/nexplayer.js
+```
+
+* **[Added]** Implemented setting for enabling and disabling the usage of VPAID ads. [enableVpaid](ps5/api?id=setup) is a boolean that allows the player to execute VPAID ads, otherwise, the player will play other media that is available in the ad.
+
+Date November 4th 2022
+
 #### Version 4.4.5
 
 ```

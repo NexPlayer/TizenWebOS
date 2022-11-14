@@ -720,7 +720,6 @@ Set the video quality level.
 | --- | --- | --- |
 | HLS | <code>number</code> | <code>0</code> |
 | DASH | <code>number</code> | <code>1</code> |
-| PROGRESSIVE_DOWNLOAD | <code>number</code> | <code>2</code> |
 | UNKNOWN | <code>number</code> | <code>3</code> |
 
 #### <a id="nexevent"></a>player.NexEvent : <code>enum</code>

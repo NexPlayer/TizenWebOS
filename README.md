@@ -14,7 +14,6 @@ The default UI is easily customizable to fit the user's personal preferences (e.
     <div class="contentCell">
       <div>HLS </div>
       <div>DASH </div>
-      <div>Progressive Download </div>
     </div>
     <div class="titleCell">AD INSERTION</div>
     <div class="contentCell">

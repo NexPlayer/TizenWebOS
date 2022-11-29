@@ -4,21 +4,24 @@
 
 Each version of the SDK is hosted in a CDN to allow faster and more efficient developments. Optionally, the library can be downloaded and hosted on a custom server.
 
-#### Version 4.4.3.3
+#### Version 4.4.5.1
 
 ```
-https://nexplayer.nexplayersdk.com/HTML5/4.4.3.3_20221104/nexplayer.js
+https://nexplayer.nexplayersdk.com/HTML5/4.4.5.1_20221129/nexplayer.js
 ```
+
+* **[Improved]** Fixed subtitles not being displayed after pre-roll ads using IMA.
+
+Date November 29th 2022
+
+
+#### Version 4.4.3.3
 
 * **[Added]** Implemented setting for enabling and disabling the usage of VPAID ads. [enableVpaid](ps5/api?id=setup) is a boolean that allows the player to execute VPAID ads, otherwise, the player will play other media that is available in the ad.
 
 Date November 4th 2022
 
 #### Version 4.4.5
-
-```
-https://nexplayer.nexplayersdk.com/HTML5/4.4.5_20221018/nexplayer.js
-```
 
 * **[Improved]** Fixed parsing of HLS streams with EXT-X-BYTERANGE tags.
 * **[Improved]** Fixed issue using 'adsMode' and 'ssaiMediaTailor' properties. 'adsMode' decides what kind of ad module will be used, so in case the 'ssaiMediaTailor' property is provided it will only work if 'adsMode' is set to 'ssai'.
